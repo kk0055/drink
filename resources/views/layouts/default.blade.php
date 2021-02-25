@@ -35,6 +35,11 @@
        .nav{
         font-family: 'Stick', sans-serif;
        }
+       .drink-show {
+        width: 80%;
+        margin: 0 auto;
+        max-width: 500px;
+       }
 
         .hover\:grow {
             transition: all 0.3s;
@@ -45,6 +50,15 @@
             transform: scale(1.02);
         }
         
+        .body-box{
+        width:100% !important;
+        height:30px !important;
+        }
+
+        .item-image{
+        width:185px !important;
+        height:215px !important;
+        }
         .carousel-open:checked + .carousel-item {
             position: static;
             opacity: 100;
@@ -79,6 +93,8 @@
             color: #000;
             /*Set to match the Tailwind colour you want the active one to be */
         }
+
+
     </style>
 
 </head>

@@ -35,13 +35,14 @@ class DrinkController extends Controller
 
     $this->validate($request, [
     'name' => 'required',
-    'body' => 'required',
+    'body' => 'required|max:150',
     'score' => 'required',
     'image' => 'required'
     ],
     [
         'name.required' => '何かにゅうりょくしてね',
         'body.required'  => '感想教えてね',
+        'body.max'  => '150文字までだよ',
         'score.required' =>'何点？？？',
         'image.required' => '画像のせてくれ'
     ]);
@@ -69,9 +70,13 @@ class DrinkController extends Controller
     return redirect()->route('drinks.index')->with('info','ご馳走様');
     }
 
-    public function show()
+    public function show($drink)
     {
-        return view('drinks.show');
+
+        $drink = Drink::findOrFail($drink);
+        return view('drinks.show',[
+            'drink' => $drink
+        ]);
     }
 
 }
