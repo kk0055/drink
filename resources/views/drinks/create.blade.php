@@ -14,7 +14,7 @@
 
           <div class="col-span-6">
         
-            <label for="name" class="block text-sm font-medium text-gray-700">なまえ</label>
+            <label for="name" class="block text-sm font-medium text-gray-700">飲んだもの</label>
             <input type="text" name="name" id="title"  class="mt-1 p-1 focus:outline-none focus:ring focus:border-blue-300  block w-full shadow-sm sm:text-sm rounded-md border border-indigo-600" placeholder="" value="{{ old('name') }}" >
           </div>
           @error('name')
@@ -38,9 +38,9 @@
 
           </div>
           <div class="col-span-6 mt-3 sm:col-span-6 ">
-          <label>Score</label>
+          <label>何点？</label>
           <select class="form-control" name="score">
-            <option value="" selected>-----------------</option>                   
+            <option value="" selected>---------------</option>                   
           <option value="1" name="score">1</option>
           <option value="2" name="score">2</option>
           <option value="3" name="score">3</option>
@@ -57,7 +57,7 @@
         @enderror 
           {{-- image --}}
           <div class="col-span-6 sm:col-span-6 lg:col-span-2 mt-3">
-            <label for="image" class="block text-sm font-medium text-gray-700"></label>
+            <label for="image" class="block text-sm font-medium text-gray-700">写真</label>
             <input type="file" name="image" id="filename" class="focus:outline-none " >
           </div>
 
