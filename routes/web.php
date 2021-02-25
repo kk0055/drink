@@ -22,5 +22,8 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/', [DrinkController::class, 'index'])->name('drinks.index');
 
 Route::get('/create', [DrinkController::class, 'create'])->name('drinks.create');
+Route::get('/{drink}/show', [DrinkController::class, 'show'])->name('drink.show');
+Route::get('/edit', [DrinkController::class, 'edit'])->name('drinks.edit');
+Route::post('/update', [DrinkController::class, 'update'])->name('drinks.update');
 
 Route::post('/create', [DrinkController::class, 'store'])->name('drinks.store');

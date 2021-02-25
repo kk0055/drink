@@ -69,5 +69,9 @@ class DrinkController extends Controller
     return redirect()->route('drinks.index')->with('info','ご馳走様');
     }
 
+    public function show()
+    {
+        return view('drinks.show');
+    }
 
 }
