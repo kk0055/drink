@@ -13,7 +13,8 @@
     <link href="https://unpkg.com/tailwindcss/dist/tailwind.min.css" rel="stylesheet">
     <!--Replace with your tailwind.css once created-->
     <link href="https://fonts.googleapis.com/css?family=Work+Sans:200,400&display=swap" rel="stylesheet">
-
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Stick&display=swap" rel="stylesheet">
     <style>
         .worksans {
             font-family: 'Work Sans', sans-serif;
@@ -27,6 +28,8 @@
         }
         .main-title{
           font-size: 4rem;
+          font-family: 'Stick', sans-serif;
+          margin-bottom: 50px
         }
         .hover\:grow {
             transition: all 0.3s;
@@ -137,8 +140,9 @@
 
                     <div class="container mx-auto">
                         <div class="flex flex-col w-full lg:w-1/2 md:ml-16 items-center md:items-start px-6 tracking-wide">
-                            <p class="text-black text-2xl my-4">Real Bamboo Wall Clock</p>
-                            <a class="text-xl inline-block no-underline border-b border-gray-600 leading-relaxed hover:text-black hover:border-black" href="#">view product</a>
+                            <p class="text-black text-2xl my-4">人生はチョコレートの箱のようなもの。
+                                <br> 開けてみるまで中身はわからない。</p>
+                            <a class="text-xl inline-block no-underline border-b border-gray-600 leading-relaxed hover:text-black hover:border-black" href="{{ route('drinks.create') }}">-フォレストガンプ-</a>
                         </div>
                     </div>
 
@@ -154,8 +158,9 @@
 
                     <div class="container mx-auto">
                         <div class="flex flex-col w-full lg:w-1/2 md:ml-16 items-center md:items-start px-6 tracking-wide">
-                            <p class="text-black text-2xl my-4">Brown and blue hardbound book</p>
-                            <a class="text-xl inline-block no-underline border-b border-gray-600 leading-relaxed hover:text-black hover:border-black" href="#">view product</a>
+                            <p class="text-black text-2xl my-4">俺の酒も甘い</p>
+                            <a class="text-xl inline-block no-underline border-b border-gray-600 leading-relaxed hover:text-black hover:border-black" href="{{ route('drinks.create') }}">パクさん
+                            </a>
                         </div>
                     </div>
 
@@ -245,16 +250,16 @@ Alternatively if you want to just have a single hero
 
         <div class="container py-8 px-6 mx-auto">
 
-            <a class="uppercase tracking-wide no-underline hover:no-underline font-bold text-gray-800 text-xl mb-8" href="#">
+            <a class="tracking-wide no-underline hover:no-underline font-bold text-gray-800 text-xl mb-8" href="#">
 			
 		</a>
-            <p class="mb-8">何が美味しいかなんて飲んでみないとわからない。<br> 不味いかもしれない。めちゃくちゃ不味いかもしれない。<br> それでもたまには美味しいものに出会えるよ。たぶん。</p>
+            <p class="mb-8">何が美味しいかなんて飲んでみないとわからない。<br> 不味いかもしれない。苦いかもしれない。甘すぎるかもしれない。<br> それでもたまには美味しいものに出会えるよ。たぶん。</p>
 
         </div>
 
     </section>
 
-    <footer class="container mx-auto bg-white py-8 border-t border-gray-400">
+    <footer class="container mx-auto bg-white py-8  border-gray-400">
         <div class="container flex px-3 py-8 ">
             <div class="w-full mx-auto flex flex-wrap">
                 <div class="flex w-full lg:w-1/2 ">
