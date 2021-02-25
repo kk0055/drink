@@ -54,7 +54,7 @@ class DrinkController extends Controller
         $fileNameToStore = null;
         }
 
-    Drink::create([
+    $request->user()->drinks()->create([
     'name' => $request->name,
     'body' => $request->body,
     'score' => $request->score,
@@ -63,7 +63,7 @@ class DrinkController extends Controller
     ]);
 
     //    dd($request);
-    return redirect()->route('main')->with('info','ご馳走様');
+    return redirect()->route('drinks.index')->with('info','ご馳走様');
     }
 
 
