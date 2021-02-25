@@ -11,13 +11,7 @@
       <div class="px-4 py-5 bg-white sm:p-6">
         <div class="">
         
-         
-   
-          @error('image')
-          <div class="text-red-500 mt-2 text-sm">
-            {{ $message }}
-          </div>
-          @enderror   
+
           <div class="col-span-6">
         
             <label for="name" class="block text-sm font-medium text-gray-700">なまえ</label>
@@ -41,9 +35,9 @@
               {{ $message }}
             </div>
             @enderror 
-            
+
           </div>
-          <div class="col-span-6 mt-3 sm:col-span-6 lg:">
+          <div class="col-span-6 mt-3 sm:col-span-6 ">
           <label>Score</label>
           <select class="form-control" name="score">
             <option value="" selected>-----------------</option>                   
@@ -55,9 +49,6 @@
           
           </select>
           </div>
- 
-          
-   
      
         @error('score')
         <div class="text-red-500 mb-2 text-sm">
@@ -69,12 +60,14 @@
             <label for="image" class="block text-sm font-medium text-gray-700"></label>
             <input type="file" name="image" id="filename" class="focus:outline-none " >
           </div>
-          <div class="col-span-6 sm:col-span-6 lg:col-span-2">
-           
-            <label for="image2" class="block text-sm font-medium text-gray-700"></label>
-            <input type="file" name="image2" id="filename" class="focus:outline-none " >
-        
+
+          
+          @error('image')
+          <div class="text-red-500 mt-2 text-sm">
+            {{ $message }}
           </div>
+          @enderror  
+    
 
         {{-- End of Body --}}
     

@@ -37,11 +37,13 @@ class DrinkController extends Controller
     'name' => 'required',
     'body' => 'required',
     'score' => 'required',
+    'image' => 'required'
     ],
     [
         'name.required' => '何かにゅうりょくしてね',
         'body.required'  => '感想教えてね',
-        'score.required' =>'何点？？？'
+        'score.required' =>'何点？？？',
+        'image.required' => '画像のせてくれ'
     ]);
 
     if($request->hasFile('image')){
