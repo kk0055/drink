@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
-
+use App\Http\Controllers\DrinkController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,10 +14,13 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
-Route::get('/', function () {
-    return view('main');
-});
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/', [DrinkController::class, 'index'])->name('drinks.index');
+
+Route::get('/create', [DrinkController::class, 'create'])->name('drinks.create');
+
+Route::post('/create', [DrinkController::class, 'store'])->name('drinks.store');
