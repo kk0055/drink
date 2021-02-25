@@ -77,7 +77,7 @@
     @guest
     <div class="px-4 py-3 bg-white text-right sm:px-6">
       <button type="submit" class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" onclick="loginAlert()" >
-        投稿
+        Go!!
       </button>
     </div>
    @endguest
@@ -85,10 +85,15 @@
     @auth
       <div class="px-4 py-3 bg-white text-right sm:px-6">
         <button type="submit" class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" >
-          投稿
+          Go!!
         </button>
       </div>
       @endauth
     </div>
   </form>
 </div>
+<script>
+  function loginAlert() {
+    alert("ごめんなさい。ログインしてください(T_T)");
+  }
+  </script>

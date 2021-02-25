@@ -63,6 +63,7 @@ class DrinkController extends Controller
     'image' =>  $fileNameToStore,
 
     ]);
+   
 
     //    dd($request);
     return redirect()->route('drinks.index')->with('info','ご馳走様');
