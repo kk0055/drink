@@ -51,9 +51,14 @@
         }
         
         .body-box{
-        width:100% !important;
-        height:30px !important;
+        height:100px;
+        overflow: hidden;
+        text-overflow: ellipsis ;
         }
+
+        p {
+       overflow-wrap: break-word;
+       }
 
         .item-image{
         width:185px !important;

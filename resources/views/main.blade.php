@@ -122,7 +122,7 @@ Alternatively if you want to just have a single hero
               </div>
             </nav> --}}
             @foreach ($drinks as $drink)
-            <div class="w-1/2 md:w-1/3 xl:w-1/4 p-6 flex flex-col ">
+            <div class="w-1/2 md:w-1/3 xl:w-1/4 p-6 flex flex-col  inline-block">
             
                 <a href="{{ route('drink.show', $drink) }}">  
 
@@ -136,10 +136,9 @@ Alternatively if you want to just have a single hero
                     <p class="pt-1 text-gray-900">
                         <i class="fas fa-star text-yellow-300"></i>
                         {{ $drink->score }}</p>
-                    <div class="body-box">
-                    <p>{{ $drink->body }}</p>
+                    <div class="body-box ">
+                    <p class="">{{ $drink->body }}</p>
                     </div>
-                    
                     </a>
             </div>
             @endforeach

@@ -16,7 +16,7 @@ class DrinkController extends Controller
     public function index( )
     {
        
-        $drinks = Drink::all();
+        $drinks = Drink::orderBy('created_at','desc')->get();
      
         return view('main', [
             'drinks' => $drinks,
