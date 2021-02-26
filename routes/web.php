@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\DrinkController;
+use App\Http\Controllers\SearchController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -27,3 +28,5 @@ Route::get('/edit', [DrinkController::class, 'edit'])->name('drinks.edit');
 Route::post('/update', [DrinkController::class, 'update'])->name('drinks.update');
 
 Route::post('/create', [DrinkController::class, 'store'])->name('drinks.store');
+
+Route::get('/search', [SearchController::class, 'search'])->name('item.search');

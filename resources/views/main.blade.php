@@ -107,8 +107,8 @@ Alternatively if you want to just have a single hero
                     <div class="flex items-center " id="store-nav-content">
 
                         <form action="">
-                            <i class="fas fa-search"></i>
-                            <input type="text" name="query" class=" text-sm rounded-full w-64 px-4  py-1 focus:outline-none focus:shadow-outline " placeholder="Search">
+                            <i class="fas fa-search "></i>
+                            <input type="text" name="query" class=" text-sm rounded-full w-64 px-4  py-1 focus:outline-none border-b focus:shadow-outline " placeholder=" Search">
                             <div class="">
                             </div>
                           </form>
