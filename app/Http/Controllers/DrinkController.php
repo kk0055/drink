@@ -16,7 +16,7 @@ class DrinkController extends Controller
     public function index( )
     {
        
-        $drinks = Drink::orderBy('created_at','desc')->get();
+        $drinks = Drink::orderBy('created_at','desc')->paginate(10);
      
         return view('main', [
             'drinks' => $drinks,
