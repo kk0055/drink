@@ -67,7 +67,7 @@ class DrinkController extends Controller
    
 
     //    dd($request);
-    return redirect()->route('drinks.index')->with('info','ご馳走様');
+    return redirect()->route('drinks.index')->with('info','ごちそうさまでした！');
     }
 
     public function show($drink)

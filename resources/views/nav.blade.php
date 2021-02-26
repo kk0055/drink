@@ -34,7 +34,7 @@
             
           </div>
                  <div class="order-1 md:order-2 ">
-              <a class="flex items-center tracking-wide no-underline hover:no-underline font-bold text-gray-800 text-xl " href="{{ route('drinks.create') }}">
+              <a class="flex items-center tracking-wide no-underline hover:no-underline font-bold text-gray-800 text-xl " href="{{ route('drinks.index') }}">
                   <i class="fas fa-wine-bottle"></i>
               </a>
          

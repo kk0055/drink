@@ -1,7 +1,11 @@
 @extends('layouts.default')
 @section('contents')
+@include('nav')
+<div class="search-text flex flex-col w-full items-center  px-6 tracking-wide">
+  <h1> <i class="fas fa-star text-yellow-300"></i>美味い順番<i class="fas fa-star text-yellow-300"></i></h1>
+ 
+  </div>
 
-<h1> <i class="fas fa-star text-yellow-300"></i>が多い順番だよ</h1>
 
 @include('components.drink')
 
