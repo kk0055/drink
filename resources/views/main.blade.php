@@ -98,22 +98,16 @@ Alternatively if you want to just have a single hero
         <div class="container mx-auto flex items-center flex-wrap pt-4 pb-12">
 
             <nav id="store" class="w-full z-30 top-0 px-6 py-1">
-                <div class="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 px-2 py-3">
-
-                    <a class="uppercase tracking-wide no-underline hover:no-underline font-bold text-gray-800 text-xl " href="#">
-				
-			</a>
-
+                <div class="w-full container mx-auto flex  items-center justify-end mt-0 px-2 py-3">
                     <div class="flex items-center " id="store-nav-content">
 
-                        <form action="">
+                        <form action="{{ route('item.search') }}">
                             <i class="fas fa-search "></i>
                             <input type="text" name="query" class=" text-sm rounded-full w-64 px-4  py-1 focus:outline-none border-b focus:shadow-outline " placeholder=" Search">
                             <div class="">
                             </div>
                           </form>
                        
-                   
                     </div>
               </div>
             </nav>

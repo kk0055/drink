@@ -59,6 +59,14 @@
         p {
        overflow-wrap: break-word;
        }
+       .search-text{
+        font-size: 2rem;
+        font-family: 'Stick', sans-serif;
+        width: 80%;
+        margin: 0 auto;
+       margin-top: 20px;
+        
+       }
 
         .item-image{
         width:185px !important;
