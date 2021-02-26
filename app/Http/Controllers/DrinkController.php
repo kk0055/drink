@@ -37,6 +37,7 @@ class DrinkController extends Controller
     'name' => 'required',
     'body' => 'required|max:150',
     'score' => 'required',
+    'place' => 'required',
     'image' => 'required'
     ],
     [
@@ -44,7 +45,8 @@ class DrinkController extends Controller
         'body.required'  => '感想教えてね',
         'body.max'  => '150文字までだよ',
         'score.required' =>'何点？？？',
-        'image.required' => '画像のせてくれ'
+        'image.required' => '画像のせてくれ',
+        'place.required' => 'どこで買ったのか教えてよ～'
     ]);
 
     if($request->hasFile('image')){
@@ -61,6 +63,7 @@ class DrinkController extends Controller
     'name' => $request->name,
     'body' => $request->body,
     'score' => $request->score,
+    'place' => $request->place,
     'image' =>  $fileNameToStore,
 
     ]);

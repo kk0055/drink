@@ -111,10 +111,8 @@ Alternatively if you want to just have a single hero
                     <div class="flex items-center " id="store-nav-content">
 
                         <form action="{{ route('item.search') }}">
-                            <i class="fas fa-search "></i>
+                            <i class="fas fa-search "> </i>
                             <input type="text" name="query" class=" text-sm rounded-full w-64 px-4  py-1 focus:outline-none border-b focus:shadow-outline " placeholder=" Search">
-                            <div class="">
-                            </div>
                           </form>
                        
                     </div>
@@ -136,7 +134,8 @@ Alternatively if you want to just have a single hero
                         <i class="fas fa-star text-yellow-300"></i>
                         {{ $drink->score }}</p>
                     <div class="body-box ">
-                    <p class="">{{ $drink->body }}</p>
+                        <p>買った店：{{ $drink->place }}</p>
+                    <p class="mt-2">{{ $drink->body }}</p>
                     </div>
                     </a>
             </div>
