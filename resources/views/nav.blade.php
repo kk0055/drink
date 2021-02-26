@@ -30,13 +30,13 @@
          
             
           </div>
-          
-          <div class="order-1 md:order-2 ">
+                 <div class="order-1 md:order-2 ">
               <a class="flex items-center tracking-wide no-underline hover:no-underline font-bold text-gray-800 text-xl " href="{{ route('drinks.create') }}">
                   <i class="fas fa-wine-bottle"></i>
               </a>
+         
           </div>
-
+    
        
       </div>
   </nav>
