@@ -143,7 +143,7 @@ Alternatively if you want to just have a single hero
             <a class="tracking-wide no-underline hover:no-underline font-bold text-gray-800 text-xl mb-8" href="#">
 			
 		</a>
-            <p class="mb-8">何が美味しいかなんて飲んでみないとわからない。<br> 不味いかもしれない。苦いかもしれない。甘すぎるかもしれない。<br> それでもたまには美味しいものに出会えるよ。たぶん。</p>
+            <p class="mb-8 footer-tesxt">何が美味しいかなんて飲んでみないとわからない。<br> 不味いかもしれない。苦いかもしれない。甘すぎるかもしれない。<br> それでもたまには美味しいものに出会えるよ。たぶん。</p>
 
         </div>
 

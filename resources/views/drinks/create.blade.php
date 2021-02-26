@@ -4,7 +4,6 @@
 
 <div class="mt-1 md:mt-0 md:col-span-2 max-w-3xl mx-auto  p-16">
 
-
   <form action="{{ route('drinks.store') }}" method="POST" enctype="multipart/form-data">
     @csrf
     <div class="shadow overflow-hidden sm:rounded-md">

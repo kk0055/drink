@@ -6,7 +6,7 @@
 
 <div class="flex items-center justify-center mt-5 ">
     
-    <div class="w-2/3 lg:w-1/2 xl:max-w-screen-sm bg-white  ">
+    <div class="w-2/3 lg:w-1/2 xl:max-w-screen-sm bg-white shadow px-4 py-2 rounded-md">
        
         <div class=" md:px-48 lg:px-12 lg:mt-16 xl:px-24  xl:max-w-2xl">
             <a href="{{ route('drinks.index') }}"> 
@@ -16,19 +16,16 @@
             <div class="  mt-10">
                      <form method="POST" action="{{ route('login') }}">
                     @csrf
-                    @if (session('oauth_error'))
-                    {{ session('oauth_error') }}
-                    @endif
-                
+                                  
                     @error('email')
-                    <span class="invalid-feedback" role="alert">
+                    <span class="text-red-500" role="alert">
                         <strong>{{ $message }}</strong>
                     </span>
                       @enderror
 
                     <div>
                         <div class="text-sm font-bold text-gray-700 tracking-wide">メールアドレス</div>
-                        <input class="w-full text-lg py-2 border-b border-gray-300 focus:outline-none focus:border-indigo-500 form-control @error('email') is-invalid @enderror" type="email" name="email" placeholder="メールアドレス" value="{{ old('email') }}" >
+                        <input class=" text-lg py-2 border-b border-gray-300 focus:outline-none focus:border-indigo-500 form-control @error('email') is-invalid @enderror" type="email" name="email" placeholder="メールアドレス" value="{{ old('email') }}" >
                     </div>
 
                     @error('password')
@@ -60,16 +57,9 @@
                     </div>
                 </form>
                 <div class="mt-2 text-sm font-display font-semibold text-gray-700 text-center">
-                    アカウントをお持ちでない方はこちら<a class="cursor-pointer text-indigo-600 hover:text-indigo-800 ml-2" href="{{ 'register' }}">登録</a>
+                    アカウントをお持ちでない方はこちら<a class="cursor-pointer ml-2 border-b text-gray-500" href="{{ 'register' }}">登録</a>
                 </div>
-                {{-- <div class=" space-y-3 w-full mt-3 mb-4">
-                    <a
-                      class="ml-2  px-6 py-2 text-xs font-medium leading-6 text-center text-white transition bg-blue-700 rounded shadow ripple hover:shadow-lg hover:bg-blue-800 focus:outline-none" href="{{ route('twitter.login',['provider' => 'twitter']) }}"
-                    >
-                    <i class="fab fa-twitter mr-2"></i>
-                        Twitterで登録する   
-                    </a>
-                </div> --}}
+           
                 {{-- テストボタン --}}
                 <div class="mb-2 ml-2">
                   <form method="POST" action="{{ route('login') }}">

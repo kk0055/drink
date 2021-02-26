@@ -15,7 +15,10 @@
     <link href="https://fonts.googleapis.com/css?family=Work+Sans:200,400&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Stick&display=swap" rel="stylesheet">
+    
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=RocknRoll+One&display=swap');
+
         .worksans {
             font-family: 'Work Sans', sans-serif;
         }
@@ -66,6 +69,9 @@
         margin: 0 auto;
        margin-top: 20px;
         
+       }
+       .footer-tesxt {
+        font-family: 'RocknRoll One', sans-serif;
        }
 
         .item-image{
