@@ -17,7 +17,7 @@
                     <div class="container mx-auto">
                         <div class="flex flex-col w-full items-center  px-6 tracking-wide">
                             <p class="main-title text-black text-2xl my-4">俺が飲んだもの</p>
-                            <p class="mt-2">ここには日々飲んだ飲み物を書いていく</p>
+                            <p class="mt-2">ここには日々飲んだ飲み物を書いていくよ</p>
                         <div>
                             <span class="t">ところで、</span> 
                             <a class="text-xl inline-block no-underline border-b border-gray-600 leading-relaxed hover:text-black hover:border-black mt-3" href="{{ route('drinks.create') }}">今日は何を飲んだ?</a></div>

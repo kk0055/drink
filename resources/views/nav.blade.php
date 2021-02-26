@@ -6,7 +6,7 @@
       
           <label for="menu-toggle" class="cursor-pointer md:hidden block">
               <svg class="fill-current text-gray-900" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
-                  <title>menu</title>
+                  <title>何飲んだ？</title>
                   <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
               </svg>
              
@@ -24,6 +24,7 @@
                       <li><a class="inline-block no-underline hover:text-black hover:underline py-2 px-4" href="{{ route('register') }}">登録</a></li>
                     @endguest
                     <li><a class="inline-block no-underline hover:text-black hover:underline py-2 px-4" href="{{ route('drinks.create') }}">飲んだ?</a></li>
+                    <li><a class="inline-block no-underline hover:text-black hover:underline py-2 px-4" href="https://www.amazon.co.jp/b/ref=s9_acss_bw_ln_Grocery_1_20s_w?ie=UTF8&node=71442051&pf_rd_m=A3P5ROKL5A1OLE&pf_rd_s=merchandised-search-leftnav&pf_rd_r=5AHSHQJPB75AZ04J7H7M&pf_rd_t=101&pf_rd_p=8e6be6b0-ad1d-4854-be00-ceab93a3847b&pf_rd_i=57239051" target="_blank">注文する?</a></li>
                   </ul>    
               </nav>
          
