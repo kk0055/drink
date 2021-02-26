@@ -18,6 +18,7 @@ class CreateDrinksTable extends Migration
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->string('name');
             $table->string('body');
+            $table->string('place');
             $table->integer('score');
             $table->string('image')->nullable();
             $table->timestamps();

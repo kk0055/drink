@@ -21,6 +21,17 @@
             {{ $message }}
           </div>
           @enderror
+
+          <div class="col-span-6 mt-3">
+        
+            <label for="place" class="block text-sm font-medium text-gray-700">買える場所</label>
+            <input type="text" name="place"   class="mt-1 p-1 focus:outline-none focus:ring  block w-full shadow-sm sm:text-sm rounded-md border border-indigo-600" placeholder="" value="{{ old('place') }}" >
+          </div>
+          @error('place')
+          <div class="text-red-500 mb-2 text-sm">
+            {{ $message }}
+          </div>
+          @enderror
           {{-- Body --}}
 
              
