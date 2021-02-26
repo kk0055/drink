@@ -1,4 +1,3 @@
-    <!--Nav-->
   
     <nav id="header" class="w-full z-30 top-0 py-1">
      
@@ -23,6 +22,10 @@
                       <li><a class="inline-block no-underline hover:text-black hover:underline py-2 px-4" href="{{ route('login') }}">ログイン</a></li>
                       <li><a class="inline-block no-underline hover:text-black hover:underline py-2 px-4" href="{{ route('register') }}">登録</a></li>
                     @endguest
+                    <li>
+                        <a class="inline-block no-underline hover:text-black hover:underline py-2 px-4" href="{{ route('drinks.ranking') }}">ランキング</a> 
+                    </li>
+
                     <li><a class="inline-block no-underline hover:text-black hover:underline py-2 px-4" href="{{ route('drinks.create') }}">飲んだ?</a></li>
                     <li><a class="inline-block no-underline hover:text-black hover:underline py-2 px-4" href="https://www.amazon.co.jp/b/ref=s9_acss_bw_ln_Grocery_1_20s_w?ie=UTF8&node=71442051&pf_rd_m=A3P5ROKL5A1OLE&pf_rd_s=merchandised-search-leftnav&pf_rd_r=5AHSHQJPB75AZ04J7H7M&pf_rd_t=101&pf_rd_p=8e6be6b0-ad1d-4854-be00-ceab93a3847b&pf_rd_i=57239051" target="_blank">注文する?</a></li>
                   </ul>    

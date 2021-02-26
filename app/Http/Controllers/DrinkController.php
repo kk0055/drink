@@ -79,4 +79,15 @@ class DrinkController extends Controller
         ]);
     }
 
+    public function ranking()
+    {
+
+    $drinks = Drink::orderBy('score','desc')->get();
+    
+    return view('drinks.ranking', [
+        'drinks' => $drinks,
+        
+    ]);
+    }
+
 }

@@ -2,8 +2,14 @@
 @section('contents')
 @if (!$drinks->count())
 <div class="search-text flex flex-col w-full items-center  px-6 tracking-wide">
-<p>検索した飲み物はまだ無いみたいだね。<br> 君が飲んでくれ！</p>
+<p>検索した飲み物はまだ無いみたいだね！<br> 君が飲んでくれ！
+  
+  <a class="hover:no-underline font-bold text-gray-800 text-xl " href="{{ route('drinks.index') }}">
+  <i class="fas fa-wine-bottle"></i>
+</a></p>
+
 </div>
+
 @else
 @foreach ($drinks as $drink)
 <div class="w-1/2 md:w-1/3 xl:w-1/4 p-6 flex flex-col  inline-block">

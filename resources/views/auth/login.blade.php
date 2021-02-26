@@ -4,11 +4,11 @@
 @section('contents')
 
 
-<div class="flex items-center justify-center mt-3 ">
+<div class="flex items-center justify-center mt-5 ">
     
-    <div class="w-2/3 lg:w-1/2 xl:max-w-screen-sm bg-white">
+    <div class="w-2/3 lg:w-1/2 xl:max-w-screen-sm bg-white  ">
        
-        <div class=" md:px-48 lg:px-12 lg:mt-16 xl:px-24 xl:max-w-2xl">
+        <div class=" md:px-48 lg:px-12 lg:mt-16 xl:px-24  xl:max-w-2xl">
             <a href="{{ route('drinks.index') }}"> 
                 <i class="fas fa-wine-glass-alt"></i></a>  
             <P class="text-center text-gray-700   lg:text-left font-bold ">ログイン</P>

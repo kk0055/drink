@@ -15,7 +15,7 @@
           <div class="col-span-6">
         
             <label for="name" class="block text-sm font-medium text-gray-700">飲んだもの</label>
-            <input type="text" name="name" id="title"  class="mt-1 p-1 focus:outline-none focus:ring focus:border-blue-300  block w-full shadow-sm sm:text-sm rounded-md border border-indigo-600" placeholder="" value="{{ old('name') }}" >
+            <input type="text" name="name" id="title"  class="mt-1 p-1 focus:outline-none focus:ring  block w-full shadow-sm sm:text-sm rounded-md border border-indigo-600" placeholder="" value="{{ old('name') }}" >
           </div>
           @error('name')
           <div class="text-red-500 mb-2 text-sm">
@@ -76,7 +76,7 @@
     {{-- ログインしていないとき --}}
     @guest
     <div class="px-4 py-3 bg-white text-right sm:px-6">
-      <button type="submit" class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" onclick="loginAlert()" >
+      <button type="submit" class="inline-flex  justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white focus:outline-none focus:ring-2 focus:ring-offset-2 bg-black"  onclick="loginAlert()" >
         Go!!
       </button>
     </div>
@@ -84,7 +84,7 @@
     {{-- ログインしていないとき --}}
     @auth
       <div class="px-4 py-3 bg-white text-right sm:px-6">
-        <button type="submit" class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" >
+        <button type="submit" class="inline-flex  justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white focus:outline-none focus:ring-2 focus:ring-offset-2 bg-black" >
           Go!!
         </button>
       </div>
