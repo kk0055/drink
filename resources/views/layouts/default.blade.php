@@ -121,7 +121,13 @@
             /*Set to match the Tailwind colour you want the active one to be */
         }
 
-
+        @media (max-width: 500px){
+         .main-title{
+          font-size: 2rem;
+          font-family: 'Stick', sans-serif;
+          margin-bottom: 50px
+        }
+}
     </style>
 
 </head>
