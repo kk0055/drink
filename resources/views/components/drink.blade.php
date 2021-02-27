@@ -16,7 +16,7 @@
                   <i class="fas fa-star text-yellow-300"></i>
                   {{ $drink->score }}</p>
               <div class="body-box ">
-                <p>{{ $drink->place }}</p>
+                <p>買った店：{{ $drink->place }}</p>
               <p class="">{{ $drink->body }}</p>
               </div>
               </a>

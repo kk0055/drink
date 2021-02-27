@@ -1,6 +1,6 @@
 @extends('layouts.default')
 @section('contents')
-
+<body class="bg-white text-gray-600 work-sans leading-normal text-base tracking-normal">
 @include('nav')   
 
 <div class="search-text flex flex-col w-full items-center  px-6 tracking-wide">

@@ -16,7 +16,7 @@ class SearchController extends Controller
         }
        $drinks = Drink::where('name', 'LIKE',"%{$query}%")
        ->orWhere('body', 'LIKE',"%{$query}%")
-       ->get();
+       ->paginate(10);
     
     //    dd($items);
        return view('drinks.search_results',[
