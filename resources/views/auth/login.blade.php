@@ -10,8 +10,8 @@
        
         <div class=" md:px-48 lg:px-12 lg:mt-16 xl:px-24  xl:max-w-2xl">
             <a href="{{ route('drinks.index') }}"> 
-                <i class="fas fa-wine-glass-alt"></i></a>  
-            <P class="text-center text-gray-700   lg:text-left font-bold ">ログイン</P>
+                <i class="fas fa-wine-glass-alt text-2xl hover:text-red-500"></i></a>  
+            <P class="text-center text-gray-700    font-bold ">ログイン</P>
          
             <div class="  mt-10">
                      <form method="POST" action="{{ route('login') }}">
@@ -28,18 +28,13 @@
                         <input class=" text-lg py-2 border-b border-gray-300 focus:outline-none focus:border-indigo-500 form-control @error('email') is-invalid @enderror" type="email" name="email" placeholder="メールアドレス" value="{{ old('email') }}" >
                     </div>
 
-                    @error('password')
-                    <span class="invalid-feedback" role="alert">
-                        <strong>{{ $message }}</strong>
-                    </span>
-                    @enderror
-                    {{-- @foreach($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                   @endforeach --}}
-
+                                
                     <div class="mt-8">
-
-                        
+                        @error('password')
+                        <span class="text-red-500" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                        @enderror
                         <div class="flex justify-between items-center">
                             <div class="text-sm font-bold text-gray-700 tracking-wide">
                                 パスワード
@@ -49,15 +44,15 @@
                         <input class=" text-lg py-2  focus:outline-none  border-b focus:border-indigo-500 form-control @error('password') is-invalid @enderror" type="password"  placeholder="パスワード" value="{{ old('password') }}" name="password">
                     </div>
                     <div class="mt-10">
-                        <button class=" p-4 w-full rounded-full tracking-wide
+                        <button class=" p-4 w-full rounded-full 
                         font-semibold font-display focus:outline-none focus:shadow-outline hover:bg-gray-200
                         shadow-lg">
                         ログイン
                         </button>
                     </div>
                 </form>
-                <div class="mt-2 text-sm font-display font-semibold text-gray-700 text-center">
-                    アカウントをお持ちでない方はこちら<a class="cursor-pointer ml-2 border-b text-gray-500" href="{{ 'register' }}">登録</a>
+                <div class="mt-2 text-sm font-display font-semibold text-gray-700 my-4">
+                    アカウントを持ってない？<a class="cursor-pointer ml-2 border-b text-gray-500" href="{{ 'register' }}">登録</a>
                 </div>
            
                 {{-- テストボタン --}}
@@ -70,8 +65,8 @@
                     </div>
                         <input class="" type="hidden"  value="12345678910" name="password">
                   
-                    <div class="mt-2">
-                        <button class="bg-green-300 px-2 text-gray-100 rounded-full tracking-wide
+                    <div class=" my-4">
+                        <button class="bg-black px-2 text-white rounded-full tracking-wide
                         font-semibold font-display focus:outline-none focus:shadow-outline hover:bg-green-500
                         shadow-lg"> とりあえず何か飲んだから書く
                     

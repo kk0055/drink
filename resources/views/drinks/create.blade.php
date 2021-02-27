@@ -14,7 +14,7 @@
           <div class="col-span-6">
         
             <label for="name" class="block text-sm font-medium text-gray-700">飲んだもの</label>
-            <input type="text" name="name" id="title"  class="mt-1 p-1 focus:outline-none focus:ring  block w-full shadow-sm sm:text-sm rounded-md border border-indigo-600" placeholder="" value="{{ old('name') }}" >
+            <input type="text" name="name"  class="mt-1 p-1 focus:outline-none focus:ring  block w-full shadow-sm sm:text-sm rounded-md border border-indigo-600" placeholder="" value="{{ old('name') }}" >
           </div>
           @error('name')
           <div class="text-red-500 mb-2 text-sm">
@@ -56,6 +56,11 @@
           <option value="3" name="score">3</option>
           <option value="4" name="score">4</option>
           <option value="5" name="score">5</option>
+          <option value="6" name="score">6</option>
+          <option value="7" name="score">7</option>
+          <option value="8" name="score">8</option>
+          <option value="9" name="score">9</option>
+          <option value="10" name="score">10</option>
           
           </select>
           </div>

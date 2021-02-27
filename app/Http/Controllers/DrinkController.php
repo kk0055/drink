@@ -41,7 +41,7 @@ class DrinkController extends Controller
     'image' => 'required'
     ],
     [
-        'name.required' => '何かにゅうりょくしてね',
+        'name.required' => '何飲んだの？',
         'body.required'  => '感想教えてね',
         'body.max'  => '150文字までだよ',
         'score.required' =>'何点？？？',
@@ -85,7 +85,7 @@ class DrinkController extends Controller
     public function ranking()
     {
 
-    $drinks = Drink::orderBy('score','desc')->get();
+    $drinks = Drink::orderBy('score','desc')->paginate(10);
     
     return view('drinks.ranking', [
         'drinks' => $drinks,

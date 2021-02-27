@@ -22,6 +22,25 @@
                       <li><a class="inline-block no-underline hover:text-black hover:underline py-2 px-4" href="{{ route('login') }}">ログイン</a></li>
                       <li><a class="inline-block no-underline hover:text-black hover:underline py-2 px-4" href="{{ route('register') }}">登録</a></li>
                     @endguest
+
+                  
+                    @auth
+                    <li>
+                    <a class="inline-block no-underline hover:text-black hover:underline py-2 px-4" href="{{ route('logout') }}"
+                    onclick="event.preventDefault();
+                                  document.getElementById('logout-form').submit();">
+                     ログアウト
+                 </a></li>
+                 
+                 <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                    @csrf
+                </form>
+                 @endauth
+               
+                    
+           
+                  
+
                     <li>
                         <a class="inline-block no-underline hover:text-black hover:underline py-2 px-4" href="{{ route('drinks.ranking') }}">ランキング</a> 
                     </li>
