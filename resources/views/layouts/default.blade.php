@@ -11,7 +11,7 @@
     <meta property="og:type" content="" />
     <meta property="og:url" content="https://oreno-drink.com/" />
     <meta property="og:image" content="https://pbs.twimg.com/media/EvNwpbTU4AYVIgx?format=png&name=medium" />
-    <meta property="og:site_name" content="サイト名" />
+    <meta property="og:site_name" content="俺が飲んだもの" />
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
 
     <link href="https://unpkg.com/tailwindcss/dist/tailwind.min.css" rel="stylesheet">
@@ -78,8 +78,15 @@
         font-family: 'Stick', sans-serif;
         width: 80%;
         margin: 0 auto;
-       margin-top: 20px;
-        
+        margin-top: 20px;
+       }
+
+       .create-text{
+        font-size: 1rem;
+        font-family: 'Stick', sans-serif;
+        width: 80%;
+        margin: 0 auto;
+        margin-top: 20px;
        }
        .footer-tesxt {
         font-family: 'RocknRoll One', sans-serif;

@@ -9,7 +9,16 @@
     @csrf
     <div class="shadow overflow-hidden sm:rounded-md">
       <div class="px-4 py-5 bg-white sm:p-6">
-        <div class="">
+        <div class="create-text flex flex-col w-full items-center  px-6 tracking-wide">
+          @guest
+          <div class="text-red-500" role="alert">
+             <p>※ログインしてないと投稿できないよ～<br>ログインするか？<i class="fas fa-hand-point-right"></i> 
+            <a href="{{ route('login') }}" class="text-black">ログイン</a></p>
+             
+          </div>
+         @endguest
+         
+          </div>
         
 
           <div class="col-span-6">
