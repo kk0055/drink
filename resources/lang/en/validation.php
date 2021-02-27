@@ -140,6 +140,9 @@ return [
         'password' => [
             'required' => ':attributeを入力してね',
         ],
+        'name' => [
+            'required' => ':attributeを入力してね',
+        ],
     ],
 
     /*
@@ -156,6 +159,7 @@ return [
     'attributes' =>   [
         'email' => 'メールアドレス',
         'password' => 'パスワード',
+        'name' => 'なまえ',
     ],
 
 ];

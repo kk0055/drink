@@ -1,6 +1,7 @@
-<link href="https://unpkg.com/tailwindcss/dist/tailwind.min.css" rel="stylesheet">
-<!--Replace with your tailwind.css once created-->
-<link href="https://fonts.googleapis.com/css?family=Work+Sans:200,400&display=swap" rel="stylesheet">
+
+@extends('layouts.default')
+
+@section('contents')
 
 <div class="mt-1 md:mt-0 md:col-span-2 max-w-3xl mx-auto  p-16">
 
@@ -96,7 +97,7 @@
       </button>
     </div>
    @endguest
-    {{-- ログインしていないとき --}}
+    {{-- ログインしてるとき --}}
     @auth
       <div class="px-4 py-3 bg-white text-right sm:px-6">
         <button type="submit" class="inline-flex  justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white focus:outline-none focus:ring-2 focus:ring-offset-2 bg-black" >
@@ -107,8 +108,8 @@
     </div>
   </form>
 </div>
-<script>
-  function loginAlert() {
-    alert("ごめんなさい。ログインしてください(T_T)");
-  }
-  </script>
+
+
+
+    
+@endsection

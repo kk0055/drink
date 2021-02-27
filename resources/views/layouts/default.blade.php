@@ -44,6 +44,12 @@
         max-width: 500px;
        }
 
+       .show-item-image{
+        width:300px !important;
+        height:auto;
+        margin: 0 auto;
+        }
+
         .hover\:grow {
             transition: all 0.3s;
             transform: scale(1);
@@ -117,7 +123,14 @@
     </style>
 
 </head>
-
+<body class="bg-white text-gray-600 work-sans leading-normal text-base tracking-normal">
 @yield('contents')
+
+<script>
+    function loginAlert() {
+      alert("ごめんなさい。ログインして(T_T)");
+    }
+    </script>
+</body>
 
 </html>

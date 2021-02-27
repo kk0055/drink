@@ -2,9 +2,10 @@
 @extends('layouts.default')
 @section('contents')
 
+@include('nav')
 
-<div class="drink-show w-1/2 md:w-1/3 xl:w-1/4 p-6 flex flex-col">
-    <img src="{{asset('/storage/image/'.$drink->image)  }}" alt="pic"  class=" hover:opacity-75 ">
+<div class="drink-show w-1/2 md:w-1/3 xl:w-1/4 p-6 flex flex-col shadow">
+    <img src="{{asset('/storage/image/'.$drink->image)  }}" alt="pic"  class=" hover:opacity-75 show-item-image">
         <div class="pt-3 flex items-center ">
             <p class="">{{ $drink->name }}</p>
             {{-- <svg class="h-6 w-6 fill-current text-gray-500 hover:text-black" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
