@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>俺が飲んだもの</title>
-    <meta name="description" content="Free open source Tailwind CSS Store template">
-    <meta name="keywords" content="tailwind,tailwindcss,tailwind css,css,starter template,free template,store template, shop layout, minimal, monochrome, minimalistic, theme, nordic">
+    <meta name="description" content="俺が飲んだもの">
+    <meta name="keywords" content="俺が飲んだもの,drink,ドリンク,飲み物">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
 
     <link href="https://unpkg.com/tailwindcss/dist/tailwind.min.css" rel="stylesheet">
@@ -16,6 +16,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Stick&display=swap" rel="stylesheet">
     
+   
+
     <style>
         @import url('https://fonts.googleapis.com/css2?family=RocknRoll+One&display=swap');
 
