@@ -8,6 +8,10 @@
     <title>俺が飲んだもの</title>
     <meta name="description" content="俺が飲んだもの">
     <meta name="keywords" content="俺が飲んだもの,drink,ドリンク,飲み物">
+    <meta property="og:type" content="" />
+    <meta property="og:url" content="https://oreno-drink.com/" />
+    <meta property="og:image" content="{{asset('/images/logo.png')  }}" />
+    <meta property="og:site_name" content="サイト名" />
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
 
     <link href="https://unpkg.com/tailwindcss/dist/tailwind.min.css" rel="stylesheet">
