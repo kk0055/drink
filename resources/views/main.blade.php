@@ -23,7 +23,8 @@
                     <div class="container mx-auto">
                         <div class="flex flex-col w-full items-center  px-6 tracking-wide">
                             <p class="main-title text-black text-2xl my-4">俺が飲んだもの</p>
-                            <p class="mt-2">ここには日々俺が飲んだものを書いていくよ</p>
+                            <p class="mt-2">ここには日々俺が飲んだものを書いていくよ。</p>
+                          
                         <div>
                             <span class="t">ところで、</span> 
                             <a class="text-xl inline-block no-underline border-b border-gray-600 leading-relaxed hover:text-black hover:border-black mt-3" href="{{ route('drinks.create') }}">君は今日何を飲んだ?</a></div>
@@ -148,8 +149,9 @@ Alternatively if you want to just have a single hero
             <a class="tracking-wide no-underline hover:no-underline font-bold text-gray-800 text-xl mb-8" href="#">
 			
 		</a>
-            <p class="mb-8 footer-tesxt">何が美味しいかなんて飲んでみないとわからない。<br> 不味いかもしれない。苦いかもしれない。甘すぎるかもしれない。<br> それでもたまには美味しいものに出会えるよ。たぶん。</p>
-
+            <p class="mb-8 footer-tesxt"> 世の中には飲んだことのない飲み物が無数にある。<br> 何が美味しいかなんて飲んでみないとわからない。<br>  ひとつでも多く知らない味に出会うことで人生の幅が広がるとは思わないか?
+            <br> 不味いかもしれない。苦いかもしれない。甘すぎるかもしれない。<br> それでもたまには美味しいものに出会えるよ。たぶん。</p>
+            
         </div>
 
     </section>
