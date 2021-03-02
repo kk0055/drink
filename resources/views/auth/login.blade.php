@@ -56,7 +56,7 @@
                 </div>
            
                 {{-- テストボタン --}}
-                <div class="mb-2 ml-2">
+                <div class="mb-2  ml-2">
                   <form method="POST" action="{{ route('login') }}">
                     @csrf
                     <div>
@@ -65,10 +65,10 @@
                     </div>
                         <input class="" type="hidden"  value="12345678910" name="password">
                   
-                    <div class=" my-4">
-                        <button class="bg-black px-2 text-white rounded-full tracking-wide
-                        font-semibold font-display focus:outline-none focus:shadow-outline hover:bg-green-500
-                        shadow-lg"> とりあえず何か飲んだから書く
+                    <div class=" my-6">
+                        <button class="bg-black px-2 text-white rounded-full 
+                        font-display focus:outline-none focus:shadow-outline hover:bg-green-500
+                        shadow-lg"> とりあえず何か飲んだからテストユーザーとして書く
                     
                         </button>
                     </div>  

@@ -88,7 +88,7 @@ class DrinkController extends Controller
         $drink = Drink::findOrFail($drink);
         $drink->delete();
 
-        return redirect()->route('drinks.index')->with('info','消しましたよ');
+        return redirect()->route('drinks.index')->with('info','消しました!');
     }
 
     public function ranking()
