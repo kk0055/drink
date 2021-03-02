@@ -82,6 +82,14 @@ class DrinkController extends Controller
         ]);
     }
 
+    public function destroy( $drink)
+    {
+
+        $drink->delete();
+
+        return redirect()->route('drinks.index')->with('info','削除しました');
+    }
+
     public function ranking()
     {
 
