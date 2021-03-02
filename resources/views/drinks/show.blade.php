@@ -16,7 +16,20 @@
         </div>
         <p>買った店：{{ $drink->place }}</p>
         <p class="mt-2">{{ $drink->body }}</p>
-    
+ 
+
+        @if ($drink->user->id === Auth::user()->id)
+        <div class="flex justify-end ">
+            
+          <form action="{{ route('drinks.destroy', $drink) }}" method="post" class="mr-1">
+            @csrf
+            @method('DELETE')
+            
+            <button type="submit" class="inline-flex mb-2 py-2 px-2 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-black hover:bg-black focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">削除</button>
+          </form>
+       
+          @endif
+        
 </div>
 
 @endsection
