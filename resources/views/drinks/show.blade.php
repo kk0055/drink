@@ -25,7 +25,7 @@
             @csrf
             @method('DELETE')
             
-            <button type="submit" class="inline-flex mb-2 py-2 px-2 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-black hover:bg-black focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">削除</button>
+            <button type="submit" class="inline-flex mb-2 py-2 px-2 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-black hover:bg-black focus:outline-none "  onclick="return confirm('消しても大丈夫?')">削除</button>
           </form>
        
           @endif

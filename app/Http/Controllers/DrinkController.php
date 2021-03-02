@@ -82,12 +82,13 @@ class DrinkController extends Controller
         ]);
     }
 
-    public function destroy( $drink)
+    public function destroy($drink)
     {
 
+        $drink = Drink::findOrFail($drink);
         $drink->delete();
 
-        return redirect()->route('drinks.index')->with('info','削除しました');
+        return redirect()->route('drinks.index')->with('info','消しましたよ');
     }
 
     public function ranking()

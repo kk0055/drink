@@ -29,7 +29,7 @@ Route::post('/update', [DrinkController::class, 'update'])->name('drinks.update'
 
 Route::get('/ranking', [DrinkController::class, 'ranking'])->name('drinks.ranking');
 
-Route::post('/{drink}/delete', [DrinkController::class, 'destroy'])->name('drinks.destroy');
+Route::delete('/{drink}/delete', [DrinkController::class, 'destroy'])->name('drinks.destroy');
 
 Route::post('/create', [DrinkController::class, 'store'])->name('drinks.store');
 
