@@ -139,7 +139,7 @@
         }
 }
     </style>
-
+<meta name="google-site-verification" content="hfxhZpIpglETSHt-BZBBPnQTp5XE-7nkkN09kyLwQSg" />
 </head>
 
 @yield('contents')
