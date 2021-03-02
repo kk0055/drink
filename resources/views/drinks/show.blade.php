@@ -18,6 +18,7 @@
         <p class="mt-2">{{ $drink->body }}</p>
  
 
+        @auth
         @if ($drink->user->id === Auth::user()->id)
         <div class="flex justify-end ">
             
@@ -29,7 +30,7 @@
           </form>
        
           @endif
-        
+          @endauth
 </div>
 
 @endsection
