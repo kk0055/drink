@@ -16,7 +16,7 @@ class DrinkController extends Controller
     public function index( )
     {
        
-        $drinks = Drink::orderBy('created_at','desc')->paginate(10);
+        $drinks = Drink::orderBy('created_at','desc')->paginate(8);
      
         return view('main', [
             'drinks' => $drinks,
@@ -94,7 +94,7 @@ class DrinkController extends Controller
     public function ranking()
     {
 
-    $drinks = Drink::orderBy('score','desc')->paginate(10);
+    $drinks = Drink::orderBy('score','desc')->paginate(8);
     
     return view('drinks.ranking', [
         'drinks' => $drinks,
