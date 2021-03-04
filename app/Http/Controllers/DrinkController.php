@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Drink;
 use App\Models\User;
+use \InterventionImage;
 
 class DrinkController extends Controller
 {
@@ -49,12 +50,16 @@ class DrinkController extends Controller
         'place.required' => 'どこで買ったのか教えてよ～'
     ]);
 
+    $img = InterventionImage::make(request()->file('image') )->resize(320, 240);
+
     if($request->hasFile('image')){
     $filenameWithExt = $request->file('image')->getClientOriginalName();
     $filename = pathinfo($filenameWithExt ,PATHINFO_FILENAME);
     $extension = $request->file('image')->getClientOriginalExtension();
     $fileNameToStore = $filename . '_'. time(). '.'.$extension;
     $path = $request->file('image')->storeAs('public/image',  $fileNameToStore);
+
+    $img->save($fileNameToStore);
     } else {
         $fileNameToStore = null;
         }
