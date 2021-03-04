@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Drink;
 use App\Models\User;
-use Intervention\Image\ImageManagerStatic as InterventionImage;
+use Intervention\Image\ImageServiceProvider as InterventionImage;
 
 class DrinkController extends Controller
 {
