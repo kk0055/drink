@@ -52,42 +52,40 @@ class DrinkController extends Controller
         'place.required' => 'どこで買ったのか教えてよ～'
     ]);
 
-    $file = $request->file('image');
-    $name = $file->getClientOriginalName();
+    // $file = $request->file('image');
+    // $name = $file->getClientOriginalName();
     
-    $fileNameToStore = InterventionImage::make($file)->resize(1080, null, function ($constraint) {$constraint->aspectRatio();})->save(public_path('/images/' . $name ) );
+    // $fileNameToStore = InterventionImage::make($file)->resize(1080, null, function ($constraint) {$constraint->aspectRatio();})->save(public_path('/images/' . $name ) );
 
-    // if($request->hasFile('image')){
-    // $filenameWithExt = $request->file('image')->getClientOriginalName();
-    // $filename = pathinfo($filenameWithExt ,PATHINFO_FILENAME);
-    // $extension = $request->file('image')->getClientOriginalExtension();
-    // $fileNameToStore = $filename . '_'. time(). '.'.$extension;
-    // $path = $request->file('image')->storeAs('public/image',  $fileNameToStore);
+    if($request->hasFile('image')){
+    $filenameWithExt = $request->file('image')->getClientOriginalName();
+    $filename = pathinfo($filenameWithExt ,PATHINFO_FILENAME);
+    $extension = $request->file('image')->getClientOriginalExtension();
+    $fileNameToStore = $filename . '_'. time(). '.'.$extension;
+    $path = $request->file('image')->storeAs('public/image',  $fileNameToStore);
 
-    // } else {
-    //     $fileNameToStore = null;
-    //     }
+    } else {
+        $fileNameToStore = null;
+        }
 
-    $drink = new Drink;
-    $drink->name = $request->input('name');
-    $drink->body = $request->input('body');
-    $drink->user_id = auth()->user()->id;
-    $drink->score = $request->input('score');
-    $drink->place = $request->input('place');
-    $drink->image = $fileNameToStore;
-    $drink->save();
+    // $drink = new Drink;
+    // $drink->name = $request->input('name');
+    // $drink->body = $request->input('body');
+    // $drink->user_id = auth()->user()->id;
+    // $drink->score = $request->input('score');
+    // $drink->place = $request->input('place');
+    // $drink->image = $fileNameToStore;
+    // $drink->save();
  
-    // $request->user()->drinks()->create([
-    // 'name' => $request->name,
-    // 'body' => $request->body,
-    // 'score' => $request->score,
-    // 'place' => $request->place,
-    // 'image' =>  $fileNameToStore,
+    $request->user()->drinks()->create([
+    'name' => $request->name,
+    'body' => $request->body,
+    'score' => $request->score,
+    'place' => $request->place,
+    'image' =>  $fileNameToStore,
 
-    // ]);
+    ]);
    
-
-    //    dd($request);
     return redirect()->route('drinks.index')->with('info','ごちそうさまでした！');
     }
 

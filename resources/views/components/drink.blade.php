@@ -22,6 +22,7 @@
               </a>
       </div>
       @endforeach
-      {{ $drinks->links() }}
+      
       </div>
+      {{ $drinks->links() }}
 </section>
