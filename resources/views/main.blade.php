@@ -133,7 +133,7 @@ Alternatively if you want to just have a single hero
                         {{ $drink->score }}</p>
                     <div class="body-box ">
                         <p>買った店：{{ $drink->place }}</p>
-                    <p class="mt-2">{{ $drink->body }}</p>
+                    <p class="mt-2 text">{{ $drink->body }}</p>
                     </div>
                     </a>
             </div>
@@ -149,7 +149,7 @@ Alternatively if you want to just have a single hero
             <a class="tracking-wide no-underline hover:no-underline font-bold text-gray-800 text-xl mb-8" href="#">
 			
 		</a>
-            <p class="mb-8 footer-tesxt"> 世の中には飲んだことのない飲み物が無数にある。<br> 何が美味しいかなんて飲んでみないとわからない。<br>  ひとつでも多く知らない味に出会うことで人生の幅が広がるとは思わないか?
+            <p class="mb-8 footer-tesxt"> 世の中には飲んだことのない飲み物が無数にある。<br> 何が美味しいかなんて飲んでみないとわからない。
             <br> 不味いかもしれない。苦いかもしれない。甘すぎるかもしれない。<br> それでもたまには美味しいものに出会えるよ。たぶん。</p>
             
         </div>

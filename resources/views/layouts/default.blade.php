@@ -69,6 +69,12 @@
         overflow: hidden;
         text-overflow: ellipsis ;
         }
+        .text{
+         white-space: nowrap; 
+         width: 50px; 
+         overflow: hidden;
+         text-overflow: ellipsis; 
+        }
 
         p {
        overflow-wrap: break-word;
