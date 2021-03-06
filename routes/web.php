@@ -24,8 +24,8 @@ Route::get('/', [DrinkController::class, 'index'])->name('drinks.index');
 
 Route::get('/create', [DrinkController::class, 'create'])->name('drinks.create');
 Route::get('/{drink}/show', [DrinkController::class, 'show'])->name('drink.show');
-Route::get('/edit', [DrinkController::class, 'edit'])->name('drinks.edit');
-Route::post('/update', [DrinkController::class, 'update'])->name('drinks.update');
+Route::get('/{drink}/edit', [DrinkController::class, 'edit'])->name('drinks.edit');
+Route::post('/{drink}/update', [DrinkController::class, 'update'])->name('drinks.update');
 
 Route::get('/ranking', [DrinkController::class, 'ranking'])->name('drinks.ranking');
 

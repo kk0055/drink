@@ -105,4 +105,50 @@ class DrinkController extends Controller
     ]);
     }
 
+    public function edit($drink)
+    {
+         //一つのItemを返す
+        $item = Drink::findOrFail($drink);
+
+        return view('drinks.edit',[
+            'item' =>$item
+        ]);
+
+   }
+
+   public function update(Request $request, $drink)
+{
+
+$this->validate($request, [
+'title' => 'required',
+'body' => 'required'
+],
+[
+    'title.required' => 'タイトルは必須項目です。',
+    'body.required'  => '詳細は必須項目です。',
+    
+]);
+$item = Drink::findOrFail($drink);
+
+if($request->hasFile('image')){
+$filenameWithExt = $request->file('image')->getClientOriginalName();
+$filename = pathinfo($filenameWithExt ,PATHINFO_FILENAME);
+$extension = $request->file('image')->getClientOriginalExtension();
+$fileNameToStore = $filename . '_'. time(). '.'.$extension;
+$path = $request->file('image')->storeAs('public/image',  $fileNameToStore);
+}else {
+$fileNameToStore = $item->image;
+}
+
+
+$item->update([
+'title' => $request->title,
+'body' => $request->body,
+'image' =>  $fileNameToStore,
+]);
+
+//    dd($request);
+return redirect()->route('item.show',['itemId'=> $item->id])->with('info','編集が完了しました。');
+}
+
 }
