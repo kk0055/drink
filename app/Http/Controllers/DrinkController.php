@@ -11,13 +11,13 @@ class DrinkController extends Controller
 {
     public function __construct()
     {
-        $this->middleware(['auth'])->only(['store', 'destroy']);
+        $this->middleware(['auth'])->only(['store', 'destroy','edit']);
     }
 
     public function index( )
     {
        
-        $drinks = Drink::orderBy('created_at','desc')->simplePaginate(8);
+        $drinks = Drink::latest()->simplePaginate(8);
      
         return view('main', [
             'drinks' => $drinks,
@@ -97,7 +97,7 @@ class DrinkController extends Controller
     public function ranking()
     {
 
-    $drinks = Drink::orderBy('score','desc')->simplePaginate(8);
+    $drinks = Drink::latest()->simplePaginate(8);
     
     return view('drinks.ranking', [
         'drinks' => $drinks,
@@ -105,9 +105,13 @@ class DrinkController extends Controller
     ]);
     }
 
+     /**
+     * Show the form for editing the specified resource.
+     *
+     */
     public function edit($drink)
     {
-         //一つのItemを返す
+       
         $item = Drink::findOrFail($drink);
 
         return view('drinks.edit',[
@@ -116,39 +120,44 @@ class DrinkController extends Controller
 
    }
 
-   public function update(Request $request, $drink)
-{
+     /**
+     * Update the specified resource in storage.
+     *
+     */
 
-$this->validate($request, [
-'title' => 'required',
-'body' => 'required'
-],
-[
-    'title.required' => 'タイトルは必須項目です。',
-    'body.required'  => '詳細は必須項目です。',
-    
-]);
-$item = Drink::findOrFail($drink);
+    public function update(Request $request, $drink)
+    {
 
-if($request->hasFile('image')){
-$filenameWithExt = $request->file('image')->getClientOriginalName();
-$filename = pathinfo($filenameWithExt ,PATHINFO_FILENAME);
-$extension = $request->file('image')->getClientOriginalExtension();
-$fileNameToStore = $filename . '_'. time(). '.'.$extension;
-$path = $request->file('image')->storeAs('public/image',  $fileNameToStore);
-}else {
-$fileNameToStore = $item->image;
-}
+    $this->validate($request, [
+    'title' => 'required',
+    'body' => 'required'
+    ],
+    [
+        'title.required' => 'タイトルは必須項目です。',
+        'body.required'  => '詳細は必須項目です。',
+        
+    ]);
+    $item = Drink::findOrFail($drink);
+
+    if($request->hasFile('image')){
+    $filenameWithExt = $request->file('image')->getClientOriginalName();
+    $filename = pathinfo($filenameWithExt ,PATHINFO_FILENAME);
+    $extension = $request->file('image')->getClientOriginalExtension();
+    $fileNameToStore = $filename . '_'. time(). '.'.$extension;
+    $path = $request->file('image')->storeAs('public/image',  $fileNameToStore);
+    }else {
+    $fileNameToStore = $item->image;
+    }
 
 
-$item->update([
-'title' => $request->title,
-'body' => $request->body,
-'image' =>  $fileNameToStore,
-]);
+    $item->update([
+    'title' => $request->title,
+    'body' => $request->body,
+    'image' =>  $fileNameToStore,
+    ]);
 
-//    dd($request);
-return redirect()->route('item.show',['itemId'=> $item->id])->with('info','編集が完了しました。');
-}
+    //    dd($request);
+    return redirect()->route('item.show',['itemId'=> $item->id])->with('info','編集が完了しました。');
+    }
 
 }

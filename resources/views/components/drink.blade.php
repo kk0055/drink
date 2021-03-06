@@ -4,7 +4,7 @@
   <div class="container mx-auto flex items-center flex-wrap pt-4 pb-12">
       @foreach ($drinks as $drink)
       <div class="w-1/2 md:w-1/3 xl:w-1/4 p-6 flex flex-col  inline-block">   
-          <a href="{{ route('drink.show', $drink) }}">  
+          <a href="{{ route('drinks.show', $drink) }}">  
           <img src="{{asset('/storage/image/'.$drink->image)  }}" alt="pic"  class="item-image hover:opacity-75 transition ">
               <div class="pt-3 flex items-center justify-between">
                   <p class="">{{ $drink->name }}</p>

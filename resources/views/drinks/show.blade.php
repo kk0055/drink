@@ -28,7 +28,8 @@
             
             <button type="submit" class="inline-flex mb-2 py-2 px-2 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-black hover:bg-black focus:outline-none "  onclick="return confirm('本当に消しても大丈夫?')">削除</button>
           </form>
-          <a type="submit" class="inline-flex mb-2 py-2 px-2 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-black hover:bg-black focus:outline-none "  href="{{ route('drinks.edit',$drink) }}">編集
+          <a type="submit" class="inline-flex mb-2 py-2 px-2  shadow-sm text-sm font-medium rounded-md text-white bg-black hover:bg-black focus:outline-none "  href="{{ route('drinks.edit',$drink) }}">編集</a>
+          
           @endif
           @endauth
 </div>

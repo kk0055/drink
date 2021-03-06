@@ -22,15 +22,8 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::get('/', [DrinkController::class, 'index'])->name('drinks.index');
 
-Route::get('/create', [DrinkController::class, 'create'])->name('drinks.create');
-Route::get('/{drink}/show', [DrinkController::class, 'show'])->name('drink.show');
-Route::get('/{drink}/edit', [DrinkController::class, 'edit'])->name('drinks.edit');
-Route::post('/{drink}/update', [DrinkController::class, 'update'])->name('drinks.update');
+Route::resource('drinks',DrinkController::class );
 
 Route::get('/ranking', [DrinkController::class, 'ranking'])->name('drinks.ranking');
-
-Route::delete('/{drink}/delete', [DrinkController::class, 'destroy'])->name('drinks.destroy');
-
-Route::post('/create', [DrinkController::class, 'store'])->name('drinks.store');
 
 Route::get('/search', [SearchController::class, 'search'])->name('item.search');
