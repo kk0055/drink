@@ -85,6 +85,10 @@ class DrinkController extends Controller
         ]);
     }
 
+    /**
+     * Delete the item
+     *
+     */
     public function destroy($drink)
     {
 
@@ -113,7 +117,6 @@ class DrinkController extends Controller
     {
        
         $item = Drink::findOrFail($drink);
-
         return view('drinks.edit',[
             'item' =>$item
         ]);
@@ -128,15 +131,7 @@ class DrinkController extends Controller
     public function update(Request $request, $drink)
     {
 
-    $this->validate($request, [
-    'title' => 'required',
-    'body' => 'required'
-    ],
-    [
-        'title.required' => 'タイトルは必須項目です。',
-        'body.required'  => '詳細は必須項目です。',
-        
-    ]);
+   
     $item = Drink::findOrFail($drink);
 
     if($request->hasFile('image')){
@@ -151,13 +146,15 @@ class DrinkController extends Controller
 
 
     $item->update([
-    'title' => $request->title,
+    'name' => $request->name,
     'body' => $request->body,
+    'place' => $request->place,
+    'score' => $request->score,
     'image' =>  $fileNameToStore,
     ]);
 
     //    dd($request);
-    return redirect()->route('item.show',['itemId'=> $item->id])->with('info','編集が完了しました。');
+    return redirect()->route('drinks.index')->with('info','編集完了!');
     }
 
 }
