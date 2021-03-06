@@ -71,7 +71,6 @@
         }
         .text{
          white-space: nowrap; 
-         width: 50px; 
          overflow: hidden;
          text-overflow: ellipsis; 
         }
