@@ -53,8 +53,8 @@
           </div>
           <div class="col-span-6 mt-3 sm:col-span-6 ">
           <label>何点？</label>
-          <select class="form-control" name="score">
-            <option value="" selected>---------------</option>                   
+          <select class="form-control" name="score"  >
+            <option selected  value="{{$item->score }}">---------------</option>                   
           <option value="1" name="score">1</option>
           <option value="2" name="score">2</option>
           <option value="3" name="score">3</option>
