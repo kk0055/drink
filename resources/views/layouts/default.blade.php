@@ -100,6 +100,7 @@
          overflow: hidden;
          text-overflow: ellipsis;     
         }
+       
         .text{
          white-space: nowrap; 
          overflow: hidden;
