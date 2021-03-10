@@ -90,18 +90,18 @@
         overflow: hidden;
         text-overflow: ellipsis ;
         }
-        .name{
+        .drink-name{
          white-space: nowrap; 
          overflow: hidden;
          text-overflow: ellipsis;    
         }
-        .place {
+        .drink-place {
          white-space: nowrap; 
          overflow: hidden;
          text-overflow: ellipsis;     
         }
        
-        .text{
+        .drink-text{
          white-space: nowrap; 
          overflow: hidden;
          text-overflow: ellipsis; 
