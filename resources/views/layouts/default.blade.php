@@ -62,10 +62,12 @@
        .nav{
         font-family: 'Stick', sans-serif;
        }
+
        .drink-show {
         width: 80%;
         margin: 0 auto;
         max-width: 500px;
+    
        }
 
        .show-item-image{
