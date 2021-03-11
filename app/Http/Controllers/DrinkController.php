@@ -52,40 +52,27 @@ class DrinkController extends Controller
         'place.required' => 'どこで買ったのか教えてよ～'
     ]);
 
-
-    $image = $request->file('image');
-   if(isset($image)){  
+  
+    if($request->hasFile('image')){
     $filenameWithExt = $request->file('image')->getClientOriginalName();
     $filename = pathinfo($filenameWithExt ,PATHINFO_FILENAME);
     $extension = $request->file('image')->getClientOriginalExtension();
     $fileNameToStore = $filename . '_'. time(). '.'.$extension;
-     //幅300に合わせる
-     $image = InterventionImage::make($image)
-     ->resize(300, null, function ($constraint) {
-     $constraint->aspectRatio();
-     });
-     $image->save( public_path() . '/storage/image/'  . $fileNameToStore);
-    //  $request->image = basename($fileNameToStore);
-}
+    $path = $request->file('image')->storeAs('public/image',  $fileNameToStore);
 
-  
-    // if($request->hasFile('image')){
-    // $filenameWithExt = $request->file('image')->getClientOriginalName();
-    // $filename = pathinfo($filenameWithExt ,PATHINFO_FILENAME);
-    // $extension = $request->file('image')->getClientOriginalExtension();
-    // $fileNameToStore = $filename . '_'. time(). '.'.$extension;
-    // $path = $request->file('image')->storeAs('public/image',  $fileNameToStore);
+    $image =  InterventionImage::make(public_path("storage/image/{$fileNameToStore}"))->fit(1200, 1200);
+    $image->save();
 
-    // } else {
-    //     $fileNameToStore = null;
-    //     }
+    } else {
+        $fileNameToStore = null;
+        }
 
     $request->user()->drinks()->create([
     'name' => $request->name,
     'body' => $request->body,
     'score' => $request->score,
     'place' => $request->place,
-    // 'image' =>  $fileNameToStore,
+    'image' =>  $fileNameToStore,
 
     ]);
    
