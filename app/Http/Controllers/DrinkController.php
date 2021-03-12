@@ -60,7 +60,8 @@ class DrinkController extends Controller
     $fileNameToStore = $filename . '_'. time(). '.'.$extension;
     $path = $request->file('image')->storeAs('public/image',  $fileNameToStore);
 
-    $image =  InterventionImage::make(public_path("storage/image/{$fileNameToStore}"))->fit(1200, 1200);
+    $image =  InterventionImage::make(public_path("storage/image/{$fileNameToStore}"))->fit(1000, 1000);
+    
     $image->save();
 
     } else {
@@ -143,6 +144,9 @@ class DrinkController extends Controller
     $extension = $request->file('image')->getClientOriginalExtension();
     $fileNameToStore = $filename . '_'. time(). '.'.$extension;
     $path = $request->file('image')->storeAs('public/image',  $fileNameToStore);
+    $image =  InterventionImage::make(public_path("storage/image/{$fileNameToStore}"))->fit(1000, 1000);
+    
+    $image->save();
     }else {
     $fileNameToStore = $item->image;
     }
