@@ -105,7 +105,7 @@ class DrinkController extends Controller
     public function ranking()
     {
 
-    $drinks = Drink::latest()->simplePaginate(8);
+    $drinks = Drink::orderBy('score','desc')->simplePaginate(8);
     
     return view('drinks.ranking', [
         'drinks' => $drinks,
