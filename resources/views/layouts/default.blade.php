@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>俺が飲んだもの</title>
-    <meta name="description" content="俺が飲んだもの">
-    <meta name="keywords" content="俺が飲んだもの,drink,ドリンク,飲み物">
+    <title>俺の飲んだもの</title>
+    <meta name="description" content="俺の飲んだもの">
+    <meta name="keywords" content="俺の飲んだもの,drink,ドリンク,飲み物">
     <meta property="og:type" content="" />
     <meta property="og:url" content="https://oreno-drink.com/" />
     <meta property="og:image" content="https://pbs.twimg.com/media/EvNwpbTU4AYVIgx?format=png&name=medium" />

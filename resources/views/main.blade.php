@@ -22,7 +22,7 @@
 
                     <div class="container mx-auto">
                         <div class="flex flex-col w-full items-center  px-6 tracking-wide">
-                            <p class="main-title text-black text-2xl my-4">俺が飲んだもの</p>
+                            <p class="main-title text-black text-2xl my-4">俺の飲んだもの</p>
                             <p class="mt-2">ここには日々俺が飲んだものを書いていくよ。</p>
                           
                         <div>
