@@ -18,6 +18,18 @@
               <p class="drink-text">{{ $drink->body }}</p>
               </div>
               </a>
+                        {{-- Vue --}}
+                        @if (Auth::check())
+                        <div class="panel-footer">
+                            <favorite-btn
+                                :drink={{ $drink->id }}
+                                :favorited={{ $drink->favorited() ? 'true' : 'false' }}
+                            ></favorite-btn>
+                            {{-- {{ count(  ) }} --}}
+                       @endif
+                     </div>
+                  
+                        {{-- Vue --}}
       </div>
       @endforeach
       
