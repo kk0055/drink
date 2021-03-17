@@ -10,7 +10,6 @@ use App\Http\Controllers\SearchController;
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::get('/', [DrinkController::class, 'index'])->name('drinks.index');
 
@@ -20,8 +19,9 @@ Route::get('/ranking', [DrinkController::class, 'ranking'])->name('drinks.rankin
 
 Route::get('/search', [SearchController::class, 'search'])->name('item.search');
 
-Route::get('my_favorites', [DrinkController::class, 'myFavorites'])->middleware('auth');
+Route::get('my_favorites', [DrinkController::class, 'myFavorites']);
 
 Route::post('/favorite/{drink}', [DrinkController::class, 'favorite']);
 Route::post('/unfavorite/{drink}', [DrinkController::class, 'unFavorite']);
 
+Route::get('/count/{drink}', [DrinkController::class, 'count']);

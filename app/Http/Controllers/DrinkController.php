@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Drink;
 use App\Models\User;
+use App\Models\Favorite;
 use Intervention\Image\ImageManagerStatic as InterventionImage;
 use Illuminate\Support\Facades\Auth;
 
@@ -19,6 +20,7 @@ class DrinkController extends Controller
     {
        
         $drinks = Drink::latest()->simplePaginate(8);
+     
      
         return view('main', [
             'drinks' => $drinks,
@@ -185,8 +187,18 @@ class DrinkController extends Controller
 
   public function myFavorites()
   {
-      $drinks = Auth::user()->favorites;
-  
+      $drinks = Auth::user()->favorites()->simplePaginate(8);
+    
       return view('drinks.my_favorites', compact('drinks'));
   }
+
+   public function count (Drink $drink) //以下追加
+  {
+      $post = Drink::find($drink);
+      $count = $post->user()->count();
+
+      dd($post);
+      return response()->json($count);
+  }
+
 }

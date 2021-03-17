@@ -1856,15 +1856,19 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: ['drink', 'favorited'],
   data: function data() {
     return {
-      isFavorited: ''
+      isFavorited: '',
+      count: ''
     };
   },
   mounted: function mounted() {
     this.isFavorited = this.isFavorite ? true : false;
+    this.countfavorites();
   },
   computed: {
     isFavorite: function isFavorite() {
@@ -1884,10 +1888,20 @@ __webpack_require__.r(__webpack_exports__);
     unFavorite: function unFavorite(drink) {
       var _this2 = this;
 
-      axios.post('/unfavorite/' + drink).then(function (response) {
+      axios.post('/unfavorite/' + drink.id).then(function (response) {
         return _this2.isFavorited = false;
       })["catch"](function (response) {
         return console.log(response.data);
+      });
+    },
+    countfavorites: function countfavorites(drink) {
+      var _this3 = this;
+
+      axios.get('/count/' + drink).then(function (res) {
+        _this3.count = res.data;
+        console.log(_this3.count);
+      })["catch"](function (error) {
+        console.log(error);
       });
     }
   }
@@ -37464,7 +37478,11 @@ var render = function() {
               }
             }
           },
-          [_c("i", { staticClass: "far fa-heart" })]
+          [
+            _c("i", { staticClass: "far fa-heart" }),
+            _vm._v(" "),
+            _c("p", [_vm._v(_vm._s(_vm.count))])
+          ]
         )
   ])
 }

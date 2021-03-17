@@ -50,4 +50,9 @@ class User extends Authenticatable
 {
     return $this->belongsToMany(Drink::class, 'favorites', 'user_id', 'drink_id')->withTimeStamps();
 }
+
+public function countfavorites()
+{
+    return $this->belongsToMany(Drink::class, 'favorites', 'user_id', 'drink_id')->withTimeStamps();
+}
 }
