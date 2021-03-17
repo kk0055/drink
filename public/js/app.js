@@ -37451,7 +37451,7 @@ var render = function() {
               }
             }
           },
-          [_c("i", { staticClass: "far fa-heart" })]
+          [_c("i", { staticClass: "fas fa-heart" })]
         )
       : _c(
           "a",

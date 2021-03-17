@@ -1,7 +1,7 @@
 <template>
     <span>
         <a href="#" v-if="isFavorited" @click.prevent="unFavorite(drink)">
-           <i class="far fa-heart"></i>
+          <i class="fas fa-heart"></i>
         </a>
         <a href="#" v-else @click.prevent="favorite(drink)">
             <i  class="far fa-heart"></i>
@@ -31,7 +31,7 @@
 
         methods: {
             favorite(drink) {
-                axios.post('/favorite/'+drink)
+                axios.post('/favorite/'+ drink)
                     .then(response => this.isFavorited = true)
                     .catch(response => console.log(response.data));
             },

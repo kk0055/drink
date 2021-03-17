@@ -165,7 +165,7 @@ class DrinkController extends Controller
     return redirect()->route('drinks.index')->with('info','編集完了!');
     }
 
-    public function favorite($drink)
+    public function favorite(Drink $drink)
     {
        
         Auth::user()->favorites()->attach($drink->id);
@@ -174,7 +174,7 @@ class DrinkController extends Controller
 
    }
 
-   public function unFavorite($drink)
+   public function unFavorite(Drink $drink)
    {
       
     Auth::user()->favorites()->detach($drink->id);
