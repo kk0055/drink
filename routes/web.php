@@ -19,3 +19,6 @@ Route::resource('drinks',DrinkController::class );
 Route::get('/ranking', [DrinkController::class, 'ranking'])->name('drinks.ranking');
 
 Route::get('/search', [SearchController::class, 'search'])->name('item.search');
+
+Route::post('favorite/{post}', [DrinkController::class, 'favoritePost']);
+Route::post('unfavorite/{post}', [DrinkController::class, 'unFavoritePost']);
