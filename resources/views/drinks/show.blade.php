@@ -22,9 +22,15 @@
               :favorited={{ $drink->favorited() ? 'true' : 'false' }}
           ></favorite-btn>
           {{ $count }}
+       
+        </div>
+        @else
+        <div class="ml-5">
+        <i class="far fa-heart ml-2"></i> {{ $count }}
+       </div>
       @endif
-     </div>
-      {{-- Vue --}}</div>
+      {{-- Vue --}}
+    </div>
    
         <p class="mt-1 mb-1 " >買った店 : {{ $drink->place }}</p>
         <p class="my-2">{{$drink->body }}</p>

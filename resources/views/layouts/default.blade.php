@@ -193,7 +193,7 @@
      </script>  
 <meta name="google-site-verification" content="hfxhZpIpglETSHt-BZBBPnQTp5XE-7nkkN09kyLwQSg" />
 </head>
-<body class="bg-white text-gray-600 work-sans leading-normal text-base tracking-normal">
+
 <div id="app">
      
 @yield('contents')
