@@ -48,6 +48,6 @@ class User extends Authenticatable
 
     public function favorites()
 {
-    return $this->belongsToMany(Drink::class, 'favorites', 'user_id', 'post_id')->withTimeStamps();
+    return $this->belongsToMany(Drink::class, 'favorites', 'user_id', 'drink_id')->withTimeStamps();
 }
 }
