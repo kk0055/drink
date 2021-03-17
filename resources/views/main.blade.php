@@ -134,19 +134,22 @@ Alternatively if you want to just have a single hero
                     <p class="mt-2 drink-text">{{ $drink->body }}</p>
                     </div>
                     </a>
-       {{-- Vue --}}
-       @if (Auth::check())
-       <div class="panel-footer">
-           <favorite
-               :drink={{ $drink->id }}
-               :favorited={{ $drink->favorited() ? 'true' : 'false' }}
-           ></favorite>
-       </div>
-      @endif
-       {{-- Vue --}}
+                {{-- Vue --}}
+                {{-- <div id="app"> --}}
+                @if (Auth::check())
+                <div class="panel-footer">
+                    <favorite-btn
+                        :drink={{ $drink->id }}
+                        :favorited={{ $drink->favorited() ? 'true' : 'false' }}
+                    ></favorite-btn>
+                {{-- </div> --}}
+               @endif
+             </div>
+                {{-- Vue --}}
             </div>
             @endforeach
             </div>
+   
             {{ $drinks->links() }}
     </section>
 

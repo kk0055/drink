@@ -4,7 +4,7 @@
            <i class="far fa-heart"></i>
         </a>
         <a href="#" v-else @click.prevent="favorite(drink)">
-            <i  class="fa fa-heart-o"></i>
+            <i  class="far fa-heart"></i>
         </a>
     </span>
 </template>
