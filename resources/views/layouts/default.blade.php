@@ -39,6 +39,8 @@
     <meta name="msapplication-TileImage" content="/favicon/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
   {{-- Favicon --}}
+      <!-- Scripts -->
+      <script src="{{ asset('js/app.js') }}" defer></script>
 
     <style>
         @import url('https://fonts.googleapis.com/css2?family=RocknRoll+One&display=swap');
@@ -185,16 +187,21 @@
 
    gtag('config', 'G-D044F053SJ');
    </script>    
-<meta name="google-site-verification" content="hfxhZpIpglETSHt-BZBBPnQTp5XE-7nkkN09kyLwQSg" />
-</head>
-
-@yield('contents')
-
-<script>
+   <script>
     function loginAlert() {
       alert("ごめんなさい。ログインして(T_T)");
     }
     </script>
+<meta name="google-site-verification" content="hfxhZpIpglETSHt-BZBBPnQTp5XE-7nkkN09kyLwQSg" />
+</head>
+<body class="bg-white text-gray-600 work-sans leading-normal text-base tracking-normal">
+<div id="app">
+
+@yield('contents')
+    
+         
+    </div>
+    <script src="{{ mix('/js/app.js') }}"></script>
 </body>
 
 </html>

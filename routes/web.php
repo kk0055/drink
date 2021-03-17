@@ -19,6 +19,7 @@ Route::resource('drinks',DrinkController::class );
 Route::get('/ranking', [DrinkController::class, 'ranking'])->name('drinks.ranking');
 
 Route::get('/search', [SearchController::class, 'search'])->name('item.search');
+
 Route::get('my_favorites', [DrinkController::class, 'myFavorite'])->middleware('auth');
 
 Route::post('/favorite/{drink}', [DrinkController::class, 'favorite']);
