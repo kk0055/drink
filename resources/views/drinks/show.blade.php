@@ -10,14 +10,27 @@
             <p class="">{{ $drink->name }}</p>
            
           </div>
-            <p class="pt-1 mt-2 mb-2 text-gray-900">
+          <div class="flex pt-1 mt-2 mb-2 text-gray-900">
+            <p class="">
             <i class="fas fa-star text-yellow-300"></i> 
             {{ $drink->score }}</p>
-          
+               {{-- Vue --}}
+       @if (Auth::check())
+      <div class="ml-5">
+          <favorite-btn
+              :drink={{ $drink->id }}
+              :favorited={{ $drink->favorited() ? 'true' : 'false' }}
+          ></favorite-btn>
+          {{ $count }}
+      @endif
+     </div>
+      {{-- Vue --}}</div>
+   
         <p class="mt-1 mb-1 " >買った店 : {{ $drink->place }}</p>
         <p class="my-2">{{$drink->body }}</p>
      
-
+  
+ 
         @auth
         @if ($drink->user->id === Auth::user()->id)
         <div class="flex justify-end ">

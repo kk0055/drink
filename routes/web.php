@@ -24,4 +24,3 @@ Route::get('my_favorites', [DrinkController::class, 'myFavorites']);
 Route::post('/favorite/{drink}', [DrinkController::class, 'favorite']);
 Route::post('/unfavorite/{drink}', [DrinkController::class, 'unFavorite']);
 
-Route::get('/count/{drink}', [DrinkController::class, 'count']);

@@ -18,7 +18,7 @@ class DrinkController extends Controller
 
     public function index( )
     {
-       
+        
         $drinks = Drink::latest()->simplePaginate(8);
      
      
@@ -85,10 +85,12 @@ class DrinkController extends Controller
 
     public function show($drink)
     {
-
+        $favorites = Favorite::where('drink_id', $drink)->get();
+        $count = count( $favorites);
         $drink = Drink::findOrFail($drink);
         return view('drinks.show',[
-            'drink' => $drink
+            'drink' => $drink,
+            'count' => $count
         ]);
     }
 
@@ -192,13 +194,5 @@ class DrinkController extends Controller
       return view('drinks.my_favorites', compact('drinks'));
   }
 
-   public function count (Drink $drink) //以下追加
-  {
-      $post = Drink::find($drink);
-      $count = $post->user()->count();
-
-      dd($post);
-      return response()->json($count);
-  }
 
 }
