@@ -185,8 +185,8 @@ class DrinkController extends Controller
 
   public function myFavorites()
   {
-      $myFavorites = Auth::user()->favorites;
+      $drinks = Auth::user()->favorites;
   
-      return view('drinks.my_favorites', compact('myFavorites'));
+      return view('drinks.my_favorites', compact('drinks'));
   }
 }
