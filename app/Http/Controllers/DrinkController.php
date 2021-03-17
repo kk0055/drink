@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Drink;
 use App\Models\User;
 use Intervention\Image\ImageManagerStatic as InterventionImage;
+use Illuminate\Support\Facades\Auth;
 
 class DrinkController extends Controller
 {
@@ -164,4 +165,27 @@ class DrinkController extends Controller
     return redirect()->route('drinks.index')->with('info','編集完了!');
     }
 
+    public function favorite($drink)
+    {
+       
+        Auth::user()->favorites()->attach($drink->id);
+
+        return back();
+
+   }
+
+   public function unFavorite($drink)
+   {
+      
+    Auth::user()->favorites()->detach($drink->id);
+
+    return back();
+
+  }
+
+  public function myFavorite()
+  {
+     
+
+  }
 }

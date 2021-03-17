@@ -34,11 +34,14 @@
                  <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                     @csrf
                 </form>
+
+                     
+                 <li>
+                    <a class="inline-block no-underline hover:text-black hover:underline py-2 px-4" href="{{ url('my_favorites') }}">俺のお気に入り</a>
+                </li>
                  @endauth
                
-                    
-           
-                  
+                            
 
                     <li>
                         <a class="inline-block no-underline hover:text-black hover:underline py-2 px-4" href="{{ route('drinks.ranking') }}">ランキング</a> 
