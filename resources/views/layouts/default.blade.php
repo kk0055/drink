@@ -72,7 +72,7 @@
        }
 
        .show-item-image{
-        width:90% !important;
+        width:80% !important;
         height:auto;
         margin: 0 auto;
         }
