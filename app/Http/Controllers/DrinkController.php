@@ -41,7 +41,7 @@ class DrinkController extends Controller
 
     $this->validate($request, [
     'name' => 'required',
-    'body' => 'required|max:150',
+    'body' => 'required|max:300',
     'score' => 'required',
     'place' => 'required',
     'image' => 'required'
@@ -49,7 +49,7 @@ class DrinkController extends Controller
     [
         'name.required' => '何飲んだの？',
         'body.required'  => '感想教えてね',
-        'body.max'  => '150文字までだよ',
+        'body.max'  => '300文字までだよ',
         'score.required' =>'何点？？？',
         'image.required' => '画像のせてくれ',
         'place.required' => 'どこで買ったのか教えてよ～'
