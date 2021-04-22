@@ -72,7 +72,7 @@
        }
 
        .show-item-image{
-        width:300px !important;
+        width:90% !important;
         height:auto;
         margin: 0 auto;
         }
@@ -126,6 +126,8 @@
         margin: 0 auto;
         margin-top: 20px;
        }
+
+    
        .footer-tesxt {
         font-family: 'RocknRoll One', sans-serif;
        }
