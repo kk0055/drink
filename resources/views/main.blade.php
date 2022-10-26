@@ -107,7 +107,7 @@
             
                 <a href="{{ route('drinks.show', $drink) }}">  
 
-                <img src="{{asset('/storage/image/'.$drink->image)  }}" alt="pic"  class="item-image hover:opacity-75 transition ">
+                <img src="{{asset('/storage/images/'.$drink->image)  }}" alt="pic"  class="item-image hover:opacity-75 transition ">
                     <div class="pt-3 flex items-center justify-between">
                         <p class="drink-name">{{ $drink->name }}</p>
                    
