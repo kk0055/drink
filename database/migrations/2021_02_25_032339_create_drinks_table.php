@@ -17,10 +17,14 @@ class CreateDrinksTable extends Migration
             $table->id();
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->string('name');
-            $table->string('body');
-            $table->string('place');
-            $table->integer('score');
+            $table->text('review');
+            $table->string('prefecture');
+            $table->string('place')->nullable();
+            $table->text('map_url')->nullable();
             $table->string('image')->nullable();
+            $table->string('price');
+            $table->integer('score');
+            
             $table->timestamps();
         });
     }
