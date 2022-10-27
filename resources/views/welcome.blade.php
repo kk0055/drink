@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 
 <head>
     <meta charset="UTF-8">
@@ -181,25 +181,27 @@
 }
     </style>
    <!-- Global site tag (gtag.js) - Google Analytics -->
-   <script async src="https://www.googletagmanager.com/gtag/js?id=G-D044F053SJ"></script>
+   {{-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-D044F053SJ"></script>
    <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
  
     gtag('config', 'G-D044F053SJ');
-    </script>    
+    </script>     --}}
     <script>
      function loginAlert() {
        alert("ごめんなさい。ログインして(T_T)");
      }
      </script>  
 <meta name="google-site-verification" content="hfxhZpIpglETSHt-BZBBPnQTp5XE-7nkkN09kyLwQSg" />
+<link href="{{ mix('/css/app.css') }}" rel="stylesheet">
 </head>
 <body>
 <div id="app">
+  <header-component></header-component>
 </div>
-<script src="{{ asset('js/app.js') }}"></script>
+<script src="{{ mix('/js/app.js') }}" defer></script>
 </body>
 
 </html>

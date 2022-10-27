@@ -3,9 +3,9 @@ require('./bootstrap');
 
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-import router from "./router"; 
-
-
+import router from './router/index.js'
+import App from './src/App.vue';
+import HeaderComponent from './components/Header'
 
 window.Vue = require('vue').default;
 Vue.use(VueRouter);
@@ -23,7 +23,7 @@ Vue.use(VueRouter);
 
 
 Vue.component('favorite-btn', require('./components/Favorite.vue').default);
-
+Vue.component('header-component', HeaderComponent);
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
@@ -31,7 +31,8 @@ Vue.component('favorite-btn', require('./components/Favorite.vue').default);
  */
 
  const app = new Vue({
-    el: '#app',
+
     router,
-  
-});
+  render:(h) => h(App)
+}).$mount('#app')
+
