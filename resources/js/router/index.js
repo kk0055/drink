@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import ExampleComponent from '../components/ExampleComponent'
 import HeaderComponent from '../components/Header'
+import Drink from '../src/views/Drink'
 
 
 Vue.use(VueRouter)
@@ -9,8 +10,8 @@ Vue.use(VueRouter)
 const routes = [
   {
     path: '/',
-    name: 'welcome',
-    component: HeaderComponent,
+    name: 'home',
+    component: Drink,
   },
  
 ]
