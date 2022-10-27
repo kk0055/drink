@@ -2130,15 +2130,201 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
+/* harmony import */ var _components_Header__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../components/Header */ "./resources/js/components/Header.vue");
 //
 //
 //
 //
 //
 //
+//
+
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  name: 'app'
+  name: 'app',
+  components: {
+    HeaderComponent: _components_Header__WEBPACK_IMPORTED_MODULE_0__.default
+  }
 });
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/src/views/Drink.vue?vue&type=script&lang=js&":
+/*!***********************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/src/views/Drink.vue?vue&type=script&lang=js& ***!
+  \***********************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({});
 
 /***/ }),
 
@@ -2150,20 +2336,19 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js");
-/* harmony import */ var vue_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! vue-router */ "./node_modules/vue-router/dist/vue-router.esm.js");
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js");
+/* harmony import */ var vue_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! vue-router */ "./node_modules/vue-router/dist/vue-router.esm.js");
 /* harmony import */ var _router_index_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./router/index.js */ "./resources/js/router/index.js");
 /* harmony import */ var _src_App_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./src/App.vue */ "./resources/js/src/App.vue");
-/* harmony import */ var _components_Header__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/Header */ "./resources/js/components/Header.vue");
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 
 
 
-
+ // import HeaderComponent from './components/Header'
 
 window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js").default;
-vue__WEBPACK_IMPORTED_MODULE_3__.default.use(vue_router__WEBPACK_IMPORTED_MODULE_4__.default);
+vue__WEBPACK_IMPORTED_MODULE_2__.default.use(vue_router__WEBPACK_IMPORTED_MODULE_3__.default);
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue
@@ -2174,15 +2359,15 @@ vue__WEBPACK_IMPORTED_MODULE_3__.default.use(vue_router__WEBPACK_IMPORTED_MODULE
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
-vue__WEBPACK_IMPORTED_MODULE_3__.default.component('favorite-btn', __webpack_require__(/*! ./components/Favorite.vue */ "./resources/js/components/Favorite.vue").default);
-vue__WEBPACK_IMPORTED_MODULE_3__.default.component('header-component', _components_Header__WEBPACK_IMPORTED_MODULE_2__.default);
+vue__WEBPACK_IMPORTED_MODULE_2__.default.component('favorite-btn', __webpack_require__(/*! ./components/Favorite.vue */ "./resources/js/components/Favorite.vue").default);
+vue__WEBPACK_IMPORTED_MODULE_2__.default.component('App', _src_App_vue__WEBPACK_IMPORTED_MODULE_1__.default);
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-var app = new vue__WEBPACK_IMPORTED_MODULE_3__.default({
+new vue__WEBPACK_IMPORTED_MODULE_2__.default({
   router: _router_index_js__WEBPACK_IMPORTED_MODULE_0__.default,
   render: function render(h) {
     return h(_src_App_vue__WEBPACK_IMPORTED_MODULE_1__.default);
@@ -2249,19 +2434,27 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js");
 /* harmony import */ var vue_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! vue-router */ "./node_modules/vue-router/dist/vue-router.esm.js");
 /* harmony import */ var _components_ExampleComponent__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../components/ExampleComponent */ "./resources/js/components/ExampleComponent.vue");
-/* harmony import */ var _components_Header__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/Header */ "./resources/js/components/Header.vue");
-Object(function webpackMissingModule() { var e = new Error("Cannot find module '../../src/views/Drink'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
+/* harmony import */ var _src_views_Drink__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../src/views/Drink */ "./resources/js/src/views/Drink.vue");
+/* harmony import */ var _src_App_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../src/App.vue */ "./resources/js/src/App.vue");
 /* provided dependency */ var process = __webpack_require__(/*! process/browser */ "./node_modules/process/browser.js");
 
 
+ // import HeaderComponent from '../components/Header'
 
 
 
 vue__WEBPACK_IMPORTED_MODULE_3__.default.use(vue_router__WEBPACK_IMPORTED_MODULE_4__.default);
 var routes = [{
   path: '/',
-  name: 'home',
-  component: Object(function webpackMissingModule() { var e = new Error("Cannot find module '../../src/views/Drink'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())
+  name: 'drink',
+  component: _src_views_Drink__WEBPACK_IMPORTED_MODULE_1__.default // children: [
+  //   {
+  //     path: '',
+  //     name: 'drink',
+  //     component: Drink,
+  //   },
+  // ]
+
 }];
 var router = new vue_router__WEBPACK_IMPORTED_MODULE_4__.default({
   mode: 'history',
@@ -37802,6 +37995,45 @@ component.options.__file = "resources/js/src/App.vue"
 
 /***/ }),
 
+/***/ "./resources/js/src/views/Drink.vue":
+/*!******************************************!*\
+  !*** ./resources/js/src/views/Drink.vue ***!
+  \******************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _Drink_vue_vue_type_template_id_140a27de___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Drink.vue?vue&type=template&id=140a27de& */ "./resources/js/src/views/Drink.vue?vue&type=template&id=140a27de&");
+/* harmony import */ var _Drink_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Drink.vue?vue&type=script&lang=js& */ "./resources/js/src/views/Drink.vue?vue&type=script&lang=js&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+;
+var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__.default)(
+  _Drink_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__.default,
+  _Drink_vue_vue_type_template_id_140a27de___WEBPACK_IMPORTED_MODULE_0__.render,
+  _Drink_vue_vue_type_template_id_140a27de___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/src/views/Drink.vue"
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (component.exports);
+
+/***/ }),
+
 /***/ "./resources/js/components/ExampleComponent.vue?vue&type=script&lang=js&":
 /*!*******************************************************************************!*\
   !*** ./resources/js/components/ExampleComponent.vue?vue&type=script&lang=js& ***!
@@ -37863,6 +38095,22 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_App_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./App.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/src/App.vue?vue&type=script&lang=js&");
  /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_App_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__.default); 
+
+/***/ }),
+
+/***/ "./resources/js/src/views/Drink.vue?vue&type=script&lang=js&":
+/*!*******************************************************************!*\
+  !*** ./resources/js/src/views/Drink.vue?vue&type=script&lang=js& ***!
+  \*******************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Drink_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./Drink.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/src/views/Drink.vue?vue&type=script&lang=js&");
+ /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Drink_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__.default); 
 
 /***/ }),
 
@@ -37930,6 +38178,23 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_App_vue_vue_type_template_id_7201f370___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
 /* harmony export */ });
 /* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_App_vue_vue_type_template_id_7201f370___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./App.vue?vue&type=template&id=7201f370& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/src/App.vue?vue&type=template&id=7201f370&");
+
+
+/***/ }),
+
+/***/ "./resources/js/src/views/Drink.vue?vue&type=template&id=140a27de&":
+/*!*************************************************************************!*\
+  !*** ./resources/js/src/views/Drink.vue?vue&type=template&id=140a27de& ***!
+  \*************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Drink_vue_vue_type_template_id_140a27de___WEBPACK_IMPORTED_MODULE_0__.render),
+/* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Drink_vue_vue_type_template_id_140a27de___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
+/* harmony export */ });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Drink_vue_vue_type_template_id_140a27de___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./Drink.vue?vue&type=template&id=140a27de& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/src/views/Drink.vue?vue&type=template&id=140a27de&");
 
 
 /***/ }),
@@ -38259,9 +38524,463 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [_c("router-view")], 1)
+  return _c("div", [_c("HeaderComponent"), _vm._v(" "), _c("router-view")], 1)
 }
 var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/src/views/Drink.vue?vue&type=template&id=140a27de&":
+/*!****************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/src/views/Drink.vue?vue&type=template&id=140a27de& ***!
+  \****************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* binding */ render),
+/* harmony export */   "staticRenderFns": () => (/* binding */ staticRenderFns)
+/* harmony export */ });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _vm._m(0)
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", [
+      _c(
+        "div",
+        {
+          staticClass:
+            "search-text flex flex-col w-full items-center  px-6 tracking-wide"
+        },
+        [_c("div", { staticClass: "text-red-500", attrs: { role: "alert" } })]
+      ),
+      _vm._v(" "),
+      _c(
+        "div",
+        {
+          staticClass: "carousel relative container mx-auto",
+          staticStyle: { "max-width": "1600px" }
+        },
+        [
+          _c(
+            "div",
+            { staticClass: "carousel-inner relative overflow-hidden w-full" },
+            [
+              _c("input", {
+                staticClass: "carousel-open",
+                attrs: {
+                  type: "radio",
+                  id: "carousel-1",
+                  name: "carousel",
+                  "aria-hidden": "true",
+                  hidden: "",
+                  checked: "checked"
+                }
+              }),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass: "carousel-item absolute opacity-0",
+                  staticStyle: { height: "50vh" }
+                },
+                [
+                  _c(
+                    "div",
+                    {
+                      staticClass:
+                        "bg block h-full w-full mx-auto flex pt-6 md:pt-0 md:items-center bg-cover bg-right"
+                    },
+                    [
+                      _c("div", { staticClass: "container mx-auto" }, [
+                        _c(
+                          "div",
+                          {
+                            staticClass:
+                              "flex flex-col w-full items-center  px-6 tracking-wide"
+                          },
+                          [
+                            _c(
+                              "p",
+                              {
+                                staticClass:
+                                  "main-title text-black text-2xl my-4"
+                              },
+                              [_vm._v("俺の飲んだもの")]
+                            ),
+                            _vm._v(" "),
+                            _c("p", { staticClass: "mt-2" }, [
+                              _vm._v(
+                                "ここには日々俺が飲んだものを書いていくよ。"
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("div", [
+                              _c("span", { staticClass: "t" }, [
+                                _vm._v("ところで、")
+                              ]),
+                              _vm._v(" "),
+                              _c(
+                                "a",
+                                {
+                                  staticClass:
+                                    "text-xl inline-block no-underline border-b border-gray-600 leading-relaxed hover:text-black hover:border-black mt-3",
+                                  attrs: { href: "" }
+                                },
+                                [_vm._v("君は今日何を飲んだ?")]
+                              )
+                            ])
+                          ]
+                        )
+                      ])
+                    ]
+                  )
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "label",
+                {
+                  staticClass:
+                    "prev control-1 w-10 h-10 ml-2 md:ml-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-gray-900 leading-tight text-center z-10 inset-y-0 left-0 my-auto",
+                  attrs: { for: "carousel-3" }
+                },
+                [_vm._v("‹")]
+              ),
+              _vm._v(" "),
+              _c(
+                "label",
+                {
+                  staticClass:
+                    "next control-1 w-10 h-10 mr-2 md:mr-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-gray-900 leading-tight text-center z-10 inset-y-0 right-0 my-auto",
+                  attrs: { for: "carousel-2" }
+                },
+                [_vm._v("›")]
+              ),
+              _vm._v(" "),
+              _c("input", {
+                staticClass: "carousel-open",
+                attrs: {
+                  type: "radio",
+                  id: "carousel-2",
+                  name: "carousel",
+                  "aria-hidden": "true",
+                  hidden: ""
+                }
+              }),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass:
+                    "carousel-item absolute opacity-0 bg-cover bg-right",
+                  staticStyle: { height: "50vh" }
+                },
+                [
+                  _c(
+                    "div",
+                    {
+                      staticClass:
+                        "block h-full w-full mx-auto flex pt-6 md:pt-0 md:items-center bg-cover bg-right"
+                    },
+                    [
+                      _c("div", { staticClass: "container mx-auto" }, [
+                        _c(
+                          "div",
+                          {
+                            staticClass:
+                              "flex flex-col w-full lg:w-1/2 md:ml-16 items-center md:items-start px-6 tracking-wide"
+                          },
+                          [
+                            _c(
+                              "p",
+                              { staticClass: "text-black text-2xl my-4" },
+                              [
+                                _vm._v(
+                                  "人生はチョコレートの箱のようなもの。\r\n                                "
+                                ),
+                                _c("br"),
+                                _vm._v(" 開けてみるまで中身はわからない。")
+                              ]
+                            ),
+                            _vm._v(" "),
+                            _c(
+                              "a",
+                              {
+                                staticClass:
+                                  "text-xl inline-block no-underline border-b border-gray-600 leading-relaxed hover:text-black hover:border-black",
+                                attrs: { href: "" }
+                              },
+                              [_vm._v("-フォレストガンプ-")]
+                            )
+                          ]
+                        )
+                      ])
+                    ]
+                  )
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "label",
+                {
+                  staticClass:
+                    "prev control-2 w-10 h-10 ml-2 md:ml-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-gray-900  leading-tight text-center z-10 inset-y-0 left-0 my-auto",
+                  attrs: { for: "carousel-1" }
+                },
+                [_vm._v("‹")]
+              ),
+              _vm._v(" "),
+              _c(
+                "label",
+                {
+                  staticClass:
+                    "next control-2 w-10 h-10 mr-2 md:mr-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-gray-900  leading-tight text-center z-10 inset-y-0 right-0 my-auto",
+                  attrs: { for: "carousel-3" }
+                },
+                [_vm._v("›")]
+              ),
+              _vm._v(" "),
+              _c("input", {
+                staticClass: "carousel-open",
+                attrs: {
+                  type: "radio",
+                  id: "carousel-3",
+                  name: "carousel",
+                  "aria-hidden": "true",
+                  hidden: ""
+                }
+              }),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass: "carousel-item absolute opacity-0",
+                  staticStyle: { height: "50vh" }
+                },
+                [
+                  _c(
+                    "div",
+                    {
+                      staticClass:
+                        "block h-full w-full mx-auto flex pt-6 md:pt-0 md:items-center bg-cover bg-bottom"
+                    },
+                    [
+                      _c("div", { staticClass: "container mx-auto" }, [
+                        _c(
+                          "div",
+                          {
+                            staticClass:
+                              "flex flex-col w-full lg:w-1/2 md:ml-16 items-center md:items-start px-6 tracking-wide"
+                          },
+                          [
+                            _c(
+                              "p",
+                              { staticClass: "text-black text-2xl my-4" },
+                              [_vm._v("俺の酒も甘い")]
+                            ),
+                            _vm._v(" "),
+                            _c(
+                              "a",
+                              {
+                                staticClass:
+                                  "text-xl inline-block no-underline border-b border-gray-600 leading-relaxed hover:text-black hover:border-black",
+                                attrs: { href: "" }
+                              },
+                              [
+                                _vm._v(
+                                  "パクさん\r\n                            "
+                                )
+                              ]
+                            )
+                          ]
+                        )
+                      ])
+                    ]
+                  )
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "label",
+                {
+                  staticClass:
+                    "prev control-3 w-10 h-10 ml-2 md:ml-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-gray-900  leading-tight text-center z-10 inset-y-0 left-0 my-auto",
+                  attrs: { for: "carousel-2" }
+                },
+                [_vm._v("‹")]
+              ),
+              _vm._v(" "),
+              _c(
+                "label",
+                {
+                  staticClass:
+                    "next control-3 w-10 h-10 mr-2 md:mr-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-gray-900  leading-tight text-center z-10 inset-y-0 right-0 my-auto",
+                  attrs: { for: "carousel-1" }
+                },
+                [_vm._v("›")]
+              ),
+              _vm._v(" "),
+              _c("ol", { staticClass: "carousel-indicators" }, [
+                _c("li", { staticClass: "inline-block mr-3" }, [
+                  _c(
+                    "label",
+                    {
+                      staticClass:
+                        "carousel-bullet cursor-pointer block text-4xl text-gray-400 hover:text-gray-900",
+                      attrs: { for: "carousel-1" }
+                    },
+                    [_vm._v("•")]
+                  )
+                ]),
+                _vm._v(" "),
+                _c("li", { staticClass: "inline-block mr-3" }, [
+                  _c(
+                    "label",
+                    {
+                      staticClass:
+                        "carousel-bullet cursor-pointer block text-4xl text-gray-400 hover:text-gray-900",
+                      attrs: { for: "carousel-2" }
+                    },
+                    [_vm._v("•")]
+                  )
+                ]),
+                _vm._v(" "),
+                _c("li", { staticClass: "inline-block mr-3" }, [
+                  _c(
+                    "label",
+                    {
+                      staticClass:
+                        "carousel-bullet cursor-pointer block text-4xl text-gray-400 hover:text-gray-900",
+                      attrs: { for: "carousel-3" }
+                    },
+                    [_vm._v("•")]
+                  )
+                ])
+              ])
+            ]
+          )
+        ]
+      ),
+      _vm._v(" "),
+      _c("section", { staticClass: "bg-white py-8" }, [
+        _c(
+          "div",
+          {
+            staticClass:
+              "container mx-auto flex items-center flex-wrap pt-4 pb-12"
+          },
+          [
+            _c("div", { staticClass: "w-full z-30 top-0 px-6 py-1" }, [
+              _c(
+                "div",
+                {
+                  staticClass:
+                    "w-full container mx-auto flex  items-center justify-end mt-0 px-2 py-3"
+                },
+                [
+                  _c(
+                    "div",
+                    {
+                      staticClass: "flex items-center ",
+                      attrs: { id: "store-nav-content" }
+                    },
+                    [
+                      _c("i", { staticClass: "fas fa-search " }),
+                      _vm._v(" "),
+                      _c("input", {
+                        staticClass:
+                          " text-sm rounded-full w-64 px-4  py-1 focus:outline-none border-b focus:shadow-outline ",
+                        attrs: {
+                          type: "text",
+                          name: "query",
+                          placeholder: " Search"
+                        }
+                      })
+                    ]
+                  )
+                ]
+              )
+            ]),
+            _vm._v(" "),
+            _c(
+              "div",
+              {
+                staticClass:
+                  "w-1/2 md:w-1/3 xl:w-1/4 p-6 flex flex-col  inline-block"
+              },
+              [
+                _c("a", { attrs: { href: "" } }, [
+                  _c("div", {
+                    staticClass: "pt-3 flex items-center justify-between"
+                  }),
+                  _vm._v(" "),
+                  _c("p", { staticClass: "pt-1 text-gray-900 " }, [
+                    _c("i", { staticClass: "fas fa-star text-yellow-300" })
+                  ]),
+                  _c("div", { staticClass: "body-box " })
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "panel-footer" })
+              ]
+            )
+          ]
+        )
+      ]),
+      _vm._v(" "),
+      _c("section", { staticClass: "bg-white py-8" }, [
+        _c("div", { staticClass: "container py-8 px-6 mx-auto" }, [
+          _c("a", {
+            staticClass:
+              "tracking-wide no-underline hover:no-underline font-bold text-gray-800 text-xl mb-8",
+            attrs: { href: "#" }
+          }),
+          _vm._v(" "),
+          _c("p", { staticClass: "mb-8 footer-tesxt" }, [
+            _vm._v(" 世の中には飲んだことのない飲み物が無数にある。"),
+            _c("br"),
+            _vm._v(
+              " 何が美味しいかなんて飲んでみないとわからない。\r\n            "
+            ),
+            _c("br"),
+            _vm._v(
+              " 不味いかもしれない。苦いかもしれない。甘すぎるかもしれない。"
+            ),
+            _c("br"),
+            _vm._v(" それでもたまには美味しいものに出会えるよ。たぶん。")
+          ])
+        ])
+      ]),
+      _vm._v(" "),
+      _c(
+        "footer",
+        { staticClass: "container mx-auto bg-white py-8  border-gray-400" },
+        [
+          _c("div", { staticClass: "container flex px-3 py-8 " }, [
+            _c("div", { staticClass: "w-full mx-auto flex flex-wrap" }, [
+              _c("div", { staticClass: "flex w-full lg:w-1/2 " }),
+              _vm._v(" "),
+              _c("div", {
+                staticClass: "flex w-full lg:w-1/2 lg:justify-end lg:text-right"
+              })
+            ])
+          ])
+        ]
+      )
+    ])
+  }
+]
 render._withStripped = true
 
 

@@ -1,5 +1,6 @@
 <template>
-<div class="search-text flex flex-col w-full items-center  px-6 tracking-wide">
+<div>
+  <div class="search-text flex flex-col w-full items-center  px-6 tracking-wide">
    
     <div class="text-red-500" role="alert">
  
@@ -159,6 +160,7 @@
             </div>
         </div>
     </footer>
+</div>
 </template>
 
 <script>

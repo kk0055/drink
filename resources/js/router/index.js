@@ -1,17 +1,24 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import ExampleComponent from '../components/ExampleComponent'
-import HeaderComponent from '../components/Header'
+// import HeaderComponent from '../components/Header'
 import Drink from '../src/views/Drink'
-
+import App from '../src/App.vue';
 
 Vue.use(VueRouter)
 
 const routes = [
   {
     path: '/',
-    name: 'home',
+    name: 'drink',
     component: Drink,
+    // children: [
+    //   {
+    //     path: '',
+    //     name: 'drink',
+    //     component: Drink,
+    //   },
+    // ]
   },
  
 ]
