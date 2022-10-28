@@ -28,7 +28,7 @@ class DrinkFactory extends Factory
             'name' => $this->faker->word,
             'user_id' => $this->faker->randomElement($userId),
             'review' => $this->faker->text,
-            'prefecture' => $this->faker->city,
+            'prefecture' => $this->faker->prefecture,
             'place' => $this->faker->word,
             'map_url' => $this->faker->url,
             'image' => "https://1.bp.blogspot.com/-BnPjHnaxR8Q/YEGP_e4vImI/AAAAAAABdco/2i7s2jl14xUhqtxlR2P3JIsFz76EDZv3gCNcBGAsYHQ/s400/buranko_boy_smile.png",

@@ -19,11 +19,7 @@ class DrinkController extends Controller
     public function index()
     {
 
-        $drinks = Drink::latest()->simplePaginate(8);
-
-        return view('main', [
-            'drinks' => $drinks,
-        ]);
+        return Drink::all();
 
     }
 
