@@ -99,21 +99,21 @@
               </div>
             </div>
             <!-- @foreach ($drinks as $drink) -->
-            <div class="w-1/2 md:w-1/3 xl:w-1/4 p-6 flex flex-col  inline-block">
+            <div v-for="drink in drinks" class="w-1/2 md:w-1/3 xl:w-1/4 p-6 flex flex-col  inline-block">
             
                 <a href="">  
 
-                <!-- <img src="{{asset('/storage/images/'.$drink->image)  }}" alt="pic"  class="item-image hover:opacity-75 transition "> -->
+                <img :src="drink.image" alt="pic"  class="item-image hover:opacity-75 transition ">
                     <div class="pt-3 flex items-center justify-between">
-                        <!-- <p class="drink-name">{{ $drink->name }}</p> -->
+                        <p class="drink-name">{{ drink.name }}</p>
                    
                     </div>
                     <p class="pt-1 text-gray-900 ">
                         <i class="fas fa-star text-yellow-300"></i>
-                        <!-- {{ $drink->score }}</p> -->
+                        {{ drink.score }}</p>
                     <div class="body-box ">
-                        <!-- <p class="drink-place">買った店：{{ $drink->place }}</p>
-                    <p class="mt-2 drink-text">{{ $drink->body }}</p> -->
+                        <p class="drink-place">買った店：{{ drink.place }}</p>
+                    <p class="mt-2 drink-text">{{ drink.review }}</p>
                     </div>
                     </a>
                 <!-- {{-- Vue --}} -->
@@ -165,6 +165,8 @@
 
 <script>
 export default {
-  
+  props:{
+    drinks: Array
+  }
 }
 </script>

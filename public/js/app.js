@@ -2157,6 +2157,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: 'app',
@@ -2165,7 +2167,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
   },
   data: function data() {
     return {
-      data: {}
+      drinks: []
     };
   },
   created: function created() {
@@ -2198,7 +2200,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
               case 0:
                 _context2.next = 2;
                 return axios.get("/api/").then(function (response) {
-                  _this2.data = response.data;
+                  _this2.drinks = response.data;
                 })["catch"](function (error) {
                   console.log(error);
                 });
@@ -2392,7 +2394,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({});
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  props: {
+    drinks: Array
+  }
+});
 
 /***/ }),
 
@@ -39350,7 +39356,15 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [_c("HeaderComponent"), _vm._v(" "), _c("router-view")], 1)
+  return _c(
+    "div",
+    [
+      _c("HeaderComponent"),
+      _vm._v(" "),
+      _c("router-view", { attrs: { drinks: _vm.drinks } })
+    ],
+    1
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -39375,372 +39389,23 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", [
+  return _c("div", [
+    _vm._m(0),
+    _vm._v(" "),
+    _vm._m(1),
+    _vm._v(" "),
+    _c("section", { staticClass: "bg-white py-8" }, [
       _c(
         "div",
         {
           staticClass:
-            "search-text flex flex-col w-full items-center  px-6 tracking-wide"
-        },
-        [_c("div", { staticClass: "text-red-500", attrs: { role: "alert" } })]
-      ),
-      _vm._v(" "),
-      _c(
-        "div",
-        {
-          staticClass: "carousel relative container mx-auto",
-          staticStyle: { "max-width": "1600px" }
+            "container mx-auto flex items-center flex-wrap pt-4 pb-12"
         },
         [
-          _c(
-            "div",
-            { staticClass: "carousel-inner relative overflow-hidden w-full" },
-            [
-              _c("input", {
-                staticClass: "carousel-open",
-                attrs: {
-                  type: "radio",
-                  id: "carousel-1",
-                  name: "carousel",
-                  "aria-hidden": "true",
-                  hidden: "",
-                  checked: "checked"
-                }
-              }),
-              _vm._v(" "),
-              _c(
-                "div",
-                {
-                  staticClass: "carousel-item absolute opacity-0",
-                  staticStyle: { height: "50vh" }
-                },
-                [
-                  _c(
-                    "div",
-                    {
-                      staticClass:
-                        "bg block h-full w-full mx-auto flex pt-6 md:pt-0 md:items-center bg-cover bg-right"
-                    },
-                    [
-                      _c("div", { staticClass: "container mx-auto" }, [
-                        _c(
-                          "div",
-                          {
-                            staticClass:
-                              "flex flex-col w-full items-center  px-6 tracking-wide"
-                          },
-                          [
-                            _c(
-                              "p",
-                              {
-                                staticClass:
-                                  "main-title text-black text-2xl my-4"
-                              },
-                              [_vm._v("俺の飲んだもの")]
-                            ),
-                            _vm._v(" "),
-                            _c("p", { staticClass: "mt-2" }, [
-                              _vm._v(
-                                "ここには日々俺が飲んだものを書いていくよ。"
-                              )
-                            ]),
-                            _vm._v(" "),
-                            _c("div", [
-                              _c("span", { staticClass: "t" }, [
-                                _vm._v("ところで、")
-                              ]),
-                              _vm._v(" "),
-                              _c(
-                                "a",
-                                {
-                                  staticClass:
-                                    "text-xl inline-block no-underline border-b border-gray-600 leading-relaxed hover:text-black hover:border-black mt-3",
-                                  attrs: { href: "" }
-                                },
-                                [_vm._v("君は今日何を飲んだ?")]
-                              )
-                            ])
-                          ]
-                        )
-                      ])
-                    ]
-                  )
-                ]
-              ),
-              _vm._v(" "),
-              _c(
-                "label",
-                {
-                  staticClass:
-                    "prev control-1 w-10 h-10 ml-2 md:ml-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-gray-900 leading-tight text-center z-10 inset-y-0 left-0 my-auto",
-                  attrs: { for: "carousel-3" }
-                },
-                [_vm._v("‹")]
-              ),
-              _vm._v(" "),
-              _c(
-                "label",
-                {
-                  staticClass:
-                    "next control-1 w-10 h-10 mr-2 md:mr-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-gray-900 leading-tight text-center z-10 inset-y-0 right-0 my-auto",
-                  attrs: { for: "carousel-2" }
-                },
-                [_vm._v("›")]
-              ),
-              _vm._v(" "),
-              _c("input", {
-                staticClass: "carousel-open",
-                attrs: {
-                  type: "radio",
-                  id: "carousel-2",
-                  name: "carousel",
-                  "aria-hidden": "true",
-                  hidden: ""
-                }
-              }),
-              _vm._v(" "),
-              _c(
-                "div",
-                {
-                  staticClass:
-                    "carousel-item absolute opacity-0 bg-cover bg-right",
-                  staticStyle: { height: "50vh" }
-                },
-                [
-                  _c(
-                    "div",
-                    {
-                      staticClass:
-                        "block h-full w-full mx-auto flex pt-6 md:pt-0 md:items-center bg-cover bg-right"
-                    },
-                    [
-                      _c("div", { staticClass: "container mx-auto" }, [
-                        _c(
-                          "div",
-                          {
-                            staticClass:
-                              "flex flex-col w-full lg:w-1/2 md:ml-16 items-center md:items-start px-6 tracking-wide"
-                          },
-                          [
-                            _c(
-                              "p",
-                              { staticClass: "text-black text-2xl my-4" },
-                              [
-                                _vm._v(
-                                  "人生はチョコレートの箱のようなもの。\r\n                                "
-                                ),
-                                _c("br"),
-                                _vm._v(" 開けてみるまで中身はわからない。")
-                              ]
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "a",
-                              {
-                                staticClass:
-                                  "text-xl inline-block no-underline border-b border-gray-600 leading-relaxed hover:text-black hover:border-black",
-                                attrs: { href: "" }
-                              },
-                              [_vm._v("-フォレストガンプ-")]
-                            )
-                          ]
-                        )
-                      ])
-                    ]
-                  )
-                ]
-              ),
-              _vm._v(" "),
-              _c(
-                "label",
-                {
-                  staticClass:
-                    "prev control-2 w-10 h-10 ml-2 md:ml-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-gray-900  leading-tight text-center z-10 inset-y-0 left-0 my-auto",
-                  attrs: { for: "carousel-1" }
-                },
-                [_vm._v("‹")]
-              ),
-              _vm._v(" "),
-              _c(
-                "label",
-                {
-                  staticClass:
-                    "next control-2 w-10 h-10 mr-2 md:mr-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-gray-900  leading-tight text-center z-10 inset-y-0 right-0 my-auto",
-                  attrs: { for: "carousel-3" }
-                },
-                [_vm._v("›")]
-              ),
-              _vm._v(" "),
-              _c("input", {
-                staticClass: "carousel-open",
-                attrs: {
-                  type: "radio",
-                  id: "carousel-3",
-                  name: "carousel",
-                  "aria-hidden": "true",
-                  hidden: ""
-                }
-              }),
-              _vm._v(" "),
-              _c(
-                "div",
-                {
-                  staticClass: "carousel-item absolute opacity-0",
-                  staticStyle: { height: "50vh" }
-                },
-                [
-                  _c(
-                    "div",
-                    {
-                      staticClass:
-                        "block h-full w-full mx-auto flex pt-6 md:pt-0 md:items-center bg-cover bg-bottom"
-                    },
-                    [
-                      _c("div", { staticClass: "container mx-auto" }, [
-                        _c(
-                          "div",
-                          {
-                            staticClass:
-                              "flex flex-col w-full lg:w-1/2 md:ml-16 items-center md:items-start px-6 tracking-wide"
-                          },
-                          [
-                            _c(
-                              "p",
-                              { staticClass: "text-black text-2xl my-4" },
-                              [_vm._v("俺の酒も甘い")]
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "a",
-                              {
-                                staticClass:
-                                  "text-xl inline-block no-underline border-b border-gray-600 leading-relaxed hover:text-black hover:border-black",
-                                attrs: { href: "" }
-                              },
-                              [
-                                _vm._v(
-                                  "パクさん\r\n                            "
-                                )
-                              ]
-                            )
-                          ]
-                        )
-                      ])
-                    ]
-                  )
-                ]
-              ),
-              _vm._v(" "),
-              _c(
-                "label",
-                {
-                  staticClass:
-                    "prev control-3 w-10 h-10 ml-2 md:ml-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-gray-900  leading-tight text-center z-10 inset-y-0 left-0 my-auto",
-                  attrs: { for: "carousel-2" }
-                },
-                [_vm._v("‹")]
-              ),
-              _vm._v(" "),
-              _c(
-                "label",
-                {
-                  staticClass:
-                    "next control-3 w-10 h-10 mr-2 md:mr-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-gray-900  leading-tight text-center z-10 inset-y-0 right-0 my-auto",
-                  attrs: { for: "carousel-1" }
-                },
-                [_vm._v("›")]
-              ),
-              _vm._v(" "),
-              _c("ol", { staticClass: "carousel-indicators" }, [
-                _c("li", { staticClass: "inline-block mr-3" }, [
-                  _c(
-                    "label",
-                    {
-                      staticClass:
-                        "carousel-bullet cursor-pointer block text-4xl text-gray-400 hover:text-gray-900",
-                      attrs: { for: "carousel-1" }
-                    },
-                    [_vm._v("•")]
-                  )
-                ]),
-                _vm._v(" "),
-                _c("li", { staticClass: "inline-block mr-3" }, [
-                  _c(
-                    "label",
-                    {
-                      staticClass:
-                        "carousel-bullet cursor-pointer block text-4xl text-gray-400 hover:text-gray-900",
-                      attrs: { for: "carousel-2" }
-                    },
-                    [_vm._v("•")]
-                  )
-                ]),
-                _vm._v(" "),
-                _c("li", { staticClass: "inline-block mr-3" }, [
-                  _c(
-                    "label",
-                    {
-                      staticClass:
-                        "carousel-bullet cursor-pointer block text-4xl text-gray-400 hover:text-gray-900",
-                      attrs: { for: "carousel-3" }
-                    },
-                    [_vm._v("•")]
-                  )
-                ])
-              ])
-            ]
-          )
-        ]
-      ),
-      _vm._v(" "),
-      _c("section", { staticClass: "bg-white py-8" }, [
-        _c(
-          "div",
-          {
-            staticClass:
-              "container mx-auto flex items-center flex-wrap pt-4 pb-12"
-          },
-          [
-            _c("div", { staticClass: "w-full z-30 top-0 px-6 py-1" }, [
-              _c(
-                "div",
-                {
-                  staticClass:
-                    "w-full container mx-auto flex  items-center justify-end mt-0 px-2 py-3"
-                },
-                [
-                  _c(
-                    "div",
-                    {
-                      staticClass: "flex items-center ",
-                      attrs: { id: "store-nav-content" }
-                    },
-                    [
-                      _c("i", { staticClass: "fas fa-search " }),
-                      _vm._v(" "),
-                      _c("input", {
-                        staticClass:
-                          " text-sm rounded-full w-64 px-4  py-1 focus:outline-none border-b focus:shadow-outline ",
-                        attrs: {
-                          type: "text",
-                          name: "query",
-                          placeholder: " Search"
-                        }
-                      })
-                    ]
-                  )
-                ]
-              )
-            ]),
-            _vm._v(" "),
-            _c(
+          _vm._m(2),
+          _vm._v(" "),
+          _vm._l(_vm.drinks, function(drink) {
+            return _c(
               "div",
               {
                 staticClass:
@@ -39748,63 +39413,443 @@ var staticRenderFns = [
               },
               [
                 _c("a", { attrs: { href: "" } }, [
-                  _c("div", {
-                    staticClass: "pt-3 flex items-center justify-between"
+                  _c("img", {
+                    staticClass: "item-image hover:opacity-75 transition ",
+                    attrs: { src: drink.image, alt: "pic" }
                   }),
                   _vm._v(" "),
+                  _c(
+                    "div",
+                    { staticClass: "pt-3 flex items-center justify-between" },
+                    [
+                      _c("p", { staticClass: "drink-name" }, [
+                        _vm._v(_vm._s(drink.name))
+                      ])
+                    ]
+                  ),
+                  _vm._v(" "),
                   _c("p", { staticClass: "pt-1 text-gray-900 " }, [
-                    _c("i", { staticClass: "fas fa-star text-yellow-300" })
+                    _c("i", { staticClass: "fas fa-star text-yellow-300" }),
+                    _vm._v("\r\n                        " + _vm._s(drink.score))
                   ]),
-                  _c("div", { staticClass: "body-box " })
+                  _vm._v(" "),
+                  _c("div", { staticClass: "body-box " }, [
+                    _c("p", { staticClass: "drink-place" }, [
+                      _vm._v("買った店：" + _vm._s(drink.place))
+                    ]),
+                    _vm._v(" "),
+                    _c("p", { staticClass: "mt-2 drink-text" }, [
+                      _vm._v(_vm._s(drink.review))
+                    ])
+                  ])
                 ]),
                 _vm._v(" "),
                 _c("div", { staticClass: "panel-footer" })
               ]
             )
+          })
+        ],
+        2
+      )
+    ]),
+    _vm._v(" "),
+    _vm._m(3),
+    _vm._v(" "),
+    _vm._m(4)
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      {
+        staticClass:
+          "search-text flex flex-col w-full items-center  px-6 tracking-wide"
+      },
+      [_c("div", { staticClass: "text-red-500", attrs: { role: "alert" } })]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      {
+        staticClass: "carousel relative container mx-auto",
+        staticStyle: { "max-width": "1600px" }
+      },
+      [
+        _c(
+          "div",
+          { staticClass: "carousel-inner relative overflow-hidden w-full" },
+          [
+            _c("input", {
+              staticClass: "carousel-open",
+              attrs: {
+                type: "radio",
+                id: "carousel-1",
+                name: "carousel",
+                "aria-hidden": "true",
+                hidden: "",
+                checked: "checked"
+              }
+            }),
+            _vm._v(" "),
+            _c(
+              "div",
+              {
+                staticClass: "carousel-item absolute opacity-0",
+                staticStyle: { height: "50vh" }
+              },
+              [
+                _c(
+                  "div",
+                  {
+                    staticClass:
+                      "bg block h-full w-full mx-auto flex pt-6 md:pt-0 md:items-center bg-cover bg-right"
+                  },
+                  [
+                    _c("div", { staticClass: "container mx-auto" }, [
+                      _c(
+                        "div",
+                        {
+                          staticClass:
+                            "flex flex-col w-full items-center  px-6 tracking-wide"
+                        },
+                        [
+                          _c(
+                            "p",
+                            {
+                              staticClass: "main-title text-black text-2xl my-4"
+                            },
+                            [_vm._v("俺の飲んだもの")]
+                          ),
+                          _vm._v(" "),
+                          _c("p", { staticClass: "mt-2" }, [
+                            _vm._v("ここには日々俺が飲んだものを書いていくよ。")
+                          ]),
+                          _vm._v(" "),
+                          _c("div", [
+                            _c("span", { staticClass: "t" }, [
+                              _vm._v("ところで、")
+                            ]),
+                            _vm._v(" "),
+                            _c(
+                              "a",
+                              {
+                                staticClass:
+                                  "text-xl inline-block no-underline border-b border-gray-600 leading-relaxed hover:text-black hover:border-black mt-3",
+                                attrs: { href: "" }
+                              },
+                              [_vm._v("君は今日何を飲んだ?")]
+                            )
+                          ])
+                        ]
+                      )
+                    ])
+                  ]
+                )
+              ]
+            ),
+            _vm._v(" "),
+            _c(
+              "label",
+              {
+                staticClass:
+                  "prev control-1 w-10 h-10 ml-2 md:ml-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-gray-900 leading-tight text-center z-10 inset-y-0 left-0 my-auto",
+                attrs: { for: "carousel-3" }
+              },
+              [_vm._v("‹")]
+            ),
+            _vm._v(" "),
+            _c(
+              "label",
+              {
+                staticClass:
+                  "next control-1 w-10 h-10 mr-2 md:mr-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-gray-900 leading-tight text-center z-10 inset-y-0 right-0 my-auto",
+                attrs: { for: "carousel-2" }
+              },
+              [_vm._v("›")]
+            ),
+            _vm._v(" "),
+            _c("input", {
+              staticClass: "carousel-open",
+              attrs: {
+                type: "radio",
+                id: "carousel-2",
+                name: "carousel",
+                "aria-hidden": "true",
+                hidden: ""
+              }
+            }),
+            _vm._v(" "),
+            _c(
+              "div",
+              {
+                staticClass:
+                  "carousel-item absolute opacity-0 bg-cover bg-right",
+                staticStyle: { height: "50vh" }
+              },
+              [
+                _c(
+                  "div",
+                  {
+                    staticClass:
+                      "block h-full w-full mx-auto flex pt-6 md:pt-0 md:items-center bg-cover bg-right"
+                  },
+                  [
+                    _c("div", { staticClass: "container mx-auto" }, [
+                      _c(
+                        "div",
+                        {
+                          staticClass:
+                            "flex flex-col w-full lg:w-1/2 md:ml-16 items-center md:items-start px-6 tracking-wide"
+                        },
+                        [
+                          _c("p", { staticClass: "text-black text-2xl my-4" }, [
+                            _vm._v(
+                              "人生はチョコレートの箱のようなもの。\r\n                                "
+                            ),
+                            _c("br"),
+                            _vm._v(" 開けてみるまで中身はわからない。")
+                          ]),
+                          _vm._v(" "),
+                          _c(
+                            "a",
+                            {
+                              staticClass:
+                                "text-xl inline-block no-underline border-b border-gray-600 leading-relaxed hover:text-black hover:border-black",
+                              attrs: { href: "" }
+                            },
+                            [_vm._v("-フォレストガンプ-")]
+                          )
+                        ]
+                      )
+                    ])
+                  ]
+                )
+              ]
+            ),
+            _vm._v(" "),
+            _c(
+              "label",
+              {
+                staticClass:
+                  "prev control-2 w-10 h-10 ml-2 md:ml-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-gray-900  leading-tight text-center z-10 inset-y-0 left-0 my-auto",
+                attrs: { for: "carousel-1" }
+              },
+              [_vm._v("‹")]
+            ),
+            _vm._v(" "),
+            _c(
+              "label",
+              {
+                staticClass:
+                  "next control-2 w-10 h-10 mr-2 md:mr-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-gray-900  leading-tight text-center z-10 inset-y-0 right-0 my-auto",
+                attrs: { for: "carousel-3" }
+              },
+              [_vm._v("›")]
+            ),
+            _vm._v(" "),
+            _c("input", {
+              staticClass: "carousel-open",
+              attrs: {
+                type: "radio",
+                id: "carousel-3",
+                name: "carousel",
+                "aria-hidden": "true",
+                hidden: ""
+              }
+            }),
+            _vm._v(" "),
+            _c(
+              "div",
+              {
+                staticClass: "carousel-item absolute opacity-0",
+                staticStyle: { height: "50vh" }
+              },
+              [
+                _c(
+                  "div",
+                  {
+                    staticClass:
+                      "block h-full w-full mx-auto flex pt-6 md:pt-0 md:items-center bg-cover bg-bottom"
+                  },
+                  [
+                    _c("div", { staticClass: "container mx-auto" }, [
+                      _c(
+                        "div",
+                        {
+                          staticClass:
+                            "flex flex-col w-full lg:w-1/2 md:ml-16 items-center md:items-start px-6 tracking-wide"
+                        },
+                        [
+                          _c("p", { staticClass: "text-black text-2xl my-4" }, [
+                            _vm._v("俺の酒も甘い")
+                          ]),
+                          _vm._v(" "),
+                          _c(
+                            "a",
+                            {
+                              staticClass:
+                                "text-xl inline-block no-underline border-b border-gray-600 leading-relaxed hover:text-black hover:border-black",
+                              attrs: { href: "" }
+                            },
+                            [_vm._v("パクさん\r\n                            ")]
+                          )
+                        ]
+                      )
+                    ])
+                  ]
+                )
+              ]
+            ),
+            _vm._v(" "),
+            _c(
+              "label",
+              {
+                staticClass:
+                  "prev control-3 w-10 h-10 ml-2 md:ml-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-gray-900  leading-tight text-center z-10 inset-y-0 left-0 my-auto",
+                attrs: { for: "carousel-2" }
+              },
+              [_vm._v("‹")]
+            ),
+            _vm._v(" "),
+            _c(
+              "label",
+              {
+                staticClass:
+                  "next control-3 w-10 h-10 mr-2 md:mr-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-gray-900  leading-tight text-center z-10 inset-y-0 right-0 my-auto",
+                attrs: { for: "carousel-1" }
+              },
+              [_vm._v("›")]
+            ),
+            _vm._v(" "),
+            _c("ol", { staticClass: "carousel-indicators" }, [
+              _c("li", { staticClass: "inline-block mr-3" }, [
+                _c(
+                  "label",
+                  {
+                    staticClass:
+                      "carousel-bullet cursor-pointer block text-4xl text-gray-400 hover:text-gray-900",
+                    attrs: { for: "carousel-1" }
+                  },
+                  [_vm._v("•")]
+                )
+              ]),
+              _vm._v(" "),
+              _c("li", { staticClass: "inline-block mr-3" }, [
+                _c(
+                  "label",
+                  {
+                    staticClass:
+                      "carousel-bullet cursor-pointer block text-4xl text-gray-400 hover:text-gray-900",
+                    attrs: { for: "carousel-2" }
+                  },
+                  [_vm._v("•")]
+                )
+              ]),
+              _vm._v(" "),
+              _c("li", { staticClass: "inline-block mr-3" }, [
+                _c(
+                  "label",
+                  {
+                    staticClass:
+                      "carousel-bullet cursor-pointer block text-4xl text-gray-400 hover:text-gray-900",
+                    attrs: { for: "carousel-3" }
+                  },
+                  [_vm._v("•")]
+                )
+              ])
+            ])
           ]
         )
-      ]),
-      _vm._v(" "),
-      _c("section", { staticClass: "bg-white py-8" }, [
-        _c("div", { staticClass: "container py-8 px-6 mx-auto" }, [
-          _c("a", {
-            staticClass:
-              "tracking-wide no-underline hover:no-underline font-bold text-gray-800 text-xl mb-8",
-            attrs: { href: "#" }
-          }),
-          _vm._v(" "),
-          _c("p", { staticClass: "mb-8 footer-tesxt" }, [
-            _vm._v(" 世の中には飲んだことのない飲み物が無数にある。"),
-            _c("br"),
-            _vm._v(
-              " 何が美味しいかなんて飲んでみないとわからない。\r\n            "
-            ),
-            _c("br"),
-            _vm._v(
-              " 不味いかもしれない。苦いかもしれない。甘すぎるかもしれない。"
-            ),
-            _c("br"),
-            _vm._v(" それでもたまには美味しいものに出会えるよ。たぶん。")
-          ])
-        ])
-      ]),
-      _vm._v(" "),
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "w-full z-30 top-0 px-6 py-1" }, [
       _c(
-        "footer",
-        { staticClass: "container mx-auto bg-white py-8  border-gray-400" },
+        "div",
+        {
+          staticClass:
+            "w-full container mx-auto flex  items-center justify-end mt-0 px-2 py-3"
+        },
         [
-          _c("div", { staticClass: "container flex px-3 py-8 " }, [
-            _c("div", { staticClass: "w-full mx-auto flex flex-wrap" }, [
-              _c("div", { staticClass: "flex w-full lg:w-1/2 " }),
+          _c(
+            "div",
+            {
+              staticClass: "flex items-center ",
+              attrs: { id: "store-nav-content" }
+            },
+            [
+              _c("i", { staticClass: "fas fa-search " }),
               _vm._v(" "),
-              _c("div", {
-                staticClass: "flex w-full lg:w-1/2 lg:justify-end lg:text-right"
+              _c("input", {
+                staticClass:
+                  " text-sm rounded-full w-64 px-4  py-1 focus:outline-none border-b focus:shadow-outline ",
+                attrs: { type: "text", name: "query", placeholder: " Search" }
               })
-            ])
-          ])
+            ]
+          )
         ]
       )
     ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("section", { staticClass: "bg-white py-8" }, [
+      _c("div", { staticClass: "container py-8 px-6 mx-auto" }, [
+        _c("a", {
+          staticClass:
+            "tracking-wide no-underline hover:no-underline font-bold text-gray-800 text-xl mb-8",
+          attrs: { href: "#" }
+        }),
+        _vm._v(" "),
+        _c("p", { staticClass: "mb-8 footer-tesxt" }, [
+          _vm._v(" 世の中には飲んだことのない飲み物が無数にある。"),
+          _c("br"),
+          _vm._v(
+            " 何が美味しいかなんて飲んでみないとわからない。\r\n            "
+          ),
+          _c("br"),
+          _vm._v(
+            " 不味いかもしれない。苦いかもしれない。甘すぎるかもしれない。"
+          ),
+          _c("br"),
+          _vm._v(" それでもたまには美味しいものに出会えるよ。たぶん。")
+        ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "footer",
+      { staticClass: "container mx-auto bg-white py-8  border-gray-400" },
+      [
+        _c("div", { staticClass: "container flex px-3 py-8 " }, [
+          _c("div", { staticClass: "w-full mx-auto flex flex-wrap" }, [
+            _c("div", { staticClass: "flex w-full lg:w-1/2 " }),
+            _vm._v(" "),
+            _c("div", {
+              staticClass: "flex w-full lg:w-1/2 lg:justify-end lg:text-right"
+            })
+          ])
+        ])
+      ]
+    )
   }
 ]
 render._withStripped = true

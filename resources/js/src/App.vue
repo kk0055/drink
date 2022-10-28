@@ -1,7 +1,9 @@
 <template>
 <div>
   <HeaderComponent></HeaderComponent>
-  <router-view></router-view>
+  <router-view
+  :drinks="drinks"
+  ></router-view>
 </div>
 </template>
 
@@ -13,7 +15,7 @@ export default {
     HeaderComponent,
   },
     data: () => ({
-    data:{},
+    drinks:[],
 
   }),
     async created() {
@@ -24,7 +26,7 @@ export default {
     async getData() {
         await axios.get("/api/")
       .then((response) => {
-       this.data = response.data
+       this.drinks = response.data
       })
       .catch(function (error) {
         console.log(error);
