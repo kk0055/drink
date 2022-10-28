@@ -1,37 +1,34 @@
 <template>
-<div>
-  <HeaderComponent></HeaderComponent>
-  <router-view
-  :drinks="drinks"
-  ></router-view>
-</div>
+  <div>
+    <HeaderComponent></HeaderComponent>
+    <router-view :drinks="drinks"></router-view>
+  </div>
 </template>
 
 <script>
-import HeaderComponent from '../components/Header'
+import HeaderComponent from "../components/Header";
 export default {
-   name:'app',
-    components: {
+  name: "app",
+  components: {
     HeaderComponent,
   },
-    data: () => ({
-    drinks:[],
-
+  data: () => ({
+    drinks: [],
   }),
-    async created() {
-    await Promise.all([this.getData()])
+  async created() {
+    await Promise.all([this.getData()]);
   },
-    methods: {
-
+  methods: {
     async getData() {
-        await axios.get("/api/")
-      .then((response) => {
-       this.drinks = response.data
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
+      await axios
+        .get("/api/")
+        .then((response) => {
+          this.drinks = response.data;
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
     },
   },
-}
+};
 </script>

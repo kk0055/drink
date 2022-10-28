@@ -16,6 +16,8 @@
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
     {{-- <link href="https://unpkg.com/tailwindcss/dist/tailwind.min.css" rel="stylesheet"> --}}
     {{-- <script src="https://cdn.tailwindcss.com"></script> --}}
+
+
     <!--Replace with your tailwind.css once created-->
     <link href="https://fonts.googleapis.com/css?family=Work+Sans:200,400&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -195,12 +197,13 @@
      }
      </script>  
 <meta name="google-site-verification" content="hfxhZpIpglETSHt-BZBBPnQTp5XE-7nkkN09kyLwQSg" />
-<link href="{{ mix('/css/app.css') }}" rel="stylesheet">
+{{-- <link href="{{ mix('/css/app.css') }}" rel="stylesheet"> --}}
+<link rel="stylesheet" href="{{ asset('css/app.css') }}">
 </head>
 <body>
 <div id="app">
 </div>
-<script src="{{ mix('/js/app.js') }}" defer></script>
+<script src="{{ asset('/js/app.js') }}"></script>
 </body>
 
 </html>
