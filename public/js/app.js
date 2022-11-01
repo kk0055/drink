@@ -1845,6 +1845,49 @@ module.exports = {
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/DrinkItem.vue?vue&type=script&lang=js&":
+/*!****************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/DrinkItem.vue?vue&type=script&lang=js& ***!
+  \****************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  props: {
+    drink: {
+      Type: Object
+    }
+  }
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/ExampleComponent.vue?vue&type=script&lang=js&":
 /*!***********************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/ExampleComponent.vue?vue&type=script&lang=js& ***!
@@ -2227,6 +2270,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
+/* harmony import */ var _components_DrinkItem__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../components/DrinkItem */ "./resources/js/components/DrinkItem.vue");
 //
 //
 //
@@ -2392,7 +2436,114 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  components: {
+    DrinkItem: _components_DrinkItem__WEBPACK_IMPORTED_MODULE_0__.default
+  },
   props: {
     drinks: Array
   }
@@ -21206,6 +21357,45 @@ module.exports = function (list, options) {
 
 /***/ }),
 
+/***/ "./resources/js/components/DrinkItem.vue":
+/*!***********************************************!*\
+  !*** ./resources/js/components/DrinkItem.vue ***!
+  \***********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _DrinkItem_vue_vue_type_template_id_12054870___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./DrinkItem.vue?vue&type=template&id=12054870& */ "./resources/js/components/DrinkItem.vue?vue&type=template&id=12054870&");
+/* harmony import */ var _DrinkItem_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./DrinkItem.vue?vue&type=script&lang=js& */ "./resources/js/components/DrinkItem.vue?vue&type=script&lang=js&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+;
+var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__.default)(
+  _DrinkItem_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__.default,
+  _DrinkItem_vue_vue_type_template_id_12054870___WEBPACK_IMPORTED_MODULE_0__.render,
+  _DrinkItem_vue_vue_type_template_id_12054870___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/DrinkItem.vue"
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (component.exports);
+
+/***/ }),
+
 /***/ "./resources/js/components/ExampleComponent.vue":
 /*!******************************************************!*\
   !*** ./resources/js/components/ExampleComponent.vue ***!
@@ -21401,6 +21591,22 @@ component.options.__file = "resources/js/src/views/Drink.vue"
 
 /***/ }),
 
+/***/ "./resources/js/components/DrinkItem.vue?vue&type=script&lang=js&":
+/*!************************************************************************!*\
+  !*** ./resources/js/components/DrinkItem.vue?vue&type=script&lang=js& ***!
+  \************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_DrinkItem_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./DrinkItem.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/DrinkItem.vue?vue&type=script&lang=js&");
+ /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_DrinkItem_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__.default); 
+
+/***/ }),
+
 /***/ "./resources/js/components/ExampleComponent.vue?vue&type=script&lang=js&":
 /*!*******************************************************************************!*\
   !*** ./resources/js/components/ExampleComponent.vue?vue&type=script&lang=js& ***!
@@ -21478,6 +21684,23 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Drink_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./Drink.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/src/views/Drink.vue?vue&type=script&lang=js&");
  /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Drink_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__.default); 
+
+/***/ }),
+
+/***/ "./resources/js/components/DrinkItem.vue?vue&type=template&id=12054870&":
+/*!******************************************************************************!*\
+  !*** ./resources/js/components/DrinkItem.vue?vue&type=template&id=12054870& ***!
+  \******************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_DrinkItem_vue_vue_type_template_id_12054870___WEBPACK_IMPORTED_MODULE_0__.render),
+/* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_DrinkItem_vue_vue_type_template_id_12054870___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
+/* harmony export */ });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_DrinkItem_vue_vue_type_template_id_12054870___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./DrinkItem.vue?vue&type=template&id=12054870& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/DrinkItem.vue?vue&type=template&id=12054870&");
+
 
 /***/ }),
 
@@ -21562,6 +21785,79 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Drink_vue_vue_type_template_id_140a27de___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
 /* harmony export */ });
 /* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Drink_vue_vue_type_template_id_140a27de___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./Drink.vue?vue&type=template&id=140a27de& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/src/views/Drink.vue?vue&type=template&id=140a27de&");
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/DrinkItem.vue?vue&type=template&id=12054870&":
+/*!*********************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/DrinkItem.vue?vue&type=template&id=12054870& ***!
+  \*********************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* binding */ render),
+/* harmony export */   "staticRenderFns": () => (/* binding */ staticRenderFns)
+/* harmony export */ });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    {
+      staticClass:
+        " rounded overflow-hidden border w-full bg-white mx-3 md:mx-0 lg:mx-0"
+    },
+    [
+      _c("img", {
+        staticClass: "w-full bg-cover p-3",
+        attrs: { src: _vm.drink.image }
+      }),
+      _vm._v(" "),
+      _c("div", { staticClass: "px-3 pb-2" }, [
+        _c("div", { staticClass: "pt-2" }, [
+          _c("p", { staticClass: "drink-name" }, [
+            _vm._v(_vm._s(_vm.drink.name))
+          ]),
+          _vm._v(" "),
+          _c("i", { staticClass: "fas fa-star text-yellow-300" }),
+          _vm._v("\n            " + _vm._s(_vm.drink.score)),
+          _c("p")
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "pt-1" }, [
+          _c("div", { staticClass: "mb-2 text-sm" }, [
+            _c("p", { staticClass: "drink-place" }, [
+              _vm._v("買った県：" + _vm._s(_vm.drink.prefecture))
+            ]),
+            _vm._v(" "),
+            _c("p", { staticClass: "drink-place" }, [
+              _vm._v("買った店：" + _vm._s(_vm.drink.place))
+            ]),
+            _vm._v(" "),
+            _c("p", { staticClass: "mt-2 drink-text" }, [
+              _vm._v(_vm._s(_vm.drink.review))
+            ]),
+            _vm._v(" "),
+            _c("p", { staticClass: "mt-2 drink-text" }, [
+              _vm._v(_vm._s(_vm.drink.map_url))
+            ]),
+            _vm._v(" "),
+            _c("p", { staticClass: "mt-2 drink-text" }, [
+              _vm._v(_vm._s(_vm.drink.price) + "円")
+            ])
+          ])
+        ])
+      ])
+    ]
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
 
 
 /***/ }),
@@ -21684,14 +21980,14 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c(
-    "nav",
+    "div",
     { staticClass: "w-full z-30 top-0 py-1", attrs: { id: "header" } },
     [
       _c(
         "div",
         {
           staticClass:
-            "\n      w-full\n      container\n      mx-auto\n      flex flex-wrap\n      items-center\n      justify-between\n      mt-0\n      px-6\n      py-3\n    "
+            "\n      w-full\n      container\n      mx-auto\n      flex flex-wrap\n      items-center\n      justify-between\n      mt-0\n      px-2\n      py-1\n    "
         },
         [
           _c(
@@ -21947,40 +22243,11 @@ var render = function() {
                   "w-1/2 md:w-1/3 xl:w-1/4 p-6 flex flex-col  inline-block"
               },
               [
-                _c("a", { attrs: { href: "" } }, [
-                  _c("img", {
-                    staticClass: "item-image hover:opacity-75 transition ",
-                    attrs: { src: drink.image, alt: "pic" }
-                  }),
-                  _vm._v(" "),
-                  _c(
-                    "div",
-                    { staticClass: "pt-3 flex items-center justify-between" },
-                    [
-                      _c("p", { staticClass: "drink-name" }, [
-                        _vm._v(_vm._s(drink.name))
-                      ])
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _c("p", { staticClass: "pt-1 text-gray-900 " }, [
-                    _c("i", { staticClass: "fas fa-star text-yellow-300" }),
-                    _vm._v("\r\n                        " + _vm._s(drink.score))
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "body-box " }, [
-                    _c("p", { staticClass: "drink-place" }, [
-                      _vm._v("買った店：" + _vm._s(drink.place))
-                    ]),
-                    _vm._v(" "),
-                    _c("p", { staticClass: "mt-2 drink-text" }, [
-                      _vm._v(_vm._s(drink.review))
-                    ])
-                  ])
-                ]),
+                _c("DrinkItem", { attrs: { drink: drink } }),
                 _vm._v(" "),
                 _c("div", { staticClass: "panel-footer" })
-              ]
+              ],
+              1
             )
           })
         ],
@@ -22061,11 +22328,17 @@ var staticRenderFns = [
                             {
                               staticClass: "main-title text-black text-2xl my-4"
                             },
-                            [_vm._v("俺の飲んだもの")]
+                            [
+                              _vm._v(
+                                "\n                                俺の飲んだもの\n                            "
+                              )
+                            ]
                           ),
                           _vm._v(" "),
                           _c("p", { staticClass: "mt-2" }, [
-                            _vm._v("ここには日々俺が飲んだものを書いていくよ。")
+                            _vm._v(
+                              "\n                                ここには日々俺が飲んだものを書いていくよ。\n                            "
+                            )
                           ]),
                           _vm._v(" "),
                           _c("div", [
@@ -22147,10 +22420,12 @@ var staticRenderFns = [
                         [
                           _c("p", { staticClass: "text-black text-2xl my-4" }, [
                             _vm._v(
-                              "人生はチョコレートの箱のようなもの。\r\n                                "
+                              "\n                                人生はチョコレートの箱のようなもの。 "
                             ),
                             _c("br"),
-                            _vm._v(" 開けてみるまで中身はわからない。")
+                            _vm._v(
+                              "\n                                開けてみるまで中身はわからない。\n                            "
+                            )
                           ]),
                           _vm._v(" "),
                           _c(
@@ -22224,7 +22499,9 @@ var staticRenderFns = [
                         },
                         [
                           _c("p", { staticClass: "text-black text-2xl my-4" }, [
-                            _vm._v("俺の酒も甘い")
+                            _vm._v(
+                              "\n                                俺の酒も甘い\n                            "
+                            )
                           ]),
                           _vm._v(" "),
                           _c(
@@ -22234,7 +22511,7 @@ var staticRenderFns = [
                                 "text-xl inline-block no-underline border-b border-gray-600 leading-relaxed hover:text-black hover:border-black",
                               attrs: { href: "" }
                             },
-                            [_vm._v("パクさん\r\n                            ")]
+                            [_vm._v("パクさん\n                            ")]
                           )
                         ]
                       )
@@ -22351,17 +22628,21 @@ var staticRenderFns = [
         }),
         _vm._v(" "),
         _c("p", { staticClass: "mb-8 footer-tesxt" }, [
-          _vm._v(" 世の中には飲んだことのない飲み物が無数にある。"),
-          _c("br"),
           _vm._v(
-            " 何が美味しいかなんて飲んでみないとわからない。\r\n            "
+            "\n                世の中には飲んだことのない飲み物が無数にある。"
           ),
           _c("br"),
           _vm._v(
-            " 不味いかもしれない。苦いかもしれない。甘すぎるかもしれない。"
+            "\n                何が美味しいかなんて飲んでみないとわからない。 "
           ),
           _c("br"),
-          _vm._v(" それでもたまには美味しいものに出会えるよ。たぶん。")
+          _vm._v(
+            "\n                不味いかもしれない。苦いかもしれない。甘すぎるかもしれない。"
+          ),
+          _c("br"),
+          _vm._v(
+            "\n                それでもたまには美味しいものに出会えるよ。たぶん。\n            "
+          )
         ])
       ])
     ])

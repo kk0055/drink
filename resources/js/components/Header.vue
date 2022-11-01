@@ -1,5 +1,5 @@
 <template>
-  <nav id="header" class="w-full z-30 top-0 py-1">
+  <div id="header" class="w-full z-30 top-0 py-1">
     <div
       class="
         w-full
@@ -9,8 +9,8 @@
         items-center
         justify-between
         mt-0
-        px-6
-        py-3
+        px-2
+        py-1
       "
     >
       <label for="menu-toggle" class="cursor-pointer md:hidden block">
@@ -166,7 +166,7 @@
         </a>
       </div>
     </div>
-  </nav>
+  </div>
 </template>
 
 <script>
