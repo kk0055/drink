@@ -10,17 +10,28 @@ Vue.use(VueRouter)
 const routes = [
   {
     path: '/',
-    name: 'drink',
+    name: 'drinks',
     component: Drink,
-    // children: [
-    //   {
-    //     path: '',
-    //     name: 'drink',
-    //     component: Drink,
-    //   },
-    // ]
+    children: [
+      // {
+      //   path: ':drinkId',
+      //   name: 'drinkDetails',
+      //   meta: {
+      //     backPath: { name: 'drinks' },
+      //   },
+      //   component: () => import('../src/views/Drinks/Drink.vue'),
+      // },
+    ],
   },
- 
+  {
+    path: '/:drinkId',
+    name: 'drinkDetails',
+    meta: {
+      backPath: { name: 'drinks' },
+    },
+    props: true,
+    component: () => import('../src/views/Drinks/Drink.vue'),
+  },
 ]
 
 const router = new VueRouter({
