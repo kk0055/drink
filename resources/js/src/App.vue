@@ -32,3 +32,8 @@ export default {
   },
 };
 </script>
+<style>
+a {
+  color: hotpink;
+}
+</style>

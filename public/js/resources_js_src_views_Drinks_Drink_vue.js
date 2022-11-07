@@ -13,6 +13,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _components_DrinkItem__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../components/DrinkItem */ "./resources/js/components/DrinkItem.vue");
 
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
@@ -25,29 +26,11 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  components: {
+    DrinkItem: _components_DrinkItem__WEBPACK_IMPORTED_MODULE_1__.default
+  },
   props: {
     drinkId: {
       Type: Number
@@ -194,62 +177,7 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
-    _c(
-      "div",
-      {
-        staticClass:
-          " rounded overflow-hidden border w-full bg-white mx-3 md:mx-0 lg:mx-0"
-      },
-      [
-        _c("img", {
-          staticClass: " p-3",
-          attrs: { width: "100px", src: _vm.drink.image }
-        }),
-        _vm._v(" "),
-        _c("div", { staticClass: "px-3 pb-2" }, [
-          _c("div", { staticClass: "pt-2" }, [
-            _c("p", { staticClass: "drink-name" }, [
-              _vm._v(_vm._s(_vm.drink.name))
-            ]),
-            _vm._v(" "),
-            _c("i", { staticClass: "fas fa-star text-yellow-300" }),
-            _vm._v(
-              "\n                " + _vm._s(_vm.drink.score) + "\n            "
-            )
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "pt-1" }, [
-            _c("div", { staticClass: "mb-2 text-sm" }, [
-              _c("p", { staticClass: "drink-place" }, [
-                _vm._v(
-                  "\n                        買った県：" +
-                    _vm._s(_vm.drink.prefecture) +
-                    "\n                    "
-                )
-              ]),
-              _vm._v(" "),
-              _c("p", { staticClass: "drink-place" }, [
-                _vm._v("買った店：" + _vm._s(_vm.drink.place))
-              ]),
-              _vm._v(" "),
-              _c("p", { staticClass: "mt-2 drink-text" }, [
-                _vm._v(_vm._s(_vm.drink.review))
-              ]),
-              _vm._v(" "),
-              _c("p", { staticClass: "mt-2 drink-text" }, [
-                _vm._v(_vm._s(_vm.drink.map_url))
-              ]),
-              _vm._v(" "),
-              _c("p", { staticClass: "mt-2 drink-text" }, [
-                _vm._v(_vm._s(_vm.drink.price) + "円")
-              ])
-            ])
-          ])
-        ])
-      ]
-    )
-  ])
+  return _c("div", [_c("DrinkItem", { attrs: { drink: _vm.drink } })], 1)
 }
 var staticRenderFns = []
 render._withStripped = true
