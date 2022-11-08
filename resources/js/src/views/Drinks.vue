@@ -104,7 +104,7 @@
 
                     <div
                         v-for="drink in drinks"
-                        class="w-1/2 md:w-1/3 xl:w-1/4 p-6 flex flex-col  inline-block"
+                        class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col  inline-block"
                     >
                         <DrinkItem :drink="drink" />
                     </div>

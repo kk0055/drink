@@ -102,13 +102,15 @@
         .drink-place {
          white-space: nowrap; 
          overflow: hidden;
-         text-overflow: ellipsis;     
+         text-overflow: ellipsis;  
+         margin-bottom: 1.2px;   
         }
        
         .drink-text{
          white-space: nowrap; 
          overflow: hidden;
          text-overflow: ellipsis; 
+         margin-bottom: 1.2px;   
         }
 
         p {

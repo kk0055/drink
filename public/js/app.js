@@ -1884,6 +1884,19 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: {
     drink: {
@@ -21823,30 +21836,9 @@ var render = function() {
     },
     [
       _vm.$route.name == "drinks"
-        ? _c(
-            "div",
-            [
-              _c(
-                "router-link",
-                {
-                  attrs: {
-                    to: {
-                      name: "drinkDetails",
-                      params: { drinkId: _vm.drink.id }
-                    }
-                  }
-                },
-                [_vm._v("詳細")]
-              )
-            ],
-            1
-          )
-        : _vm._e(),
-      _vm._v(" "),
-      _vm.$route.name == "drinks"
         ? _c("img", {
-            staticClass: "w-full bg-cover p-3",
-            attrs: { src: _vm.drink.image }
+            staticClass: "lg:h-48 md:h-36 w-full object-cover object-center",
+            attrs: { width: "300px", height: "350px", src: _vm.drink.image }
           })
         : _c("img", {
             staticClass: "p-3",
@@ -21855,12 +21847,12 @@ var render = function() {
       _vm._v(" "),
       _c("div", { staticClass: "px-3 pb-2" }, [
         _c("div", { staticClass: "pt-2" }, [
-          _c("p", { staticClass: "drink-name" }, [
+          _c("h2", { staticClass: "drink-name" }, [
             _vm._v(_vm._s(_vm.drink.name))
           ]),
           _vm._v(" "),
           _c("i", { staticClass: "fas fa-star text-yellow-300" }),
-          _vm._v("\n            " + _vm._s(_vm.drink.score) + "\n      ")
+          _vm._v("\n            " + _vm._s(_vm.drink.score) + "\n        ")
         ]),
         _vm._v(" "),
         _c("div", { staticClass: "pt-1" }, [
@@ -21873,7 +21865,7 @@ var render = function() {
               _vm._v("買った場所：" + _vm._s(_vm.drink.place))
             ]),
             _vm._v(" "),
-            _c("p", { staticClass: "mt-2 drink-text" }, [
+            _c("p", { staticClass: "mt-1 drink-text" }, [
               _vm._v(_vm._s(_vm.drink.review))
             ]),
             _vm._v(" "),
@@ -21882,8 +21874,29 @@ var render = function() {
             ]),
             _vm._v(" "),
             _c("p", { staticClass: "mt-2 drink-text" }, [
-              _vm._v(_vm._s(_vm.drink.price) + "円 ")
-            ])
+              _vm._v("値段：" + _vm._s(_vm.drink.price) + "円")
+            ]),
+            _vm._v(" "),
+            _vm.$route.name == "drinks"
+              ? _c(
+                  "div",
+                  [
+                    _c(
+                      "router-link",
+                      {
+                        attrs: {
+                          to: {
+                            name: "drinkDetails",
+                            params: { drinkId: _vm.drink.id }
+                          }
+                        }
+                      },
+                      [_vm._v("詳細\n                    ")]
+                    )
+                  ],
+                  1
+                )
+              : _vm._e()
           ])
         ])
       ])
@@ -22267,7 +22280,7 @@ var render = function() {
                 "div",
                 {
                   staticClass:
-                    "w-1/2 md:w-1/3 xl:w-1/4 p-6 flex flex-col  inline-block"
+                    "w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col  inline-block"
                 },
                 [_c("DrinkItem", { attrs: { drink: drink } })],
                 1
