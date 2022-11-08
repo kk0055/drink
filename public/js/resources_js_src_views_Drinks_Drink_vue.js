@@ -60,6 +60,11 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       }, _callee);
     }))();
   },
+  computed: {
+    id: function id() {
+      return Number(this.$route.params.drinkId);
+    }
+  },
   methods: {
     getData: function getData() {
       var _this2 = this;
@@ -70,7 +75,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
             switch (_context2.prev = _context2.next) {
               case 0:
                 _context2.next = 2;
-                return axios.get("/api/drinks/".concat(_this2.drinkId)).then(function (response) {
+                return axios.get("/api/drinks/".concat(_this2.id)).then(function (response) {
                   _this2.drink = response.data;
                 })["catch"](function (error) {
                   console.log(error);

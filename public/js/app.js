@@ -2175,6 +2175,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({});
 
 /***/ }),
@@ -2265,10 +2266,10 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
 /***/ }),
 
-/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/src/views/Drink.vue?vue&type=script&lang=js&":
-/*!***********************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/src/views/Drink.vue?vue&type=script&lang=js& ***!
-  \***********************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/src/views/Drinks.vue?vue&type=script&lang=js&":
+/*!************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/src/views/Drinks.vue?vue&type=script&lang=js& ***!
+  \************************************************************************************************************************************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -2569,7 +2570,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js");
 /* harmony import */ var vue_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! vue-router */ "./node_modules/vue-router/dist/vue-router.esm.js");
 /* harmony import */ var _components_ExampleComponent__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../components/ExampleComponent */ "./resources/js/components/ExampleComponent.vue");
-/* harmony import */ var _src_views_Drink__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../src/views/Drink */ "./resources/js/src/views/Drink.vue");
+/* harmony import */ var _src_views_Drinks__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../src/views/Drinks */ "./resources/js/src/views/Drinks.vue");
 /* harmony import */ var _src_App_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../src/App.vue */ "./resources/js/src/App.vue");
 /* provided dependency */ var process = __webpack_require__(/*! process/browser */ "./node_modules/process/browser.js");
 
@@ -2582,7 +2583,7 @@ vue__WEBPACK_IMPORTED_MODULE_3__.default.use(vue_router__WEBPACK_IMPORTED_MODULE
 var routes = [{
   path: '/',
   name: 'drinks',
-  component: _src_views_Drink__WEBPACK_IMPORTED_MODULE_1__.default,
+  component: _src_views_Drinks__WEBPACK_IMPORTED_MODULE_1__.default,
   children: [// {
     //   path: ':drinkId',
     //   name: 'drinkDetails',
@@ -2605,14 +2606,20 @@ var routes = [{
 }, {
   path: '/drinks/:drinkId',
   name: 'drinkDetails',
-  meta: {
-    backPath: {
-      name: 'drinks'
-    }
-  },
-  props: true,
   component: function component() {
     return __webpack_require__.e(/*! import() */ "resources_js_src_views_Drinks_Drink_vue").then(__webpack_require__.bind(__webpack_require__, /*! ../src/views/Drinks/Drink.vue */ "./resources/js/src/views/Drinks/Drink.vue"));
+  }
+}, {
+  path: '/register',
+  name: 'register',
+  component: function component() {
+    return __webpack_require__.e(/*! import() */ "resources_js_src_views_Register_vue").then(__webpack_require__.bind(__webpack_require__, /*! ../src/views/Register.vue */ "./resources/js/src/views/Register.vue"));
+  }
+}, {
+  path: '/login',
+  name: 'login',
+  component: function component() {
+    return __webpack_require__.e(/*! import() */ "resources_js_src_views_Login_vue").then(__webpack_require__.bind(__webpack_require__, /*! ../src/views/Login.vue */ "./resources/js/src/views/Login.vue"));
   }
 }];
 var router = new vue_router__WEBPACK_IMPORTED_MODULE_4__.default({
@@ -21542,10 +21549,10 @@ component.options.__file = "resources/js/src/App.vue"
 
 /***/ }),
 
-/***/ "./resources/js/src/views/Drink.vue":
-/*!******************************************!*\
-  !*** ./resources/js/src/views/Drink.vue ***!
-  \******************************************/
+/***/ "./resources/js/src/views/Drinks.vue":
+/*!*******************************************!*\
+  !*** ./resources/js/src/views/Drinks.vue ***!
+  \*******************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -21553,8 +21560,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _Drink_vue_vue_type_template_id_140a27de___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Drink.vue?vue&type=template&id=140a27de& */ "./resources/js/src/views/Drink.vue?vue&type=template&id=140a27de&");
-/* harmony import */ var _Drink_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Drink.vue?vue&type=script&lang=js& */ "./resources/js/src/views/Drink.vue?vue&type=script&lang=js&");
+/* harmony import */ var _Drinks_vue_vue_type_template_id_70e67505___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Drinks.vue?vue&type=template&id=70e67505& */ "./resources/js/src/views/Drinks.vue?vue&type=template&id=70e67505&");
+/* harmony import */ var _Drinks_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Drinks.vue?vue&type=script&lang=js& */ "./resources/js/src/views/Drinks.vue?vue&type=script&lang=js&");
 /* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
@@ -21564,9 +21571,9 @@ __webpack_require__.r(__webpack_exports__);
 /* normalize component */
 ;
 var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__.default)(
-  _Drink_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__.default,
-  _Drink_vue_vue_type_template_id_140a27de___WEBPACK_IMPORTED_MODULE_0__.render,
-  _Drink_vue_vue_type_template_id_140a27de___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
+  _Drinks_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__.default,
+  _Drinks_vue_vue_type_template_id_70e67505___WEBPACK_IMPORTED_MODULE_0__.render,
+  _Drinks_vue_vue_type_template_id_70e67505___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
   false,
   null,
   null,
@@ -21576,7 +21583,7 @@ var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__
 
 /* hot reload */
 if (false) { var api; }
-component.options.__file = "resources/js/src/views/Drink.vue"
+component.options.__file = "resources/js/src/views/Drinks.vue"
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (component.exports);
 
 /***/ }),
@@ -21661,10 +21668,10 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/js/src/views/Drink.vue?vue&type=script&lang=js&":
-/*!*******************************************************************!*\
-  !*** ./resources/js/src/views/Drink.vue?vue&type=script&lang=js& ***!
-  \*******************************************************************/
+/***/ "./resources/js/src/views/Drinks.vue?vue&type=script&lang=js&":
+/*!********************************************************************!*\
+  !*** ./resources/js/src/views/Drinks.vue?vue&type=script&lang=js& ***!
+  \********************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -21672,8 +21679,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Drink_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./Drink.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/src/views/Drink.vue?vue&type=script&lang=js&");
- /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Drink_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__.default); 
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Drinks_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./Drinks.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/src/views/Drinks.vue?vue&type=script&lang=js&");
+ /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Drinks_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__.default); 
 
 /***/ }),
 
@@ -21775,19 +21782,19 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/js/src/views/Drink.vue?vue&type=template&id=140a27de&":
-/*!*************************************************************************!*\
-  !*** ./resources/js/src/views/Drink.vue?vue&type=template&id=140a27de& ***!
-  \*************************************************************************/
+/***/ "./resources/js/src/views/Drinks.vue?vue&type=template&id=70e67505&":
+/*!**************************************************************************!*\
+  !*** ./resources/js/src/views/Drinks.vue?vue&type=template&id=70e67505& ***!
+  \**************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "render": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Drink_vue_vue_type_template_id_140a27de___WEBPACK_IMPORTED_MODULE_0__.render),
-/* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Drink_vue_vue_type_template_id_140a27de___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Drinks_vue_vue_type_template_id_70e67505___WEBPACK_IMPORTED_MODULE_0__.render),
+/* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Drinks_vue_vue_type_template_id_70e67505___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
 /* harmony export */ });
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Drink_vue_vue_type_template_id_140a27de___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./Drink.vue?vue&type=template&id=140a27de& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/src/views/Drink.vue?vue&type=template&id=140a27de&");
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Drinks_vue_vue_type_template_id_70e67505___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./Drinks.vue?vue&type=template&id=70e67505& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/src/views/Drinks.vue?vue&type=template&id=70e67505&");
 
 
 /***/ }),
@@ -22015,7 +22022,7 @@ var render = function() {
         "div",
         {
           staticClass:
-            "\n      w-full\n      container\n      mx-auto\n      flex flex-wrap\n      items-center\n      justify-between\n      mt-0\n      px-2\n      py-1\n    "
+            "\r\n      w-full\r\n      container\r\n      flex flex-wrap\r\n      items-center\r\n      justify-between\r\n      mx-auto\r\n      mt-0\r\n      px-2\r\n      py-1\r\n    "
         },
         [
           _c(
@@ -22054,7 +22061,7 @@ var render = function() {
             "div",
             {
               staticClass:
-                "\n        hidden\n        md:flex md:items-center md:w-auto\n        w-full\n        order-3\n        md:order-1\n      ",
+                "\r\n        hidden\r\n        md:flex md:items-center md:w-auto\r\n        w-full\r\n        order-3\r\n        md:order-1\r\n      ",
               attrs: { id: "menu" }
             },
             [
@@ -22063,18 +22070,28 @@ var render = function() {
                   "ul",
                   {
                     staticClass:
-                      "\n            md:flex\n            items-center\n            justify-between\n            text-base text-gray-700\n            pt-4\n            md:pt-0\n          "
+                      "\r\n            md:flex\r\n            items-center\r\n            justify-between\r\n            text-base text-gray-700\r\n            pt-1\r\n            md:pt-0\r\n          "
                   },
                   [
+                    _c(
+                      "li",
+                      [
+                        _c(
+                          "router-link",
+                          {
+                            staticClass:
+                              "\r\n                inline-block\r\n                no-underline\r\n                hover:text-black hover:underline\r\n                py-2\r\n                px-4\r\n              ",
+                            attrs: { to: { name: "register" } }
+                          },
+                          [_vm._v("登録\r\n              ")]
+                        )
+                      ],
+                      1
+                    ),
+                    _vm._v(" "),
                     _vm._m(0),
                     _vm._v(" "),
                     _vm._m(1),
-                    _vm._v(" "),
-                    _vm._m(2),
-                    _vm._v(" "),
-                    _vm._m(3),
-                    _vm._v(" "),
-                    _vm._m(4),
                     _vm._v(" "),
                     _c(
                       "li",
@@ -22083,7 +22100,7 @@ var render = function() {
                           "router-link",
                           {
                             staticClass:
-                              "\n                inline-block\n                no-underline\n                hover:text-black hover:underline\n                py-2\n                px-4\n              ",
+                              "\r\n                inline-block\r\n                no-underline\r\n                hover:text-black hover:underline\r\n                py-2\r\n                px-4\r\n              ",
                             attrs: { to: "/drink" }
                           },
                           [_vm._v("何か飲んだから書く?")]
@@ -22092,7 +22109,7 @@ var render = function() {
                       1
                     ),
                     _vm._v(" "),
-                    _vm._m(5)
+                    _vm._m(2)
                   ]
                 )
               ])
@@ -22103,16 +22120,15 @@ var render = function() {
             "div",
             { staticClass: "order-1 md:order-2" },
             [
-              _c("router-link", { attrs: { to: { name: "drinks" } } }, [
-                _c(
-                  "div",
-                  {
-                    staticClass:
-                      "\n          flex\n          items-center\n          tracking-wide\n          no-underline\n          hover:no-underline\n          font-bold\n          text-gray-800 text-xl\n        "
-                  },
-                  [_c("i", { staticClass: "fas fa-wine-bottle" })]
-                )
-              ])
+              _c(
+                "router-link",
+                {
+                  staticClass:
+                    "\r\n          flex\r\n          items-center\r\n          tracking-wide\r\n          no-underline\r\n          hover:no-underline\r\n          font-bold\r\n          text-gray-800 text-xl\r\n        ",
+                  attrs: { to: { name: "drinks" } }
+                },
+                [_c("i", { staticClass: "fas fa-wine-bottle" })]
+              )
             ],
             1
           )
@@ -22131,59 +22147,7 @@ var staticRenderFns = [
         "a",
         {
           staticClass:
-            "\n                inline-block\n                no-underline\n                hover:text-black hover:underline\n                py-2\n                px-4\n              ",
-          attrs: { href: "" }
-        },
-        [_vm._v("ログイン")]
-      )
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("li", [
-      _c(
-        "a",
-        {
-          staticClass:
-            "\n                inline-block\n                no-underline\n                hover:text-black hover:underline\n                py-2\n                px-4\n              ",
-          attrs: { href: "" }
-        },
-        [_vm._v("登録")]
-      )
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("li", [
-      _c(
-        "a",
-        {
-          staticClass:
-            "\n                inline-block\n                no-underline\n                hover:text-black hover:underline\n                py-2\n                px-4\n              ",
-          attrs: {
-            href: "",
-            onclick:
-              "event.preventDefault();\n                                document.getElementById('logout-form').submit();"
-          }
-        },
-        [_vm._v("\n              ログアウト\n            ")]
-      )
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("li", [
-      _c(
-        "a",
-        {
-          staticClass:
-            "\n                inline-block\n                no-underline\n                hover:text-black hover:underline\n                py-2\n                px-4\n              ",
+            "\r\n                inline-block\r\n                no-underline\r\n                hover:text-black hover:underline\r\n                py-2\r\n                px-4\r\n              ",
           attrs: { href: "" }
         },
         [_vm._v("俺のお気に入り")]
@@ -22199,7 +22163,7 @@ var staticRenderFns = [
         "a",
         {
           staticClass:
-            "\n                inline-block\n                no-underline\n                hover:text-black hover:underline\n                py-2\n                px-4\n              ",
+            "\r\n                inline-block\r\n                no-underline\r\n                hover:text-black hover:underline\r\n                py-2\r\n                px-4\r\n              ",
           attrs: { href: "" }
         },
         [_vm._v("ランキング")]
@@ -22215,7 +22179,7 @@ var staticRenderFns = [
         "a",
         {
           staticClass:
-            "\n                inline-block\n                no-underline\n                hover:text-black hover:underline\n                py-2\n                px-4\n              ",
+            "\r\n                inline-block\r\n                no-underline\r\n                hover:text-black hover:underline\r\n                py-2\r\n                px-4\r\n              ",
           attrs: {
             href:
               "https://www.amazon.co.jp/b/ref=s9_acss_bw_ln_Grocery_1_20s_w?ie=UTF8&node=71442051&pf_rd_m=A3P5ROKL5A1OLE&pf_rd_s=merchandised-search-leftnav&pf_rd_r=5AHSHQJPB75AZ04J7H7M&pf_rd_t=101&pf_rd_p=8e6be6b0-ad1d-4854-be00-ceab93a3847b&pf_rd_i=57239051",
@@ -22266,10 +22230,10 @@ render._withStripped = true
 
 /***/ }),
 
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/src/views/Drink.vue?vue&type=template&id=140a27de&":
-/*!****************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/src/views/Drink.vue?vue&type=template&id=140a27de& ***!
-  \****************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/src/views/Drinks.vue?vue&type=template&id=70e67505&":
+/*!*****************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/src/views/Drinks.vue?vue&type=template&id=70e67505& ***!
+  \*****************************************************************************************************************************************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -37924,7 +37888,7 @@ Vue.compile = compileToFunctions;
 /******/ 		// This function allow to reference async chunks
 /******/ 		__webpack_require__.u = (chunkId) => {
 /******/ 			// return url for filenames not based on template
-/******/ 			if ({"resources_js_src_views_Drinks_DrinkCreate_vue":1,"resources_js_src_views_Drinks_Drink_vue":1}[chunkId]) return "js/" + chunkId + ".js";
+/******/ 			if ({"resources_js_src_views_Drinks_DrinkCreate_vue":1,"resources_js_src_views_Drinks_Drink_vue":1,"resources_js_src_views_Register_vue":1,"resources_js_src_views_Login_vue":1}[chunkId]) return "js/" + chunkId + ".js";
 /******/ 			// return url for filenames based on template
 /******/ 			return undefined;
 /******/ 		};

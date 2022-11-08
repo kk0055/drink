@@ -1,6 +1,6 @@
 <template>
     <div>
-         <DrinkItem :drink="drink" />
+        <DrinkItem :drink="drink" />
     </div>
 </template>
 
@@ -19,10 +19,15 @@ export default {
     async created() {
         await Promise.all([this.getData()]);
     },
+    computed: {
+        id() {
+            return Number(this.$route.params.drinkId);
+        }
+    },
     methods: {
         async getData() {
             await axios
-                .get(`/api/drinks/${this.drinkId}`)
+                .get(`/api/drinks/${this.id}`)
                 .then(response => {
                     this.drink = response.data;
                 })

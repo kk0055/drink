@@ -2,7 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import ExampleComponent from '../components/ExampleComponent'
 // import HeaderComponent from '../components/Header'
-import Drink from '../src/views/Drink'
+import Drinks from '../src/views/Drinks'
 import App from '../src/App.vue';
 
 Vue.use(VueRouter)
@@ -11,7 +11,7 @@ const routes = [
   {
     path: '/',
     name: 'drinks',
-    component: Drink,
+    component: Drinks,
     children: [
       // {
       //   path: ':drinkId',
@@ -35,11 +35,17 @@ const routes = [
   {
     path: '/drinks/:drinkId',
     name: 'drinkDetails',
-    meta: {
-      backPath: { name: 'drinks' },
-    },
-    props: true,
     component: () => import('../src/views/Drinks/Drink.vue'),
+  },
+  {
+    path: '/register',
+    name: 'register',
+    component: () => import('../src/views/Register.vue'),
+  },
+  {
+    path: '/login',
+    name: 'login',
+    component: () => import('../src/views/Login.vue'),
   },
 
 ]
