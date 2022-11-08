@@ -1,6 +1,6 @@
 <template>
     <div
-        class=" rounded overflow-hidden border w-full bg-white mx-3 md:mx-0 lg:mx-0"
+        class="pt-3 px-1 rounded overflow-hidden border w-full bg-white mx-3 md:mx-0 lg:mx-0"
     >
         <img
             class="lg:h-48 md:h-36 w-full object-cover object-center"

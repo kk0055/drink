@@ -21781,7 +21781,7 @@ var render = function() {
     "div",
     {
       staticClass:
-        " rounded overflow-hidden border w-full bg-white mx-3 md:mx-0 lg:mx-0"
+        "pt-3 px-1 rounded overflow-hidden border w-full bg-white mx-3 md:mx-0 lg:mx-0"
     },
     [
       _vm.$route.name == "drinks"
@@ -22177,6 +22177,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
+    { staticClass: "bg-white" },
     [
       _c("HeaderComponent"),
       _vm._v(" "),
@@ -22257,7 +22258,7 @@ var staticRenderFns = [
       "div",
       {
         staticClass:
-          "search-text flex flex-col w-full items-center  px-6 tracking-wide"
+          "search-text flex flex-col w-full items-center  px-6 tracking-wide "
       },
       [
         _c("h1", { staticClass: "text-red-500", attrs: { role: "alert" } }, [

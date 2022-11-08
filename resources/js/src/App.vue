@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="bg-white">
     <HeaderComponent></HeaderComponent>
     <router-view :drinks="drinks"></router-view>
   </div>

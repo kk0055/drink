@@ -1,8 +1,8 @@
 <template>
     <div>
-        <div>
+        <div >
             <div
-                class="search-text flex flex-col w-full items-center  px-6 tracking-wide"
+                class="search-text flex flex-col w-full items-center  px-6 tracking-wide "
             >
                 <h1 class="text-red-500" role="alert">俺の飲んだもの</h1>
             </div>
