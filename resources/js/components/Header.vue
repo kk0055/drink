@@ -120,7 +120,7 @@
             </li>
 
             <li>
-              <a
+              <router-link
                 class="
                   inline-block
                   no-underline
@@ -128,8 +128,8 @@
                   py-2
                   px-4
                 "
-                href=""
-                >何か飲んだから書く?</a
+                to="/drink"
+                >何か飲んだから書く?</router-link
               >
             </li>
             <li>
@@ -150,8 +150,8 @@
         </nav>
       </div>
       <div class="order-1 md:order-2">
-        <a
-          class="
+         <router-link  :to="{ name: 'drinks' }">
+          <div class="
             flex
             items-center
             tracking-wide
@@ -160,10 +160,10 @@
             font-bold
             text-gray-800 text-xl
           "
-          href=""
         >
           <i class="fas fa-wine-bottle"></i>
-        </a>
+         </div>
+      </router-link>
       </div>
     </div>
   </div>

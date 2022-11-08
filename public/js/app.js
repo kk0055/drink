@@ -2449,111 +2449,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   components: {
@@ -2698,7 +2593,17 @@ var routes = [{
     // },
   ]
 }, {
-  path: '/:drinkId',
+  path: '/drink',
+  name: 'createDrink',
+  // meta: {
+  //   backPath: { name: 'drinks' },
+  // },
+  props: true,
+  component: function component() {
+    return __webpack_require__.e(/*! import() */ "resources_js_src_views_Drinks_DrinkCreate_vue").then(__webpack_require__.bind(__webpack_require__, /*! ../src/views/Drinks/DrinkCreate.vue */ "./resources/js/src/views/Drinks/DrinkCreate.vue"));
+  }
+}, {
+  path: '/drinks/:drinkId',
   name: 'drinkDetails',
   meta: {
     backPath: {
@@ -2841,7 +2746,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\na {\r\n  color: hotpink;\n}\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\na {\r\n  color: grey;\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -22145,9 +22050,72 @@ var render = function() {
             attrs: { type: "checkbox", id: "menu-toggle" }
           }),
           _vm._v(" "),
-          _vm._m(0),
+          _c(
+            "div",
+            {
+              staticClass:
+                "\n        hidden\n        md:flex md:items-center md:w-auto\n        w-full\n        order-3\n        md:order-1\n      ",
+              attrs: { id: "menu" }
+            },
+            [
+              _c("nav", { staticClass: "nav" }, [
+                _c(
+                  "ul",
+                  {
+                    staticClass:
+                      "\n            md:flex\n            items-center\n            justify-between\n            text-base text-gray-700\n            pt-4\n            md:pt-0\n          "
+                  },
+                  [
+                    _vm._m(0),
+                    _vm._v(" "),
+                    _vm._m(1),
+                    _vm._v(" "),
+                    _vm._m(2),
+                    _vm._v(" "),
+                    _vm._m(3),
+                    _vm._v(" "),
+                    _vm._m(4),
+                    _vm._v(" "),
+                    _c(
+                      "li",
+                      [
+                        _c(
+                          "router-link",
+                          {
+                            staticClass:
+                              "\n                inline-block\n                no-underline\n                hover:text-black hover:underline\n                py-2\n                px-4\n              ",
+                            attrs: { to: "/drink" }
+                          },
+                          [_vm._v("何か飲んだから書く?")]
+                        )
+                      ],
+                      1
+                    ),
+                    _vm._v(" "),
+                    _vm._m(5)
+                  ]
+                )
+              ])
+            ]
+          ),
           _vm._v(" "),
-          _vm._m(1)
+          _c(
+            "div",
+            { staticClass: "order-1 md:order-2" },
+            [
+              _c("router-link", { attrs: { to: { name: "drinks" } } }, [
+                _c(
+                  "div",
+                  {
+                    staticClass:
+                      "\n          flex\n          items-center\n          tracking-wide\n          no-underline\n          hover:no-underline\n          font-bold\n          text-gray-800 text-xl\n        "
+                  },
+                  [_c("i", { staticClass: "fas fa-wine-bottle" })]
+                )
+              ])
+            ],
+            1
+          )
         ]
       )
     ]
@@ -22158,132 +22126,103 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      {
-        staticClass:
-          "\n        hidden\n        md:flex md:items-center md:w-auto\n        w-full\n        order-3\n        md:order-1\n      ",
-        attrs: { id: "menu" }
-      },
-      [
-        _c("nav", { staticClass: "nav" }, [
-          _c(
-            "ul",
-            {
-              staticClass:
-                "\n            md:flex\n            items-center\n            justify-between\n            text-base text-gray-700\n            pt-4\n            md:pt-0\n          "
-            },
-            [
-              _c("li", [
-                _c(
-                  "a",
-                  {
-                    staticClass:
-                      "\n                inline-block\n                no-underline\n                hover:text-black hover:underline\n                py-2\n                px-4\n              ",
-                    attrs: { href: "" }
-                  },
-                  [_vm._v("ログイン")]
-                )
-              ]),
-              _vm._v(" "),
-              _c("li", [
-                _c(
-                  "a",
-                  {
-                    staticClass:
-                      "\n                inline-block\n                no-underline\n                hover:text-black hover:underline\n                py-2\n                px-4\n              ",
-                    attrs: { href: "" }
-                  },
-                  [_vm._v("登録")]
-                )
-              ]),
-              _vm._v(" "),
-              _c("li", [
-                _c(
-                  "a",
-                  {
-                    staticClass:
-                      "\n                inline-block\n                no-underline\n                hover:text-black hover:underline\n                py-2\n                px-4\n              ",
-                    attrs: {
-                      href: "",
-                      onclick:
-                        "event.preventDefault();\n                                document.getElementById('logout-form').submit();"
-                    }
-                  },
-                  [_vm._v("\n              ログアウト\n            ")]
-                )
-              ]),
-              _vm._v(" "),
-              _c("li", [
-                _c(
-                  "a",
-                  {
-                    staticClass:
-                      "\n                inline-block\n                no-underline\n                hover:text-black hover:underline\n                py-2\n                px-4\n              ",
-                    attrs: { href: "" }
-                  },
-                  [_vm._v("俺のお気に入り")]
-                )
-              ]),
-              _vm._v(" "),
-              _c("li", [
-                _c(
-                  "a",
-                  {
-                    staticClass:
-                      "\n                inline-block\n                no-underline\n                hover:text-black hover:underline\n                py-2\n                px-4\n              ",
-                    attrs: { href: "" }
-                  },
-                  [_vm._v("ランキング")]
-                )
-              ]),
-              _vm._v(" "),
-              _c("li", [
-                _c(
-                  "a",
-                  {
-                    staticClass:
-                      "\n                inline-block\n                no-underline\n                hover:text-black hover:underline\n                py-2\n                px-4\n              ",
-                    attrs: { href: "" }
-                  },
-                  [_vm._v("何か飲んだから書く?")]
-                )
-              ]),
-              _vm._v(" "),
-              _c("li", [
-                _c(
-                  "a",
-                  {
-                    staticClass:
-                      "\n                inline-block\n                no-underline\n                hover:text-black hover:underline\n                py-2\n                px-4\n              ",
-                    attrs: {
-                      href:
-                        "https://www.amazon.co.jp/b/ref=s9_acss_bw_ln_Grocery_1_20s_w?ie=UTF8&node=71442051&pf_rd_m=A3P5ROKL5A1OLE&pf_rd_s=merchandised-search-leftnav&pf_rd_r=5AHSHQJPB75AZ04J7H7M&pf_rd_t=101&pf_rd_p=8e6be6b0-ad1d-4854-be00-ceab93a3847b&pf_rd_i=57239051",
-                      target: "_blank"
-                    }
-                  },
-                  [_vm._v("注文する?(Amazon)")]
-                )
-              ])
-            ]
-          )
-        ])
-      ]
-    )
+    return _c("li", [
+      _c(
+        "a",
+        {
+          staticClass:
+            "\n                inline-block\n                no-underline\n                hover:text-black hover:underline\n                py-2\n                px-4\n              ",
+          attrs: { href: "" }
+        },
+        [_vm._v("ログイン")]
+      )
+    ])
   },
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "order-1 md:order-2" }, [
+    return _c("li", [
       _c(
         "a",
         {
           staticClass:
-            "\n          flex\n          items-center\n          tracking-wide\n          no-underline\n          hover:no-underline\n          font-bold\n          text-gray-800 text-xl\n        ",
+            "\n                inline-block\n                no-underline\n                hover:text-black hover:underline\n                py-2\n                px-4\n              ",
           attrs: { href: "" }
         },
-        [_c("i", { staticClass: "fas fa-wine-bottle" })]
+        [_vm._v("登録")]
+      )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("li", [
+      _c(
+        "a",
+        {
+          staticClass:
+            "\n                inline-block\n                no-underline\n                hover:text-black hover:underline\n                py-2\n                px-4\n              ",
+          attrs: {
+            href: "",
+            onclick:
+              "event.preventDefault();\n                                document.getElementById('logout-form').submit();"
+          }
+        },
+        [_vm._v("\n              ログアウト\n            ")]
+      )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("li", [
+      _c(
+        "a",
+        {
+          staticClass:
+            "\n                inline-block\n                no-underline\n                hover:text-black hover:underline\n                py-2\n                px-4\n              ",
+          attrs: { href: "" }
+        },
+        [_vm._v("俺のお気に入り")]
+      )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("li", [
+      _c(
+        "a",
+        {
+          staticClass:
+            "\n                inline-block\n                no-underline\n                hover:text-black hover:underline\n                py-2\n                px-4\n              ",
+          attrs: { href: "" }
+        },
+        [_vm._v("ランキング")]
+      )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("li", [
+      _c(
+        "a",
+        {
+          staticClass:
+            "\n                inline-block\n                no-underline\n                hover:text-black hover:underline\n                py-2\n                px-4\n              ",
+          attrs: {
+            href:
+              "https://www.amazon.co.jp/b/ref=s9_acss_bw_ln_Grocery_1_20s_w?ie=UTF8&node=71442051&pf_rd_m=A3P5ROKL5A1OLE&pf_rd_s=merchandised-search-leftnav&pf_rd_r=5AHSHQJPB75AZ04J7H7M&pf_rd_t=101&pf_rd_p=8e6be6b0-ad1d-4854-be00-ceab93a3847b&pf_rd_i=57239051",
+            target: "_blank"
+          }
+        },
+        [_vm._v("注文する?(Amazon)")]
       )
     ])
   }
@@ -22488,223 +22427,42 @@ var staticRenderFns = [
             ),
             _vm._v(" "),
             _c(
-              "label",
-              {
-                staticClass:
-                  "prev control-1 w-10 h-10 ml-2 md:ml-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-gray-900 leading-tight text-center z-10 inset-y-0 left-0 my-auto",
-                attrs: { for: "carousel-3" }
-              },
-              [_vm._v("‹")]
-            ),
-            _vm._v(" "),
-            _c(
-              "label",
-              {
-                staticClass:
-                  "next control-1 w-10 h-10 mr-2 md:mr-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-gray-900 leading-tight text-center z-10 inset-y-0 right-0 my-auto",
-                attrs: { for: "carousel-2" }
-              },
-              [_vm._v("›")]
-            ),
-            _vm._v(" "),
-            _c("input", {
-              staticClass: "carousel-open",
-              attrs: {
-                type: "radio",
-                id: "carousel-2",
-                name: "carousel",
-                "aria-hidden": "true",
-                hidden: ""
-              }
-            }),
-            _vm._v(" "),
-            _c(
               "div",
-              {
-                staticClass:
-                  "carousel-item absolute opacity-0 bg-cover bg-right",
-                staticStyle: { height: "50vh" }
-              },
+              { staticClass: "flex flex-col text-center w-full mb-20" },
               [
+                _c("h2", {
+                  staticClass:
+                    "text-xs text-indigo-500 tracking-widest font-medium title-font mb-1"
+                }),
+                _vm._v(" "),
                 _c(
-                  "div",
+                  "h1",
                   {
                     staticClass:
-                      "block h-full w-full mx-auto flex pt-6 md:pt-0 md:items-center bg-cover bg-right"
+                      "sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900"
                   },
                   [
-                    _c("div", { staticClass: "container mx-auto" }, [
-                      _c(
-                        "div",
-                        {
-                          staticClass:
-                            "flex flex-col w-full lg:w-1/2 md:ml-16 items-center md:items-start px-6 tracking-wide"
-                        },
-                        [
-                          _c("p", { staticClass: "text-black text-2xl my-4" }, [
-                            _vm._v(
-                              "\n                                    人生はチョコレートの箱のようなもの。\n                                    "
-                            ),
-                            _c("br"),
-                            _vm._v(
-                              "\n                                    開けてみるまで中身はわからない。\n                                "
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c(
-                            "a",
-                            {
-                              staticClass:
-                                "text-xl inline-block no-underline border-b border-gray-600 leading-relaxed hover:text-black hover:border-black",
-                              attrs: { href: "" }
-                            },
-                            [_vm._v("-フォレストガンプ-")]
-                          )
-                        ]
-                      )
-                    ])
+                    _vm._v(
+                      "\n                        俺の飲んだもの\n                    "
+                    )
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "p",
+                  { staticClass: "lg:w-2/3 mx-auto leading-relaxed text-base" },
+                  [
+                    _vm._v(
+                      "\n                        ここには日々俺が飲んだものを書いていくよ。"
+                    ),
+                    _c("span", { staticClass: "t" }, [_vm._v("ところで、")]),
+                    _vm._v(
+                      "\n                        君は今日何を飲んだ?\n                    "
+                    )
                   ]
                 )
               ]
-            ),
-            _vm._v(" "),
-            _c(
-              "label",
-              {
-                staticClass:
-                  "prev control-2 w-10 h-10 ml-2 md:ml-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-gray-900  leading-tight text-center z-10 inset-y-0 left-0 my-auto",
-                attrs: { for: "carousel-1" }
-              },
-              [_vm._v("‹")]
-            ),
-            _vm._v(" "),
-            _c(
-              "label",
-              {
-                staticClass:
-                  "next control-2 w-10 h-10 mr-2 md:mr-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-gray-900  leading-tight text-center z-10 inset-y-0 right-0 my-auto",
-                attrs: { for: "carousel-3" }
-              },
-              [_vm._v("›")]
-            ),
-            _vm._v(" "),
-            _c("input", {
-              staticClass: "carousel-open",
-              attrs: {
-                type: "radio",
-                id: "carousel-3",
-                name: "carousel",
-                "aria-hidden": "true",
-                hidden: ""
-              }
-            }),
-            _vm._v(" "),
-            _c(
-              "div",
-              {
-                staticClass: "carousel-item absolute opacity-0",
-                staticStyle: { height: "50vh" }
-              },
-              [
-                _c(
-                  "div",
-                  {
-                    staticClass:
-                      "block h-full w-full mx-auto flex pt-6 md:pt-0 md:items-center bg-cover bg-bottom"
-                  },
-                  [
-                    _c("div", { staticClass: "container mx-auto" }, [
-                      _c(
-                        "div",
-                        {
-                          staticClass:
-                            "flex flex-col w-full lg:w-1/2 md:ml-16 items-center md:items-start px-6 tracking-wide"
-                        },
-                        [
-                          _c("p", { staticClass: "text-black text-2xl my-4" }, [
-                            _vm._v(
-                              "\n                                    俺の酒も甘い\n                                "
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c(
-                            "a",
-                            {
-                              staticClass:
-                                "text-xl inline-block no-underline border-b border-gray-600 leading-relaxed hover:text-black hover:border-black",
-                              attrs: { href: "" }
-                            },
-                            [
-                              _vm._v(
-                                "パクさん\n                                "
-                              )
-                            ]
-                          )
-                        ]
-                      )
-                    ])
-                  ]
-                )
-              ]
-            ),
-            _vm._v(" "),
-            _c(
-              "label",
-              {
-                staticClass:
-                  "prev control-3 w-10 h-10 ml-2 md:ml-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-gray-900  leading-tight text-center z-10 inset-y-0 left-0 my-auto",
-                attrs: { for: "carousel-2" }
-              },
-              [_vm._v("‹")]
-            ),
-            _vm._v(" "),
-            _c(
-              "label",
-              {
-                staticClass:
-                  "next control-3 w-10 h-10 mr-2 md:mr-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-gray-900  leading-tight text-center z-10 inset-y-0 right-0 my-auto",
-                attrs: { for: "carousel-1" }
-              },
-              [_vm._v("›")]
-            ),
-            _vm._v(" "),
-            _c("ol", { staticClass: "carousel-indicators" }, [
-              _c("li", { staticClass: "inline-block mr-3" }, [
-                _c(
-                  "label",
-                  {
-                    staticClass:
-                      "carousel-bullet cursor-pointer block text-4xl text-gray-400 hover:text-gray-900",
-                    attrs: { for: "carousel-1" }
-                  },
-                  [_vm._v("•")]
-                )
-              ]),
-              _vm._v(" "),
-              _c("li", { staticClass: "inline-block mr-3" }, [
-                _c(
-                  "label",
-                  {
-                    staticClass:
-                      "carousel-bullet cursor-pointer block text-4xl text-gray-400 hover:text-gray-900",
-                    attrs: { for: "carousel-2" }
-                  },
-                  [_vm._v("•")]
-                )
-              ]),
-              _vm._v(" "),
-              _c("li", { staticClass: "inline-block mr-3" }, [
-                _c(
-                  "label",
-                  {
-                    staticClass:
-                      "carousel-bullet cursor-pointer block text-4xl text-gray-400 hover:text-gray-900",
-                    attrs: { for: "carousel-3" }
-                  },
-                  [_vm._v("•")]
-                )
-              ])
-            ])
+            )
           ]
         )
       ]
@@ -38166,7 +37924,7 @@ Vue.compile = compileToFunctions;
 /******/ 		// This function allow to reference async chunks
 /******/ 		__webpack_require__.u = (chunkId) => {
 /******/ 			// return url for filenames not based on template
-/******/ 			if (chunkId === "resources_js_src_views_Drinks_Drink_vue") return "js/" + chunkId + ".js";
+/******/ 			if ({"resources_js_src_views_Drinks_DrinkCreate_vue":1,"resources_js_src_views_Drinks_Drink_vue":1}[chunkId]) return "js/" + chunkId + ".js";
 /******/ 			// return url for filenames based on template
 /******/ 			return undefined;
 /******/ 		};
@@ -38293,7 +38051,7 @@ Vue.compile = compileToFunctions;
 /******/ 					if(installedChunkData) {
 /******/ 						promises.push(installedChunkData[2]);
 /******/ 					} else {
-/******/ 						if("resources_js_src_views_Drinks_Drink_vue" == chunkId) {
+/******/ 						if("css/app" != chunkId) {
 /******/ 							// setup Promise in chunk cache
 /******/ 							var promise = new Promise((resolve, reject) => {
 /******/ 								installedChunkData = installedChunks[chunkId] = [resolve, reject];

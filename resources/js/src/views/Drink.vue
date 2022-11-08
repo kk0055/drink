@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div >
+        <div>
             <div
                 class="search-text flex flex-col w-full items-center  px-6 tracking-wide"
             >
@@ -54,131 +54,26 @@
                             </div>
                         </div>
                     </div>
-                    <label
-                        for="carousel-3"
-                        class="prev control-1 w-10 h-10 ml-2 md:ml-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-gray-900 leading-tight text-center z-10 inset-y-0 left-0 my-auto"
-                        >‹</label
-                    >
-                    <label
-                        for="carousel-2"
-                        class="next control-1 w-10 h-10 mr-2 md:mr-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-gray-900 leading-tight text-center z-10 inset-y-0 right-0 my-auto"
-                        >›</label
-                    >
 
-                    <!--Slide 2-->
-                    <input
-                        class="carousel-open"
-                        type="radio"
-                        id="carousel-2"
-                        name="carousel"
-                        aria-hidden="true"
-                        hidden=""
-                    />
-                    <div
-                        class="carousel-item absolute opacity-0 bg-cover bg-right"
-                        style="height:50vh;"
-                    >
-                        <div
-                            class="block h-full w-full mx-auto flex pt-6 md:pt-0 md:items-center bg-cover bg-right"
-                            style=""
+                    <div class="flex flex-col text-center w-full mb-20">
+                        <h2
+                            class="text-xs text-indigo-500 tracking-widest font-medium title-font mb-1"
                         >
-                            <div class="container mx-auto">
-                                <div
-                                    class="flex flex-col w-full lg:w-1/2 md:ml-16 items-center md:items-start px-6 tracking-wide"
-                                >
-                                    <p class="text-black text-2xl my-4">
-                                        人生はチョコレートの箱のようなもの。
-                                        <br />
-                                        開けてみるまで中身はわからない。
-                                    </p>
-                                    <a
-                                        class="text-xl inline-block no-underline border-b border-gray-600 leading-relaxed hover:text-black hover:border-black"
-                                        href=""
-                                        >-フォレストガンプ-</a
-                                    >
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <label
-                        for="carousel-1"
-                        class="prev control-2 w-10 h-10 ml-2 md:ml-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-gray-900  leading-tight text-center z-10 inset-y-0 left-0 my-auto"
-                        >‹</label
-                    >
-                    <label
-                        for="carousel-3"
-                        class="next control-2 w-10 h-10 mr-2 md:mr-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-gray-900  leading-tight text-center z-10 inset-y-0 right-0 my-auto"
-                        >›</label
-                    >
-
-                    <!--Slide 3-->
-                    <input
-                        class="carousel-open"
-                        type="radio"
-                        id="carousel-3"
-                        name="carousel"
-                        aria-hidden="true"
-                        hidden=""
-                    />
-                    <div
-                        class="carousel-item absolute opacity-0"
-                        style="height:50vh;"
-                    >
-                        <div
-                            class="block h-full w-full mx-auto flex pt-6 md:pt-0 md:items-center bg-cover bg-bottom"
-                            style=""
+                            <!-- ROOF PARTY POLAROID -->
+                        </h2>
+                        <h1
+                            class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900"
                         >
-                            <div class="container mx-auto">
-                                <div
-                                    class="flex flex-col w-full lg:w-1/2 md:ml-16 items-center md:items-start px-6 tracking-wide"
-                                >
-                                    <p class="text-black text-2xl my-4">
-                                        俺の酒も甘い
-                                    </p>
-                                    <a
-                                        class="text-xl inline-block no-underline border-b border-gray-600 leading-relaxed hover:text-black hover:border-black"
-                                        href=""
-                                        >パクさん
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
+                            俺の飲んだもの
+                        </h1>
+                        <p class="lg:w-2/3 mx-auto leading-relaxed text-base">
+                            ここには日々俺が飲んだものを書いていくよ。<span
+                                class="t"
+                                >ところで、</span
+                            >
+                            君は今日何を飲んだ?
+                        </p>
                     </div>
-                    <label
-                        for="carousel-2"
-                        class="prev control-3 w-10 h-10 ml-2 md:ml-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-gray-900  leading-tight text-center z-10 inset-y-0 left-0 my-auto"
-                        >‹</label
-                    >
-                    <label
-                        for="carousel-1"
-                        class="next control-3 w-10 h-10 mr-2 md:mr-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-gray-900  leading-tight text-center z-10 inset-y-0 right-0 my-auto"
-                        >›</label
-                    >
-
-                    <!-- Add additional indicators for each slide-->
-                    <ol class="carousel-indicators">
-                        <li class="inline-block mr-3">
-                            <label
-                                for="carousel-1"
-                                class="carousel-bullet cursor-pointer block text-4xl text-gray-400 hover:text-gray-900"
-                                >•</label
-                            >
-                        </li>
-                        <li class="inline-block mr-3">
-                            <label
-                                for="carousel-2"
-                                class="carousel-bullet cursor-pointer block text-4xl text-gray-400 hover:text-gray-900"
-                                >•</label
-                            >
-                        </li>
-                        <li class="inline-block mr-3">
-                            <label
-                                for="carousel-3"
-                                class="carousel-bullet cursor-pointer block text-4xl text-gray-400 hover:text-gray-900"
-                                >•</label
-                            >
-                        </li>
-                    </ol>
                 </div>
             </div>
 

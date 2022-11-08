@@ -34,6 +34,6 @@ export default {
 </script>
 <style>
 a {
-  color: hotpink;
+  color: grey;
 }
 </style>

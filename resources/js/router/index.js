@@ -24,7 +24,16 @@ const routes = [
     ],
   },
   {
-    path: '/:drinkId',
+    path: '/drink',
+    name: 'createDrink',
+    // meta: {
+    //   backPath: { name: 'drinks' },
+    // },
+    props: true,
+    component: () => import('../src/views/Drinks/DrinkCreate.vue'),
+  },
+  {
+    path: '/drinks/:drinkId',
     name: 'drinkDetails',
     meta: {
       backPath: { name: 'drinks' },
@@ -32,6 +41,7 @@ const routes = [
     props: true,
     component: () => import('../src/views/Drinks/Drink.vue'),
   },
+
 ]
 
 const router = new VueRouter({
