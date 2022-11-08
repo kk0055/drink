@@ -2412,57 +2412,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   components: {
@@ -22310,7 +22259,11 @@ var staticRenderFns = [
         staticClass:
           "search-text flex flex-col w-full items-center  px-6 tracking-wide"
       },
-      [_c("div", { staticClass: "text-red-500", attrs: { role: "alert" } })]
+      [
+        _c("h1", { staticClass: "text-red-500", attrs: { role: "alert" } }, [
+          _vm._v("俺の飲んだもの")
+        ])
+      ]
     )
   },
   function() {
@@ -22319,129 +22272,25 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c(
       "div",
-      {
-        staticClass: "carousel relative container mx-auto",
-        staticStyle: { "max-width": "1600px" }
-      },
+      { staticClass: "flex flex-col text-center w-full mb-20" },
       [
-        _c(
-          "div",
-          { staticClass: "carousel-inner relative overflow-hidden w-full" },
-          [
-            _c("input", {
-              staticClass: "carousel-open",
-              attrs: {
-                type: "radio",
-                id: "carousel-1",
-                name: "carousel",
-                "aria-hidden": "true",
-                hidden: "",
-                checked: "checked"
-              }
-            }),
-            _vm._v(" "),
-            _c(
-              "div",
-              {
-                staticClass: "carousel-item absolute opacity-0",
-                staticStyle: { height: "50vh" }
-              },
-              [
-                _c(
-                  "div",
-                  {
-                    staticClass:
-                      "bg block h-full w-full mx-auto flex pt-6 md:pt-0 md:items-center bg-cover bg-right"
-                  },
-                  [
-                    _c("div", { staticClass: "container mx-auto" }, [
-                      _c(
-                        "div",
-                        {
-                          staticClass:
-                            "flex flex-col w-full items-center  px-6 tracking-wide"
-                        },
-                        [
-                          _c(
-                            "p",
-                            {
-                              staticClass: "main-title text-black text-2xl my-4"
-                            },
-                            [
-                              _vm._v(
-                                "\n                                    俺の飲んだもの\n                                "
-                              )
-                            ]
-                          ),
-                          _vm._v(" "),
-                          _c("p", { staticClass: "mt-2" }, [
-                            _vm._v(
-                              "\n                                    ここには日々俺が飲んだものを書いていくよ。\n                                "
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("div", [
-                            _c("span", { staticClass: "t" }, [
-                              _vm._v("ところで、")
-                            ]),
-                            _vm._v(" "),
-                            _c(
-                              "a",
-                              {
-                                staticClass:
-                                  "text-xl inline-block no-underline border-b border-gray-600 leading-relaxed hover:text-black hover:border-black mt-3",
-                                attrs: { href: "" }
-                              },
-                              [_vm._v("君は今日何を飲んだ?")]
-                            )
-                          ])
-                        ]
-                      )
-                    ])
-                  ]
-                )
-              ]
-            ),
-            _vm._v(" "),
-            _c(
-              "div",
-              { staticClass: "flex flex-col text-center w-full mb-20" },
-              [
-                _c("h2", {
-                  staticClass:
-                    "text-xs text-indigo-500 tracking-widest font-medium title-font mb-1"
-                }),
-                _vm._v(" "),
-                _c(
-                  "h1",
-                  {
-                    staticClass:
-                      "sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900"
-                  },
-                  [
-                    _vm._v(
-                      "\n                        俺の飲んだもの\n                    "
-                    )
-                  ]
-                ),
-                _vm._v(" "),
-                _c(
-                  "p",
-                  { staticClass: "lg:w-2/3 mx-auto leading-relaxed text-base" },
-                  [
-                    _vm._v(
-                      "\n                        ここには日々俺が飲んだものを書いていくよ。"
-                    ),
-                    _c("span", { staticClass: "t" }, [_vm._v("ところで、")]),
-                    _vm._v(
-                      "\n                        君は今日何を飲んだ?\n                    "
-                    )
-                  ]
-                )
-              ]
-            )
-          ]
-        )
+        _c("h2", {
+          staticClass:
+            "text-xs text-indigo-500 tracking-widest font-medium title-font mb-1"
+        }),
+        _vm._v(" "),
+        _c("h1", {
+          staticClass:
+            "sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900"
+        }),
+        _vm._v(" "),
+        _c("div", { staticClass: "w-2/3 mx-auto leading-relaxed text-base" }, [
+          _vm._v(
+            "\n                    街を歩いている時にたまたま出会った、面白いパッケージの飲み物、美味し飲み物。知らないだけで自販機やコンビニ、スーパーにも発見はどこにでもある。そんな偶然を記録していこう。"
+          ),
+          _c("span", { staticClass: "t" }, [_vm._v("ところで、")]),
+          _vm._v("\n                    君は今日何を飲んだ?\n                ")
+        ])
       ]
     )
   },

@@ -31,7 +31,7 @@ class DrinkFactory extends Factory
             'prefecture' => $this->faker->prefecture,
             'place' => $this->faker->word,
             'map_url' => $this->faker->url,
-            'image' => "https://1.bp.blogspot.com/-BnPjHnaxR8Q/YEGP_e4vImI/AAAAAAABdco/2i7s2jl14xUhqtxlR2P3JIsFz76EDZv3gCNcBGAsYHQ/s400/buranko_boy_smile.png",
+            'image' => "https://m.media-amazon.com/images/I/51eomlP5sJL._AC_SX679_.jpg",
             'price' => $this->faker->randomNumber($nbDigits = 3),
             'score' =>  $this->faker->randomElement($score),
         ];

@@ -4,79 +4,28 @@
             <div
                 class="search-text flex flex-col w-full items-center  px-6 tracking-wide"
             >
-                <div class="text-red-500" role="alert"></div>
+                <h1 class="text-red-500" role="alert">俺の飲んだもの</h1>
             </div>
-            <div
-                class="carousel relative container mx-auto"
-                style="max-width:1600px;"
-            >
-                <div class="carousel-inner relative overflow-hidden w-full">
-                    <!--Slide 1-->
-                    <input
-                        class="carousel-open"
-                        type="radio"
-                        id="carousel-1"
-                        name="carousel"
-                        aria-hidden="true"
-                        hidden=""
-                        checked="checked"
-                    />
-                    <div
-                        class="carousel-item absolute opacity-0"
-                        style="height:50vh;"
+                <div class="flex flex-col text-center w-full mb-20">
+                    <h2
+                        class="text-xs text-indigo-500 tracking-widest font-medium title-font mb-1"
                     >
-                        <div
-                            class="bg block h-full w-full mx-auto flex pt-6 md:pt-0 md:items-center bg-cover bg-right"
-                            style=""
+                        <!-- ROOF PARTY POLAROID -->
+                    </h2>
+                    <h1
+                        class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900"
+                    >
+                        <!-- 俺の飲んだもの -->
+                    </h1>
+                    <div class="w-2/3 mx-auto leading-relaxed text-base">
+                        街を歩いている時にたまたま出会った、面白いパッケージの飲み物、美味し飲み物。知らないだけで自販機やコンビニ、スーパーにも発見はどこにでもある。そんな偶然を記録していこう。<span
+                            class="t"
+                            >ところで、</span
                         >
-                            <div class="container mx-auto">
-                                <div
-                                    class="flex flex-col w-full items-center  px-6 tracking-wide"
-                                >
-                                    <p
-                                        class="main-title text-black text-2xl my-4"
-                                    >
-                                        俺の飲んだもの
-                                    </p>
-                                    <p class="mt-2">
-                                        ここには日々俺が飲んだものを書いていくよ。
-                                    </p>
-
-                                    <div>
-                                        <span class="t">ところで、</span>
-                                        <a
-                                            class="text-xl inline-block no-underline border-b border-gray-600 leading-relaxed hover:text-black hover:border-black mt-3"
-                                            href=""
-                                            >君は今日何を飲んだ?</a
-                                        >
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="flex flex-col text-center w-full mb-20">
-                        <h2
-                            class="text-xs text-indigo-500 tracking-widest font-medium title-font mb-1"
-                        >
-                            <!-- ROOF PARTY POLAROID -->
-                        </h2>
-                        <h1
-                            class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900"
-                        >
-                            俺の飲んだもの
-                        </h1>
-                        <p class="lg:w-2/3 mx-auto leading-relaxed text-base">
-                            ここには日々俺が飲んだものを書いていくよ。<span
-                                class="t"
-                                >ところで、</span
-                            >
-                            君は今日何を飲んだ?
-                        </p>
+                        君は今日何を飲んだ?
                     </div>
                 </div>
-            </div>
-
+        
             <section class="bg-white py-8">
                 <div
                     class="container mx-auto flex items-center flex-wrap pt-4 pb-12"
