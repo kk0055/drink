@@ -2244,6 +2244,17 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "app",
@@ -2252,7 +2263,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
   },
   data: function data() {
     return {
-      drinks: []
+      drinks: [],
+      loading: true
     };
   },
   created: function created() {
@@ -2291,6 +2303,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 });
 
               case 2:
+                _this2.loading = false;
+
+              case 3:
               case "end":
                 return _context2.stop();
             }
@@ -2436,10 +2451,15 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   components: {
     DrinkItem: _components_DrinkItem__WEBPACK_IMPORTED_MODULE_0__.default
+  },
+  data: function data() {
+    return {};
   },
   props: {
     drinks: Array
@@ -2739,7 +2759,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\na {\r\n  color: grey;\n}\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\na {\r\n    color: grey;\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -22237,16 +22257,31 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    { staticClass: "bg-white" },
-    [
-      _c("HeaderComponent"),
-      _vm._v(" "),
-      _c("router-view", { attrs: { drinks: _vm.drinks } })
-    ],
-    1
-  )
+  return _vm.loading
+    ? _c(
+        "div",
+        {
+          staticClass: "flex justify-center items-center",
+          staticStyle: { height: "90vh" }
+        },
+        [
+          _c("div", {
+            staticClass:
+              "spinner-border animate-spin inline-block w-8 h-8 border-4 rounded-full text-blue-400",
+            attrs: { role: "status" }
+          })
+        ]
+      )
+    : _c(
+        "div",
+        { staticClass: "bg-white" },
+        [
+          _c("HeaderComponent"),
+          _vm._v(" "),
+          _c("router-view", { attrs: { drinks: _vm.drinks } })
+        ],
+        1
+      )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -22273,42 +22308,44 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("div", [
     _c("div", [
-      _vm._m(0),
-      _vm._v(" "),
-      _vm._m(1),
-      _vm._v(" "),
-      _c("section", { staticClass: "bg-white py-8" }, [
-        _c(
-          "div",
-          {
-            staticClass:
-              "container mx-auto flex items-center flex-wrap pt-4 pb-12"
-          },
-          [
-            _vm._m(2),
-            _vm._v(" "),
-            _vm._l(_vm.drinks, function(drink) {
-              return _c(
-                "div",
-                {
-                  staticClass:
-                    "w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col  inline-block"
-                },
-                [_c("DrinkItem", { attrs: { drink: drink } })],
-                1
-              )
-            })
-          ],
-          2
-        ),
+      _c("div", [
+        _vm._m(0),
         _vm._v(" "),
-        _c("div", { staticClass: "panel-footer" })
-      ])
-    ]),
-    _vm._v(" "),
-    _vm._m(3),
-    _vm._v(" "),
-    _vm._m(4)
+        _vm._m(1),
+        _vm._v(" "),
+        _c("section", { staticClass: "bg-white py-8" }, [
+          _c(
+            "div",
+            {
+              staticClass:
+                "container mx-auto flex items-center flex-wrap pt-4 pb-12"
+            },
+            [
+              _vm._m(2),
+              _vm._v(" "),
+              _vm._l(_vm.drinks, function(drink) {
+                return _c(
+                  "div",
+                  {
+                    staticClass:
+                      "w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col  inline-block"
+                  },
+                  [_c("DrinkItem", { attrs: { drink: drink } })],
+                  1
+                )
+              })
+            ],
+            2
+          ),
+          _vm._v(" "),
+          _c("div", { staticClass: "panel-footer" })
+        ])
+      ]),
+      _vm._v(" "),
+      _vm._m(3),
+      _vm._v(" "),
+      _vm._m(4)
+    ])
   ])
 }
 var staticRenderFns = [
@@ -22349,7 +22386,7 @@ var staticRenderFns = [
         _vm._v(" "),
         _c("div", { staticClass: "w-2/3 mx-auto leading-relaxed text-base" }, [
           _vm._v(
-            "\n                    街を歩いている時にたまたま出会った、面白いパッケージの飲み物、美味し飲み物。知らないだけで自販機やコンビニ、スーパーにも発見はどこにでもある。そんな偶然を記録していこう。"
+            "\n                    街を歩いている時にたまたま出会った、見たこともない面白いパッケージの飲み物、ビックリするほど美味しいドリンク。君が知らないだけで街角の自販機やコンビニ、スーパー、居酒屋、近所の喫茶店...などなど新しい発見はどこにでもある。そんな偶然を記録していこう。"
           ),
           _c("span", { staticClass: "t" }, [_vm._v("ところで、")]),
           _vm._v("\n                    君は今日何を飲んだ?\n                ")
@@ -22403,19 +22440,19 @@ var staticRenderFns = [
         _vm._v(" "),
         _c("p", { staticClass: "mb-8 footer-tesxt" }, [
           _vm._v(
-            "\n                世の中には飲んだことのない飲み物が無数にある。"
+            "\n                    世の中には飲んだことのない飲み物が無数にある。"
           ),
           _c("br"),
           _vm._v(
-            "\n                何が美味しいかなんて飲んでみないとわからない。 "
+            "\n                    何が美味しいかなんて飲んでみないとわからない。 "
           ),
           _c("br"),
           _vm._v(
-            "\n                不味いかもしれない。苦いかもしれない。甘すぎるかもしれない。"
+            "\n                    不味いかもしれない。苦いかもしれない。甘すぎるかもしれない。"
           ),
           _c("br"),
           _vm._v(
-            "\n                それでもたまには美味しいものに出会えるよ。たぶん。\n            "
+            "\n                    それでもたまには美味しいものに出会えるよ。たぶん。\n                "
           )
         ])
       ])
