@@ -13,17 +13,29 @@
         <img class="p-3" v-else width="200px" :src="drink.image" />
         <div class="px-3 pb-2">
             <div class="pt-2">
-                <h2 class="drink-name">{{ drink.name }}</h2>
+                <h2 class="drink-name text-rose-500">{{ drink.name }}</h2>
                 <i class="fas fa-star text-yellow-300"></i>
                 {{ drink.score }}
+                <favorite-btn
+                    :drink="drink.id"
+                    :favorited="drink.favorited ? 'true' : 'false'"
+                    class="pl-2"
+                ></favorite-btn>
             </div>
+
             <div class="pt-1">
                 <div class="mb-2 text-sm">
-                    <p class="drink-place">買った県：{{ drink.prefecture }}</p>
-                    <p class="drink-place">買った場所：{{ drink.place }}</p>
+                    <p class="drink-place "><i class="fas fa-tenge mr-2 text-blue-700"></i>{{ drink.prefecture }}</p>
+                    <p class="drink-place">
+                        <i class="fas fa-map-marker-alt mr-2"></i>
+                        {{ drink.place }}
+                    </p>
+                    <p class="mt-2 drink-text">
+                        <i class="far fa-globe mr-2"></i>{{ drink.map_url }}
+                    </p>
+                    <p class="mt-2 drink-text"><i class="fas fa-yen-sign mr-2"></i>{{ drink.price }}円</p>
                     <p class="mt-1 drink-text">{{ drink.review }}</p>
-                    <p class="mt-2 drink-text">{{ drink.map_url }}</p>
-                    <p class="mt-2 drink-text">値段：{{ drink.price }}円</p>
+
                     <div v-if="$route.name == 'drinks'">
                         <router-link
                             :to="{

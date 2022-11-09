@@ -1897,6 +1897,18 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: {
     drink: {
@@ -21795,35 +21807,57 @@ var render = function() {
           }),
       _vm._v(" "),
       _c("div", { staticClass: "px-3 pb-2" }, [
-        _c("div", { staticClass: "pt-2" }, [
-          _c("h2", { staticClass: "drink-name" }, [
-            _vm._v(_vm._s(_vm.drink.name))
-          ]),
-          _vm._v(" "),
-          _c("i", { staticClass: "fas fa-star text-yellow-300" }),
-          _vm._v("\n            " + _vm._s(_vm.drink.score) + "\n        ")
-        ]),
+        _c(
+          "div",
+          { staticClass: "pt-2" },
+          [
+            _c("h2", { staticClass: "drink-name text-rose-500" }, [
+              _vm._v(_vm._s(_vm.drink.name))
+            ]),
+            _vm._v(" "),
+            _c("i", { staticClass: "fas fa-star text-yellow-300" }),
+            _vm._v(
+              "\n            " + _vm._s(_vm.drink.score) + "\n            "
+            ),
+            _c("favorite-btn", {
+              staticClass: "pl-2",
+              attrs: {
+                drink: _vm.drink.id,
+                favorited: _vm.drink.favorited ? "true" : "false"
+              }
+            })
+          ],
+          1
+        ),
         _vm._v(" "),
         _c("div", { staticClass: "pt-1" }, [
           _c("div", { staticClass: "mb-2 text-sm" }, [
-            _c("p", { staticClass: "drink-place" }, [
-              _vm._v("買った県：" + _vm._s(_vm.drink.prefecture))
+            _c("p", { staticClass: "drink-place " }, [
+              _c("i", { staticClass: "fas fa-tenge mr-2 text-blue-700" }),
+              _vm._v(_vm._s(_vm.drink.prefecture))
             ]),
             _vm._v(" "),
             _c("p", { staticClass: "drink-place" }, [
-              _vm._v("買った場所：" + _vm._s(_vm.drink.place))
+              _c("i", { staticClass: "fas fa-map-marker-alt mr-2" }),
+              _vm._v(
+                "\n                    " +
+                  _vm._s(_vm.drink.place) +
+                  "\n                "
+              )
+            ]),
+            _vm._v(" "),
+            _c("p", { staticClass: "mt-2 drink-text" }, [
+              _c("i", { staticClass: "far fa-globe mr-2" }),
+              _vm._v(_vm._s(_vm.drink.map_url) + "\n                ")
+            ]),
+            _vm._v(" "),
+            _c("p", { staticClass: "mt-2 drink-text" }, [
+              _c("i", { staticClass: "fas fa-yen-sign mr-2" }),
+              _vm._v(_vm._s(_vm.drink.price) + "円")
             ]),
             _vm._v(" "),
             _c("p", { staticClass: "mt-1 drink-text" }, [
               _vm._v(_vm._s(_vm.drink.review))
-            ]),
-            _vm._v(" "),
-            _c("p", { staticClass: "mt-2 drink-text" }, [
-              _vm._v(_vm._s(_vm.drink.map_url))
-            ]),
-            _vm._v(" "),
-            _c("p", { staticClass: "mt-2 drink-text" }, [
-              _vm._v("値段：" + _vm._s(_vm.drink.price) + "円")
             ]),
             _vm._v(" "),
             _vm.$route.name == "drinks"
