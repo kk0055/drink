@@ -1909,6 +1909,18 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: {
     drink: {
@@ -21798,11 +21810,11 @@ var render = function() {
     [
       _vm.$route.name == "drinks"
         ? _c("img", {
-            staticClass: "lg:h-48 md:h-36 w-full object-cover object-center",
+            staticClass: "h-48 md:h-36 w-full object-cover object-center",
             attrs: { width: "300px", height: "350px", src: _vm.drink.image }
           })
         : _c("img", {
-            staticClass: "p-3",
+            staticClass: "p-3  w-full object-center",
             attrs: { width: "200px", src: _vm.drink.image }
           }),
       _vm._v(" "),
@@ -21832,9 +21844,9 @@ var render = function() {
         _vm._v(" "),
         _c("div", { staticClass: "pt-1" }, [
           _c("div", { staticClass: "mb-2 text-sm" }, [
-            _c("p", { staticClass: "drink-place " }, [
+            _c("p", { staticClass: "drink-place" }, [
               _c("i", { staticClass: "fas fa-tenge mr-2 text-blue-700" }),
-              _vm._v(_vm._s(_vm.drink.prefecture))
+              _vm._v(_vm._s(_vm.drink.prefecture) + "\n                ")
             ]),
             _vm._v(" "),
             _c("p", { staticClass: "drink-place" }, [
@@ -21846,19 +21858,35 @@ var render = function() {
               )
             ]),
             _vm._v(" "),
-            _c("p", { staticClass: "mt-2 drink-text" }, [
-              _c("i", { staticClass: "far fa-globe mr-2" }),
-              _vm._v(_vm._s(_vm.drink.map_url) + "\n                ")
-            ]),
+            _vm.$route.name == "drinks"
+              ? _c("p", { staticClass: "mt-2 drink-text " }, [
+                  _c("i", { staticClass: "far fa-globe mr-2" }),
+                  _vm._v(
+                    "\n                    " +
+                      _vm._s(_vm.drink.map_url) +
+                      "\n                "
+                  )
+                ])
+              : _c("p", { staticClass: "mt-2" }, [
+                  _c("i", { staticClass: "far fa-globe mr-2" }),
+                  _vm._v(" "),
+                  _c("a", { attrs: { href: _vm.drink.map_url } }, [
+                    _vm._v(_vm._s(_vm.drink.map_url))
+                  ])
+                ]),
             _vm._v(" "),
             _c("p", { staticClass: "mt-2 drink-text" }, [
               _c("i", { staticClass: "fas fa-yen-sign mr-2" }),
-              _vm._v(_vm._s(_vm.drink.price) + "円")
+              _vm._v(_vm._s(_vm.drink.price) + "円\n                ")
             ]),
             _vm._v(" "),
-            _c("p", { staticClass: "mt-1 drink-text" }, [
-              _vm._v(_vm._s(_vm.drink.review))
-            ]),
+            _vm.$route.name == "drinks"
+              ? _c("p", { staticClass: "mt-1 drink-text" }, [
+                  _vm._v(_vm._s(_vm.drink.review))
+                ])
+              : _c("p", { staticClass: "mt-1" }, [
+                  _vm._v(_vm._s(_vm.drink.review))
+                ]),
             _vm._v(" "),
             _vm.$route.name == "drinks"
               ? _c(
