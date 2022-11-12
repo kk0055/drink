@@ -66,19 +66,24 @@
         </div>
     </div>
 </template>
-
 <script>
+import prefectures from "../../../Libraries/prefectures.js";
 export default {
     data: () => ({
-      data:[],
-      loading: true
+        data: [],
+        loading: true,
+        prefectures: {}
     }),
     methods: {
+         created() {
+          //  this.prefectures = prefectures
+        },
+        computed() {
+   console.log( this.prefectures )
+        },
         async getData() {
             await axios
-                .post("/api/drinks" ,{
-                  
-                })
+                .post("/api/drinks", {})
                 .then(response => {
                     // .then(response => console.log(res))
                 })
