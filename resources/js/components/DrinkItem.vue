@@ -47,14 +47,14 @@
                     </p>
                     <p class="mt-1 drink-text" v-if="$route.name == 'drinks'">{{ drink.review }}</p>
                     <p class="mt-1" v-else>{{ drink.review }}</p>
-
-                    <div v-if="$route.name == 'drinks'">
+  
+                    <div v-if="$route.name == 'drinks'" class="mt-1 flex justify-end">
                         <router-link
                             :to="{
                                 name: 'drinkDetails',
                                 params: { drinkId: drink.id }
                             }"
-                            >詳細
+                            >...more
                         </router-link>
                     </div>
                 </div>

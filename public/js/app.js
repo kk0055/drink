@@ -21911,6 +21911,7 @@ var render = function() {
             _vm.$route.name == "drinks"
               ? _c(
                   "div",
+                  { staticClass: "mt-1 flex justify-end" },
                   [
                     _c(
                       "router-link",
@@ -21922,7 +21923,7 @@ var render = function() {
                           }
                         }
                       },
-                      [_vm._v("詳細\n                    ")]
+                      [_vm._v("...more\n                    ")]
                     )
                   ],
                   1
