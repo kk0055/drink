@@ -11509,6 +11509,33 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -11539,7 +11566,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       starsize: "lg",
       //[xs,lg,1x,2x,3x,4x,5x,6x,7x,8x,9x,10x],
       maxstars: 5,
-      disabled: false
+      disabled: false,
+      imageUrl: ''
     };
   },
   components: {
@@ -11577,6 +11605,10 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
           }
         }, _callee);
       }))();
+    },
+    show: function show() {
+      var file = this.$refs.preview.files[0];
+      this.imageUrl = URL.createObjectURL(file);
     }
   }
 });
@@ -12022,13 +12054,129 @@ var render = function() {
             1
           ),
           _vm._v(" "),
-          _vm._m(0)
+          _c("div", { staticClass: "flex justify-center mt-8" }, [
+            _c(
+              "div",
+              { staticClass: "max-w-2xl rounded-lg shadow-xl bg-gray-50" },
+              [
+                _c("div", { staticClass: "m-4" }, [
+                  _c(
+                    "label",
+                    { staticClass: "inline-block mb-2 text-gray-500" },
+                    [_vm._v("File Upload")]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    { staticClass: "flex items-center justify-center w-full" },
+                    [
+                      _c(
+                        "label",
+                        {
+                          staticClass:
+                            "flex flex-col w-full h-32 border-4 border-blue-200 border-dashed hover:bg-gray-100 hover:border-gray-300"
+                        },
+                        [
+                          _vm.imageUrl
+                            ? _c(
+                                "div",
+                                {
+                                  staticClass:
+                                    "flex flex-col items-center justify-center-box"
+                                },
+                                [
+                                  _c("img", {
+                                    staticClass: "h-32",
+                                    attrs: { width: "298px", src: _vm.imageUrl }
+                                  })
+                                ]
+                              )
+                            : _c(
+                                "div",
+                                {
+                                  staticClass:
+                                    "flex flex-col items-center justify-center pt-7"
+                                },
+                                [
+                                  _c(
+                                    "svg",
+                                    {
+                                      staticClass:
+                                        "w-8 h-8 text-gray-400 group-hover:text-gray-600",
+                                      attrs: {
+                                        xmlns: "http://www.w3.org/2000/svg",
+                                        fill: "none",
+                                        viewBox: "0 0 24 24",
+                                        stroke: "currentColor"
+                                      }
+                                    },
+                                    [
+                                      _c("path", {
+                                        attrs: {
+                                          "stroke-linecap": "round",
+                                          "stroke-linejoin": "round",
+                                          "stroke-width": "2",
+                                          d:
+                                            "M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"
+                                        }
+                                      })
+                                    ]
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "p",
+                                    {
+                                      staticClass:
+                                        "pt-1 text-sm tracking-wider text-gray-400 group-hover:text-gray-600"
+                                    },
+                                    [
+                                      _vm._v(
+                                        "\n                            Attach a file"
+                                      )
+                                    ]
+                                  )
+                                ]
+                              ),
+                          _vm._v(" "),
+                          _c("input", {
+                            ref: "preview",
+                            staticClass: "opacity-0",
+                            attrs: { type: "file", name: "avatar" },
+                            on: { change: _vm.show }
+                          })
+                        ]
+                      )
+                    ]
+                  )
+                ]),
+                _vm._v(" "),
+                _vm._m(0)
+              ]
+            )
+          ]),
+          _vm._v(" "),
+          _vm._m(1)
         ])
       ])
     ]
   )
 }
 var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "flex justify-center p-2" }, [
+      _c(
+        "button",
+        {
+          staticClass:
+            "w-full px-4 py-2 text-white bg-blue-500 rounded shadow-xl"
+        },
+        [_vm._v("Create")]
+      )
+    ])
+  },
   function() {
     var _vm = this
     var _h = _vm.$createElement
@@ -12040,7 +12188,7 @@ var staticRenderFns = [
           staticClass:
             " rounded-full  p-3 w-full sm:w-56   bg-gradient-to-r from-sky-600  to-teal-300 text-white text-lg font-semibold "
         },
-        [_vm._v("\n                    投稿\n                ")]
+        [_vm._v("\n                        投稿\n                    ")]
       )
     ])
   }
