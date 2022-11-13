@@ -1,4 +1,4 @@
-export default [
+export default 
 {
   "prefectures": [
     {
@@ -191,4 +191,4 @@ export default [
     }
   ]
 }
-];
+;

@@ -97,12 +97,14 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       prefectures: {}
     };
   },
+  created: function created() {
+    this.prefectures = _Libraries_prefectures_js__WEBPACK_IMPORTED_MODULE_1__.default.prefectures;
+  },
+  computed: {// getPrefectures() {
+    //     this.prefectures = prefectures.prefectures;
+    // }
+  },
   methods: {
-    created: function created() {//  this.prefectures = prefectures
-    },
-    computed: function computed() {
-      console.log(this.prefectures);
-    },
     getData: function getData() {
       var _this = this;
 
@@ -144,7 +146,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ([{
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   "prefectures": [{
     "code": 1,
     "name": "北海道"
@@ -287,7 +289,7 @@ __webpack_require__.r(__webpack_exports__);
     "code": 47,
     "name": "沖縄県"
   }]
-}]);
+});
 
 /***/ }),
 

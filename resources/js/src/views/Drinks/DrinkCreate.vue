@@ -74,13 +74,15 @@ export default {
         loading: true,
         prefectures: {}
     }),
+    created() {
+        this.prefectures = prefectures.prefectures;
+    },
+    computed: {
+        // getPrefectures() {
+        //     this.prefectures = prefectures.prefectures;
+        // }
+    },
     methods: {
-         created() {
-          //  this.prefectures = prefectures
-        },
-        computed() {
-   console.log( this.prefectures )
-        },
         async getData() {
             await axios
                 .post("/api/drinks", {})
