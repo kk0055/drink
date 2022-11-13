@@ -11,10 +11,10 @@ use Intervention\Image\ImageManagerStatic as InterventionImage;
 
 class DrinkController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware(['auth'])->only(['store', 'destroy', 'edit']);
-    }
+    // public function __construct()
+    // {
+    //     $this->middleware(['auth'])->only(['store', 'destroy', 'edit']);
+    // }
 
     public function index()
     {
@@ -31,21 +31,21 @@ class DrinkController extends Controller
     public function store(Request $request)
     {
 
-        $this->validate($request, [
-            'name' => 'required',
-            'body' => 'required|max:300',
-            'score' => 'required',
-            'place' => 'required',
-            'image' => 'required',
-        ],
-            [
-                'name.required' => '何飲んだの？',
-                'body.required' => '感想教えてね',
-                'body.max' => '300文字までだよ',
-                'score.required' => '何点？？？',
-                'image.required' => '画像のせてくれ',
-                'place.required' => 'どこで買ったのか教えてよ～',
-            ]);
+        // $this->validate($request, [
+        //     'name' => 'required',
+        //     'body' => 'required|max:300',
+        //     'score' => 'required',
+        //     'place' => 'required',
+        //     'image' => 'required',
+        // ],
+        //     [
+        //         'name.required' => '何飲んだの？',
+        //         'body.required' => '感想教えてね',
+        //         'body.max' => '300文字までだよ',
+        //         'score.required' => '何点？？？',
+        //         'image.required' => '画像のせてくれ',
+        //         'place.required' => 'どこで買ったのか教えてよ～',
+        //     ]);
 
         if ($request->hasFile('image')) {
             $filenameWithExt = $request->file('image')->getClientOriginalName();
@@ -63,17 +63,30 @@ class DrinkController extends Controller
         } else {
             $fileNameToStore = null;
         }
+    
+    // $data = $request->all();
+    // $data['user_id'] = '1';
+    return Drink::create([
+    'name' => $request->name,
+    'user_id' => '1',
+    'prefecture' => $request->prefecture,
+    'review' => $request->review,
+    'score' => $request->score,
+    'place' => $request->place,
+    'map_url' => $request->map_url,
+    'price' => $request->price,
+    'image' => $fileNameToStore,
+]);
+        // $request->user()->drinks()->create([
+        //     'name' => $request->name,
+        //     'review' => $request->review,
+        //     'score' => $request->score,
+        //     'place' => $request->place,
+        //     'image' => $fileNameToStore,
 
-        $request->user()->drinks()->create([
-            'name' => $request->name,
-            'body' => $request->body,
-            'score' => $request->score,
-            'place' => $request->place,
-            'image' => $fileNameToStore,
+        // ]);
 
-        ]);
-
-        return redirect()->route('drinks.index')->with('info', 'ごちそうさまでした！');
+        // return redirect()->route('drinks.index')->with('info', 'ごちそうさまでした！');
     }
 
     public function show($drink)

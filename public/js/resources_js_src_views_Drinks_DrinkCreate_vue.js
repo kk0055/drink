@@ -11536,12 +11536,63 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
-      data: [],
+      data: {},
       loading: true,
       prefectures: {},
       star: 5,
@@ -11567,7 +11618,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       //[xs,lg,1x,2x,3x,4x,5x,6x,7x,8x,9x,10x],
       maxstars: 5,
       disabled: false,
-      imageUrl: ''
+      imageUrl: ""
     };
   },
   components: {
@@ -11581,7 +11632,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     // }
   },
   methods: {
-    getData: function getData() {
+    postData: function postData() {
       var _this = this;
 
       return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee() {
@@ -11590,7 +11641,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
             switch (_context.prev = _context.next) {
               case 0:
                 _context.next = 2;
-                return axios.post("/api/drinks", {}).then(function (response) {// .then(response => console.log(res))
+                return axios.post("/api/drinks", _this.data).then(function (response) {// .then(response => console.log(res))
                 })["catch"](function (error) {
                   console.log(error);
                 });
@@ -11869,10 +11920,18 @@ var render = function() {
     },
     [
       _c("div", { staticClass: "bg-white py-6 px-10 sm:max-w-md w-full " }, [
-        _c("div", {
-          staticClass:
-            "sm:text-3xl text-2xl font-semibold text-center text-sky-600  mb-12"
-        }),
+        _c(
+          "div",
+          {
+            staticClass:
+              "sm:text-3xl text-2xl font-semibold items-center justify-center text-center text-sky-600  mb-12"
+          },
+          [
+            _c("img", {
+              attrs: { src: "/images/logo.png", alt: "", width: "50x" }
+            })
+          ]
+        ),
         _vm._v(" "),
         _c("div", {}, [
           _c("div", [
@@ -12027,6 +12086,31 @@ var render = function() {
             })
           ]),
           _vm._v(" "),
+          _c("div", [
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.data.price,
+                  expression: "data.price"
+                }
+              ],
+              staticClass:
+                "focus:outline-none border-b w-full pb-2 border-sky-400 placeholder-gray-500 my-4",
+              attrs: { type: "text", placeholder: "値段" },
+              domProps: { value: _vm.data.price },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.$set(_vm.data, "price", $event.target.value)
+                }
+              }
+            })
+          ]),
+          _vm._v(" "),
           _c(
             "div",
             [
@@ -12082,7 +12166,7 @@ var render = function() {
                                 "div",
                                 {
                                   staticClass:
-                                    "flex flex-col items-center justify-center-box"
+                                    "flex flex-col items-center justify-center-box "
                                 },
                                 [
                                   _c("img", {
@@ -12131,7 +12215,7 @@ var render = function() {
                                     },
                                     [
                                       _vm._v(
-                                        "\n                            Attach a file"
+                                        "\n                                        Attach a file\n                                    "
                                       )
                                     ]
                                   )
@@ -12148,51 +12232,28 @@ var render = function() {
                       )
                     ]
                   )
-                ]),
-                _vm._v(" "),
-                _vm._m(0)
+                ])
               ]
             )
           ]),
           _vm._v(" "),
-          _vm._m(1)
+          _c("div", { staticClass: "flex justify-center my-6" }, [
+            _c(
+              "button",
+              {
+                staticClass:
+                  " rounded-full  p-3 w-full sm:w-56   bg-gradient-to-r from-sky-600  to-teal-300 text-white text-lg font-semibold ",
+                on: { click: _vm.postData }
+              },
+              [_vm._v("\n                    投稿\n                ")]
+            )
+          ])
         ])
       ])
     ]
   )
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "flex justify-center p-2" }, [
-      _c(
-        "button",
-        {
-          staticClass:
-            "w-full px-4 py-2 text-white bg-blue-500 rounded shadow-xl"
-        },
-        [_vm._v("Create")]
-      )
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "flex justify-center my-6" }, [
-      _c(
-        "button",
-        {
-          staticClass:
-            " rounded-full  p-3 w-full sm:w-56   bg-gradient-to-r from-sky-600  to-teal-300 text-white text-lg font-semibold "
-        },
-        [_vm._v("\n                        投稿\n                    ")]
-      )
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
 
