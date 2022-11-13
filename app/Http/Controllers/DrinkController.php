@@ -58,7 +58,7 @@ class DrinkController extends Controller
                 $constraint->aspectRatio();
             });
 
-            $image->save();
+            $image->save($path);
 
         } else {
             $fileNameToStore = null;

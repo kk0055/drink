@@ -30,7 +30,7 @@
                     <input
                         v-model="data.review"
                         type="text"
-                        class="focus:outline-none border-b w-full pb-2 border-sky-400 placeholder-gray-500 my-8"
+                        class="focus:outline-none border-b w-full pb-2 border-sky-400 placeholder-gray-500 mt-4"
                         placeholder="感想"
                     />
                 </div>
@@ -79,7 +79,9 @@
                 <div>
                 <p>評価</p>
                <div width="20px">
-                <star-rating v-model="data.score"></star-rating>
+                <star-rating v-model="data.score"
+                :item-size="20"
+                ></star-rating>
                </div>
                 </div>
                 <div class="flex justify-center mt-8">
@@ -102,6 +104,7 @@
                                             class="h-32"
                                             width="298px"
                                             v-bind:src="imageUrl"
+                                            v-model="data.image"
                                         />
                                     </div>
                                     <div
@@ -145,7 +148,7 @@
                 </div>
                 <div class="flex justify-center my-6">
                     <button
-                        class=" rounded-full  p-3 w-full sm:w-56   bg-gradient-to-r from-sky-600  to-teal-300 text-blue-400 text-lg font-semibold "
+                        class=" rounded-full  p-3 w-full sm:w-56   bg-gradient-to-r from-sky-600  to-teal-300 text-blue-400 text-lg font-semibold shadow"
                         @click="postData"
                     >
                         投稿

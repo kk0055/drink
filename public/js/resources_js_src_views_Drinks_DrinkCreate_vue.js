@@ -179,6 +179,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
  // import AwesomeVueStarRating from "awesome-vue-star-rating";
 // import StarRating from "../../../components/StarRating";
 
@@ -564,7 +567,7 @@ var render = function() {
                 }
               ],
               staticClass:
-                "focus:outline-none border-b w-full pb-2 border-sky-400 placeholder-gray-500 my-8",
+                "focus:outline-none border-b w-full pb-2 border-sky-400 placeholder-gray-500 mt-4",
               attrs: { type: "text", placeholder: "感想" },
               domProps: { value: _vm.data.review },
               on: {
@@ -713,6 +716,7 @@ var render = function() {
               { attrs: { width: "20px" } },
               [
                 _c("star-rating", {
+                  attrs: { "item-size": 20 },
                   model: {
                     value: _vm.data.score,
                     callback: function($$v) {
@@ -759,7 +763,17 @@ var render = function() {
                                 [
                                   _c("img", {
                                     staticClass: "h-32",
-                                    attrs: { width: "298px", src: _vm.imageUrl }
+                                    attrs: {
+                                      width: "298px",
+                                      src: _vm.imageUrl
+                                    },
+                                    model: {
+                                      value: _vm.data.image,
+                                      callback: function($$v) {
+                                        _vm.$set(_vm.data, "image", $$v)
+                                      },
+                                      expression: "data.image"
+                                    }
                                   })
                                 ]
                               )
@@ -830,7 +844,7 @@ var render = function() {
               "button",
               {
                 staticClass:
-                  " rounded-full  p-3 w-full sm:w-56   bg-gradient-to-r from-sky-600  to-teal-300 text-blue-400 text-lg font-semibold ",
+                  " rounded-full  p-3 w-full sm:w-56   bg-gradient-to-r from-sky-600  to-teal-300 text-blue-400 text-lg font-semibold shadow",
                 on: { click: _vm.postData }
               },
               [_vm._v("\n                    投稿\n                ")]
