@@ -19,7 +19,7 @@ class DrinkController extends Controller
     public function index()
     {
 
-        return Drink::all();
+        return Drink::latest()->get();
 
     }
 

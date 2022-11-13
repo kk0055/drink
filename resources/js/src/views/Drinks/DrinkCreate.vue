@@ -47,7 +47,7 @@
                     >
                         <option
                             v-for="prefecture in prefectures"
-                            :value="prefecture.code"
+                            :value="prefecture.name"
                             >{{ prefecture.name }}</option
                         >
                     </select>
@@ -77,17 +77,10 @@
                     />
                 </div>
                 <div>
-                    <p>評価</p>
-                    <AwesomeVueStarRating
-                        v-model="data.score"
-                        :star="this.star"
-                        :disabled="this.disabled"
-                        :maxstars="this.maxstars"
-                        :starsize="this.starsize"
-                        :hasresults="this.hasresults"
-                        :hasdescription="this.hasdescription"
-                        :ratingdescription="this.ratingdescription"
-                    />
+                <p>評価</p>
+               <div width="20px">
+                <star-rating v-model="data.score"></star-rating>
+               </div>
                 </div>
                 <div class="flex justify-center mt-8">
                     <div class="max-w-2xl rounded-lg shadow-xl bg-gray-50">
@@ -164,9 +157,9 @@
 </template>
 <script>
 import prefectures from "../../../Libraries/prefectures.js";
-import AwesomeVueStarRating from "awesome-vue-star-rating";
-import StarRating from "../../../components/StarRating";
-
+// import AwesomeVueStarRating from "awesome-vue-star-rating";
+// import StarRating from "../../../components/StarRating";
+import {StarRating} from 'vue-rate-it';
 export default {
     data: () => ({
         data: {},
@@ -203,7 +196,7 @@ export default {
         imageUrl: ""
     }),
     components: {
-        AwesomeVueStarRating,
+        // AwesomeVueStarRating,
         StarRating
     },
     created() {
@@ -211,12 +204,11 @@ export default {
     },
     computed: {
         getPrefectures() {
-            this.data.score = this.star
         }
     },
     methods: {
         async postData() {
-            this.data.score = this.stars
+           
             await axios
                 .post("/api/drinks", this.data)
                 .then(response => {

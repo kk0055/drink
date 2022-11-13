@@ -28,6 +28,7 @@
         "awesome-vue-star-rating": "^1.0.9",
         "bootstrap": "^5.2.2",
         "jquery": "^3.6.1",
+        "vue-rate-it": "^2.1.0",
         "vue-router": "^3.6.5",
         "vue-select": "^3.20.0",
         "vuetify": "^2.6.12"
