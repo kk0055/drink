@@ -152,7 +152,7 @@
                 </div>
                 <div class="flex justify-center my-6">
                     <button
-                        class=" rounded-full  p-3 w-full sm:w-56   bg-gradient-to-r from-sky-600  to-teal-300 text-white text-lg font-semibold "
+                        class=" rounded-full  p-3 w-full sm:w-56   bg-gradient-to-r from-sky-600  to-teal-300 text-blue-400 text-lg font-semibold "
                         @click="postData"
                     >
                         投稿
@@ -165,6 +165,8 @@
 <script>
 import prefectures from "../../../Libraries/prefectures.js";
 import AwesomeVueStarRating from "awesome-vue-star-rating";
+import StarRating from "../../../components/StarRating";
+
 export default {
     data: () => ({
         data: {},
@@ -201,18 +203,20 @@ export default {
         imageUrl: ""
     }),
     components: {
-        AwesomeVueStarRating
+        AwesomeVueStarRating,
+        StarRating
     },
     created() {
         this.prefectures = prefectures.prefectures;
     },
     computed: {
-        // getPrefectures() {
-        //     this.prefectures = prefectures.prefectures;
-        // }
+        getPrefectures() {
+            this.data.score = this.star
+        }
     },
     methods: {
         async postData() {
+            this.data.score = this.stars
             await axios
                 .post("/api/drinks", this.data)
                 .then(response => {

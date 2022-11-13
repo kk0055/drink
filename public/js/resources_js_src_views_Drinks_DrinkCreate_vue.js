@@ -11401,6 +11401,32 @@ module.exports = '\x09\x0A\x0B\x0C\x0D\x20\xA0\u1680\u180E\u2000\u2001\u2002\u20
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/StarRating.vue?vue&type=script&lang=js&":
+/*!*****************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/StarRating.vue?vue&type=script&lang=js& ***!
+  \*****************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  name: "StarRating",
+  props: ['value']
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/src/views/Drinks/DrinkCreate.vue?vue&type=script&lang=js&":
 /*!************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/src/views/Drinks/DrinkCreate.vue?vue&type=script&lang=js& ***!
@@ -11417,6 +11443,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Libraries_prefectures_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../Libraries/prefectures.js */ "./resources/js/Libraries/prefectures.js");
 /* harmony import */ var awesome_vue_star_rating__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! awesome-vue-star-rating */ "./node_modules/awesome-vue-star-rating/dist/AwesomeVueStarRating.common.js");
 /* harmony import */ var awesome_vue_star_rating__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(awesome_vue_star_rating__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _components_StarRating__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../components/StarRating */ "./resources/js/components/StarRating.vue");
 
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
@@ -11589,6 +11616,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 
 
+
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
@@ -11622,14 +11650,16 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     };
   },
   components: {
-    AwesomeVueStarRating: (awesome_vue_star_rating__WEBPACK_IMPORTED_MODULE_2___default())
+    AwesomeVueStarRating: (awesome_vue_star_rating__WEBPACK_IMPORTED_MODULE_2___default()),
+    StarRating: _components_StarRating__WEBPACK_IMPORTED_MODULE_3__.default
   },
   created: function created() {
     this.prefectures = _Libraries_prefectures_js__WEBPACK_IMPORTED_MODULE_1__.default.prefectures;
   },
-  computed: {// getPrefectures() {
-    //     this.prefectures = prefectures.prefectures;
-    // }
+  computed: {
+    getPrefectures: function getPrefectures() {
+      this.data.score = this.star;
+    }
   },
   methods: {
     postData: function postData() {
@@ -11640,16 +11670,17 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
           while (1) {
             switch (_context.prev = _context.next) {
               case 0:
-                _context.next = 2;
+                _this.data.score = _this.stars;
+                _context.next = 3;
                 return axios.post("/api/drinks", _this.data).then(function (response) {// .then(response => console.log(res))
                 })["catch"](function (error) {
                   console.log(error);
                 });
 
-              case 2:
+              case 3:
                 _this.loading = false;
 
-              case 3:
+              case 4:
               case "end":
                 return _context.stop();
             }
@@ -11824,6 +11855,45 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/components/StarRating.vue":
+/*!************************************************!*\
+  !*** ./resources/js/components/StarRating.vue ***!
+  \************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _StarRating_vue_vue_type_template_id_413cebba___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./StarRating.vue?vue&type=template&id=413cebba& */ "./resources/js/components/StarRating.vue?vue&type=template&id=413cebba&");
+/* harmony import */ var _StarRating_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./StarRating.vue?vue&type=script&lang=js& */ "./resources/js/components/StarRating.vue?vue&type=script&lang=js&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+;
+var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__.default)(
+  _StarRating_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__.default,
+  _StarRating_vue_vue_type_template_id_413cebba___WEBPACK_IMPORTED_MODULE_0__.render,
+  _StarRating_vue_vue_type_template_id_413cebba___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/StarRating.vue"
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (component.exports);
+
+/***/ }),
+
 /***/ "./resources/js/src/views/Drinks/DrinkCreate.vue":
 /*!*******************************************************!*\
   !*** ./resources/js/src/views/Drinks/DrinkCreate.vue ***!
@@ -11863,6 +11933,22 @@ component.options.__file = "resources/js/src/views/Drinks/DrinkCreate.vue"
 
 /***/ }),
 
+/***/ "./resources/js/components/StarRating.vue?vue&type=script&lang=js&":
+/*!*************************************************************************!*\
+  !*** ./resources/js/components/StarRating.vue?vue&type=script&lang=js& ***!
+  \*************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_StarRating_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./StarRating.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/StarRating.vue?vue&type=script&lang=js&");
+ /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_StarRating_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__.default); 
+
+/***/ }),
+
 /***/ "./resources/js/src/views/Drinks/DrinkCreate.vue?vue&type=script&lang=js&":
 /*!********************************************************************************!*\
   !*** ./resources/js/src/views/Drinks/DrinkCreate.vue?vue&type=script&lang=js& ***!
@@ -11879,6 +11965,23 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/components/StarRating.vue?vue&type=template&id=413cebba&":
+/*!*******************************************************************************!*\
+  !*** ./resources/js/components/StarRating.vue?vue&type=template&id=413cebba& ***!
+  \*******************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_StarRating_vue_vue_type_template_id_413cebba___WEBPACK_IMPORTED_MODULE_0__.render),
+/* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_StarRating_vue_vue_type_template_id_413cebba___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
+/* harmony export */ });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_StarRating_vue_vue_type_template_id_413cebba___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./StarRating.vue?vue&type=template&id=413cebba& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/StarRating.vue?vue&type=template&id=413cebba&");
+
+
+/***/ }),
+
 /***/ "./resources/js/src/views/Drinks/DrinkCreate.vue?vue&type=template&id=e43df1ec&":
 /*!**************************************************************************************!*\
   !*** ./resources/js/src/views/Drinks/DrinkCreate.vue?vue&type=template&id=e43df1ec& ***!
@@ -11892,6 +11995,71 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_DrinkCreate_vue_vue_type_template_id_e43df1ec___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
 /* harmony export */ });
 /* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_DrinkCreate_vue_vue_type_template_id_e43df1ec___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./DrinkCreate.vue?vue&type=template&id=e43df1ec& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/src/views/Drinks/DrinkCreate.vue?vue&type=template&id=e43df1ec&");
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/StarRating.vue?vue&type=template&id=413cebba&":
+/*!**********************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/StarRating.vue?vue&type=template&id=413cebba& ***!
+  \**********************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* binding */ render),
+/* harmony export */   "staticRenderFns": () => (/* binding */ staticRenderFns)
+/* harmony export */ });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    { staticClass: "flex" },
+    _vm._l(5, function(i) {
+      return _c(
+        "button",
+        {
+          class: { "mr-1": i < 5 },
+          attrs: { type: "button" },
+          on: {
+            click: function($event) {
+              return _vm.$emit("input", i)
+            }
+          }
+        },
+        [
+          _c(
+            "svg",
+            {
+              staticClass: "block h-8 w-8",
+              class: [_vm.value >= i ? "text-blue" : "text-grey"],
+              attrs: {
+                fill: "currentColor",
+                xmlns: "http://www.w3.org/2000/svg",
+                viewBox: "0 0 20 20"
+              }
+            },
+            [
+              _c("path", {
+                attrs: {
+                  d:
+                    "M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"
+                }
+              })
+            ]
+          )
+        ]
+      )
+    }),
+    0
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
 
 
 /***/ }),
@@ -12242,7 +12410,7 @@ var render = function() {
               "button",
               {
                 staticClass:
-                  " rounded-full  p-3 w-full sm:w-56   bg-gradient-to-r from-sky-600  to-teal-300 text-white text-lg font-semibold ",
+                  " rounded-full  p-3 w-full sm:w-56   bg-gradient-to-r from-sky-600  to-teal-300 text-blue-400 text-lg font-semibold ",
                 on: { click: _vm.postData }
               },
               [_vm._v("\n                    投稿\n                ")]
