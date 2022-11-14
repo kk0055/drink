@@ -278,9 +278,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     selectedFile: function selectedFile(e) {
       var file = this.$refs.preview.files[0];
       this.imageUrl = URL.createObjectURL(file);
-      console.log(e);
       e.preventDefault();
       var files = e.target.files;
+      console.log(files[0]);
       this.files = files[0];
     }
   }

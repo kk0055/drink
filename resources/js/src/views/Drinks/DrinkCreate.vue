@@ -244,9 +244,10 @@ export default {
          selectedFile(e) {
             const file = this.$refs.preview.files[0];
             this.imageUrl = URL.createObjectURL(file);
-            console.log(e)
+           
                 e.preventDefault();
                 let files = e.target.files;
+                 console.log(files[0])
                 this.files = files[0];
             },
     }

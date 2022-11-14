@@ -54,12 +54,10 @@ class DrinkController extends Controller
             $fileNameToStore = $filename . '_' . time() . '.' . $extension;
             $path = $request->file('image')->storeAs('public/image', $fileNameToStore);
 
-            $image = InterventionImage::make(public_path("storage/image/{$fileNameToStore}"))->resize(1000, 1000, function ($constraint) {
-                $constraint->aspectRatio();
-            });
-
-            $image->save($path);
-
+            // $image = InterventionImage::make(public_path("storage/image/{$fileNameToStore}"))->resize(1000, 1000, function ($constraint) {
+            //     $constraint->aspectRatio();
+            // });
+         
         } else {
             $fileNameToStore = null;
         }
@@ -75,7 +73,7 @@ class DrinkController extends Controller
     'place' => $request->place,
     'map_url' => $request->map_url,
     'price' => $request->price,
-    'image' => $fileNameToStore,
+    'image' => $fileNameToStore ,
 ]);
         // $request->user()->drinks()->create([
         //     'name' => $request->name,
