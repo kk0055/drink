@@ -6,7 +6,7 @@
             <div
                 class="sm:text-3xl text-2xl font-semibold items-center justify-center text-center text-sky-600  mb-12"
             >
-            <img :src="'/images/logo.png'" alt="" width="50x">
+                <img :src="'/images/logo.png'" alt="" width="50x" />
                 <!-- Registration Form  -->
             </div>
 
@@ -57,7 +57,7 @@
                         v-model="data.place"
                         type="text"
                         class="focus:outline-none border-b w-full pb-2 border-sky-400 placeholder-gray-500 my-4"
-                        placeholder="見つけた店、場所"
+                        placeholder="見つけた店 or 場所"
                     />
                 </div>
                 <div>
@@ -77,12 +77,13 @@
                     />
                 </div>
                 <div>
-                <p>評価</p>
-               <div width="20px">
-                <star-rating v-model="data.score"
-                :item-size="20"
-                ></star-rating>
-               </div>
+                    <p>評価</p>
+                    <div width="20px">
+                        <star-rating
+                            v-model="data.score"
+                            :item-size="20"
+                        ></star-rating>
+                    </div>
                 </div>
                 <div class="flex justify-center mt-8">
                     <div class="max-w-2xl rounded-lg shadow-xl bg-gray-50">
@@ -104,8 +105,7 @@
                                             class="h-32"
                                             width="298px"
                                             v-bind:src="imageUrl"
-                                            v-model="data.image"
-                                        />
+                                             />
                                     </div>
                                     <div
                                         v-else
@@ -136,7 +136,7 @@
                                         class="opacity-0"
                                         name="avatar"
                                         ref="preview"
-                                        v-on:change="show"
+                                        @change="selectedFile"
                                     />
                                 </label>
                             </div>
@@ -162,7 +162,7 @@
 import prefectures from "../../../Libraries/prefectures.js";
 // import AwesomeVueStarRating from "awesome-vue-star-rating";
 // import StarRating from "../../../components/StarRating";
-import {StarRating} from 'vue-rate-it';
+import { StarRating } from "vue-rate-it";
 export default {
     data: () => ({
         data: {},
@@ -196,7 +196,8 @@ export default {
         starsize: "lg", //[xs,lg,1x,2x,3x,4x,5x,6x,7x,8x,9x,10x],
         maxstars: 5,
         disabled: false,
-        imageUrl: ""
+        imageUrl: "",
+        files: []
     }),
     components: {
         // AwesomeVueStarRating,
@@ -206,16 +207,32 @@ export default {
         this.prefectures = prefectures.prefectures;
     },
     computed: {
-        getPrefectures() {
+        getPrefectures() {},
+        photo() {
+            return 
         }
     },
     methods: {
         async postData() {
-           
+            const config = {
+                headers: {
+                    "content-type": "multipart/form-data"
+                }
+            };
+            let formData = new FormData();
+            formData.append('image', this.files);
+            formData.append('name', this.data.name);
+            formData.append('prefecture', this.data.prefecture);
+            formData.append('place', this.data.place);
+            formData.append('map_url', this.data.map_url);
+            formData.append('review', this.data.review);
+            formData.append('score', this.data.score);
+            formData.append('price', this.data.price);
+
             await axios
-                .post("/api/drinks", this.data)
-                .then(response => {
-                    // .then(response => console.log(res))
+                .post("/api/drinks", formData, config)
+                .then(rs => {
+                    console.log(rs.data);
                 })
                 .catch(function(error) {
                     console.log(error);
@@ -223,9 +240,15 @@ export default {
             this.loading = false;
         },
         show() {
+        },
+         selectedFile(e) {
             const file = this.$refs.preview.files[0];
             this.imageUrl = URL.createObjectURL(file);
-        }
+            console.log(e)
+                e.preventDefault();
+                let files = e.target.files;
+                this.files = files[0];
+            },
     }
 };
 </script>

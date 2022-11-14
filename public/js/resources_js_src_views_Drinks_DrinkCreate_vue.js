@@ -215,7 +215,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       //[xs,lg,1x,2x,3x,4x,5x,6x,7x,8x,9x,10x],
       maxstars: 5,
       disabled: false,
-      imageUrl: ""
+      imageUrl: "",
+      files: []
     };
   },
   components: {
@@ -226,27 +227,46 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     this.prefectures = _Libraries_prefectures_js__WEBPACK_IMPORTED_MODULE_1__.default.prefectures;
   },
   computed: {
-    getPrefectures: function getPrefectures() {}
+    getPrefectures: function getPrefectures() {},
+    photo: function photo() {
+      return;
+    }
   },
   methods: {
     postData: function postData() {
       var _this = this;
 
       return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee() {
+        var config, formData;
         return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee$(_context) {
           while (1) {
             switch (_context.prev = _context.next) {
               case 0:
-                _context.next = 2;
-                return axios.post("/api/drinks", _this.data).then(function (response) {// .then(response => console.log(res))
+                config = {
+                  headers: {
+                    "content-type": "multipart/form-data"
+                  }
+                };
+                formData = new FormData();
+                formData.append('image', _this.files);
+                formData.append('name', _this.data.name);
+                formData.append('prefecture', _this.data.prefecture);
+                formData.append('place', _this.data.place);
+                formData.append('map_url', _this.data.map_url);
+                formData.append('review', _this.data.review);
+                formData.append('score', _this.data.score);
+                formData.append('price', _this.data.price);
+                _context.next = 12;
+                return axios.post("/api/drinks", formData, config).then(function (rs) {
+                  console.log(rs.data);
                 })["catch"](function (error) {
                   console.log(error);
                 });
 
-              case 2:
+              case 12:
                 _this.loading = false;
 
-              case 3:
+              case 13:
               case "end":
                 return _context.stop();
             }
@@ -254,9 +274,14 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         }, _callee);
       }))();
     },
-    show: function show() {
+    show: function show() {},
+    selectedFile: function selectedFile(e) {
       var file = this.$refs.preview.files[0];
       this.imageUrl = URL.createObjectURL(file);
+      console.log(e);
+      e.preventDefault();
+      var files = e.target.files;
+      this.files = files[0];
     }
   }
 });
@@ -645,7 +670,7 @@ var render = function() {
               ],
               staticClass:
                 "focus:outline-none border-b w-full pb-2 border-sky-400 placeholder-gray-500 my-4",
-              attrs: { type: "text", placeholder: "見つけた店、場所" },
+              attrs: { type: "text", placeholder: "見つけた店 or 場所" },
               domProps: { value: _vm.data.place },
               on: {
                 input: function($event) {
@@ -763,17 +788,7 @@ var render = function() {
                                 [
                                   _c("img", {
                                     staticClass: "h-32",
-                                    attrs: {
-                                      width: "298px",
-                                      src: _vm.imageUrl
-                                    },
-                                    model: {
-                                      value: _vm.data.image,
-                                      callback: function($$v) {
-                                        _vm.$set(_vm.data, "image", $$v)
-                                      },
-                                      expression: "data.image"
-                                    }
+                                    attrs: { width: "298px", src: _vm.imageUrl }
                                   })
                                 ]
                               )
@@ -828,7 +843,7 @@ var render = function() {
                             ref: "preview",
                             staticClass: "opacity-0",
                             attrs: { type: "file", name: "avatar" },
-                            on: { change: _vm.show }
+                            on: { change: _vm.selectedFile }
                           })
                         ]
                       )
