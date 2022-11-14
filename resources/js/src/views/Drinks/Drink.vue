@@ -13,7 +13,7 @@ export default {
         DrinkItem
     },
     props: {
-        drinkId: { Type: Number }
+     
     },
     data: () => ({
         drink: []

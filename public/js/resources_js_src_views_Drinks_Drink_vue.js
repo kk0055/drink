@@ -33,11 +33,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
   components: {
     DrinkItem: _components_DrinkItem__WEBPACK_IMPORTED_MODULE_1__.default
   },
-  props: {
-    drinkId: {
-      Type: Number
-    }
-  },
+  props: {},
   data: function data() {
     return {
       drink: []

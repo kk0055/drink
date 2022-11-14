@@ -52,11 +52,11 @@ class DrinkController extends Controller
             $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
             $extension = $request->file('image')->getClientOriginalExtension();
             $fileNameToStore = $filename . '_' . time() . '.' . $extension;
-            $path = $request->file('image')->storeAs('public/image', $fileNameToStore);
-
-            // $image = InterventionImage::make(public_path("storage/image/{$fileNameToStore}"))->resize(1000, 1000, function ($constraint) {
-            //     $constraint->aspectRatio();
-            // });
+            $path = $request->file('image')->storeAs('public/images', $fileNameToStore);
+            // dd($fileNameToStore);
+            $image = InterventionImage::make($request->file('image'))->resize(1000, 1000, function ($constraint) {
+                $constraint->aspectRatio();
+            });
          
         } else {
             $fileNameToStore = null;

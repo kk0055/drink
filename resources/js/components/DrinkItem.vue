@@ -8,7 +8,7 @@
             width="300px"
             height="350px"
             
-            :src="drink.image"
+            :src="`/image/${drink.image}`"
         />
         <!-- <img class="w-full bg-cover p-3" width="300px" height="350px" v-if="$route.name == 'drinks'"  :src="drink.image"> -->
         <img class="p-3  w-full object-center" v-else width="200px" :src="drink.image" />

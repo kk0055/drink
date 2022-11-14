@@ -21831,7 +21831,11 @@ var render = function() {
       _vm.$route.name == "drinks"
         ? _c("img", {
             staticClass: "h-48 md:h-36 w-full object-cover object-center",
-            attrs: { width: "300px", height: "350px", src: _vm.drink.image }
+            attrs: {
+              width: "300px",
+              height: "350px",
+              src: "/image/" + _vm.drink.image
+            }
           })
         : _c("img", {
             staticClass: "p-3  w-full object-center",
