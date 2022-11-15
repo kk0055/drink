@@ -21834,7 +21834,7 @@ var render = function() {
             attrs: {
               width: "300px",
               height: "350px",
-              src: "/image/" + _vm.drink.image
+              src: "" + _vm.drink.image
             }
           })
         : _c("img", {

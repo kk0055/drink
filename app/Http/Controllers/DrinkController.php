@@ -48,16 +48,20 @@ class DrinkController extends Controller
         //     ]);
 
         if ($request->hasFile('image')) {
+           
             $filenameWithExt = $request->file('image')->getClientOriginalName();
             $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
             $extension = $request->file('image')->getClientOriginalExtension();
             $fileNameToStore = $filename . '_' . time() . '.' . $extension;
-            $path = $request->file('image')->storeAs('public/images', $fileNameToStore);
+            
+            // $request->file('image')->storeAs('public/images/', $fileNameToStore);
+            $save_path = "storage/images/". $fileNameToStore;
+            $filePath = storage_path('app/public/images');
             // dd($fileNameToStore);
             $image = InterventionImage::make($request->file('image'))->resize(1000, 1000, function ($constraint) {
                 $constraint->aspectRatio();
             });
-         
+            $image->save($filePath . '/'. $fileNameToStore);
         } else {
             $fileNameToStore = null;
         }
@@ -73,7 +77,7 @@ class DrinkController extends Controller
     'place' => $request->place,
     'map_url' => $request->map_url,
     'price' => $request->price,
-    'image' => $fileNameToStore ,
+    'image' => $save_path ,
 ]);
         // $request->user()->drinks()->create([
         //     'name' => $request->name,
