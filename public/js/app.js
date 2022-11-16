@@ -1920,7 +1920,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: {
     drink: {
@@ -21834,7 +21833,7 @@ var render = function() {
             attrs: {
               width: "300px",
               height: "350px",
-              src: "" + _vm.drink.image
+              src: "/images/" + _vm.drink.image
             }
           })
         : _c("img", {

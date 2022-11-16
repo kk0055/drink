@@ -61,7 +61,7 @@ class DrinkController extends Controller
             $image = InterventionImage::make($request->file('image'))->resize(1000, 1000, function ($constraint) {
                 $constraint->aspectRatio();
             });
-            $image->save($filePath . '/'. $fileNameToStore);
+            $image->save(public_path('images/'. $fileNameToStore));
         } else {
             $fileNameToStore = null;
         }
@@ -77,7 +77,7 @@ class DrinkController extends Controller
     'place' => $request->place,
     'map_url' => $request->map_url,
     'price' => $request->price,
-    'image' => $save_path ,
+    'image' => $fileNameToStore ,
 ]);
         // $request->user()->drinks()->create([
         //     'name' => $request->name,
