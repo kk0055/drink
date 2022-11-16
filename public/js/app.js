@@ -2444,14 +2444,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   components: {
@@ -22311,17 +22303,15 @@ var render = function() {
       _c("div", [
         _vm._m(0),
         _vm._v(" "),
-        _vm._m(1),
-        _vm._v(" "),
-        _c("section", { staticClass: "bg-white py-8" }, [
+        _c("section", { staticClass: "bg-white  py-4" }, [
           _c(
             "div",
             {
               staticClass:
-                "container mx-auto flex items-center flex-wrap pt-4 pb-12"
+                "container mx-auto flex items-center flex-wrap pt-1 pb-12"
             },
             [
-              _vm._m(2),
+              _vm._m(1),
               _vm._v(" "),
               _vm._l(_vm.drinks, function(drink) {
                 return _c(
@@ -22342,9 +22332,9 @@ var render = function() {
         ])
       ]),
       _vm._v(" "),
-      _vm._m(3),
+      _vm._m(2),
       _vm._v(" "),
-      _vm._m(4)
+      _vm._m(3)
     ])
   ])
 }
@@ -22355,42 +22345,50 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c(
       "div",
-      {
-        staticClass:
-          "search-text flex flex-col w-full items-center  px-6 tracking-wide "
-      },
+      { staticClass: "bg-indigo-900 relative overflow-hidden h-screen" },
       [
-        _c("h1", { staticClass: "text-red-500", attrs: { role: "alert" } }, [
-          _vm._v("俺の飲んだもの")
-        ])
-      ]
-    )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      { staticClass: "flex flex-col text-center w-full mb-20" },
-      [
-        _c("h2", {
-          staticClass:
-            "text-xs text-indigo-500 tracking-widest font-medium title-font mb-1"
+        _c("img", {
+          staticClass: "absolute h-full w-full  object-cover",
+          attrs: { src: "/images/background2.png" }
         }),
         _vm._v(" "),
-        _c("h1", {
-          staticClass:
-            "sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900"
-        }),
+        _c("div", { staticClass: "inset-0 bg-black opacity-25 absolute" }),
         _vm._v(" "),
-        _c("div", { staticClass: "w-2/3 mx-auto leading-relaxed text-base" }, [
-          _vm._v(
-            "\n                    街を歩いている時にたまたま出会った、見たこともない面白いパッケージの飲み物、ビックリするほど美味しいドリンク。君が知らないだけで街角の自販機やコンビニ、スーパー、居酒屋、近所の喫茶店...などなど新しい発見はどこにでもある。そんな偶然を記録していこう。"
-          ),
-          _c("span", { staticClass: "t" }, [_vm._v("ところで、")]),
-          _vm._v("\n                    君は今日何を飲んだ?\n                ")
-        ])
+        _c(
+          "div",
+          {
+            staticClass:
+              "container mx-auto px-6 md:px-12 relative z-10 flex items-center py-32 xl:py-40"
+          },
+          [
+            _c(
+              "div",
+              {
+                staticClass:
+                  "w-full font-mono flex flex-col items-center relative z-10"
+              },
+              [
+                _c(
+                  "h1",
+                  {
+                    staticClass:
+                      "font-extrabold text-5xl text-center text-white leading-tight mt-4"
+                  },
+                  [_vm._v("\n                You're alone here\n            ")]
+                ),
+                _vm._v(" "),
+                _c(
+                  "p",
+                  {
+                    staticClass:
+                      "font-extrabold text-8xl my-44 text-white animate-bounce"
+                  },
+                  [_vm._v("\n                404\n            ")]
+                )
+              ]
+            )
+          ]
+        )
       ]
     )
   },
@@ -22409,16 +22407,23 @@ var staticRenderFns = [
           _c(
             "div",
             {
-              staticClass: "flex items-center ",
+              staticClass: "flex items-center relative mb-6",
               attrs: { id: "store-nav-content" }
             },
             [
-              _c("i", { staticClass: "fas fa-search " }),
+              _c(
+                "div",
+                {
+                  staticClass:
+                    "absolute inset-y-0 left-0 flex items-center pl-5 pointer-events-none"
+                },
+                [_c("i", { staticClass: "fas fa-search " })]
+              ),
               _vm._v(" "),
               _c("input", {
                 staticClass:
-                  " text-sm rounded-full w-64 px-4  py-1 focus:outline-none border-b focus:shadow-outline ",
-                attrs: { type: "text", name: "query", placeholder: " Search" }
+                  " text-sm rounded-full w-64 px-4 ml-2 py-1 focus:outline-none border border-gray-300 border-b focus:shadow-outline ",
+                attrs: { type: "text", name: "query", placeholder: "  Search" }
               })
             ]
           )
@@ -22440,19 +22445,19 @@ var staticRenderFns = [
         _vm._v(" "),
         _c("p", { staticClass: "mb-8 footer-tesxt" }, [
           _vm._v(
-            "\n                    世の中には飲んだことのない飲み物が無数にある。"
+            "\n                        世の中には飲んだことのない飲み物が無数にある。"
           ),
           _c("br"),
           _vm._v(
-            "\n                    何が美味しいかなんて飲んでみないとわからない。 "
+            "\n                        何が美味しいかなんて飲んでみないとわからない。 "
           ),
           _c("br"),
           _vm._v(
-            "\n                    不味いかもしれない。苦いかもしれない。甘すぎるかもしれない。"
+            "\n                        不味いかもしれない。苦いかもしれない。甘すぎるかもしれない。"
           ),
           _c("br"),
           _vm._v(
-            "\n                    それでもたまには美味しいものに出会えるよ。たぶん。\n                "
+            "\n                        それでもたまには美味しいものに出会えるよ。たぶん。\n                    "
           )
         ])
       ])

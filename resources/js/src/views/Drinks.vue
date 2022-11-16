@@ -2,50 +2,42 @@
     <div>
         <div>
             <div>
-                <div
-                    class="search-text flex flex-col w-full items-center  px-6 tracking-wide "
-                >
-                    <h1 class="text-red-500" role="alert">俺の飲んだもの</h1>
-                </div>
-                <div class="flex flex-col text-center w-full mb-20">
-                    <h2
-                        class="text-xs text-indigo-500 tracking-widest font-medium title-font mb-1"
-                    >
-                        <!-- ROOF PARTY POLAROID -->
-                    </h2>
-                    <h1
-                        class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900"
-                    >
-                        <!-- 俺の飲んだもの -->
-                    </h1>
-                    <div class="w-2/3 mx-auto leading-relaxed text-base">
-                        街を歩いている時にたまたま出会った、見たこともない面白いパッケージの飲み物、ビックリするほど美味しいドリンク。君が知らないだけで街角の自販機やコンビニ、スーパー、居酒屋、近所の喫茶店...などなど新しい発見はどこにでもある。そんな偶然を記録していこう。<span
-                            class="t"
-                            >ところで、</span
-                        >
-                        君は今日何を飲んだ?
-                    </div>
-                </div>
+<div class="bg-indigo-900 relative overflow-hidden h-screen">
+    <img src="/images/background2.png" class="absolute h-full w-full  object-cover"/>
+    <div class="inset-0 bg-black opacity-25 absolute">
+    </div>
+    <div class="container mx-auto px-6 md:px-12 relative z-10 flex items-center py-32 xl:py-40">
+        <div class="w-full font-mono flex flex-col items-center relative z-10">
+            <h1 class="font-extrabold text-5xl text-center text-white leading-tight mt-4">
+                You&#x27;re alone here
+            </h1>
+            <p class="font-extrabold text-8xl my-44 text-white animate-bounce">
+                404
+            </p>
+        </div>
+    </div>
+</div>
 
-                <section class="bg-white py-8">
+                <section class="bg-white  py-4">
                     <div
-                        class="container mx-auto flex items-center flex-wrap pt-4 pb-12"
+                        class="container mx-auto flex items-center flex-wrap pt-1 pb-12"
                     >
                         <div class="w-full z-30 top-0 px-6 py-1">
                             <div
                                 class="w-full container mx-auto flex  items-center justify-end mt-0 px-2 py-3"
                             >
                                 <div
-                                    class="flex items-center "
+                                    class="flex items-center relative mb-6"
                                     id="store-nav-content"
                                 >
-                                    <!-- <form action="{{ route('item.search') }}"> -->
+                                    <div class="absolute inset-y-0 left-0 flex items-center pl-5 pointer-events-none">
                                     <i class="fas fa-search "> </i>
+                                    </div>
                                     <input
                                         type="text"
                                         name="query"
-                                        class=" text-sm rounded-full w-64 px-4  py-1 focus:outline-none border-b focus:shadow-outline "
-                                        placeholder=" Search"
+                                        class=" text-sm rounded-full w-64 px-4 ml-2 py-1 focus:outline-none border border-gray-300 border-b focus:shadow-outline "
+                                        placeholder="  Search"
                                     />
                                     <!-- </form> -->
                                 </div>
