@@ -4,7 +4,8 @@
             <div>
 <div class="bg-indigo-900 relative overflow-hidden h-screen">
     <img src="/images/background2.png" class="absolute h-full w-full  object-cover"/>
-    <div class="inset-0 bg-black opacity-25 absolute">
+    <!-- 背景画像に被せる色 -->
+    <div class="inset-0 bg-black opacity-90 absolute">
     </div>
     <div class="container mx-auto px-6 md:px-12 relative z-10 flex items-center py-32 xl:py-40">
         <div class="w-full font-mono flex flex-col items-center relative z-10">
@@ -30,13 +31,13 @@
                                     class="flex items-center relative mb-6"
                                     id="store-nav-content"
                                 >
-                                    <div class="absolute inset-y-0 left-0 flex items-center pl-5 pointer-events-none">
+                                    <div class="absolute inset-y-0 left-0 flex items-center pl-3 pr-10 pointer-events-none">
                                     <i class="fas fa-search "> </i>
                                     </div>
                                     <input
                                         type="text"
                                         name="query"
-                                        class=" text-sm rounded-full w-64 px-4 ml-2 py-1 focus:outline-none border border-gray-300 border-b focus:shadow-outline "
+                                        class="block  text-sm rounded-full w-64 p-4 pl-2 py-1 focus:outline-none border border-gray-300 border-b focus:shadow-outline "
                                         placeholder="  Search"
                                     />
                                     <!-- </form> -->

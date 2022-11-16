@@ -10,7 +10,7 @@
       mx-auto
       mt-0
       px-2
-      py-1
+  
     "
   >
     <label for="menu-toggle" class="cursor-pointer md:hidden block">

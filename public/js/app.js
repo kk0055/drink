@@ -2444,6 +2444,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   components: {
@@ -22058,7 +22059,7 @@ var render = function() {
         "div",
         {
           staticClass:
-            "\r\n      w-full\r\n      container\r\n      flex flex-wrap\r\n      items-center\r\n      justify-between\r\n      mx-auto\r\n      mt-0\r\n      px-2\r\n      py-1\r\n    "
+            "\r\n      w-full\r\n      container\r\n      flex flex-wrap\r\n      items-center\r\n      justify-between\r\n      mx-auto\r\n      mt-0\r\n      px-2\r\n  \r\n    "
         },
         [
           _c(
@@ -22352,7 +22353,7 @@ var staticRenderFns = [
           attrs: { src: "/images/background2.png" }
         }),
         _vm._v(" "),
-        _c("div", { staticClass: "inset-0 bg-black opacity-25 absolute" }),
+        _c("div", { staticClass: "inset-0 bg-black opacity-90 absolute" }),
         _vm._v(" "),
         _c(
           "div",
@@ -22415,14 +22416,14 @@ var staticRenderFns = [
                 "div",
                 {
                   staticClass:
-                    "absolute inset-y-0 left-0 flex items-center pl-5 pointer-events-none"
+                    "absolute inset-y-0 left-0 flex items-center pl-3 pr-10 pointer-events-none"
                 },
                 [_c("i", { staticClass: "fas fa-search " })]
               ),
               _vm._v(" "),
               _c("input", {
                 staticClass:
-                  " text-sm rounded-full w-64 px-4 ml-2 py-1 focus:outline-none border border-gray-300 border-b focus:shadow-outline ",
+                  "block  text-sm rounded-full w-64 p-4 pl-2 py-1 focus:outline-none border border-gray-300 border-b focus:shadow-outline ",
                 attrs: { type: "text", name: "query", placeholder: "  Search" }
               })
             ]
