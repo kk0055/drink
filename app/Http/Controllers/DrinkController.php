@@ -59,7 +59,7 @@ class DrinkController extends Controller
             // $request->file('image')->storeAs('public/images/', $fileNameToStore);
 
             //storageを含めたパス全体を保存すれば呼び出しが簡単
-            $savedItemToDB = "storage/images/". $fileNameToStore;
+            $savedItemToDB = "/storage/images/". $fileNameToStore;
 
             //storage_path...Storageに保存される. public_path...publicに保存される.publicに保存すべきではない。
             //Storage上の画像を保存するパス
@@ -68,6 +68,7 @@ class DrinkController extends Controller
             $image = InterventionImage::make($request->file('image'))->resize(1000, 1000, function ($constraint) {
                 $constraint->aspectRatio();
             });
+            //InterventionImageを保存する場合はあらかじめ指定するdirectlyがstorage内に必要
             $image->save($filePath. $fileNameToStore);
         } else {
             $fileNameToStore = null;
