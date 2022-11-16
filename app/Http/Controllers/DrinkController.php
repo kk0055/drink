@@ -49,25 +49,30 @@ class DrinkController extends Controller
 
         if ($request->hasFile('image')) {
            
+            //名前設定
             $filenameWithExt = $request->file('image')->getClientOriginalName();
             $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
             $extension = $request->file('image')->getClientOriginalExtension();
             $fileNameToStore = $filename . '_' . time() . '.' . $extension;
             
+            //InterventionImageを使わない場合に使用
             // $request->file('image')->storeAs('public/images/', $fileNameToStore);
-            $save_path = "storage/images/". $fileNameToStore;
-            $filePath = storage_path('app/public/images');
-            // dd($fileNameToStore);
+
+            //storageを含めたパス全体を保存すれば呼び出しが簡単
+            $savedItemToDB = "storage/images/". $fileNameToStore;
+
+            //storage_path...Storageに保存される. public_path...publicに保存される.publicに保存すべきではない。
+            //Storage上の画像を保存するパス
+            $filePath = storage_path('app/public/images/');
+
             $image = InterventionImage::make($request->file('image'))->resize(1000, 1000, function ($constraint) {
                 $constraint->aspectRatio();
             });
-            $image->save(public_path('images/'. $fileNameToStore));
+            $image->save($filePath. $fileNameToStore);
         } else {
             $fileNameToStore = null;
         }
     
-    // $data = $request->all();
-    // $data['user_id'] = '1';
     return Drink::create([
     'name' => $request->name,
     'user_id' => '1',
@@ -77,7 +82,7 @@ class DrinkController extends Controller
     'place' => $request->place,
     'map_url' => $request->map_url,
     'price' => $request->price,
-    'image' => $fileNameToStore ,
+    'image' => $savedItemToDB ,
 ]);
         // $request->user()->drinks()->create([
         //     'name' => $request->name,
