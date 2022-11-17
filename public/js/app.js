@@ -2144,75 +2144,14 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({});
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  data: function data() {
+    return {
+      showProf: false,
+      openNav: false
+    };
+  }
+});
 
 /***/ }),
 
@@ -2329,6 +2268,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var _components_DrinkItem__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../components/DrinkItem */ "./resources/js/components/DrinkItem.vue");
+//
+//
+//
+//
 //
 //
 //
@@ -21854,7 +21797,7 @@ var render = function() {
           "div",
           { staticClass: "pt-2" },
           [
-            _c("h2", { staticClass: "drink-name text-rose-500" }, [
+            _c("h3", { staticClass: "drink-name text-rose-500" }, [
               _vm._v(_vm._s(_vm.drink.name))
             ]),
             _vm._v(" "),
@@ -22070,179 +22013,364 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    { staticClass: "w-full z-30 top-0 py-1", attrs: { id: "header" } },
-    [
+  return _c("nav", { staticClass: "bg-gray-800" }, [
+    _c("div", { staticClass: "mx-auto max-w-7xl px-2 sm:px-6 lg:px-8" }, [
       _c(
         "div",
-        {
-          staticClass:
-            "\r\n      w-full\r\n      container\r\n      flex flex-wrap\r\n      items-center\r\n      justify-between\r\n      mx-auto\r\n      mt-0\r\n      px-2\r\n  \r\n    "
-        },
+        { staticClass: "relative flex h-16 items-center justify-between" },
         [
           _c(
-            "label",
+            "div",
             {
-              staticClass: "cursor-pointer md:hidden block",
-              attrs: { for: "menu-toggle" }
+              staticClass:
+                "absolute inset-y-0 left-0 flex items-center sm:hidden"
             },
             [
               _c(
-                "svg",
+                "button",
                 {
-                  staticClass: "fill-current text-gray-900",
+                  staticClass:
+                    "inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white",
                   attrs: {
-                    xmlns: "http://www.w3.org/2000/svg",
-                    width: "20",
-                    height: "20",
-                    viewBox: "0 0 20 20"
+                    type: "button",
+                    "aria-controls": "mobile-menu",
+                    "aria-expanded": "false"
+                  },
+                  on: {
+                    click: function($event) {
+                      _vm.openNav = !_vm.openNav
+                    }
                   }
                 },
                 [
-                  _c("path", {
-                    attrs: { d: "M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" }
-                  })
+                  _c("span", { staticClass: "sr-only" }, [
+                    _vm._v("Open main menu")
+                  ]),
+                  _vm._v(" "),
+                  _c(
+                    "svg",
+                    {
+                      staticClass: "block h-6 w-6",
+                      attrs: {
+                        xmlns: "http://www.w3.org/2000/svg",
+                        fill: "none",
+                        viewBox: "0 0 24 24",
+                        "stroke-width": "1.5",
+                        stroke: "currentColor",
+                        "aria-hidden": "true"
+                      }
+                    },
+                    [
+                      _c("path", {
+                        attrs: {
+                          "stroke-linecap": "round",
+                          "stroke-linejoin": "round",
+                          d: "M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+                        }
+                      })
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "svg",
+                    {
+                      staticClass: "hidden h-6 w-6",
+                      attrs: {
+                        xmlns: "http://www.w3.org/2000/svg",
+                        fill: "none",
+                        viewBox: "0 0 24 24",
+                        "stroke-width": "1.5",
+                        stroke: "currentColor",
+                        "aria-hidden": "true"
+                      }
+                    },
+                    [
+                      _c("path", {
+                        attrs: {
+                          "stroke-linecap": "round",
+                          "stroke-linejoin": "round",
+                          d: "M6 18L18 6M6 6l12 12"
+                        }
+                      })
+                    ]
+                  )
                 ]
               )
             ]
           ),
           _vm._v(" "),
-          _c("input", {
-            staticClass: "hidden",
-            attrs: { type: "checkbox", id: "menu-toggle" }
-          }),
+          _vm._m(0),
           _vm._v(" "),
           _c(
             "div",
             {
               staticClass:
-                "\r\n        hidden\r\n        md:flex md:items-center md:w-auto\r\n        w-full\r\n        order-3\r\n        md:order-1\r\n      ",
-              attrs: { id: "menu" }
+                "absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0"
             },
             [
-              _c("nav", { staticClass: "nav" }, [
-                _c(
-                  "ul",
-                  {
-                    staticClass:
-                      "\r\n            md:flex\r\n            items-center\r\n            justify-between\r\n            text-base text-gray-700\r\n            pt-1\r\n            md:pt-0\r\n          "
-                  },
-                  [
-                    _c(
-                      "li",
-                      [
-                        _c(
-                          "router-link",
-                          {
-                            staticClass:
-                              "\r\n                inline-block\r\n                no-underline\r\n                hover:text-black hover:underline\r\n                py-2\r\n                px-4\r\n              ",
-                            attrs: { to: { name: "register" } }
-                          },
-                          [_vm._v("登録\r\n              ")]
-                        )
-                      ],
-                      1
-                    ),
-                    _vm._v(" "),
-                    _vm._m(0),
-                    _vm._v(" "),
-                    _vm._m(1),
-                    _vm._v(" "),
-                    _c(
-                      "li",
-                      [
-                        _c(
-                          "router-link",
-                          {
-                            staticClass:
-                              "\r\n                inline-block\r\n                no-underline\r\n                hover:text-black hover:underline\r\n                py-2\r\n                px-4\r\n              ",
-                            attrs: { to: "/drink" }
-                          },
-                          [_vm._v("何か飲んだから書く?")]
-                        )
-                      ],
-                      1
-                    ),
-                    _vm._v(" "),
-                    _vm._m(2)
-                  ]
-                )
-              ])
-            ]
-          ),
-          _vm._v(" "),
-          _c(
-            "div",
-            { staticClass: "order-1 md:order-2" },
-            [
               _c(
-                "router-link",
+                "button",
                 {
                   staticClass:
-                    "\r\n          flex\r\n          items-center\r\n          tracking-wide\r\n          no-underline\r\n          hover:no-underline\r\n          font-bold\r\n          text-gray-800 text-xl\r\n        ",
-                  attrs: { to: { name: "drinks" } }
+                    "rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800",
+                  attrs: { type: "button" }
                 },
-                [_c("i", { staticClass: "fas fa-wine-bottle" })]
-              )
-            ],
-            1
+                [
+                  _c("span", { staticClass: "sr-only" }, [
+                    _vm._v("View notifications")
+                  ]),
+                  _vm._v(" "),
+                  _c(
+                    "svg",
+                    {
+                      staticClass: "h-6 w-6",
+                      attrs: {
+                        xmlns: "http://www.w3.org/2000/svg",
+                        fill: "none",
+                        viewBox: "0 0 24 24",
+                        "stroke-width": "1.5",
+                        stroke: "currentColor",
+                        "aria-hidden": "true"
+                      }
+                    },
+                    [
+                      _c("path", {
+                        attrs: {
+                          "stroke-linecap": "round",
+                          "stroke-linejoin": "round",
+                          d:
+                            "M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0"
+                        }
+                      })
+                    ]
+                  )
+                ]
+              ),
+              _vm._v(" "),
+              _c("div", { staticClass: "relative ml-3" }, [
+                _c("div", [
+                  _c(
+                    "button",
+                    {
+                      staticClass:
+                        "flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800",
+                      attrs: {
+                        type: "button",
+                        id: "user-menu-button",
+                        "aria-expanded": "false",
+                        "aria-haspopup": "true"
+                      },
+                      on: {
+                        click: function($event) {
+                          _vm.showProf = !_vm.showProf
+                        }
+                      }
+                    },
+                    [
+                      _c("span", { staticClass: "sr-only" }, [
+                        _vm._v("Open user menu")
+                      ]),
+                      _vm._v(" "),
+                      _c("img", {
+                        staticClass: "h-8 w-8 rounded-full",
+                        attrs: {
+                          src:
+                            "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
+                          alt: ""
+                        }
+                      })
+                    ]
+                  )
+                ]),
+                _vm._v(" "),
+                _vm.showProf
+                  ? _c(
+                      "div",
+                      {
+                        staticClass:
+                          "absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none",
+                        attrs: {
+                          role: "menu",
+                          "aria-orientation": "vertical",
+                          "aria-labelledby": "user-menu-button",
+                          tabindex: "-1"
+                        }
+                      },
+                      [
+                        _c(
+                          "a",
+                          {
+                            staticClass:
+                              "block px-4 py-2 text-sm text-gray-700",
+                            attrs: {
+                              href: "#",
+                              role: "menuitem",
+                              tabindex: "-1",
+                              id: "user-menu-item-0"
+                            }
+                          },
+                          [_vm._v("Your Profile")]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "a",
+                          {
+                            staticClass:
+                              "block px-4 py-2 text-sm text-gray-700",
+                            attrs: {
+                              href: "#",
+                              role: "menuitem",
+                              tabindex: "-1",
+                              id: "user-menu-item-1"
+                            }
+                          },
+                          [_vm._v("Settings")]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "a",
+                          {
+                            staticClass:
+                              "block px-4 py-2 text-sm text-gray-700",
+                            attrs: {
+                              href: "#",
+                              role: "menuitem",
+                              tabindex: "-1",
+                              id: "user-menu-item-2"
+                            }
+                          },
+                          [_vm._v("Sign out")]
+                        )
+                      ]
+                    )
+                  : _vm._e()
+              ])
+            ]
           )
         ]
       )
-    ]
-  )
+    ]),
+    _vm._v(" "),
+    _vm.openNav
+      ? _c("div", { staticClass: "sm:hidden", attrs: { id: "mobile-menu" } }, [
+          _vm._m(1)
+        ])
+      : _vm._e()
+  ])
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("li", [
-      _c(
-        "a",
-        {
-          staticClass:
-            "\r\n                inline-block\r\n                no-underline\r\n                hover:text-black hover:underline\r\n                py-2\r\n                px-4\r\n              ",
-          attrs: { href: "" }
-        },
-        [_vm._v("俺のお気に入り")]
-      )
-    ])
+    return _c(
+      "div",
+      {
+        staticClass:
+          "flex flex-1 items-center justify-center sm:items-stretch sm:justify-start"
+      },
+      [
+        _c("div", { staticClass: "flex flex-shrink-0 items-center" }, [
+          _c("img", {
+            staticClass: "block h-8 w-auto lg:hidden rounded-full",
+            attrs: { src: "images/logo.png", alt: "俺の飲んだもの" }
+          }),
+          _vm._v(" "),
+          _c("img", {
+            staticClass: "hidden h-8 w-auto lg:block rounded-full",
+            attrs: { src: "images/logo.png", alt: "俺の飲んだもの" }
+          })
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "hidden sm:ml-6 sm:block" }, [
+          _c("div", { staticClass: "flex space-x-4" }, [
+            _c(
+              "a",
+              {
+                staticClass:
+                  "bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium",
+                attrs: { href: "#", "aria-current": "page" }
+              },
+              [_vm._v("Dashboard")]
+            ),
+            _vm._v(" "),
+            _c(
+              "a",
+              {
+                staticClass:
+                  "text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium",
+                attrs: { href: "#" }
+              },
+              [_vm._v("Team")]
+            ),
+            _vm._v(" "),
+            _c(
+              "a",
+              {
+                staticClass:
+                  "text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium",
+                attrs: { href: "#" }
+              },
+              [_vm._v("Projects")]
+            ),
+            _vm._v(" "),
+            _c(
+              "a",
+              {
+                staticClass:
+                  "text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium",
+                attrs: { href: "#" }
+              },
+              [_vm._v("Calendar")]
+            )
+          ])
+        ])
+      ]
+    )
   },
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("li", [
+    return _c("div", { staticClass: "space-y-1 px-2 pt-2 pb-3" }, [
       _c(
         "a",
         {
           staticClass:
-            "\r\n                inline-block\r\n                no-underline\r\n                hover:text-black hover:underline\r\n                py-2\r\n                px-4\r\n              ",
-          attrs: { href: "" }
+            "bg-gray-900 text-white block px-3 py-2 rounded-md text-base font-medium",
+          attrs: { href: "#", "aria-current": "page" }
         },
-        [_vm._v("ランキング")]
-      )
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("li", [
+        [_vm._v("Dashboard")]
+      ),
+      _vm._v(" "),
       _c(
         "a",
         {
           staticClass:
-            "\r\n                inline-block\r\n                no-underline\r\n                hover:text-black hover:underline\r\n                py-2\r\n                px-4\r\n              ",
-          attrs: {
-            href:
-              "https://www.amazon.co.jp/b/ref=s9_acss_bw_ln_Grocery_1_20s_w?ie=UTF8&node=71442051&pf_rd_m=A3P5ROKL5A1OLE&pf_rd_s=merchandised-search-leftnav&pf_rd_r=5AHSHQJPB75AZ04J7H7M&pf_rd_t=101&pf_rd_p=8e6be6b0-ad1d-4854-be00-ceab93a3847b&pf_rd_i=57239051",
-            target: "_blank"
-          }
+            "text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium",
+          attrs: { href: "#" }
         },
-        [_vm._v("注文する?(Amazon)")]
+        [_vm._v("Team")]
+      ),
+      _vm._v(" "),
+      _c(
+        "a",
+        {
+          staticClass:
+            "text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium",
+          attrs: { href: "#" }
+        },
+        [_vm._v("Projects")]
+      ),
+      _vm._v(" "),
+      _c(
+        "a",
+        {
+          staticClass:
+            "text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium",
+          attrs: { href: "#" }
+        },
+        [_vm._v("Calendar")]
       )
     ])
   }

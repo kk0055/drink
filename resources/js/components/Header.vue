@@ -1,175 +1,114 @@
 <template>
-<div id="header" class="w-full z-30 top-0 py-1">
-  <div
-    class="
-      w-full
-      container
-      flex flex-wrap
-      items-center
-      justify-between
-      mx-auto
-      mt-0
-      px-2
-  
-    "
-  >
-    <label for="menu-toggle" class="cursor-pointer md:hidden block">
-      <svg
-        class="fill-current text-gray-900"
-        xmlns="http://www.w3.org/2000/svg"
-        width="20"
-        height="20"
-        viewBox="0 0 20 20"
-      >
-        <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
-      </svg>
-    </label>
-    <input class="hidden" type="checkbox" id="menu-toggle" />
+  <nav class="bg-gray-800">
+  <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+    <div class="relative flex h-16 items-center justify-between">
+      <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
+        <!-- Mobile menu button-->
+        <button type="button" @click="openNav = !openNav" 
+        class="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-controls="mobile-menu" aria-expanded="false">
+          <span class="sr-only">Open main menu</span>
+          <!--
+            Icon when menu is closed.
 
-    <div
-      class="
-        hidden
-        md:flex md:items-center md:w-auto
-        w-full
-        order-3
-        md:order-1
-      "
-      id="menu"
-    >
-      <nav class="nav">
-        <ul
-          class="
-            md:flex
-            items-center
-            justify-between
-            text-base text-gray-700
-            pt-1
-            md:pt-0
-          "
-        >
-          <!-- <li>
-            <router-link
-              class="
-                inline-block
-                no-underline
-                hover:text-black hover:underline
-                py-2
-                px-4
-              "
-              :to="{name:'login'}"
-              >ログイン</router-link
-            >
-          </li> -->
-          <li>
-            <router-link
-              class="
-                inline-block
-                no-underline
-                hover:text-black hover:underline
-                py-2
-                px-4
-              "
-              :to="{name:'register'}"
-              >登録
-              </router-link
-            >
-          </li>
+            Heroicon name: outline/bars-3
 
-          <!-- <li>
-            <a
-              class="
-                inline-block
-                no-underline
-                hover:text-black hover:underline
-                py-2
-                px-4
-              "
-              href=""
-              onclick="event.preventDefault();
-                                document.getElementById('logout-form').submit();"
-            >
-              ログアウト
-            </a>
-          </li> -->
+            Menu open: "hidden", Menu closed: "block"
+          -->
+          <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+          </svg>
+          <!--
+            Icon when menu is open.
 
-          <li>
-            <a
-              class="
-                inline-block
-                no-underline
-                hover:text-black hover:underline
-                py-2
-                px-4
-              "
-              href=""
-              >俺のお気に入り</a
-            >
-          </li>
+            Heroicon name: outline/x-mark
 
-          <li>
-            <a
-              class="
-                inline-block
-                no-underline
-                hover:text-black hover:underline
-                py-2
-                px-4
-              "
-              href=""
-              >ランキング</a
-            >
-          </li>
+            Menu open: "block", Menu closed: "hidden"
+          -->
+          <svg class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+      <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
+        <div class="flex flex-shrink-0 items-center">
+          <img class="block h-8 w-auto lg:hidden rounded-full" src="images/logo.png" alt="俺の飲んだもの">
+          <img class="hidden h-8 w-auto lg:block rounded-full" src="images/logo.png" alt="俺の飲んだもの">
+        </div>
+        <div class="hidden sm:ml-6 sm:block" >
+          <div class="flex space-x-4">
+            <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+            <a href="#" class="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium" aria-current="page">Dashboard</a>
 
-          <li>
-            <router-link
-              class="
-                inline-block
-                no-underline
-                hover:text-black hover:underline
-                py-2
-                px-4
-              "
-              to="/drink"
-              >何か飲んだから書く?</router-link
-            >
-          </li>
-          <li>
-            <a
-              class="
-                inline-block
-                no-underline
-                hover:text-black hover:underline
-                py-2
-                px-4
-              "
-              href="https://www.amazon.co.jp/b/ref=s9_acss_bw_ln_Grocery_1_20s_w?ie=UTF8&node=71442051&pf_rd_m=A3P5ROKL5A1OLE&pf_rd_s=merchandised-search-leftnav&pf_rd_r=5AHSHQJPB75AZ04J7H7M&pf_rd_t=101&pf_rd_p=8e6be6b0-ad1d-4854-be00-ceab93a3847b&pf_rd_i=57239051"
-              target="_blank"
-              >注文する?(Amazon)</a
-            >
-          </li>
-        </ul>
-      </nav>
-    </div>
-    <div class="order-1 md:order-2">
-      <router-link
-        class="
-          flex
-          items-center
-          tracking-wide
-          no-underline
-          hover:no-underline
-          font-bold
-          text-gray-800 text-xl
-        "
-        :to="{name:'drinks'}"
-      >
-        <i class="fas fa-wine-bottle"></i>
-      </router-link>
+            <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Team</a>
+
+            <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Projects</a>
+
+            <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Calendar</a>
+          </div>
+        </div>
+      </div>
+      <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+        <button type="button" class="rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
+          <span class="sr-only">View notifications</span>
+          <!-- Heroicon name: outline/bell -->
+          <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0" />
+          </svg>
+        </button>
+
+        <!-- Profile dropdown -->
+        <div class="relative ml-3">
+          <div>
+            <button type="button" class="flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800" id="user-menu-button" aria-expanded="false" aria-haspopup="true" @click="showProf = !showProf">
+              <span class="sr-only">Open user menu</span>
+              <img class="h-8 w-8 rounded-full" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
+            </button>
+          </div>
+
+          <!--
+            Dropdown menu, show/hide based on menu state.
+
+            Entering: "transition ease-out duration-100"
+              From: "transform opacity-0 scale-95"
+              To: "transform opacity-100 scale-100"
+            Leaving: "transition ease-in duration-75"
+              From: "transform opacity-100 scale-100"
+              To: "transform opacity-0 scale-95"
+          -->
+          <div v-if="showProf" class="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1">
+            <!-- Active: "bg-gray-100", Not Active: "" -->
+            <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-0">Your Profile</a>
+            <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-1">Settings</a>
+            <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-2">Sign out</a>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-</div>
+
+  <!-- Mobile menu, show/hide based on menu state. -->
+  <div class="sm:hidden" id="mobile-menu" v-if="openNav">
+    <div class="space-y-1 px-2 pt-2 pb-3">
+      <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+      <a href="#" class="bg-gray-900 text-white block px-3 py-2 rounded-md text-base font-medium" aria-current="page">Dashboard</a>
+
+      <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Team</a>
+
+      <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Projects</a>
+
+      <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Calendar</a>
+    </div>
+  </div>
+</nav>
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      showProf: false,
+      openNav: false,
+    }
+  },
+}
 </script>

@@ -2,9 +2,7 @@
     <div>
         <div>
             <div>
-                <div
-                    class="bg-indigo-900 relative overflow-hidden h-screen"
-                >
+                <div class="bg-indigo-900 relative overflow-hidden h-screen">
                     <img
                         src="/images/background2.png"
                         class="absolute h-full w-full  object-cover"
@@ -22,7 +20,10 @@
                             >
                                 俺の飲んだもの
                             </h1>
-                            <p class="text-white w-2/3" style="font-family: 'Stick', sans-serif">
+                            <p
+                                class="text-white w-2/3"
+                                style="font-family: 'Stick', sans-serif"
+                            >
                                 街を歩いている時にたまたま出会った、見たこともない面白いパッケージの飲み物、ビックリするほど美味しいドリンク。君が知らないだけで街角の自販機やコンビニ、スーパー、居酒屋、近所の喫茶店...などなど新しい発見はどこにでもある。そんな偶然を記録していこう。
                             </p>
                             <p
@@ -110,7 +111,10 @@
                         href="#"
                     >
                     </a>
-                    <p class="mb-8 " style="font-family: 'RocknRoll One', sans-serif;">
+                    <p
+                        class="mb-8 "
+                        style="font-family: 'RocknRoll One', sans-serif;"
+                    >
                         世の中には飲んだことのない飲み物が無数にある。<br />
                         何が美味しいかなんて飲んでみないとわからない。 <br />
                         不味いかもしれない。苦いかもしれない。甘すぎるかもしれない。<br />

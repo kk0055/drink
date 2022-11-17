@@ -13,7 +13,7 @@
         <img v-else class="p-3  w-full object-center"  width="200px" :src="drink.image" />
         <div class="px-3 pb-2">
             <div class="pt-2">
-                <h2 class="drink-name text-rose-500">{{ drink.name }}</h2>
+                <h3 class="drink-name text-rose-500">{{ drink.name }}</h3>
                 <i class="fas fa-star text-yellow-300"></i>
                 {{ drink.score }}
                 <favorite-btn
