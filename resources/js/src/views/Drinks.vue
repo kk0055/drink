@@ -2,22 +2,39 @@
     <div>
         <div>
             <div>
-<div class="bg-indigo-900 relative overflow-hidden h-screen">
-    <img src="/images/background2.png" class="absolute h-full w-full  object-cover"/>
-    <!-- 背景画像に被せる色 -->
-    <div class="inset-0 bg-black opacity-90 absolute">
-    </div>
-    <div class="container mx-auto px-6 md:px-12 relative z-10 flex items-center py-32 xl:py-40">
-        <div class="w-full font-mono flex flex-col items-center relative z-10">
-            <h1 class="font-extrabold text-5xl text-center text-white leading-tight mt-4">
-                You&#x27;re alone here
-            </h1>
-            <p class="font-extrabold text-8xl my-44 text-white animate-bounce">
-                404
-            </p>
-        </div>
-    </div>
-</div>
+                <div
+                    class="bg-indigo-900 relative overflow-hidden h-screen"
+                >
+                    <img
+                        src="/images/background2.png"
+                        class="absolute h-full w-full  object-cover"
+                    />
+                    <!-- 背景画像に被せる色 -->
+                    <div class="inset-0 bg-black opacity-95 absolute"></div>
+                    <div
+                        class="container mx-auto px-6 md:px-12 relative z-10 flex items-center py-32 xl:py-40"
+                    >
+                        <div
+                            class="w-full font-mono flex flex-col items-center relative z-10"
+                        >
+                            <h1
+                                class="font-extrabold text-5xl md:text-7xl mb-24 text-white animate-bounce "
+                            >
+                                俺の飲んだもの
+                            </h1>
+                            <p class="text-white w-2/3" style="font-family: 'Stick', sans-serif">
+                                街を歩いている時にたまたま出会った、見たこともない面白いパッケージの飲み物、ビックリするほど美味しいドリンク。君が知らないだけで街角の自販機やコンビニ、スーパー、居酒屋、近所の喫茶店...などなど新しい発見はどこにでもある。そんな偶然を記録していこう。
+                            </p>
+                            <p
+                                class="font-extrabold text-2xl my-20 text-white "
+                            >
+                                <span class=""
+                                    >ところで、君は今日何を飲んだ?</span
+                                >
+                            </p>
+                        </div>
+                    </div>
+                </div>
 
                 <section class="bg-white  py-4">
                     <div
@@ -31,8 +48,10 @@
                                     class="flex items-center relative mb-6"
                                     id="store-nav-content"
                                 >
-                                    <div class="absolute inset-y-0 left-0 flex items-center pl-3 pr-10 pointer-events-none">
-                                    <i class="fas fa-search "> </i>
+                                    <div
+                                        class="absolute inset-y-0 left-0 flex items-center pl-3 pr-10 pointer-events-none"
+                                    >
+                                        <i class="fas fa-search "> </i>
                                     </div>
                                     <input
                                         type="text"
@@ -91,7 +110,7 @@
                         href="#"
                     >
                     </a>
-                    <p class="mb-8 footer-tesxt">
+                    <p class="mb-8 " style="font-family: 'RocknRoll One', sans-serif;">
                         世の中には飲んだことのない飲み物が無数にある。<br />
                         何が美味しいかなんて飲んでみないとわからない。 <br />
                         不味いかもしれない。苦いかもしれない。甘すぎるかもしれない。<br />

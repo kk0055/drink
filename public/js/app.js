@@ -2445,6 +2445,25 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   components: {
@@ -2751,7 +2770,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\na {\r\n    color: grey;\n}\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\na {\r\n    color: grey;\n}\nh1 {\r\nfont-family: 'Stick', sans-serif;\n}\nh2 {\r\nfont-family: 'Stick', sans-serif;\n}\np {\r\n font-family:'Bitter', sans-serif;\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -22353,7 +22372,7 @@ var staticRenderFns = [
           attrs: { src: "/images/background2.png" }
         }),
         _vm._v(" "),
-        _c("div", { staticClass: "inset-0 bg-black opacity-90 absolute" }),
+        _c("div", { staticClass: "inset-0 bg-black opacity-95 absolute" }),
         _vm._v(" "),
         _c(
           "div",
@@ -22373,18 +22392,32 @@ var staticRenderFns = [
                   "h1",
                   {
                     staticClass:
-                      "font-extrabold text-5xl text-center text-white leading-tight mt-4"
+                      "font-extrabold text-5xl md:text-7xl mb-24 text-white animate-bounce "
                   },
-                  [_vm._v("\n                You're alone here\n            ")]
+                  [
+                    _vm._v(
+                      "\n                            俺の飲んだもの\n                        "
+                    )
+                  ]
                 ),
                 _vm._v(" "),
                 _c(
                   "p",
                   {
-                    staticClass:
-                      "font-extrabold text-8xl my-44 text-white animate-bounce"
+                    staticClass: "text-white w-2/3",
+                    staticStyle: { "font-family": "'Stick', sans-serif" }
                   },
-                  [_vm._v("\n                404\n            ")]
+                  [
+                    _vm._v(
+                      "\n                            街を歩いている時にたまたま出会った、見たこともない面白いパッケージの飲み物、ビックリするほど美味しいドリンク。君が知らないだけで街角の自販機やコンビニ、スーパー、居酒屋、近所の喫茶店...などなど新しい発見はどこにでもある。そんな偶然を記録していこう。\n                        "
+                    )
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "p",
+                  { staticClass: "font-extrabold text-2xl my-20 text-white " },
+                  [_c("span", {}, [_vm._v("ところで、君は今日何を飲んだ?")])]
                 )
               ]
             )
@@ -22444,23 +22477,30 @@ var staticRenderFns = [
           attrs: { href: "#" }
         }),
         _vm._v(" "),
-        _c("p", { staticClass: "mb-8 footer-tesxt" }, [
-          _vm._v(
-            "\n                        世の中には飲んだことのない飲み物が無数にある。"
-          ),
-          _c("br"),
-          _vm._v(
-            "\n                        何が美味しいかなんて飲んでみないとわからない。 "
-          ),
-          _c("br"),
-          _vm._v(
-            "\n                        不味いかもしれない。苦いかもしれない。甘すぎるかもしれない。"
-          ),
-          _c("br"),
-          _vm._v(
-            "\n                        それでもたまには美味しいものに出会えるよ。たぶん。\n                    "
-          )
-        ])
+        _c(
+          "p",
+          {
+            staticClass: "mb-8 ",
+            staticStyle: { "font-family": "'RocknRoll One', sans-serif" }
+          },
+          [
+            _vm._v(
+              "\n                    世の中には飲んだことのない飲み物が無数にある。"
+            ),
+            _c("br"),
+            _vm._v(
+              "\n                    何が美味しいかなんて飲んでみないとわからない。 "
+            ),
+            _c("br"),
+            _vm._v(
+              "\n                    不味いかもしれない。苦いかもしれない。甘すぎるかもしれない。"
+            ),
+            _c("br"),
+            _vm._v(
+              "\n                    それでもたまには美味しいものに出会えるよ。たぶん。\n                "
+            )
+          ]
+        )
       ])
     ])
   },

@@ -49,4 +49,13 @@ export default {
 a {
     color: grey;
 }
+h1 {
+font-family: 'Stick', sans-serif;
+}
+h2 {
+font-family: 'Stick', sans-serif;
+}
+p {
+ font-family:'Bitter', sans-serif;   
+}
 </style>
