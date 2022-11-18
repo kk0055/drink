@@ -2144,6 +2144,25 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
@@ -22099,7 +22118,100 @@ var render = function() {
             ]
           ),
           _vm._v(" "),
-          _vm._m(0),
+          _c(
+            "div",
+            {
+              staticClass:
+                "flex flex-1 items-center justify-center sm:items-stretch sm:justify-start"
+            },
+            [
+              _c(
+                "div",
+                { staticClass: "flex flex-shrink-0 items-center" },
+                [
+                  _c(
+                    "router-link",
+                    {
+                      staticClass:
+                        "\n          flex\n          items-center\n          tracking-wide\n          text-gray-800 text-xl\n        ",
+                      attrs: { to: { name: "drinks" } }
+                    },
+                    [
+                      _c("img", {
+                        staticClass: "block h-8 w-auto lg:hidden rounded-full",
+                        attrs: { src: "images/logo.png", alt: "俺の飲んだもの" }
+                      })
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "router-link",
+                    {
+                      staticClass:
+                        "flex items-center tracking-wide\n          text-gray-800 text-xl\n        ",
+                      attrs: { to: { name: "drinks" } }
+                    },
+                    [
+                      _c("img", {
+                        staticClass: "hidden h-8 w-auto lg:block rounded-full",
+                        attrs: { src: "images/logo.png", alt: "俺の飲んだもの" }
+                      })
+                    ]
+                  )
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c("div", { staticClass: "hidden sm:ml-6 sm:block" }, [
+                _c(
+                  "div",
+                  { staticClass: "flex space-x-4" },
+                  [
+                    _c(
+                      "router-link",
+                      {
+                        staticClass:
+                          "bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium",
+                        attrs: { "aria-current": "page", to: "/drink" }
+                      },
+                      [_vm._v("\n         何か飲んだから書く?")]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "a",
+                      {
+                        staticClass:
+                          "text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium",
+                        attrs: { href: "#" }
+                      },
+                      [_vm._v("Team")]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "a",
+                      {
+                        staticClass:
+                          "text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium",
+                        attrs: { href: "#" }
+                      },
+                      [_vm._v("Projects")]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "a",
+                      {
+                        staticClass:
+                          "text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium",
+                        attrs: { href: "#" }
+                      },
+                      [_vm._v("Calendar")]
+                    )
+                  ],
+                  1
+                )
+              ])
+            ]
+          ),
           _vm._v(" "),
           _c(
             "div",
@@ -22173,11 +22285,7 @@ var render = function() {
                       _vm._v(" "),
                       _c("img", {
                         staticClass: "h-8 w-8 rounded-full",
-                        attrs: {
-                          src:
-                            "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
-                          alt: ""
-                        }
+                        attrs: { src: "images/girl.png", alt: "" }
                       })
                     ]
                   )
@@ -22253,81 +22361,12 @@ var render = function() {
     _vm._v(" "),
     _vm.openNav
       ? _c("div", { staticClass: "sm:hidden", attrs: { id: "mobile-menu" } }, [
-          _vm._m(1)
+          _vm._m(0)
         ])
       : _vm._e()
   ])
 }
 var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      {
-        staticClass:
-          "flex flex-1 items-center justify-center sm:items-stretch sm:justify-start"
-      },
-      [
-        _c("div", { staticClass: "flex flex-shrink-0 items-center" }, [
-          _c("img", {
-            staticClass: "block h-8 w-auto lg:hidden rounded-full",
-            attrs: { src: "images/logo.png", alt: "俺の飲んだもの" }
-          }),
-          _vm._v(" "),
-          _c("img", {
-            staticClass: "hidden h-8 w-auto lg:block rounded-full",
-            attrs: { src: "images/logo.png", alt: "俺の飲んだもの" }
-          })
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "hidden sm:ml-6 sm:block" }, [
-          _c("div", { staticClass: "flex space-x-4" }, [
-            _c(
-              "a",
-              {
-                staticClass:
-                  "bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium",
-                attrs: { href: "#", "aria-current": "page" }
-              },
-              [_vm._v("Dashboard")]
-            ),
-            _vm._v(" "),
-            _c(
-              "a",
-              {
-                staticClass:
-                  "text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium",
-                attrs: { href: "#" }
-              },
-              [_vm._v("Team")]
-            ),
-            _vm._v(" "),
-            _c(
-              "a",
-              {
-                staticClass:
-                  "text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium",
-                attrs: { href: "#" }
-              },
-              [_vm._v("Projects")]
-            ),
-            _vm._v(" "),
-            _c(
-              "a",
-              {
-                staticClass:
-                  "text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium",
-                attrs: { href: "#" }
-              },
-              [_vm._v("Calendar")]
-            )
-          ])
-        ])
-      ]
-    )
-  },
   function() {
     var _vm = this
     var _h = _vm.$createElement
