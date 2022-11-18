@@ -31,6 +31,7 @@
         "vue-rate-it": "^2.1.0",
         "vue-router": "^3.6.5",
         "vue-select": "^3.20.0",
+        "vue-toastification": "^1.7.14",
         "vuetify": "^2.6.12"
     }
 }

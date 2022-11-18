@@ -184,19 +184,6 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
  // import AwesomeVueStarRating from "awesome-vue-star-rating";
 // import StarRating from "../../../components/StarRating";
 
@@ -240,12 +227,15 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
   },
   created: function created() {
     this.prefectures = _Libraries_prefectures_js__WEBPACK_IMPORTED_MODULE_1__.default.prefectures;
+    this.$toast("投稿完了!", {
+      position: "top-right",
+      timeout: 2000 // transition: "fade"
+
+    });
   },
   computed: {
     getPrefectures: function getPrefectures() {},
-    photo: function photo() {
-      return;
-    }
+    photo: function photo() {}
   },
   methods: {
     postData: function postData() {
@@ -263,18 +253,16 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                   }
                 };
                 formData = new FormData();
-                formData.append('image', _this.files);
-                formData.append('name', _this.data.name);
-                formData.append('prefecture', _this.data.prefecture);
-                formData.append('place', _this.data.place);
-                formData.append('map_url', _this.data.map_url);
-                formData.append('review', _this.data.review);
-                formData.append('score', _this.data.score);
-                formData.append('price', _this.data.price);
+                formData.append("image", _this.files);
+                formData.append("name", _this.data.name);
+                formData.append("prefecture", _this.data.prefecture);
+                formData.append("place", _this.data.place);
+                formData.append("map_url", _this.data.map_url);
+                formData.append("review", _this.data.review);
+                formData.append("score", _this.data.score);
+                formData.append("price", _this.data.price);
                 _context.next = 12;
-                return axios.post("/api/drinks", formData, config).then(function (rs) {
-                  console.log(rs.data);
-                })["catch"](function (error) {
+                return axios.post("/api/drinks", formData, config).then(function (rs) {})["catch"](function (error) {
                   console.log(error);
                 });
 
@@ -558,93 +546,6 @@ var render = function() {
       },
       [
         _c("div", { staticClass: "bg-white py-6 px-10 sm:max-w-md w-full " }, [
-          _c(
-            "div",
-            {
-              staticClass:
-                "flex items-center p-2 mb-4 w-full max-w-xs text-gray-500 bg-white rounded-lg shadow dark:text-gray-400 dark:bg-gray-800",
-              attrs: { id: "toast-success", role: "alert" }
-            },
-            [
-              _c(
-                "div",
-                {
-                  staticClass:
-                    "inline-flex flex-shrink-0 justify-center items-center w-8 h-8 text-green-500 bg-green-100 rounded-lg dark:bg-green-800 dark:text-green-200"
-                },
-                [
-                  _c(
-                    "svg",
-                    {
-                      staticClass: "w-5 h-5",
-                      attrs: {
-                        "aria-hidden": "true",
-                        fill: "currentColor",
-                        viewBox: "0 0 20 20",
-                        xmlns: "http://www.w3.org/2000/svg"
-                      }
-                    },
-                    [
-                      _c("path", {
-                        attrs: {
-                          "fill-rule": "evenodd",
-                          d:
-                            "M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z",
-                          "clip-rule": "evenodd"
-                        }
-                      })
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _c("span", { staticClass: "sr-only" }, [_vm._v("Check icon")])
-                ]
-              ),
-              _vm._v(" "),
-              _c("div", { staticClass: "ml-3 text-sm font-normal" }, [
-                _vm._v("Item created successfully.")
-              ]),
-              _vm._v(" "),
-              _c(
-                "button",
-                {
-                  staticClass:
-                    "ml-auto -mx-1.5 -my-1.5 bg-white text-gray-400 hover:text-gray-900 rounded-lg focus:ring-2 focus:ring-gray-300 p-1.5 hover:bg-gray-100 inline-flex h-8 w-8 dark:text-gray-500 dark:hover:text-white dark:bg-gray-800 dark:hover:bg-gray-700",
-                  attrs: {
-                    type: "button",
-                    "data-dismiss-target": "#toast-success",
-                    "aria-label": "Close"
-                  }
-                },
-                [
-                  _c("span", { staticClass: "sr-only" }, [_vm._v("Close")]),
-                  _vm._v(" "),
-                  _c(
-                    "svg",
-                    {
-                      staticClass: "w-5 h-5",
-                      attrs: {
-                        "aria-hidden": "true",
-                        fill: "currentColor",
-                        viewBox: "0 0 20 20",
-                        xmlns: "http://www.w3.org/2000/svg"
-                      }
-                    },
-                    [
-                      _c("path", {
-                        attrs: {
-                          "fill-rule": "evenodd",
-                          d:
-                            "M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z",
-                          "clip-rule": "evenodd"
-                        }
-                      })
-                    ]
-                  )
-                ]
-              )
-            ]
-          ),
-          _vm._v(" "),
           _c(
             "div",
             {
