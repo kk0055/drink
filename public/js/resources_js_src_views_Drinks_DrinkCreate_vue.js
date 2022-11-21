@@ -270,8 +270,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       var file = this.$refs.preview.files[0];
       this.imageUrl = URL.createObjectURL(file);
       e.preventDefault();
-      var files = e.target.files;
-      console.log(files[0]);
+      var files = e.target.files; // console.log(files[0]);
+
       this.files = files[0];
     }
   }

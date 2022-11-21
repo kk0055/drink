@@ -22221,33 +22221,33 @@ var render = function() {
                     ),
                     _vm._v(" "),
                     _c(
-                      "a",
+                      "router-link",
                       {
                         staticClass:
                           "text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium",
-                        attrs: { href: "#" }
+                        attrs: { to: "#" }
                       },
-                      [_vm._v("Team")]
+                      [_vm._v("登録")]
                     ),
                     _vm._v(" "),
                     _c(
-                      "a",
+                      "router-link",
                       {
                         staticClass:
                           "text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium",
-                        attrs: { href: "#" }
+                        attrs: { to: "#" }
                       },
-                      [_vm._v("Projects")]
+                      [_vm._v("俺のお気に入り")]
                     ),
                     _vm._v(" "),
                     _c(
-                      "a",
+                      "router-link",
                       {
                         staticClass:
                           "text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium",
-                        attrs: { href: "#" }
+                        attrs: { to: "#" }
                       },
-                      [_vm._v("Calendar")]
+                      [_vm._v("ランキング")]
                     )
                   ],
                   1
@@ -22354,6 +22354,7 @@ var render = function() {
                             staticClass:
                               "block px-4 py-2 text-sm text-gray-700",
                             attrs: {
+                              to: "#",
                               href: "#",
                               role: "menuitem",
                               tabindex: "-1",
@@ -22404,59 +22405,57 @@ var render = function() {
     _vm._v(" "),
     _vm.openNav
       ? _c("div", { staticClass: "sm:hidden", attrs: { id: "mobile-menu" } }, [
-          _vm._m(0)
+          _c(
+            "div",
+            { staticClass: "space-y-1 px-2 pt-2 pb-3" },
+            [
+              _c(
+                "router-link",
+                {
+                  staticClass:
+                    "bg-gray-900 text-white block px-3 py-2 rounded-md text-base font-medium",
+                  attrs: { to: "#", "aria-current": "page" }
+                },
+                [_vm._v("何か飲んだから書く")]
+              ),
+              _vm._v(" "),
+              _c(
+                "router-link",
+                {
+                  staticClass:
+                    "text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium",
+                  attrs: { to: "#" }
+                },
+                [_vm._v("登録")]
+              ),
+              _vm._v(" "),
+              _c(
+                "router-link",
+                {
+                  staticClass:
+                    "text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium",
+                  attrs: { to: "#" }
+                },
+                [_vm._v("俺のお気に入り")]
+              ),
+              _vm._v(" "),
+              _c(
+                "router-link",
+                {
+                  staticClass:
+                    "text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium",
+                  attrs: { to: "#" }
+                },
+                [_vm._v("ランキング")]
+              )
+            ],
+            1
+          )
         ])
       : _vm._e()
   ])
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "space-y-1 px-2 pt-2 pb-3" }, [
-      _c(
-        "a",
-        {
-          staticClass:
-            "bg-gray-900 text-white block px-3 py-2 rounded-md text-base font-medium",
-          attrs: { href: "#", "aria-current": "page" }
-        },
-        [_vm._v("Dashboard")]
-      ),
-      _vm._v(" "),
-      _c(
-        "a",
-        {
-          staticClass:
-            "text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium",
-          attrs: { href: "#" }
-        },
-        [_vm._v("Team")]
-      ),
-      _vm._v(" "),
-      _c(
-        "a",
-        {
-          staticClass:
-            "text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium",
-          attrs: { href: "#" }
-        },
-        [_vm._v("Projects")]
-      ),
-      _vm._v(" "),
-      _c(
-        "a",
-        {
-          staticClass:
-            "text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium",
-          attrs: { href: "#" }
-        },
-        [_vm._v("Calendar")]
-      )
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
 

@@ -227,7 +227,7 @@ export default {
 
             e.preventDefault();
             let files = e.target.files;
-            console.log(files[0]);
+            // console.log(files[0]);
             this.files = files[0];
         }
     }
