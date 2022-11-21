@@ -58,7 +58,7 @@
          何か飲んだから書く?</router-link>
             
 
-            <router-link to="#" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">登録</router-link>
+            <router-link to="/login" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">ログイン</router-link>
 
          <router-link to="#" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">俺のお気に入り</router-link>
 
@@ -111,7 +111,7 @@
       <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
       <router-link to="#" class="bg-gray-900 text-white block px-3 py-2 rounded-md text-base font-medium" aria-current="page">何か飲んだから書く</router-link>
 
-      <router-link to="#"  class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">登録</router-link>
+      <router-link to="/login"  class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">ログイン</router-link>
 
       <router-link to="#"  class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">俺のお気に入り</router-link>
 

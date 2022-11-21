@@ -1920,6 +1920,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: {
     drink: {
@@ -21873,7 +21874,9 @@ var render = function() {
                 drink: _vm.drink.id,
                 favorited: _vm.drink.favorited ? "true" : "false"
               }
-            })
+            }),
+            _vm._v(" "),
+            _c("i", { staticClass: "far fa-comment pl-2" })
           ],
           1
         ),
@@ -21906,14 +21909,16 @@ var render = function() {
               : _c("p", { staticClass: "mt-2" }, [
                   _c("i", { staticClass: "far fa-globe mr-2" }),
                   _vm._v(" "),
-                  _c("a", { attrs: { href: _vm.drink.map_url } }, [
-                    _vm._v(_vm._s(_vm.drink.map_url))
-                  ])
+                  _c(
+                    "a",
+                    { attrs: { href: _vm.drink.map_url, target: "_blank" } },
+                    [_vm._v(_vm._s(_vm.drink.map_url))]
+                  )
                 ]),
             _vm._v(" "),
             _c("p", { staticClass: "mt-2 drink-text" }, [
               _c("i", { staticClass: "fas fa-yen-sign mr-2" }),
-              _vm._v(_vm._s(_vm.drink.price) + "円\n                ")
+              _vm._v(_vm._s(_vm.drink.price) + " 円\n                ")
             ]),
             _vm._v(" "),
             _vm.$route.name == "drinks"
@@ -22231,9 +22236,9 @@ var render = function() {
                       {
                         staticClass:
                           "text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium",
-                        attrs: { to: "#" }
+                        attrs: { to: "/login" }
                       },
-                      [_vm._v("登録")]
+                      [_vm._v("ログイン")]
                     ),
                     _vm._v(" "),
                     _c(
@@ -22430,9 +22435,9 @@ var render = function() {
                 {
                   staticClass:
                     "text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium",
-                  attrs: { to: "#" }
+                  attrs: { to: "/login" }
                 },
-                [_vm._v("登録")]
+                [_vm._v("ログイン")]
               ),
               _vm._v(" "),
               _c(

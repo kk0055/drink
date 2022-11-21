@@ -21,6 +21,7 @@
                     :favorited="drink.favorited ? 'true' : 'false'"
                     class="pl-2"
                 ></favorite-btn>
+          <i class="far fa-comment pl-2"></i>
             </div>
 
             <div class="pt-1">
@@ -39,10 +40,10 @@
                     </p>
                     <p class="mt-2" v-else>
                         <i class="far fa-globe mr-2"></i>
-                        <a :href="drink.map_url">{{ drink.map_url }}</a>
+                        <a :href="drink.map_url" target="_blank">{{ drink.map_url }}</a>
                     </p>
                     <p class="mt-2 drink-text">
-                        <i class="fas fa-yen-sign mr-2"></i>{{ drink.price }}円
+                        <i class="fas fa-yen-sign mr-2"></i>{{ drink.price }} 円
                     </p>
                     <p class="mt-1 drink-text" v-if="$route.name == 'drinks'">{{ drink.review }}</p>
                     <p class="mt-1" v-else>{{ drink.review }}</p>

@@ -184,6 +184,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -737,7 +738,7 @@ var render = function() {
                 { attrs: { width: "20px" } },
                 [
                   _c("star-rating", {
-                    attrs: { "item-size": 20 },
+                    attrs: { "item-size": 20, increment: 0.5 },
                     model: {
                       value: _vm.data.score,
                       callback: function($$v) {

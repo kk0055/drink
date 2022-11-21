@@ -83,6 +83,7 @@
                             <star-rating
                                 v-model="data.score"
                                 :item-size="20"
+                                :increment="0.5"
                             ></star-rating>
                         </div>
                     </div>
