@@ -162,8 +162,6 @@
 </template>
 <script>
 import prefectures from "../../../Libraries/prefectures.js";
-// import AwesomeVueStarRating from "awesome-vue-star-rating";
-// import StarRating from "../../../components/StarRating";
 import { StarRating } from "vue-rate-it";
 export default {
     data: () => ({
@@ -171,30 +169,6 @@ export default {
         loading: true,
         prefectures: {},
         star: 5,
-        ratingdescription: [
-            {
-                text: "Poor",
-                class: "star-poor"
-            },
-            {
-                text: "Below Average",
-                class: "star-belowAverage"
-            },
-            {
-                text: "Average",
-                class: "star-average"
-            },
-            {
-                text: "Good",
-                class: "star-good"
-            },
-            {
-                text: "Excellent",
-                class: "star-excellent"
-            }
-        ],
-        hasresults: true,
-        hasdescription: true,
         starsize: "lg", //[xs,lg,1x,2x,3x,4x,5x,6x,7x,8x,9x,10x],
         maxstars: 5,
         disabled: false,
@@ -202,20 +176,16 @@ export default {
         files: []
     }),
     components: {
-        // AwesomeVueStarRating,
         StarRating
+    },
+     props: {
+        getData: { Type: Function }
     },
     created() {
         this.prefectures = prefectures.prefectures;
-        this.$toast("投稿完了!", {
-            position: "top-right",
-            timeout: 2000,
-            // transition: "fade"
-        });
     },
     computed: {
         getPrefectures() {},
-        photo() {}
     },
     methods: {
         async postData() {
@@ -236,13 +206,21 @@ export default {
 
             await axios
                 .post("/api/drinks", formData, config)
-                .then(rs => {})
+                .then(res => {
+                    // console.log(res);
+                    this.$toast("投稿完了!", {
+                        position: "top-right",
+                        timeout: 2000
+                        // transition: "fade"
+                    });
+                    this.getData()
+                })
                 .catch(function(error) {
                     console.log(error);
                 });
             this.loading = false;
+            this.$router.push('/')
         },
-        show() {},
         selectedFile(e) {
             const file = this.$refs.preview.files[0];
             this.imageUrl = URL.createObjectURL(file);

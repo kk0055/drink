@@ -22500,7 +22500,9 @@ var render = function() {
         [
           _c("HeaderComponent"),
           _vm._v(" "),
-          _c("router-view", { attrs: { drinks: _vm.drinks } })
+          _c("router-view", {
+            attrs: { drinks: _vm.drinks, getData: _vm.getData }
+          })
         ],
         1
       )

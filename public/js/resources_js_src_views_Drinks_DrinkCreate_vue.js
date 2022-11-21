@@ -184,8 +184,6 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
- // import AwesomeVueStarRating from "awesome-vue-star-rating";
-// import StarRating from "../../../components/StarRating";
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -195,24 +193,6 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       loading: true,
       prefectures: {},
       star: 5,
-      ratingdescription: [{
-        text: "Poor",
-        "class": "star-poor"
-      }, {
-        text: "Below Average",
-        "class": "star-belowAverage"
-      }, {
-        text: "Average",
-        "class": "star-average"
-      }, {
-        text: "Good",
-        "class": "star-good"
-      }, {
-        text: "Excellent",
-        "class": "star-excellent"
-      }],
-      hasresults: true,
-      hasdescription: true,
       starsize: "lg",
       //[xs,lg,1x,2x,3x,4x,5x,6x,7x,8x,9x,10x],
       maxstars: 5,
@@ -222,20 +202,18 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     };
   },
   components: {
-    // AwesomeVueStarRating,
     StarRating: vue_rate_it__WEBPACK_IMPORTED_MODULE_2__.StarRating
+  },
+  props: {
+    getData: {
+      Type: Function
+    }
   },
   created: function created() {
     this.prefectures = _Libraries_prefectures_js__WEBPACK_IMPORTED_MODULE_1__.default.prefectures;
-    this.$toast("投稿完了!", {
-      position: "top-right",
-      timeout: 2000 // transition: "fade"
-
-    });
   },
   computed: {
-    getPrefectures: function getPrefectures() {},
-    photo: function photo() {}
+    getPrefectures: function getPrefectures() {}
   },
   methods: {
     postData: function postData() {
@@ -262,14 +240,25 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 formData.append("score", _this.data.score);
                 formData.append("price", _this.data.price);
                 _context.next = 12;
-                return axios.post("/api/drinks", formData, config).then(function (rs) {})["catch"](function (error) {
+                return axios.post("/api/drinks", formData, config).then(function (res) {
+                  // console.log(res);
+                  _this.$toast("投稿完了!", {
+                    position: "top-right",
+                    timeout: 2000 // transition: "fade"
+
+                  });
+
+                  _this.getData();
+                })["catch"](function (error) {
                   console.log(error);
                 });
 
               case 12:
                 _this.loading = false;
 
-              case 13:
+                _this.$router.push('/');
+
+              case 14:
               case "end":
                 return _context.stop();
             }
@@ -277,7 +266,6 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         }, _callee);
       }))();
     },
-    show: function show() {},
     selectedFile: function selectedFile(e) {
       var file = this.$refs.preview.files[0];
       this.imageUrl = URL.createObjectURL(file);

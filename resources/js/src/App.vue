@@ -12,7 +12,7 @@
     </div>
     <div class="bg-white" v-else>
         <HeaderComponent></HeaderComponent>
-        <router-view :drinks="drinks"></router-view>
+        <router-view :drinks="drinks" :getData="getData"></router-view>
     </div>
 </template>
 
