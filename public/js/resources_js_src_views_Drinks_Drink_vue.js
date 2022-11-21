@@ -28,6 +28,17 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   components: {
@@ -36,7 +47,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
   props: {},
   data: function data() {
     return {
-      drink: []
+      drink: [],
+      loading: true
     };
   },
   created: function created() {
@@ -72,14 +84,18 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
           while (1) {
             switch (_context2.prev = _context2.next) {
               case 0:
-                _context2.next = 2;
+                _this2.loading = true;
+                _context2.next = 3;
                 return axios.get("/api/drinks/".concat(_this2.id)).then(function (response) {
                   _this2.drink = response.data;
                 })["catch"](function (error) {
                   console.log(error);
                 });
 
-              case 2:
+              case 3:
+                _this2.loading = false;
+
+              case 4:
               case "end":
                 return _context2.stop();
             }
@@ -180,21 +196,36 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    {
-      staticClass:
-        "w-full h-auto overflow-scroll block h-screen bg-gradient-to-r from-blue-100 via-purple-100 to-pink-100 p-4 flex items-center justify-center"
-    },
-    [
-      _c(
+  return _vm.loading
+    ? _c(
         "div",
-        { staticClass: "bg-white py-6 px-10 sm:max-w-md w-full " },
-        [_c("DrinkItem", { attrs: { drink: _vm.drink } })],
-        1
+        {
+          staticClass: "flex justify-center items-center",
+          staticStyle: { height: "90vh" }
+        },
+        [
+          _c("div", {
+            staticClass:
+              "spinner-border animate-spin inline-block w-8 h-8 border-4 rounded-full text-blue-400",
+            attrs: { role: "status" }
+          })
+        ]
       )
-    ]
-  )
+    : _c(
+        "div",
+        {
+          staticClass:
+            "w-full h-auto overflow-scroll block h-screen bg-gradient-to-r from-blue-100 via-purple-100 to-pink-100 p-4 flex items-center justify-center"
+        },
+        [
+          _c(
+            "div",
+            { staticClass: "bg-white py-6 px-10 sm:max-w-md w-full " },
+            [_c("DrinkItem", { attrs: { drink: _vm.drink } })],
+            1
+          )
+        ]
+      )
 }
 var staticRenderFns = []
 render._withStripped = true

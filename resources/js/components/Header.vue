@@ -40,7 +40,7 @@
         "
         :to="{name:'drinks'}"
       >
-      <img class="block h-8 w-auto lg:hidden rounded-full" src="images/logo.png" alt="俺の飲んだもの">
+      <img class="block h-8 w-auto lg:hidden rounded-full" src="/images/logo.png" alt="俺の飲んだもの">
           </router-link>
       <router-link
         class="flex items-center tracking-wide
@@ -48,7 +48,7 @@
         "
         :to="{name:'drinks'}"
       >
-          <img class="hidden h-8 w-auto lg:block rounded-full" src="images/logo.png" alt="俺の飲んだもの">
+          <img class="hidden h-8 w-auto lg:block rounded-full" src="/images/logo.png" alt="俺の飲んだもの">
           </router-link>
         </div>
         <div class="hidden sm:ml-6 sm:block" >
@@ -80,7 +80,7 @@
           <div>
             <button type="button" class="flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800" id="user-menu-button" aria-expanded="false" aria-haspopup="true" @click="showProf = !showProf">
               <span class="sr-only">Open user menu</span>
-              <img class="h-8 w-8 rounded-full" src="images/girl.png" alt="">
+              <img class="h-8 w-8 rounded-full" src="/images/girl.png" alt="">
             </button>
           </div>
 

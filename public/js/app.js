@@ -22182,7 +22182,10 @@ var render = function() {
                     [
                       _c("img", {
                         staticClass: "block h-8 w-auto lg:hidden rounded-full",
-                        attrs: { src: "images/logo.png", alt: "俺の飲んだもの" }
+                        attrs: {
+                          src: "/images/logo.png",
+                          alt: "俺の飲んだもの"
+                        }
                       })
                     ]
                   ),
@@ -22197,7 +22200,10 @@ var render = function() {
                     [
                       _c("img", {
                         staticClass: "hidden h-8 w-auto lg:block rounded-full",
-                        attrs: { src: "images/logo.png", alt: "俺の飲んだもの" }
+                        attrs: {
+                          src: "/images/logo.png",
+                          alt: "俺の飲んだもの"
+                        }
                       })
                     ]
                   )
@@ -22328,7 +22334,7 @@ var render = function() {
                       _vm._v(" "),
                       _c("img", {
                         staticClass: "h-8 w-8 rounded-full",
-                        attrs: { src: "images/girl.png", alt: "" }
+                        attrs: { src: "/images/girl.png", alt: "" }
                       })
                     ]
                   )
