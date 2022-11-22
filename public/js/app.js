@@ -2429,9 +2429,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -22710,28 +22707,26 @@ var render = function() {
         _c("div", [
           _vm._m(0),
           _vm._v(" "),
-          _c("section", { staticClass: "bg-white  py-4" }, [
+          _c("section", { staticClass: "bg-white py-4" }, [
             _c(
               "div",
               {
                 staticClass:
-                  "container mx-auto flex items-center flex-wrap pt-1 pb-12"
+                  "container mx-auto flex items-center flex-wrap pt-1 pb-12 "
               },
               _vm._l(_vm.drinks, function(drink) {
                 return _c(
                   "div",
                   {
                     staticClass:
-                      "w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col  inline-block"
+                      "w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col  inline-block sm:-m-4 -mx-4 "
                   },
                   [_c("DrinkItem", { attrs: { drink: drink } })],
                   1
                 )
               }),
               0
-            ),
-            _vm._v(" "),
-            _c("div", { staticClass: "panel-footer" })
+            )
           ])
         ]),
         _vm._v(" "),

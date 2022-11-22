@@ -37,24 +37,21 @@
                     </div>
                 </div>
 
-                <section class="bg-white  py-4">
+                <section class="bg-white py-4">
                     <div
-                        class="container mx-auto flex items-center flex-wrap pt-1 pb-12"
+                        class="container mx-auto flex items-center flex-wrap pt-1 pb-12 "
                     >
                         <div
                             v-for="drink in drinks"
-                            class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col  inline-block"
+                            class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col  inline-block sm:-m-4 -mx-4 "
                         >
                             <DrinkItem :drink="drink" />
                         </div>
                     </div>
-
-                    <div class="panel-footer">
                         <!-- <favorite-btn
                         :drink={{ $drink->id }}
                         :favorited={{ $drink->favorited() ? 'true' : 'false' }}
                     ></favorite-btn> -->
-                    </div>
                 </section>
             </div>
             <Footer />
