@@ -22719,7 +22719,7 @@ var render = function() {
                   "div",
                   {
                     staticClass:
-                      "w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col  inline-block sm:-m-4 -mx-4 "
+                      "w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col  inline-block sm:-m-4 -mx-4 md:mx-0"
                   },
                   [_c("DrinkItem", { attrs: { drink: drink } })],
                   1
