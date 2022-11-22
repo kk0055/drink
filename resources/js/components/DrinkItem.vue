@@ -7,10 +7,10 @@
             class="h-48 md:h-36 w-full object-cover object-center"
             width="300px"
             height="350px"
-            :src="drink.image"
+            :src="image"
         />
         <!-- <img class="w-full bg-cover p-3" width="300px" height="350px" v-if="$route.name == 'drinks'"  :src="drink.image"> -->
-        <img v-else class="p-3  w-full object-center"  width="200px" :src="drink.image" />
+        <img v-else class="p-3  w-full object-center"  width="200px" :src="image" />
         <div class="px-3 pb-2">
             <div class="pt-2">
                 <h3 class="drink-name text-rose-500">{{ drink.name }}</h3>
@@ -67,6 +67,11 @@
 export default {
     props: {
         drink: { Type: Object }
-    }
+    },
+       computed: {
+        image() {
+          return this.drink.image ? this.drink.image : "https://previews.123rf.com/images/arcady31/arcady311303/arcady31130300032/18519959-vector-oops-symbol.jpg"
+        }
+    },
 };
 </script>

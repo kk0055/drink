@@ -1926,6 +1926,11 @@ __webpack_require__.r(__webpack_exports__);
     drink: {
       Type: Object
     }
+  },
+  computed: {
+    image: function image() {
+      return this.drink.image ? this.drink.image : "https://previews.123rf.com/images/arcady31/arcady311303/arcady31130300032/18519959-vector-oops-symbol.jpg";
+    }
   }
 });
 
@@ -21849,11 +21854,11 @@ var render = function() {
       _vm.$route.name == "drinks"
         ? _c("img", {
             staticClass: "h-48 md:h-36 w-full object-cover object-center",
-            attrs: { width: "300px", height: "350px", src: _vm.drink.image }
+            attrs: { width: "300px", height: "350px", src: _vm.image }
           })
         : _c("img", {
             staticClass: "p-3  w-full object-center",
-            attrs: { width: "200px", src: _vm.drink.image }
+            attrs: { width: "200px", src: _vm.image }
           }),
       _vm._v(" "),
       _c("div", { staticClass: "px-3 pb-2" }, [
