@@ -1856,6 +1856,42 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -1930,6 +1966,72 @@ __webpack_require__.r(__webpack_exports__);
   computed: {
     image: function image() {
       return this.drink.image ? this.drink.image : "https://previews.123rf.com/images/arcady31/arcady311303/arcady31130300032/18519959-vector-oops-symbol.jpg";
+    }
+  },
+  methods: {
+    deleteDrink: function deleteDrink(id) {
+      var _this = this;
+
+      return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee() {
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                if (!confirm("Sure?")) {
+                  _context.next = 3;
+                  break;
+                }
+
+                _context.next = 3;
+                return axios["delete"]("/api/drinks/".concat(id)).then(function (response) {
+                  _this.drinks = response.data;
+
+                  _this.$toast("削除完了!", {
+                    position: "top-right",
+                    timeout: 2000 // transition: "fade"
+
+                  });
+                })["catch"](function (error) {
+                  console.log(error);
+                });
+
+              case 3:
+                _this.loading = false;
+
+                _this.getDrinks();
+
+                _this.$router.push("/");
+
+              case 6:
+              case "end":
+                return _context.stop();
+            }
+          }
+        }, _callee);
+      }))();
+    },
+    getDrinks: function getDrinks() {
+      var _this2 = this;
+
+      return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee2() {
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee2$(_context2) {
+          while (1) {
+            switch (_context2.prev = _context2.next) {
+              case 0:
+                _context2.next = 2;
+                return axios.get("/api/").then(function (response) {
+                  _this2.drinks = response.data;
+                })["catch"](function (error) {
+                  console.log(error);
+                });
+
+              case 2:
+              case "end":
+                return _context2.stop();
+            }
+          }
+        }, _callee2);
+      }))();
     }
   }
 });
@@ -2274,7 +2376,6 @@ function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try
 
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
-//
 //
 //
 //
@@ -2751,7 +2852,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\na {\r\n    color: grey;\n}\nh1 {\r\nfont-family: 'Stick', sans-serif;\n}\nh2 {\r\nfont-family: 'Stick', sans-serif;\n}\np {\r\n font-family:'Bitter', sans-serif;\n}\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\na {\r\n    color: grey;\n}\nh1 {\r\n    font-family: \"Stick\", sans-serif;\n}\nh2 {\r\n    font-family: \"Stick\", sans-serif;\n}\np {\r\n    font-family: \"Bitter\", sans-serif;\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -21979,7 +22080,11 @@ var render = function() {
                   _c("i", { staticClass: "far fa-globe mr-2" }),
                   _vm._v(
                     "\n                    " +
-                      _vm._s(_vm.drink.map_url) +
+                      _vm._s(
+                        _vm.drink.map_url != "undefined"
+                          ? _vm.drink.map_url
+                          : "不明"
+                      ) +
                       "\n                "
                   )
                 ])
@@ -21989,7 +22094,16 @@ var render = function() {
                   _c(
                     "a",
                     { attrs: { href: _vm.drink.map_url, target: "_blank" } },
-                    [_vm._v(_vm._s(_vm.drink.map_url))]
+                    [
+                      _vm._v(
+                        "\n                        " +
+                          _vm._s(
+                            _vm.drink.map_url != "undefined"
+                              ? _vm.drink.map_url
+                              : "不明"
+                          )
+                      )
+                    ]
                   )
                 ]),
             _vm._v(" "),
@@ -22000,7 +22114,11 @@ var render = function() {
             _vm._v(" "),
             _vm.$route.name == "drinks"
               ? _c("p", { staticClass: "mt-1 drink-text" }, [
-                  _vm._v(_vm._s(_vm.drink.review))
+                  _vm._v(
+                    "\n                    " +
+                      _vm._s(_vm.drink.review) +
+                      "\n                "
+                  )
                 ])
               : _c("p", { staticClass: "mt-1" }, [
                   _vm._v(_vm._s(_vm.drink.review))
@@ -22026,6 +22144,22 @@ var render = function() {
                   ],
                   1
                 )
+              : _vm._e(),
+            _vm._v(" "),
+            _vm.$route.name !== "drinks"
+              ? _c("div", { staticClass: "mt-1 flex justify-end" }, [
+                  _c(
+                    "button",
+                    {
+                      on: {
+                        click: function($event) {
+                          return _vm.deleteDrink(_vm.drink.id)
+                        }
+                      }
+                    },
+                    [_c("i", { staticClass: "far fa-trash text-red-500" })]
+                  )
+                ])
               : _vm._e()
           ])
         ])
@@ -22585,7 +22719,7 @@ var render = function() {
                 {
                   staticClass:
                     "bg-gray-900 text-white block px-3 py-2 rounded-md text-base font-medium",
-                  attrs: { to: "#", "aria-current": "page" }
+                  attrs: { to: "/drink", "aria-current": "page" }
                 },
                 [_vm._v("何か飲んだから書く")]
               ),
@@ -22746,7 +22880,7 @@ var staticRenderFns = [
       { staticClass: "bg-indigo-900 relative overflow-hidden h-screen" },
       [
         _c("img", {
-          staticClass: "absolute h-full w-full  object-cover",
+          staticClass: "absolute h-full w-full object-cover",
           attrs: { src: "/images/background2.png" }
         }),
         _vm._v(" "),

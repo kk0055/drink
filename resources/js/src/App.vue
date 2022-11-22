@@ -7,8 +7,7 @@
         <div
             class="spinner-border animate-spin inline-block w-8 h-8 border-4 rounded-full text-blue-400"
             role="status"
-        >
-        </div>
+        ></div>
     </div>
     <div class="bg-white" v-else>
         <HeaderComponent></HeaderComponent>
@@ -50,12 +49,12 @@ a {
     color: grey;
 }
 h1 {
-font-family: 'Stick', sans-serif;
+    font-family: "Stick", sans-serif;
 }
 h2 {
-font-family: 'Stick', sans-serif;
+    font-family: "Stick", sans-serif;
 }
 p {
- font-family:'Bitter', sans-serif;   
+    font-family: "Bitter", sans-serif;
 }
 </style>

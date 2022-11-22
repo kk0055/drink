@@ -5,7 +5,7 @@
                 <div class="bg-indigo-900 relative overflow-hidden h-screen">
                     <img
                         src="/images/background2.png"
-                        class="absolute h-full w-full  object-cover"
+                        class="absolute h-full w-full object-cover"
                     />
                     <!-- 背景画像に被せる色 -->
                     <div class="inset-0 bg-black opacity-95 absolute"></div>

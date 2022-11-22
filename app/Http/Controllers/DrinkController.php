@@ -48,18 +48,18 @@ class DrinkController extends Controller
         //     ]);
 
         if ($request->hasFile('image')) {
-           
+
             //名前設定
             $filenameWithExt = $request->file('image')->getClientOriginalName();
             $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
             $extension = $request->file('image')->getClientOriginalExtension();
             $fileNameToStore = $filename . '_' . time() . '.' . $extension;
-            
+
             //InterventionImageを使わない場合に使用
             // $request->file('image')->storeAs('public/images/', $fileNameToStore);
 
             //storageを含めたパス全体を保存すれば呼び出しが簡単 /storageにしないとパスが切れる
-            $saveImageToDB = "/storage/images/". $fileNameToStore;
+            $saveImageToDB = "/storage/images/" . $fileNameToStore;
 
             //storage_path...Storageに保存される. public_path...publicに保存される.publicに保存すべきではない。
             //画像を保存するパス(Storage上)
@@ -69,22 +69,22 @@ class DrinkController extends Controller
                 $constraint->aspectRatio();
             });
             //InterventionImageを保存する場合はあらかじめ指定するdirectlyがstorage内に必要
-            $image->save($filePath. $fileNameToStore);
+            $image->save($filePath . $fileNameToStore);
         } else {
             $saveImageToDB = null;
         }
-    
-    return Drink::create([
-    'name' => $request->name,
-    'user_id' => '1',
-    'prefecture' => $request->prefecture,
-    'review' => $request->review,
-    'score' => $request->score,
-    'place' => $request->place,
-    'map_url' => $request->map_url,
-    'price' => $request->price,
-    'image' => $saveImageToDB ,
-]);
+
+        return Drink::create([
+            'name' => $request->name,
+            'user_id' => '1',
+            'prefecture' => $request->prefecture,
+            'review' => $request->review,
+            'score' => $request->score,
+            'place' => $request->place,
+            'map_url' => $request->map_url,
+            'price' => $request->price,
+            'image' => $saveImageToDB,
+        ]);
         // $request->user()->drinks()->create([
         //     'name' => $request->name,
         //     'review' => $request->review,
@@ -113,9 +113,8 @@ class DrinkController extends Controller
     {
 
         $drink = Drink::findOrFail($drink);
-        $drink->delete();
+        return $drink->delete();
 
-        return redirect()->route('drinks.index')->with('info', '消しました!');
     }
 
     public function ranking()

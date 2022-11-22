@@ -226,7 +226,11 @@ var render = function() {
             _c(
               "div",
               { staticClass: "bg-white py-6 px-10 sm:max-w-md w-full " },
-              [_c("DrinkItem", { attrs: { drink: _vm.drink } })],
+              [
+                _c("DrinkItem", {
+                  attrs: { drink: _vm.drink, getData: _vm.getData }
+                })
+              ],
               1
             )
           ]

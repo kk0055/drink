@@ -966,12 +966,12 @@ var render = function() {
               )
             ]),
             _vm._v(" "),
-            _c("div", { staticClass: "flex justify-center mt-8" }, [
+            _c("div", { staticClass: "flex justify-center mt-8 " }, [
               _c(
                 "div",
                 { staticClass: "max-w-2xl rounded-lg shadow-xl bg-gray-50" },
                 [
-                  _c("div", { staticClass: "m-4" }, [
+                  _c("div", { staticClass: "m-2 md:m-4" }, [
                     _c(
                       "label",
                       { staticClass: "inline-block mb-2 text-gray-500" },

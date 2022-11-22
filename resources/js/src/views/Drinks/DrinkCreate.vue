@@ -122,9 +122,9 @@
                         >
                         </div>
                     </div>
-                    <div class="flex justify-center mt-8">
+                    <div class="flex justify-center mt-8 ">
                         <div class="max-w-2xl rounded-lg shadow-xl bg-gray-50">
-                            <div class="m-4">
+                            <div class="m-2 md:m-4">
                                 <label class="inline-block mb-2 text-gray-500"
                                     >File Upload</label
                                 >
