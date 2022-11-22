@@ -59,7 +59,7 @@ class DrinkController extends Controller
             // $request->file('image')->storeAs('public/images/', $fileNameToStore);
 
             //storageを含めたパス全体を保存すれば呼び出しが簡単 /storageにしないとパスが切れる
-            $savedItemToDB = "/storage/images/". $fileNameToStore;
+            $saveImageToDB = "/storage/images/". $fileNameToStore;
 
             //storage_path...Storageに保存される. public_path...publicに保存される.publicに保存すべきではない。
             //画像を保存するパス(Storage上)
@@ -71,7 +71,7 @@ class DrinkController extends Controller
             //InterventionImageを保存する場合はあらかじめ指定するdirectlyがstorage内に必要
             $image->save($filePath. $fileNameToStore);
         } else {
-            $fileNameToStore = null;
+            $saveImageToDB = null;
         }
     
     return Drink::create([
@@ -83,7 +83,7 @@ class DrinkController extends Controller
     'place' => $request->place,
     'map_url' => $request->map_url,
     'price' => $request->price,
-    'image' => $savedItemToDB ,
+    'image' => $saveImageToDB ,
 ]);
         // $request->user()->drinks()->create([
         //     'name' => $request->name,

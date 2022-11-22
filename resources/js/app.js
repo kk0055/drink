@@ -8,12 +8,11 @@ import router from './router/index.js'
 import App from './src/App.vue';
 import Toast from "vue-toastification";
 import "vue-toastification/dist/index.css";
-// import HeaderComponent from './components/Header'
-// import vuetify from "./vuetify";
+import Vuelidate from 'vuelidate'
 import '../css/app.css' 
 Vue.use(VueRouter);
 Vue.use(Toast);
-
+Vue.use(Vuelidate)
 
 Vue.component('favorite-btn', require('./components/Favorite.vue').default);
 Vue.component('App', App);

@@ -25,7 +25,14 @@
                             class="focus:outline-none border-b w-full pb-2 border-sky-400 placeholder-gray-500"
                             placeholder="飲んだもの"
                             v-model="data.name"
+                            @input="$v.data.name.$touch()"
                         />
+                        <span
+                            v-if="$v.data.name.$error"
+                            class="mt-2"
+                            :class="{ error: $v.data.name.$error }"
+                            >Oops!!!!! 書いてね!</span
+                        >
                     </div>
                     <div>
                         <input
@@ -33,7 +40,14 @@
                             type="text"
                             class="focus:outline-none border-b w-full pb-2 border-sky-400 placeholder-gray-500 mt-4"
                             placeholder="感想"
+                            @input="$v.data.review.$touch()"
                         />
+                        <span
+                            v-if="$v.data.review.$error"
+                            class="mt-2"
+                            :class="{ error: $v.data.review.$error }"
+                            >Oops!!!!! 書いてね!</span
+                        >
                     </div>
                     <div class="mt-4">
                         <label
@@ -44,7 +58,8 @@
                         <select
                             v-model="data.prefecture"
                             id="prefectures"
-                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-1 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                            @input="$v.data.prefecture.$touch()"
                         >
                             <option
                                 v-for="prefecture in prefectures"
@@ -52,20 +67,33 @@
                                 >{{ prefecture.name }}</option
                             >
                         </select>
+                           <span
+                            v-if="$v.data.prefecture.$error"
+                            class="mt-2"
+                            :class="{ error: $v.data.prefecture.$error }"
+                            >Oops!!!!! 選択してね!</span
+                        >
                     </div>
                     <div>
                         <input
                             v-model="data.place"
                             type="text"
-                            class="focus:outline-none border-b w-full pb-2 border-sky-400 placeholder-gray-500 my-4"
+                            class="focus:outline-none border-b w-full pb-2 border-sky-400 placeholder-gray-500 mt-4"
                             placeholder="見つけた店 or 場所"
+                            @input="$v.data.place.$touch()"
                         />
+                          <span
+                            v-if="$v.data.place.$error"
+                            class="mt-2"
+                            :class="{ error: $v.data.place.$error }"
+                            >Oops!!!!! 書いてね!</span
+                        >
                     </div>
                     <div>
                         <input
                             v-model="data.map_url"
                             type="text"
-                            class="focus:outline-none border-b w-full pb-2 border-sky-400 placeholder-gray-500 my-4"
+                            class="focus:outline-none border-b w-full pb-2 border-sky-400 placeholder-gray-500 mt-4"
                             placeholder="Google mapのURL"
                         />
                     </div>
@@ -84,7 +112,14 @@
                                 v-model="data.score"
                                 :item-size="20"
                                 :increment="0.5"
+                                @input="$v.data.place.$touch()"
                             ></star-rating>
+                                 <span
+                            v-if="$v.data.score.$error"
+                            class="mt-2"
+                            :class="{ error: $v.data.score.$error }"
+                            >Oops!!!!! 選択してね!</span
+                        >
                         </div>
                     </div>
                     <div class="flex justify-center mt-8">
@@ -164,6 +199,8 @@
 <script>
 import prefectures from "../../../Libraries/prefectures.js";
 import { StarRating } from "vue-rate-it";
+import { required, minLength, between } from "vuelidate/lib/validators";
+
 export default {
     data: () => ({
         data: {},
@@ -179,17 +216,37 @@ export default {
     components: {
         StarRating
     },
-     props: {
+    props: {
         getData: { Type: Function }
+    },
+    validations: {
+        data: {
+            name: {
+                required
+            },
+            review: {
+                required
+            },
+            prefecture: {
+                required
+            },
+            place: {
+                required
+            },
+            score: {
+                required
+            }
+        }
     },
     created() {
         this.prefectures = prefectures.prefectures;
     },
     computed: {
-        getPrefectures() {},
+        getPrefectures() {}
     },
     methods: {
         async postData() {
+            this.$v.$touch()
             const config = {
                 headers: {
                     "content-type": "multipart/form-data"
@@ -204,23 +261,27 @@ export default {
             formData.append("review", this.data.review);
             formData.append("score", this.data.score);
             formData.append("price", this.data.price);
-
-            await axios
-                .post("/api/drinks", formData, config)
-                .then(res => {
-                    // console.log(res);
-                    this.$toast("投稿完了!", {
-                        position: "top-right",
-                        timeout: 2000
-                        // transition: "fade"
+            if (this.$v.$invalid) {
+                console.log("バリデーションエラー");
+            } else {
+                await axios
+                    .post("/api/drinks", formData, config)
+                    .then(res => {
+                        // console.log(res);
+                        this.$toast("投稿完了!", {
+                            position: "top-right",
+                            timeout: 2000
+                            // transition: "fade"
+                        });
+                        this.getData();
+                    })
+                    .catch(function(error) {
+                        console.log(error);
                     });
-                    this.getData()
-                })
-                .catch(function(error) {
-                    console.log(error);
-                });
+            }
+
             this.loading = false;
-            this.$router.push('/')
+            // this.$router.push("/");
         },
         selectedFile(e) {
             const file = this.$refs.preview.files[0];
@@ -234,4 +295,8 @@ export default {
     }
 };
 </script>
-<style></style>
+<style>
+.error {
+    color: #dd0f3b;
+}
+</style>
