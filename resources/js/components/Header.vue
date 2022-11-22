@@ -67,6 +67,31 @@
         </div>
       </div>
       <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+        <!-- Search -->
+    <!-- <div class="w-full z-30 top-0 px-6 py-1">
+            <div
+                class="w-full container mx-auto flex  items-center justify-end mt-0 px-2 py-3"
+            >
+                <div
+                    class="flex items-center relative mb-6"
+                    id="store-nav-content"
+                >
+                    <div
+                        class="absolute inset-y-0 left-0 flex items-center pl-3 pr-10 pointer-events-none"
+                    >
+                        <i class="fas fa-search "> </i>
+                    </div>
+                    <input
+                        type="text"
+                        name="query"
+                        class="block  text-sm rounded-full w-64 p-4 pl-2 py-1 focus:outline-none border border-gray-300 border-b focus:shadow-outline "
+                        placeholder="  Search"
+                    />
+               
+                </div>
+            </div>
+        </div> -->
+        <!-- notifications -->
         <button type="button" class="rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
           <span class="sr-only">View notifications</span>
           <!-- Heroicon name: outline/bell -->

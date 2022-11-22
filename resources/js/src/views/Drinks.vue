@@ -41,29 +41,7 @@
                     <div
                         class="container mx-auto flex items-center flex-wrap pt-1 pb-12"
                     >
-                        <div class="w-full z-30 top-0 px-6 py-1">
-                            <div
-                                class="w-full container mx-auto flex  items-center justify-end mt-0 px-2 py-3"
-                            >
-                                <div
-                                    class="flex items-center relative mb-6"
-                                    id="store-nav-content"
-                                >
-                                    <div
-                                        class="absolute inset-y-0 left-0 flex items-center pl-3 pr-10 pointer-events-none"
-                                    >
-                                        <i class="fas fa-search "> </i>
-                                    </div>
-                                    <input
-                                        type="text"
-                                        name="query"
-                                        class="block  text-sm rounded-full w-64 p-4 pl-2 py-1 focus:outline-none border border-gray-300 border-b focus:shadow-outline "
-                                        placeholder="  Search"
-                                    />
-                                    <!-- </form> -->
-                                </div>
-                            </div>
-                        </div>
+            
 
                         <div
                             v-for="drink in drinks"
@@ -73,35 +51,12 @@
                         </div>
                     </div>
 
-                    <!-- <div class="rounded overflow-hidden border ">
-                <a href="">  
-
-                <img :src="drink.image" alt="pic"  class="item-image hover:opacity-75 transition ">
-                    <div class="pt-3 flex items-center justify-between">
-                        <p class="drink-name">{{ drink.name }}</p>
-                   
-                    </div>
-                    <p class="pt-1 text-gray-900 ">
-                        <i class="fas fa-star text-yellow-300"></i>
-                        {{ drink.score }}</p>
-                    <div class="body-box ">
-                       <p class="drink-place">買った店：{{ drink.prefecture }}</p>
-                        <p class="drink-place">買った店：{{ drink.place }}</p>
-                    <p class="mt-2 drink-text">{{ drink.review }}</p>
-                    <p class="mt-2 drink-text">{{ drink.map_url }}</p>
-                    <p class="mt-2 drink-text">{{ drink.price }}</p>
-                    </div>
-                    </a>
-          </div> -->
                     <div class="panel-footer">
                         <!-- <favorite-btn
                         :drink={{ $drink->id }}
                         :favorited={{ $drink->favorited() ? 'true' : 'false' }}
                     ></favorite-btn> -->
                     </div>
-
-                    <!--    
-            {{ $drinks->links() }} -->
                 </section>
             </div>
             <section class="bg-white py-8">
