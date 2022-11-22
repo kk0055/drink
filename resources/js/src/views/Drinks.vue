@@ -41,8 +41,6 @@
                     <div
                         class="container mx-auto flex items-center flex-wrap pt-1 pb-12"
                     >
-            
-
                         <div
                             v-for="drink in drinks"
                             class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col  inline-block"
@@ -59,44 +57,18 @@
                     </div>
                 </section>
             </div>
-            <section class="bg-white py-8">
-                <div class="container py-8 px-6 mx-auto">
-                    <a
-                        class="tracking-wide no-underline hover:no-underline font-bold text-gray-800 text-xl mb-8"
-                        href="#"
-                    >
-                    </a>
-                    <p
-                        class="mb-8 "
-                        style="font-family: 'RocknRoll One', sans-serif;"
-                    >
-                        世の中には飲んだことのない飲み物が無数にある。<br />
-                        何が美味しいかなんて飲んでみないとわからない。 <br />
-                        不味いかもしれない。苦いかもしれない。甘すぎるかもしれない。<br />
-                        それでもたまには美味しいものに出会えるよ。たぶん。
-                    </p>
-                </div>
-            </section>
-
-            <footer class="container mx-auto bg-white py-8  border-gray-400">
-                <div class="container flex px-3 py-8 ">
-                    <div class="w-full mx-auto flex flex-wrap">
-                        <div class="flex w-full lg:w-1/2 "></div>
-                        <div
-                            class="flex w-full lg:w-1/2 lg:justify-end lg:text-right"
-                        ></div>
-                    </div>
-                </div>
-            </footer>
+            <Footer />
         </div>
     </div>
 </template>
 
 <script>
 import DrinkItem from "../../components/DrinkItem";
+import Footer from "../../components/Footer";
 export default {
     components: {
-        DrinkItem
+        DrinkItem,
+        Footer
     },
     data: () => ({}),
     props: {

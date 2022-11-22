@@ -5,10 +5,10 @@
         >
             <div class="bg-white py-6 px-10 sm:max-w-md w-full ">
                 <div
-                    class="sm:text-3xl text-2xl font-semibold items-center justify-center text-center text-sky-600  mb-12"
+                    class="flex sm:text-3xl text-2xl font-semibold items-center justify-center text-center text-sky-600  mb-12"
                 >
                     <img :src="'/images/logo.png'" alt="" width="50x" />
-                    <!-- Registration Form  -->
+                
                 </div>
 
                 <!-- <div

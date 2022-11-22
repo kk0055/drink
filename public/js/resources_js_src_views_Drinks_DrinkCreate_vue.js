@@ -675,7 +675,7 @@ var render = function() {
             "div",
             {
               staticClass:
-                "sm:text-3xl text-2xl font-semibold items-center justify-center text-center text-sky-600  mb-12"
+                "flex sm:text-3xl text-2xl font-semibold items-center justify-center text-center text-sky-600  mb-12"
             },
             [
               _c("img", {
