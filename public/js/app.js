@@ -2000,6 +2000,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: {
     drink: {
@@ -22358,34 +22360,20 @@ var render = function() {
                   )
                 : _vm._e(),
               _vm._v(" "),
-              _c("span", { staticClass: "mt-1 flex justify-start " }, [
-                _c("i", {
-                  staticClass: "far fa-comment pl-2 mr-2 text-2xl",
-                  on: {
-                    click: function($event) {
-                      _vm.showComment = !_vm.showComment
+              _c("div", { staticClass: "mt-1 flex  justify-between " }, [
+                _c("span", { staticClass: "mt-1 flex " }, [
+                  _c("i", {
+                    staticClass: "far fa-comment pl-2 mr-2 text-2xl",
+                    on: {
+                      click: function($event) {
+                        _vm.showComment = !_vm.showComment
+                      }
                     }
-                  }
-                }),
-                _vm._v(" "),
-                _c("p", [_vm._v(_vm._s(_vm.drink.comments.length))])
-              ]),
-              _vm._v(" "),
-              _vm.$route.name !== "drinks"
-                ? _c("div", { staticClass: "mt-1 flex justify-end" }, [
-                    _c(
-                      "button",
-                      {
-                        on: {
-                          click: function($event) {
-                            return _vm.deleteDrink(_vm.drink.id)
-                          }
-                        }
-                      },
-                      [_c("i", { staticClass: "far fa-trash text-red-500" })]
-                    )
-                  ])
-                : _vm._e()
+                  }),
+                  _vm._v(" "),
+                  _c("p", [_vm._v(_vm._s(_vm.drink.comments.length))])
+                ])
+              ])
             ])
           ]),
           _vm._v(" "),

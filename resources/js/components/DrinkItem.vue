@@ -76,7 +76,8 @@
                             >...more
                         </router-link>
                     </div>
-                    <span class="mt-1 flex justify-start ">
+                    <div class="mt-1 flex  justify-between ">
+                    <span class="mt-1 flex ">
                         <i
                             @click="showComment = !showComment"
                             class="far fa-comment pl-2 mr-2 text-2xl"
@@ -84,13 +85,14 @@
                         <p>{{ drink.comments.length }}</p>
                     </span>
                     <!-- deleteボタン削除予定 -->
-                    <div
+                    <!-- <div
                         v-if="$route.name !== 'drinks'"
                         class="mt-1 flex justify-end"
                     >
                         <button @click="deleteDrink(drink.id)">
                             <i class="far fa-trash text-red-500"></i>
                         </button>
+                    </div> -->
                     </div>
                 </div>
             </div>
