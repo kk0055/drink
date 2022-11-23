@@ -1995,6 +1995,10 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: {
     drink: {
@@ -2004,7 +2008,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
   },
   data: function data() {
     return {
-      showComment: false
+      showComment: false,
+      data: {}
     };
   },
   computed: {
@@ -2032,9 +2037,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                     position: "top-right",
                     timeout: 2000 // transition: "fade"
 
-                  }); // let i = this.drinks.filter(o => o.id !== id);
-                  // this.drinks.splice(id, 1);
-
+                  });
                 })["catch"](function (error) {
                   console.log(error);
                 });
@@ -2076,6 +2079,33 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
             }
           }
         }, _callee2);
+      }))();
+    },
+    submitComment: function submitComment() {
+      var _this3 = this;
+
+      return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee3() {
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee3$(_context3) {
+          while (1) {
+            switch (_context3.prev = _context3.next) {
+              case 0:
+                _this3.data.drink_id = _this3.drink.id;
+                _this3.data.user_id = 1;
+                _context3.next = 4;
+                return axios.post("/api/comments", _this3.data).then(function (response) {// console.log(response);
+                })["catch"](function (error) {
+                  console.log(error);
+                });
+
+              case 4:
+                _this3.loading = false;
+
+              case 5:
+              case "end":
+                return _context3.stop();
+            }
+          }
+        }, _callee3);
       }))();
     }
   }
@@ -22162,33 +22192,19 @@ var render = function() {
           }),
       _vm._v(" "),
       _c("div", { staticClass: "px-3 pb-2" }, [
-        _c(
-          "div",
-          { staticClass: "pt-2" },
-          [
-            _c("h3", { staticClass: "drink-name text-rose-500" }, [
-              _vm._v(_vm._s(_vm.drink.name))
-            ]),
-            _vm._v(" "),
-            _c("i", { staticClass: "fas fa-star text-yellow-300" }),
-            _vm._v(
-              "\n            " + _vm._s(_vm.drink.score) + "\n            "
-            ),
-            _c("favorite-btn", {
-              staticClass: "pl-2",
-              attrs: {
-                drink: _vm.drink.id,
-                favorited: _vm.drink.favorited ? "true" : "false"
-              }
-            })
-          ],
-          1
-        ),
+        _c("div", { staticClass: "pt-2" }, [
+          _c("h3", { staticClass: "drink-name text-blue-700" }, [
+            _vm._v(_vm._s(_vm.drink.name))
+          ]),
+          _vm._v(" "),
+          _c("i", { staticClass: "fas fa-star -ml-1 text-yellow-300" }),
+          _vm._v("\n            " + _vm._s(_vm.drink.score) + "\n            ")
+        ]),
         _vm._v(" "),
         _c("div", { staticClass: "pt-1" }, [
           _c("div", { staticClass: "mb-2 text-sm" }, [
             _c("p", { staticClass: "drink-place" }, [
-              _c("i", { staticClass: "fas fa-tenge mr-2 text-blue-700" }),
+              _c("i", { staticClass: "fas fa-tenge mr-2 text-red-700" }),
               _vm._v(_vm._s(_vm.drink.prefecture) + "\n                ")
             ]),
             _vm._v(" "),
@@ -22272,7 +22288,7 @@ var render = function() {
                 )
               : _vm._e(),
             _vm._v(" "),
-            _c("div", { staticClass: "mt-1 flex justify-start" }, [
+            _c("span", { staticClass: "mt-1 flex justify-start " }, [
               _c("i", {
                 staticClass: "far fa-comment pl-2 mr-2 text-2xl",
                 on: {
@@ -22314,47 +22330,64 @@ var render = function() {
                       staticClass:
                         "divide-solid max-w-md text-gray-900 divide-y divide-green-500 dark:text-white dark:divide-gray-700"
                     },
-                    [_c("li", [_c("p", [_vm._v(" " + _vm._s(comment.body))])])]
+                    [_c("li", [_c("p", [_vm._v(_vm._s(comment.body))])])]
                   )
                 }),
                 0
               ),
               _vm._v(" "),
-              _vm._m(0)
+              _c("form", { staticClass: "w-full p-4", attrs: { action: "" } }, [
+                _c("div", { staticClass: "mb-2" }, [
+                  _c(
+                    "label",
+                    {
+                      staticClass: "text-lg text-gray-600",
+                      attrs: { for: "comment" }
+                    },
+                    [_vm._v("Add a comment")]
+                  ),
+                  _vm._v(" "),
+                  _c("textarea", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.data.body,
+                        expression: "data.body"
+                      }
+                    ],
+                    staticClass:
+                      "w-full h-20 p-2 border rounded focus:outline-none focus:ring-gray-300 focus:ring-1",
+                    attrs: { name: "comment", placeholder: "" },
+                    domProps: { value: _vm.data.body },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(_vm.data, "body", $event.target.value)
+                      }
+                    }
+                  })
+                ]),
+                _vm._v(" "),
+                _c(
+                  "button",
+                  {
+                    staticClass:
+                      "px-3 py-2 text-sm text-blue-100 bg-blue-600 rounded",
+                    on: { click: _vm.submitComment }
+                  },
+                  [_vm._v("\n                    Comment\n                ")]
+                )
+              ])
             ])
           : _vm._e()
       ])
     ]
   )
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("form", { staticClass: "w-full p-4", attrs: { action: "" } }, [
-      _c("div", { staticClass: "mb-2" }, [
-        _c(
-          "label",
-          { staticClass: "text-lg text-gray-600", attrs: { for: "comment" } },
-          [_vm._v("Add a comment")]
-        ),
-        _vm._v(" "),
-        _c("textarea", {
-          staticClass:
-            "w-full h-20 p-2 border rounded focus:outline-none focus:ring-gray-300 focus:ring-1",
-          attrs: { name: "comment", placeholder: "" }
-        })
-      ]),
-      _vm._v(" "),
-      _c(
-        "button",
-        { staticClass: "px-3 py-2 text-sm text-blue-100 bg-blue-600 rounded" },
-        [_vm._v("\n                    Comment\n                ")]
-      )
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
 

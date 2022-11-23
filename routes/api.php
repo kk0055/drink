@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\DrinkController;
+use App\Http\Controllers\CommentController;
 use App\Http\Controllers\SearchController;
 use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Route;
@@ -31,6 +32,7 @@ Route
         Route::get('/', [DrinkController::class, 'index'])->name('drinks.index');
 
         Route::resource('drinks', DrinkController::class);
+        Route::resource('comments', CommentController::class);
 
         Route::get('/ranking', [DrinkController::class, 'ranking'])->name('drinks.ranking');
 

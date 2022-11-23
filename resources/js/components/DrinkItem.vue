@@ -18,20 +18,20 @@
         />
         <div class="px-3 pb-2">
             <div class="pt-2">
-                <h3 class="drink-name text-rose-500">{{ drink.name }}</h3>
-                <i class="fas fa-star text-yellow-300"></i>
+                <h3 class="drink-name text-blue-700">{{ drink.name }}</h3>
+                <i class="fas fa-star -ml-1 text-yellow-300"></i>
                 {{ drink.score }}
-                <favorite-btn
+                <!-- <favorite-btn
                     :drink="drink.id"
                     :favorited="drink.favorited ? 'true' : 'false'"
                     class="pl-2"
-                ></favorite-btn>
+                ></favorite-btn> -->
             </div>
 
             <div class="pt-1">
                 <div class="mb-2 text-sm">
                     <p class="drink-place">
-                        <i class="fas fa-tenge mr-2 text-blue-700"></i
+                        <i class="fas fa-tenge mr-2 text-red-700"></i
                         >{{ drink.prefecture }}
                     </p>
                     <p class="drink-place">
@@ -76,14 +76,13 @@
                             >...more
                         </router-link>
                     </div>
-                    <div
-                        
-                        class="mt-1 flex justify-start"
-                    >
-                        <i @click="showComment = !showComment"
-                        class="far fa-comment pl-2 mr-2 text-2xl"></i>
+                    <span class="mt-1 flex justify-start ">
+                        <i
+                            @click="showComment = !showComment"
+                            class="far fa-comment pl-2 mr-2 text-2xl"
+                        ></i>
                         <p>{{ drink.comments.length }}</p>
-                    </div>
+                    </span>
                     <!-- deleteボタン削除予定 -->
                     <div
                         v-if="$route.name !== 'drinks'"
@@ -100,10 +99,13 @@
                 v-if="showComment && $route.name != 'drinks'"
                 class="max-w-lg shadow-md"
             >
-                <div >
-                    <ul class="divide-solid max-w-md text-gray-900 divide-y divide-green-500 dark:text-white dark:divide-gray-700" v-for="comment in drink.comments">
-                        <li >
-                           <p> {{ comment.body }}</p>
+                <div>
+                    <ul
+                        class="divide-solid max-w-md text-gray-900 divide-y divide-green-500 dark:text-white dark:divide-gray-700"
+                        v-for="comment in drink.comments"
+                    >
+                        <li>
+                            <p>{{ comment.body }}</p>
                         </li>
                     </ul>
                 </div>
@@ -113,12 +115,14 @@
                             >Add a comment</label
                         >
                         <textarea
+                            v-model="data.body"
                             class="w-full h-20 p-2 border rounded focus:outline-none focus:ring-gray-300 focus:ring-1"
                             name="comment"
                             placeholder=""
                         ></textarea>
                     </div>
                     <button
+                        @click="submitComment"
                         class="px-3 py-2 text-sm text-blue-100 bg-blue-600 rounded"
                     >
                         Comment
@@ -136,7 +140,8 @@ export default {
         // drinks: { Type: Array }
     },
     data: () => ({
-        showComment: false
+        showComment: false,
+        data: {}
     }),
     computed: {
         image() {
@@ -156,8 +161,6 @@ export default {
                             timeout: 2000
                             // transition: "fade"
                         });
-                        // let i = this.drinks.filter(o => o.id !== id);
-                        // this.drinks.splice(id, 1);
                     })
                     .catch(function(error) {
                         console.log(error);
@@ -170,6 +173,20 @@ export default {
         async getDrinks() {
             await axios
                 .get("/api/")
+                .then(response => {
+                    // console.log(response);
+                })
+                .catch(function(error) {
+                    console.log(error);
+                });
+
+            this.loading = false;
+        },
+        async submitComment() {
+            this.data.drink_id = this.drink.id
+            this.data.user_id = 1
+            await axios
+                .post("/api/comments",this.data)
                 .then(response => {
                     // console.log(response);
                 })
