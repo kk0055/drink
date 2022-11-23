@@ -25,10 +25,10 @@ export default {
     data: () => ({
         drinks: [],
         loading: true,
-        
+        user:{}
     }),
     async created() {
-        // await Promise.all([this.getData()]);
+        await Promise.all([]);
     },
     methods: {
         // async getData() {
@@ -43,6 +43,18 @@ export default {
             
         //     this.loading = false;
         // }
+              async getUser() {
+            await axios
+                .get("/api/user")
+                .then(response => {
+                    this.user = response.data;
+                })
+                .catch(function(error) {
+                    console.log(error);
+                });
+            
+            this.loading = false;
+        }
     }
 };
 </script>

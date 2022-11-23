@@ -41,18 +41,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({});
 
 /***/ }),
@@ -154,7 +142,7 @@ var render = function() {
     [
       _c("div", { staticClass: "bg-white py-6 px-10 sm:max-w-md w-full " }, [
         _c(
-          "div",
+          "h2",
           {
             staticClass:
               "sm:text-3xl text-2xl font-semibold text-center text-sky-600  mb-12"
@@ -170,12 +158,6 @@ var render = function() {
           _vm._m(2),
           _vm._v(" "),
           _vm._m(3),
-          _vm._v(" "),
-          _vm._m(4),
-          _vm._v(" "),
-          _vm._m(5),
-          _vm._v(" "),
-          _vm._m(6),
           _vm._v(" "),
           _c(
             "div",
@@ -230,53 +212,12 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", [
-      _c("input", {
-        staticClass:
-          "focus:outline-none border-b w-full pb-2 border-sky-400 placeholder-gray-500 mb-8",
-        attrs: { type: "text", placeholder: "Country " }
-      })
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", [
-      _c("input", {
-        staticClass:
-          "focus:outline-none border-b w-full pb-2 border-sky-400 placeholder-gray-500 mb-8",
-        attrs: { type: "phone", placeholder: "Phone " }
-      })
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
     return _c("div", {}, [
       _c("input", {
         staticClass:
           "focus:outline-none border-b w-full pb-2 border-sky-400 placeholder-gray-500 mb-8",
         attrs: { type: "password", placeholder: "Password " }
       })
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "flex" }, [
-      _c("input", {
-        staticClass: "border-sky-400 ",
-        attrs: { type: "checkbox", value: "" }
-      }),
-      _vm._v(" "),
-      _c("div", { staticClass: "px-3 text-gray-500" }, [
-        _vm._v(
-          "\r\n                    I accept terms & conditions \r\n                "
-        )
-      ])
     ])
   },
   function() {
