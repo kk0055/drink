@@ -104,8 +104,8 @@
                         class="divide-solid max-w-md text-gray-900 divide-y divide-green-500 dark:text-white dark:divide-gray-700"
                         v-for="comment in drink.comments"
                     >
-                        <li>
-                            <p>{{ comment.body }}</p>
+                        <li class=" mr-4">
+                            <p class="-my-1 mr-4" >{{ comment.body }}</p>
                             --------------------------------------
                         </li>
                     </ul>

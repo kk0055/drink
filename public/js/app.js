@@ -22403,8 +22403,10 @@ var render = function() {
                             "divide-solid max-w-md text-gray-900 divide-y divide-green-500 dark:text-white dark:divide-gray-700"
                         },
                         [
-                          _c("li", [
-                            _c("p", [_vm._v(_vm._s(comment.body))]),
+                          _c("li", { staticClass: " mr-4" }, [
+                            _c("p", { staticClass: "-my-1 mr-4" }, [
+                              _vm._v(_vm._s(comment.body))
+                            ]),
                             _vm._v(
                               "\n                        --------------------------------------\n                    "
                             )
