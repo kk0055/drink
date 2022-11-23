@@ -92,7 +92,11 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
               case 0:
                 _this2.loading = true;
                 _context2.next = 3;
-                return axios.get("/api/drinks/".concat(_this2.id)).then(function (response) {
+                return axios.get("/api/drinks/".concat(_this2.id), {
+                  params: {
+                    "with": 'comments'
+                  }
+                }).then(function (response) {
                   _this2.drink = response.data;
                 })["catch"](function (error) {
                   console.log(error);

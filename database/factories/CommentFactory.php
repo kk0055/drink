@@ -27,7 +27,7 @@ class CommentFactory extends Factory
         $drinkId  = Drink::pluck('id')->all();
 
         return [
-            'body' => $this->faker->word,
+            'body' => $this->faker->text,
             'user_id' => $this->faker->randomElement($userId),
             'drink_id' => $this->faker->randomElement($drinkId),
         ];

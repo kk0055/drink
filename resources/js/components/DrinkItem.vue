@@ -26,7 +26,6 @@
                     :favorited="drink.favorited ? 'true' : 'false'"
                     class="pl-2"
                 ></favorite-btn>
-                <i class="far fa-comment pl-2"></i>
             </div>
 
             <div class="pt-1">
@@ -78,6 +77,15 @@
                         </router-link>
                     </div>
                     <div
+                        
+                        class="mt-1 flex justify-start"
+                    >
+                        <i @click="showComment = !showComment"
+                        class="far fa-comment pl-2 mr-2 text-2xl"></i>
+                        <p>{{ drink.comments.length }}</p>
+                    </div>
+                    <!-- deleteボタン削除予定 -->
+                    <div
                         v-if="$route.name !== 'drinks'"
                         class="mt-1 flex justify-end"
                     >
@@ -88,7 +96,17 @@
                 </div>
             </div>
             <!-- Comment -->
-            <div class="max-w-lg shadow-md">
+            <div
+                v-if="showComment && $route.name != 'drinks'"
+                class="max-w-lg shadow-md"
+            >
+                <div >
+                    <ul class="divide-solid max-w-md text-gray-900 divide-y divide-green-500 dark:text-white dark:divide-gray-700" v-for="comment in drink.comments">
+                        <li >
+                           <p> {{ comment.body }}</p>
+                        </li>
+                    </ul>
+                </div>
                 <form action="" class="w-full p-4">
                     <div class="mb-2">
                         <label for="comment" class="text-lg text-gray-600"
@@ -117,7 +135,9 @@ export default {
         drink: { Type: Object }
         // drinks: { Type: Array }
     },
-    data: () => ({}),
+    data: () => ({
+        showComment: false
+    }),
     computed: {
         image() {
             return this.drink.image

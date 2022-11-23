@@ -1977,6 +1977,24 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: {
     drink: {
@@ -1985,7 +2003,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
   },
   data: function data() {
-    return {};
+    return {
+      showComment: false
+    };
   },
   computed: {
     image: function image() {
@@ -22160,9 +22180,7 @@ var render = function() {
                 drink: _vm.drink.id,
                 favorited: _vm.drink.favorited ? "true" : "false"
               }
-            }),
-            _vm._v(" "),
-            _c("i", { staticClass: "far fa-comment pl-2" })
+            })
           ],
           1
         ),
@@ -22254,6 +22272,19 @@ var render = function() {
                 )
               : _vm._e(),
             _vm._v(" "),
+            _c("div", { staticClass: "mt-1 flex justify-start" }, [
+              _c("i", {
+                staticClass: "far fa-comment pl-2 mr-2 text-2xl",
+                on: {
+                  click: function($event) {
+                    _vm.showComment = !_vm.showComment
+                  }
+                }
+              }),
+              _vm._v(" "),
+              _c("p", [_vm._v(_vm._s(_vm.drink.comments.length))])
+            ]),
+            _vm._v(" "),
             _vm.$route.name !== "drinks"
               ? _c("div", { staticClass: "mt-1 flex justify-end" }, [
                   _c(
@@ -22272,7 +22303,26 @@ var render = function() {
           ])
         ]),
         _vm._v(" "),
-        _vm._m(0)
+        _vm.showComment && _vm.$route.name != "drinks"
+          ? _c("div", { staticClass: "max-w-lg shadow-md" }, [
+              _c(
+                "div",
+                _vm._l(_vm.drink.comments, function(comment) {
+                  return _c(
+                    "ul",
+                    {
+                      staticClass:
+                        "divide-solid max-w-md text-gray-900 divide-y divide-green-500 dark:text-white dark:divide-gray-700"
+                    },
+                    [_c("li", [_c("p", [_vm._v(" " + _vm._s(comment.body))])])]
+                  )
+                }),
+                0
+              ),
+              _vm._v(" "),
+              _vm._m(0)
+            ])
+          : _vm._e()
       ])
     ]
   )
@@ -22282,30 +22332,26 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "max-w-lg shadow-md" }, [
-      _c("form", { staticClass: "w-full p-4", attrs: { action: "" } }, [
-        _c("div", { staticClass: "mb-2" }, [
-          _c(
-            "label",
-            { staticClass: "text-lg text-gray-600", attrs: { for: "comment" } },
-            [_vm._v("Add a comment")]
-          ),
-          _vm._v(" "),
-          _c("textarea", {
-            staticClass:
-              "w-full h-20 p-2 border rounded focus:outline-none focus:ring-gray-300 focus:ring-1",
-            attrs: { name: "comment", placeholder: "" }
-          })
-        ]),
-        _vm._v(" "),
+    return _c("form", { staticClass: "w-full p-4", attrs: { action: "" } }, [
+      _c("div", { staticClass: "mb-2" }, [
         _c(
-          "button",
-          {
-            staticClass: "px-3 py-2 text-sm text-blue-100 bg-blue-600 rounded"
-          },
-          [_vm._v("\n                    Comment\n                ")]
-        )
-      ])
+          "label",
+          { staticClass: "text-lg text-gray-600", attrs: { for: "comment" } },
+          [_vm._v("Add a comment")]
+        ),
+        _vm._v(" "),
+        _c("textarea", {
+          staticClass:
+            "w-full h-20 p-2 border rounded focus:outline-none focus:ring-gray-300 focus:ring-1",
+          attrs: { name: "comment", placeholder: "" }
+        })
+      ]),
+      _vm._v(" "),
+      _c(
+        "button",
+        { staticClass: "px-3 py-2 text-sm text-blue-100 bg-blue-600 rounded" },
+        [_vm._v("\n                    Comment\n                ")]
+      )
     ])
   }
 ]

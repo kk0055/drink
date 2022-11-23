@@ -46,7 +46,11 @@ export default {
         async getData() {
             this.loading = true;
             await axios
-                .get(`/api/drinks/${this.id}`)
+                .get(`/api/drinks/${this.id}`, {
+                    params: {
+                    with:'comments'
+                    }
+                })
                 .then(response => {
                     this.drink = response.data;
                 })

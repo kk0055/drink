@@ -103,7 +103,7 @@ class DrinkController extends Controller
         $favorites = Favorite::where('drink_id', $drink)->get();
         $count = count($favorites);
         // $drink = Drink::findOrFail($drink);
-        return Drink::findOrFail($drink);
+        return Drink::queryControl()->findOrFail($drink);
     }
 
     /**
