@@ -1961,7 +1961,13 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
   props: {
     drink: {
       Type: Object
+    },
+    drinks: {
+      Type: Array
     }
+  },
+  data: function data() {
+    return {};
   },
   computed: {
     image: function image() {
@@ -1984,13 +1990,17 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
                 _context.next = 3;
                 return axios["delete"]("/api/drinks/".concat(id)).then(function (response) {
-                  _this.drinks = response.data;
-
                   _this.$toast("削除完了!", {
                     position: "top-right",
                     timeout: 2000 // transition: "fade"
 
                   });
+
+                  var i = _this.drinks.filter(function (o) {
+                    return o.id == id;
+                  });
+
+                  _this.drinks.splice(i, 1);
                 })["catch"](function (error) {
                   console.log(error);
                 });
@@ -1998,39 +2008,14 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
               case 3:
                 _this.loading = false;
 
-                _this.getDrinks();
-
                 _this.$router.push("/");
 
-              case 6:
+              case 5:
               case "end":
                 return _context.stop();
             }
           }
         }, _callee);
-      }))();
-    },
-    getDrinks: function getDrinks() {
-      var _this2 = this;
-
-      return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee2() {
-        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee2$(_context2) {
-          while (1) {
-            switch (_context2.prev = _context2.next) {
-              case 0:
-                _context2.next = 2;
-                return axios.get("/api/").then(function (response) {
-                  _this2.drinks = response.data;
-                })["catch"](function (error) {
-                  console.log(error);
-                });
-
-              case 2:
-              case "end":
-                return _context2.stop();
-            }
-          }
-        }, _callee2);
       }))();
     }
   }
@@ -22855,7 +22840,11 @@ var render = function() {
                     staticClass:
                       "w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col  inline-block sm:-m-4 -mx-4 md:mx-0"
                   },
-                  [_c("DrinkItem", { attrs: { drink: drink } })],
+                  [
+                    _c("DrinkItem", {
+                      attrs: { drink: drink, drinks: _vm.drinks }
+                    })
+                  ],
                   1
                 )
               }),

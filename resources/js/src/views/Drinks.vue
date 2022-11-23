@@ -45,7 +45,7 @@
                             v-for="drink in drinks"
                             class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col  inline-block sm:-m-4 -mx-4 md:mx-0"
                         >
-                            <DrinkItem :drink="drink" />
+                            <DrinkItem :drink="drink" :drinks="drinks" />
                         </div>
                     </div>
                         <!-- <favorite-btn

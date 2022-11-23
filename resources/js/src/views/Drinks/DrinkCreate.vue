@@ -187,8 +187,7 @@
                         <button
                             class=" rounded-full  p-3 w-full sm:w-56   bg-gradient-to-r from-sky-600  to-teal-300 text-blue-400 text-lg font-semibold shadow"
                             @click="postData"
-                        >
-                            投稿
+                        >投稿                            
                         </button>
                     </div>
                 </div>
@@ -281,7 +280,7 @@ export default {
             }
 
             this.loading = false;
-            // this.$router.push("/");
+            this.$router.push("/");
         },
         selectedFile(e) {
             const file = this.$refs.preview.files[0];

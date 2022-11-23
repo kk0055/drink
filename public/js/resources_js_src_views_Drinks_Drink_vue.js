@@ -48,7 +48,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
   components: {
     DrinkItem: _components_DrinkItem__WEBPACK_IMPORTED_MODULE_1__.default
   },
-  props: {},
+  props: {
+    drinks: Array
+  },
   data: function data() {
     return {
       drink: [],
@@ -228,7 +230,7 @@ var render = function() {
               { staticClass: "bg-white py-6 px-10 sm:max-w-md w-full " },
               [
                 _c("DrinkItem", {
-                  attrs: { drink: _vm.drink, getData: _vm.getData }
+                  attrs: { drink: _vm.drink, drinks: _vm.drinks }
                 })
               ],
               1

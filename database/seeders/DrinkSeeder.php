@@ -13,6 +13,6 @@ class DrinkSeeder extends Seeder
      */
     public function run()
     {
-        Drink::factory()->count(30)->create();
+        Drink::factory()->count(60)->create();
     }
 }

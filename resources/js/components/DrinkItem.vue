@@ -94,8 +94,10 @@
 <script>
 export default {
     props: {
-        drink: { Type: Object }
+        drink: { Type: Object },
+        drinks: { Type: Array }
     },
+    data: () => ({}),
     computed: {
         image() {
             return this.drink.image
@@ -109,31 +111,21 @@ export default {
                 await axios
                     .delete(`/api/drinks/${id}`)
                     .then(response => {
-                        this.drinks = response.data;
                         this.$toast("削除完了!", {
                             position: "top-right",
                             timeout: 2000
                             // transition: "fade"
                         });
-                        
+                        let i = this.drinks.filter(o => o.id == id);
+                        this.drinks.splice(i, 1);
                     })
                     .catch(function(error) {
                         console.log(error);
                     });
             }
+
             this.loading = false;
-            this.getDrinks()
             this.$router.push("/");
-        },
-        async getDrinks() {
-            await axios
-                .get("/api/")
-                .then(response => {
-                    this.drinks = response.data;
-                })
-                .catch(function(error) {
-                    console.log(error);
-                });
         }
     }
 };
