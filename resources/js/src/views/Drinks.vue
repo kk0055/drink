@@ -85,12 +85,16 @@ export default {
         loading: true
     }),
     async created() {
-        await Promise.all([this.getData()]);
+        await Promise.all([this.getDrinks()]);
     },
     methods: {
-        async getData() {
+        async getDrinks() {
             await axios
-                .get("/api/")
+                .get("/api/drinks", {
+                    params: {
+                    with:'comments'
+                    }
+                })
                 .then(response => {
                     this.drinks = response.data;
                 })

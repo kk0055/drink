@@ -7,6 +7,7 @@ use App\Models\Favorite;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+
 use Intervention\Image\ImageManagerStatic as InterventionImage;
 
 class DrinkController extends Controller
@@ -19,7 +20,7 @@ class DrinkController extends Controller
     public function index()
     {
 
-        return Drink::latest()->get();
+        return Drink::queryControl()->latest()->get();
 
     }
 

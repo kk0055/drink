@@ -87,6 +87,26 @@
                     </div>
                 </div>
             </div>
+            <!-- Comment -->
+            <div class="max-w-lg shadow-md">
+                <form action="" class="w-full p-4">
+                    <div class="mb-2">
+                        <label for="comment" class="text-lg text-gray-600"
+                            >Add a comment</label
+                        >
+                        <textarea
+                            class="w-full h-20 p-2 border rounded focus:outline-none focus:ring-gray-300 focus:ring-1"
+                            name="comment"
+                            placeholder=""
+                        ></textarea>
+                    </div>
+                    <button
+                        class="px-3 py-2 text-sm text-blue-100 bg-blue-600 rounded"
+                    >
+                        Comment
+                    </button>
+                </form>
+            </div>
         </div>
     </div>
 </template>
@@ -94,7 +114,7 @@
 <script>
 export default {
     props: {
-        drink: { Type: Object },
+        drink: { Type: Object }
         // drinks: { Type: Array }
     },
     data: () => ({}),
@@ -127,7 +147,7 @@ export default {
             this.loading = false;
             this.$router.push("/");
         },
-            async getDrinks() {
+        async getDrinks() {
             await axios
                 .get("/api/")
                 .then(response => {
@@ -136,7 +156,7 @@ export default {
                 .catch(function(error) {
                     console.log(error);
                 });
-            
+
             this.loading = false;
         }
     }

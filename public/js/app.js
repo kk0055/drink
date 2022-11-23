@@ -1957,6 +1957,26 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: {
     drink: {
@@ -2589,7 +2609,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
           switch (_context.prev = _context.next) {
             case 0:
               _context.next = 2;
-              return Promise.all([_this.getData()]);
+              return Promise.all([_this.getDrinks()]);
 
             case 2:
             case "end":
@@ -2600,7 +2620,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     }))();
   },
   methods: {
-    getData: function getData() {
+    getDrinks: function getDrinks() {
       var _this2 = this;
 
       return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee2() {
@@ -2609,7 +2629,11 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
             switch (_context2.prev = _context2.next) {
               case 0:
                 _context2.next = 2;
-                return axios.get("/api/").then(function (response) {
+                return axios.get("/api/drinks", {
+                  params: {
+                    "with": 'comments'
+                  }
+                }).then(function (response) {
                   _this2.drinks = response.data;
                 })["catch"](function (error) {
                   console.log(error);
@@ -22246,12 +22270,45 @@ var render = function() {
                 ])
               : _vm._e()
           ])
-        ])
+        ]),
+        _vm._v(" "),
+        _vm._m(0)
       ])
     ]
   )
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "max-w-lg shadow-md" }, [
+      _c("form", { staticClass: "w-full p-4", attrs: { action: "" } }, [
+        _c("div", { staticClass: "mb-2" }, [
+          _c(
+            "label",
+            { staticClass: "text-lg text-gray-600", attrs: { for: "comment" } },
+            [_vm._v("Add a comment")]
+          ),
+          _vm._v(" "),
+          _c("textarea", {
+            staticClass:
+              "w-full h-20 p-2 border rounded focus:outline-none focus:ring-gray-300 focus:ring-1",
+            attrs: { name: "comment", placeholder: "" }
+          })
+        ]),
+        _vm._v(" "),
+        _c(
+          "button",
+          {
+            staticClass: "px-3 py-2 text-sm text-blue-100 bg-blue-600 rounded"
+          },
+          [_vm._v("\n                    Comment\n                ")]
+        )
+      ])
+    ])
+  }
+]
 render._withStripped = true
 
 
