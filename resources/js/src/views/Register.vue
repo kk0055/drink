@@ -38,15 +38,15 @@
                         v-model="data.password_confirmation"
                         type="password"
                         class="focus:outline-none border-b w-full pb-2 border-sky-400 placeholder-gray-500 mb-8"
-                        placeholder="Password "
+                        placeholder="Password確認"
                     />
                 </div>
                 <div class="flex justify-center my-6">
                     <button
                        @click="registerUser"
-                        class=" rounded-full  p-3 w-full sm:w-56   bg-gradient-to-r from-sky-600  to-teal-300 text-white text-lg font-semibold "
+                        class="rounded-full  p-3 w-full sm:w-56   bg-gradient-to-r from-sky-600  to-teal-300 text-blue-400 text-lg font-semibold shadow"
                     >
-                        Create Account
+                        登録
                     </button>
                 </div>
                 <div class="flex justify-center ">

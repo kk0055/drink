@@ -340,7 +340,7 @@ var render = function() {
               ],
               staticClass:
                 "focus:outline-none border-b w-full pb-2 border-sky-400 placeholder-gray-500 mb-8",
-              attrs: { type: "password", placeholder: "Password " },
+              attrs: { type: "password", placeholder: "Password確認" },
               domProps: { value: _vm.data.password_confirmation },
               on: {
                 input: function($event) {
@@ -362,10 +362,10 @@ var render = function() {
               "button",
               {
                 staticClass:
-                  " rounded-full  p-3 w-full sm:w-56   bg-gradient-to-r from-sky-600  to-teal-300 text-white text-lg font-semibold ",
+                  "rounded-full  p-3 w-full sm:w-56   bg-gradient-to-r from-sky-600  to-teal-300 text-blue-400 text-lg font-semibold shadow",
                 on: { click: _vm.registerUser }
               },
-              [_vm._v("\n                    Create Account\n                ")]
+              [_vm._v("\n                    登録\n                ")]
             )
           ]),
           _vm._v(" "),

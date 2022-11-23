@@ -11,6 +11,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
 //
 //
 //
@@ -40,8 +48,86 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({});
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  data: function data() {
+    return {
+      data: {},
+      loading: true,
+      user: {}
+    };
+  },
+  created: function created() {
+    var _this = this;
+
+    return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee() {
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee$(_context) {
+        while (1) {
+          switch (_context.prev = _context.next) {
+            case 0:
+              _context.next = 2;
+              return Promise.all([_this.getUser()]);
+
+            case 2:
+            case "end":
+              return _context.stop();
+          }
+        }
+      }, _callee);
+    }))();
+  },
+  methods: {
+    getUser: function getUser() {
+      var _this2 = this;
+
+      return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee2() {
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee2$(_context2) {
+          while (1) {
+            switch (_context2.prev = _context2.next) {
+              case 0:
+                _context2.next = 2;
+                return axios.get("/api/user").then(function (response) {
+                  _this2.user = response.data;
+                })["catch"](function (error) {
+                  console.log(error);
+                });
+
+              case 2:
+                _this2.loading = false;
+
+              case 3:
+              case "end":
+                return _context2.stop();
+            }
+          }
+        }, _callee2);
+      }))();
+    },
+    login: function login() {
+      var _this3 = this;
+
+      return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee3() {
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee3$(_context3) {
+          while (1) {
+            switch (_context3.prev = _context3.next) {
+              case 0:
+                _context3.next = 2;
+                return axios.post("/api/login", _this3.data).then(function (response) {})["catch"](function (error) {
+                  console.log(error);
+                });
+
+              case 2:
+                _this3.loading = false;
+
+              case 3:
+              case "end":
+                return _context3.stop();
+            }
+          }
+        }, _callee3);
+      }))();
+    }
+  }
+});
 
 /***/ }),
 
@@ -151,20 +237,74 @@ var render = function() {
         ),
         _vm._v(" "),
         _c("div", {}, [
-          _vm._m(0),
+          _c("div", [
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.data.email,
+                  expression: "data.email"
+                }
+              ],
+              staticClass:
+                "focus:outline-none border-b w-full pb-2 border-sky-400 placeholder-gray-500 my-8",
+              attrs: { type: "email", placeholder: "Eamil Adress " },
+              domProps: { value: _vm.data.email },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.$set(_vm.data, "email", $event.target.value)
+                }
+              }
+            })
+          ]),
           _vm._v(" "),
-          _vm._m(1),
+          _c("div", {}, [
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.data.password,
+                  expression: "data.password"
+                }
+              ],
+              staticClass:
+                "focus:outline-none border-b w-full pb-2 border-sky-400 placeholder-gray-500 mb-8",
+              attrs: { type: "password", placeholder: "Password " },
+              domProps: { value: _vm.data.password },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.$set(_vm.data, "password", $event.target.value)
+                }
+              }
+            })
+          ]),
           _vm._v(" "),
-          _vm._m(2),
-          _vm._v(" "),
-          _vm._m(3),
+          _c("div", { staticClass: "flex justify-center my-6" }, [
+            _c(
+              "button",
+              {
+                staticClass:
+                  " rounded-full  p-3 w-full sm:w-56   bg-gradient-to-r from-sky-600  to-teal-300 text-white text-lg font-semibold ",
+                on: { click: _vm.login }
+              },
+              [_vm._v("\r\n                    login\r\n                ")]
+            )
+          ]),
           _vm._v(" "),
           _c(
             "div",
             { staticClass: "flex justify-center " },
             [
               _c("p", { staticClass: "text-gray-500" }, [
-                _vm._v("Already have an acount? ")
+                _vm._v("アカウント作成する? ")
               ]),
               _vm._v(" "),
               _c(
@@ -183,59 +323,7 @@ var render = function() {
     ]
   )
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", [
-      _c("input", {
-        staticClass:
-          "focus:outline-none border-b w-full pb-2 border-sky-400 placeholder-gray-500",
-        attrs: { type: "text", placeholder: "Name " }
-      })
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", [
-      _c("input", {
-        staticClass:
-          "focus:outline-none border-b w-full pb-2 border-sky-400 placeholder-gray-500 my-8",
-        attrs: { type: "email", placeholder: "Eamil Adress " }
-      })
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", {}, [
-      _c("input", {
-        staticClass:
-          "focus:outline-none border-b w-full pb-2 border-sky-400 placeholder-gray-500 mb-8",
-        attrs: { type: "password", placeholder: "Password " }
-      })
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "flex justify-center my-6" }, [
-      _c(
-        "button",
-        {
-          staticClass:
-            " rounded-full  p-3 w-full sm:w-56   bg-gradient-to-r from-sky-600  to-teal-300 text-white text-lg font-semibold "
-        },
-        [_vm._v("\r\n                    Create Account\r\n                ")]
-      )
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
 

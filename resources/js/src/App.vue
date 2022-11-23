@@ -28,7 +28,7 @@ export default {
         user:{}
     }),
     async created() {
-        await Promise.all([]);
+        await Promise.all([this.getUser()]);
     },
     methods: {
         // async getData() {

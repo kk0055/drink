@@ -5,22 +5,21 @@
             ログイン 
         </h2>
         <div class="">
-            <div>
-                 <input type="text" class="focus:outline-none border-b w-full pb-2 border-sky-400 placeholder-gray-500"  placeholder="Name "/>
-            </div>
              <div>
-                 <input type="email" class="focus:outline-none border-b w-full pb-2 border-sky-400 placeholder-gray-500 my-8"  placeholder="Eamil Adress "/>
+                 <input v-model="data.email" type="email" class="focus:outline-none border-b w-full pb-2 border-sky-400 placeholder-gray-500 my-8"  placeholder="Eamil Adress "/>
             </div>
             <div class="">
-                <input type="password" class="focus:outline-none border-b w-full pb-2 border-sky-400 placeholder-gray-500 mb-8"  placeholder="Password " />
+                <input v-model="data.password" type="password" class="focus:outline-none border-b w-full pb-2 border-sky-400 placeholder-gray-500 mb-8"  placeholder="Password " />
             </div>
             <div class="flex justify-center my-6">
-                <button class=" rounded-full  p-3 w-full sm:w-56   bg-gradient-to-r from-sky-600  to-teal-300 text-white text-lg font-semibold " >
-                    Create Account
+                <button class=" rounded-full  p-3 w-full sm:w-56   bg-gradient-to-r from-sky-600  to-teal-300 text-white text-lg font-semibold "
+                @click="login"
+                 >
+                    login
                 </button>
             </div>
             <div class="flex justify-center ">
-                <p class="text-gray-500">Already have an acount? </p>
+                <p class="text-gray-500">アカウント作成する? </p>
                  <router-link :to="{name:'register'}" class="text-sky-600 pl-2"> Sign Up</router-link>
             </div>
         </div>
@@ -30,6 +29,36 @@
 
 <script>
 export default {
-  
-}
+    data: () => ({
+        data:{},
+        loading: true,
+        user: {}
+    }),
+    async created() {
+        await Promise.all([this.getUser()]);
+    },
+    methods: {
+        async getUser() {
+            await axios
+                .get("/api/user")
+                .then(response => {
+                    this.user = response.data;
+                })
+                .catch(function(error) {
+                    console.log(error);
+                });
+            this.loading = false;
+        },
+        async login() {
+            await axios
+                .post("/api/login",this.data)
+                .then(response => {
+                })
+                .catch(function(error) {
+                    console.log(error);
+                });
+            this.loading = false;
+        }
+    }
+};
 </script>
