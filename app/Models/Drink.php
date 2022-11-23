@@ -30,4 +30,16 @@ class Drink extends Model
             ->first();
     }
 
+    public function scopeQueryFilter($query)
+    {
+        $ranking = request()->query('ranking');
+
+        return $query
+            ->when($ranking, function ($query, $val) {
+                return $query
+                ->orderBy('score', 'DESC');
+                ;
+            })
+        ;
+    }
 }

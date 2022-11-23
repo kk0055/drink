@@ -3,7 +3,7 @@
         class="pt-3 px-1 rounded overflow-hidden border w-full bg-white mx-3 md:mx-0 lg:mx-0"
     >
         <img
-            v-if="$route.name == 'drinks'"
+            v-if="$route.name == 'drinks' || $route.name == 'drinkRanking'"
             class="h-48 md:h-36 w-full object-cover object-center"
             width="300px"
             height="350px"
@@ -38,7 +38,7 @@
                         <i class="fas fa-map-marker-alt mr-2"></i>
                         {{ drink.place }}
                     </p>
-                    <p class="mt-2 drink-text " v-if="$route.name == 'drinks'">
+                    <p class="mt-2 drink-text "  v-if="$route.name == 'drinks' || $route.name == 'drinkRanking'">
                         <i class="far fa-globe mr-2"></i>
                         {{
                             drink.map_url != "undefined"
@@ -59,13 +59,13 @@
                     <p class="mt-2 drink-text">
                         <i class="fas fa-yen-sign mr-2"></i>{{ drink.price }} 円
                     </p>
-                    <p class="mt-1 drink-text" v-if="$route.name == 'drinks'">
+                    <p class="mt-1 drink-text" v-if="$route.name == 'drinks' || $route.name == 'drinkRanking'">
                         {{ drink.review }}
                     </p>
                     <p class="mt-1" v-else>{{ drink.review }}</p>
 
                     <div
-                        v-if="$route.name == 'drinks'"
+                        v-if="$route.name == 'drinks' || $route.name == 'drinkRanking'"
                         class="mt-1 flex justify-end"
                     >
                         <router-link
@@ -167,7 +167,7 @@ export default {
             return this.drink.image
                 ? this.drink.image
                 : "https://previews.123rf.com/images/arcady31/arcady311303/arcady31130300032/18519959-vector-oops-symbol.jpg";
-        }
+        },
     },
     methods: {
         async deleteDrink(id) {
@@ -218,12 +218,13 @@ export default {
                             timeout: 2000
                             // transition: "fade"
                         });
+                        this.loading = false;
+                         
                     })
                     .catch(function(error) {
                         console.log(error);
                     });
-                this.getDrink()
-                this.loading = false;
+                    this.getDrink()
             }
         }
     }

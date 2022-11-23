@@ -2107,7 +2107,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 }
 
                 console.log("Validation Error");
-                _context2.next = 12;
+                _context2.next = 11;
                 break;
 
               case 6:
@@ -2120,6 +2120,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                     timeout: 2000 // transition: "fade"
 
                   });
+
+                  _this2.loading = false;
                 })["catch"](function (error) {
                   console.log(error);
                 });
@@ -2127,9 +2129,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
               case 10:
                 _this2.getDrink();
 
-                _this2.loading = false;
-
-              case 12:
+              case 11:
               case "end":
                 return _context2.stop();
             }
@@ -2838,8 +2838,8 @@ __webpack_require__.r(__webpack_exports__);
 
 vue__WEBPACK_IMPORTED_MODULE_3__.default.use(vue_router__WEBPACK_IMPORTED_MODULE_4__.default);
 var routes = [{
-  path: '/',
-  name: 'drinks',
+  path: "/",
+  name: "drinks",
   component: _src_views_Drinks__WEBPACK_IMPORTED_MODULE_1__.default,
   children: [// {
     //   path: ':drinkId',
@@ -2851,8 +2851,14 @@ var routes = [{
     // },
   ]
 }, {
-  path: '/drink',
-  name: 'createDrink',
+  path: "/drinks/ranking",
+  name: "drinkRanking",
+  component: function component() {
+    return __webpack_require__.e(/*! import() */ "resources_js_src_views_Ranking_vue").then(__webpack_require__.bind(__webpack_require__, /*! ../src/views/Ranking.vue */ "./resources/js/src/views/Ranking.vue"));
+  }
+}, {
+  path: "/drink",
+  name: "createDrink",
   // meta: {
   //   backPath: { name: 'drinks' },
   // },
@@ -2861,26 +2867,26 @@ var routes = [{
     return __webpack_require__.e(/*! import() */ "resources_js_src_views_Drinks_DrinkCreate_vue").then(__webpack_require__.bind(__webpack_require__, /*! ../src/views/Drinks/DrinkCreate.vue */ "./resources/js/src/views/Drinks/DrinkCreate.vue"));
   }
 }, {
-  path: '/drinks/:drinkId',
-  name: 'drinkDetails',
+  path: "/drinks/:drinkId",
+  name: "drinkDetails",
   component: function component() {
     return __webpack_require__.e(/*! import() */ "resources_js_src_views_Drinks_Drink_vue").then(__webpack_require__.bind(__webpack_require__, /*! ../src/views/Drinks/Drink.vue */ "./resources/js/src/views/Drinks/Drink.vue"));
   }
 }, {
-  path: '/register',
-  name: 'register',
+  path: "/register",
+  name: "register",
   component: function component() {
     return __webpack_require__.e(/*! import() */ "resources_js_src_views_Register_vue").then(__webpack_require__.bind(__webpack_require__, /*! ../src/views/Register.vue */ "./resources/js/src/views/Register.vue"));
   }
 }, {
-  path: '/login',
-  name: 'login',
+  path: "/login",
+  name: "login",
   component: function component() {
     return __webpack_require__.e(/*! import() */ "resources_js_src_views_Login_vue").then(__webpack_require__.bind(__webpack_require__, /*! ../src/views/Login.vue */ "./resources/js/src/views/Login.vue"));
   }
 }];
 var router = new vue_router__WEBPACK_IMPORTED_MODULE_4__.default({
-  mode: 'history',
+  mode: "history",
   base: process.env.BASE_URL,
   routes: routes
 });
@@ -22274,7 +22280,7 @@ var render = function() {
         "pt-3 px-1 rounded overflow-hidden border w-full bg-white mx-3 md:mx-0 lg:mx-0"
     },
     [
-      _vm.$route.name == "drinks"
+      _vm.$route.name == "drinks" || _vm.$route.name == "drinkRanking"
         ? _c("img", {
             staticClass: "h-48 md:h-36 w-full object-cover object-center",
             attrs: { width: "300px", height: "350px", src: _vm.image }
@@ -22315,7 +22321,7 @@ var render = function() {
                 )
               ]),
               _vm._v(" "),
-              _vm.$route.name == "drinks"
+              _vm.$route.name == "drinks" || _vm.$route.name == "drinkRanking"
                 ? _c("p", { staticClass: "mt-2 drink-text " }, [
                     _c("i", { staticClass: "far fa-globe mr-2" }),
                     _vm._v(
@@ -22352,7 +22358,7 @@ var render = function() {
                 _vm._v(_vm._s(_vm.drink.price) + " 円\n                ")
               ]),
               _vm._v(" "),
-              _vm.$route.name == "drinks"
+              _vm.$route.name == "drinks" || _vm.$route.name == "drinkRanking"
                 ? _c("p", { staticClass: "mt-1 drink-text" }, [
                     _vm._v(
                       "\n                    " +
@@ -22364,7 +22370,7 @@ var render = function() {
                     _vm._v(_vm._s(_vm.drink.review))
                   ]),
               _vm._v(" "),
-              _vm.$route.name == "drinks"
+              _vm.$route.name == "drinks" || _vm.$route.name == "drinkRanking"
                 ? _c(
                     "div",
                     { staticClass: "mt-1 flex justify-end" },
@@ -22880,9 +22886,14 @@ var render = function() {
                       {
                         staticClass:
                           "text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium",
-                        attrs: { to: "#" }
+                        attrs: { to: { name: "drinkRanking" } }
                       },
-                      [_vm._v("ランキング")]
+                      [
+                        _c("i", {
+                          staticClass: "fas fa-crown text-yellow-500 mr-1"
+                        }),
+                        _vm._v("ランキング")
+                      ]
                     )
                   ],
                   1
@@ -23081,7 +23092,10 @@ var render = function() {
                     "text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium",
                   attrs: { to: "#" }
                 },
-                [_vm._v("ランキング")]
+                [
+                  _c("i", { staticClass: "fas fa-crown text-yellow-500 mr-1" }),
+                  _vm._v("ランキング")
+                ]
               )
             ],
             1
@@ -42119,7 +42133,7 @@ exports.withParams = withParams;
 /******/ 		// This function allow to reference async chunks
 /******/ 		__webpack_require__.u = (chunkId) => {
 /******/ 			// return url for filenames not based on template
-/******/ 			if ({"resources_js_src_views_Drinks_DrinkCreate_vue":1,"resources_js_src_views_Drinks_Drink_vue":1,"resources_js_src_views_Register_vue":1,"resources_js_src_views_Login_vue":1}[chunkId]) return "js/" + chunkId + ".js";
+/******/ 			if ({"resources_js_src_views_Ranking_vue":1,"resources_js_src_views_Drinks_DrinkCreate_vue":1,"resources_js_src_views_Drinks_Drink_vue":1,"resources_js_src_views_Register_vue":1,"resources_js_src_views_Login_vue":1}[chunkId]) return "js/" + chunkId + ".js";
 /******/ 			// return url for filenames based on template
 /******/ 			return undefined;
 /******/ 		};

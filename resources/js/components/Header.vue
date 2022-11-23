@@ -62,7 +62,7 @@
 
          <router-link to="#" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">俺のお気に入り</router-link>
 
-            <router-link to="#" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">ランキング</router-link>
+            <router-link :to="{name:'drinkRanking'}" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"><i class="fas fa-crown text-yellow-500 mr-1"></i>ランキング</router-link>
           </div>
         </div>
       </div>
@@ -140,7 +140,7 @@
 
       <router-link to="#"  class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">俺のお気に入り</router-link>
 
-      <router-link to="#"  class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">ランキング</router-link>
+      <router-link to="#"  class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"><i class="fas fa-crown text-yellow-500 mr-1"></i>ランキング</router-link>
     </div>
   </div>
 </nav>
