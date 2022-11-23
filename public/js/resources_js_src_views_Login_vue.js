@@ -48,6 +48,26 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
@@ -76,25 +96,23 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     }))();
   },
   methods: {
-    getUser: function getUser() {
-      var _this2 = this;
+    getUser: function getUser() {// await axios
+      //     .get("/api/user", {
+      //         with: "user"
+      //     })
+      //     .then(response => {
+      //         this.user = response.data;
+      //     })
+      //     .catch(function(error) {
+      //         console.log(error);
+      //     });
+      // this.loading = false;
 
       return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee2() {
         return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee2$(_context2) {
           while (1) {
             switch (_context2.prev = _context2.next) {
               case 0:
-                _context2.next = 2;
-                return axios.get("/api/user").then(function (response) {
-                  _this2.user = response.data;
-                })["catch"](function (error) {
-                  console.log(error);
-                });
-
-              case 2:
-                _this2.loading = false;
-
-              case 3:
               case "end":
                 return _context2.stop();
             }
@@ -103,7 +121,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       }))();
     },
     login: function login() {
-      var _this3 = this;
+      var _this2 = this;
 
       return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee3() {
         return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee3$(_context3) {
@@ -111,12 +129,12 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
             switch (_context3.prev = _context3.next) {
               case 0:
                 _context3.next = 2;
-                return axios.post("/api/login", _this3.data).then(function (response) {})["catch"](function (error) {
+                return axios.post("/api/login", _this2.data).then(function (response) {})["catch"](function (error) {
                   console.log(error);
                 });
 
               case 2:
-                _this3.loading = false;
+                _this2.loading = false;
 
               case 3:
               case "end":
@@ -233,7 +251,7 @@ var render = function() {
             staticClass:
               "sm:text-3xl text-2xl font-semibold text-center text-sky-600  mb-12"
           },
-          [_vm._v("\r\n            ログイン \r\n        ")]
+          [_vm._v("\n            ログイン\n        ")]
         ),
         _vm._v(" "),
         _c("div", {}, [
@@ -295,7 +313,7 @@ var render = function() {
                   " rounded-full  p-3 w-full sm:w-56   bg-gradient-to-r from-sky-600  to-teal-300 text-white text-lg font-semibold ",
                 on: { click: _vm.login }
               },
-              [_vm._v("\r\n                    login\r\n                ")]
+              [_vm._v("\n                    login\n                ")]
             )
           ]),
           _vm._v(" "),
@@ -304,7 +322,7 @@ var render = function() {
             { staticClass: "flex justify-center " },
             [
               _c("p", { staticClass: "text-gray-500" }, [
-                _vm._v("アカウント作成する? ")
+                _vm._v("アカウント作成する?")
               ]),
               _vm._v(" "),
               _c(
@@ -313,7 +331,7 @@ var render = function() {
                   staticClass: "text-sky-600 pl-2",
                   attrs: { to: { name: "register" } }
                 },
-                [_vm._v(" Sign Up")]
+                [_vm._v("\n                    Sign Up")]
               )
             ],
             1
