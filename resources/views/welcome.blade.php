@@ -152,9 +152,9 @@
     gtag('config', 'G-D044F053SJ');
     </script>     --}}
     <script>
-     function loginAlert() {
-       alert("ごめんなさい。ログインして(T_T)");
-     }
+    //  function loginAlert() {
+    //    alert("ごめんなさい。ログインして(T_T)");
+    //  }
      </script>  
 <meta name="google-site-verification" content="hfxhZpIpglETSHt-BZBBPnQTp5XE-7nkkN09kyLwQSg" />
 {{-- <link href="{{ mix('/css/app.css') }}" rel="stylesheet"> --}}

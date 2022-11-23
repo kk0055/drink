@@ -1999,6 +1999,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: {
     drink: {
@@ -2481,18 +2482,13 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       user: {}
     };
   },
-  created: function created() {
-    var _this = this;
+  created: function created() {// await Promise.all([this.getUser()]);
 
     return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee() {
       return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee$(_context) {
         while (1) {
           switch (_context.prev = _context.next) {
             case 0:
-              _context.next = 2;
-              return Promise.all([_this.getUser()]);
-
-            case 2:
             case "end":
               return _context.stop();
           }
@@ -2513,7 +2509,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     //     this.loading = false;
     // }
     getUser: function getUser() {
-      var _this2 = this;
+      var _this = this;
 
       return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee2() {
         return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee2$(_context2) {
@@ -2522,13 +2518,13 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
               case 0:
                 _context2.next = 2;
                 return axios.get("/api/user").then(function (response) {
-                  _this2.user = response.data;
+                  _this.user = response.data;
                 })["catch"](function (error) {
                   console.log(error);
                 });
 
               case 2:
-                _this2.loading = false;
+                _this.loading = false;
 
               case 3:
               case "end":
@@ -2681,7 +2677,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 _context2.next = 2;
                 return axios.get("/api/drinks", {
                   params: {
-                    "with": 'comments'
+                    "with": "comments"
                   }
                 }).then(function (response) {
                   _this2.drinks = response.data;
@@ -2987,6 +2983,30 @@ __webpack_require__.r(__webpack_exports__);
 var ___CSS_LOADER_EXPORT___ = _css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
 ___CSS_LOADER_EXPORT___.push([module.id, "@tailwind utilities;\n", ""]);
+// Exports
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/DrinkItem.vue?vue&type=style&index=0&lang=css&":
+/*!************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/DrinkItem.vue?vue&type=style&index=0&lang=css& ***!
+  \************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);
+// Imports
+
+var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, "\n.v-enter-active,\r\n.v-leave-active {\r\n  transition: opacity 0.5s ease;\n}\n.v-enter-from,\r\n.v-leave-to {\r\n  opacity: 0;\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -21330,6 +21350,36 @@ var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js
 
 /***/ }),
 
+/***/ "./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/DrinkItem.vue?vue&type=style&index=0&lang=css&":
+/*!****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/DrinkItem.vue?vue&type=style&index=0&lang=css& ***!
+  \****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_2_node_modules_vue_loader_lib_index_js_vue_loader_options_DrinkItem_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./DrinkItem.vue?vue&type=style&index=0&lang=css& */ "./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/DrinkItem.vue?vue&type=style&index=0&lang=css&");
+
+            
+
+var options = {};
+
+options.insert = "head";
+options.singleton = false;
+
+var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_2_node_modules_vue_loader_lib_index_js_vue_loader_options_DrinkItem_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_1__.default, options);
+
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_2_node_modules_vue_loader_lib_index_js_vue_loader_options_DrinkItem_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_1__.default.locals || {});
+
+/***/ }),
+
 /***/ "./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/src/App.vue?vue&type=style&index=0&lang=css&":
 /*!***************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/src/App.vue?vue&type=style&index=0&lang=css& ***!
@@ -21652,15 +21702,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _DrinkItem_vue_vue_type_template_id_12054870___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./DrinkItem.vue?vue&type=template&id=12054870& */ "./resources/js/components/DrinkItem.vue?vue&type=template&id=12054870&");
 /* harmony import */ var _DrinkItem_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./DrinkItem.vue?vue&type=script&lang=js& */ "./resources/js/components/DrinkItem.vue?vue&type=script&lang=js&");
-/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+/* harmony import */ var _DrinkItem_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./DrinkItem.vue?vue&type=style&index=0&lang=css& */ "./resources/js/components/DrinkItem.vue?vue&type=style&index=0&lang=css&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! !../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
 
+;
 
 
 /* normalize component */
-;
-var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__.default)(
+
+var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__.default)(
   _DrinkItem_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__.default,
   _DrinkItem_vue_vue_type_template_id_12054870___WEBPACK_IMPORTED_MODULE_0__.render,
   _DrinkItem_vue_vue_type_template_id_12054870___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
@@ -22026,6 +22078,19 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/components/DrinkItem.vue?vue&type=style&index=0&lang=css&":
+/*!********************************************************************************!*\
+  !*** ./resources/js/components/DrinkItem.vue?vue&type=style&index=0&lang=css& ***!
+  \********************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_style_loader_dist_cjs_js_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_2_node_modules_vue_loader_lib_index_js_vue_loader_options_DrinkItem_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/style-loader/dist/cjs.js!../../../node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./DrinkItem.vue?vue&type=style&index=0&lang=css& */ "./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/DrinkItem.vue?vue&type=style&index=0&lang=css&");
+
+
+/***/ }),
+
 /***/ "./resources/js/src/App.vue?vue&type=style&index=0&lang=css&":
 /*!*******************************************************************!*\
   !*** ./resources/js/src/App.vue?vue&type=style&index=0&lang=css& ***!
@@ -22191,199 +22256,224 @@ var render = function() {
             attrs: { width: "200px", src: _vm.image }
           }),
       _vm._v(" "),
-      _c("div", { staticClass: "px-3 pb-2" }, [
-        _c("div", { staticClass: "pt-2" }, [
-          _c("h3", { staticClass: "drink-name text-blue-700" }, [
-            _vm._v(_vm._s(_vm.drink.name))
+      _c(
+        "div",
+        { staticClass: "px-3 pb-2" },
+        [
+          _c("div", { staticClass: "pt-2" }, [
+            _c("h3", { staticClass: "drink-name text-blue-700" }, [
+              _vm._v(_vm._s(_vm.drink.name))
+            ]),
+            _vm._v(" "),
+            _c("i", { staticClass: "fas fa-star -ml-1 text-yellow-300" }),
+            _vm._v(
+              "\n            " + _vm._s(_vm.drink.score) + "\n            "
+            )
           ]),
           _vm._v(" "),
-          _c("i", { staticClass: "fas fa-star -ml-1 text-yellow-300" }),
-          _vm._v("\n            " + _vm._s(_vm.drink.score) + "\n            ")
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "pt-1" }, [
-          _c("div", { staticClass: "mb-2 text-sm" }, [
-            _c("p", { staticClass: "drink-place" }, [
-              _c("i", { staticClass: "fas fa-tenge mr-2 text-red-700" }),
-              _vm._v(_vm._s(_vm.drink.prefecture) + "\n                ")
-            ]),
-            _vm._v(" "),
-            _c("p", { staticClass: "drink-place" }, [
-              _c("i", { staticClass: "fas fa-map-marker-alt mr-2" }),
-              _vm._v(
-                "\n                    " +
-                  _vm._s(_vm.drink.place) +
-                  "\n                "
-              )
-            ]),
-            _vm._v(" "),
-            _vm.$route.name == "drinks"
-              ? _c("p", { staticClass: "mt-2 drink-text " }, [
-                  _c("i", { staticClass: "far fa-globe mr-2" }),
-                  _vm._v(
-                    "\n                    " +
-                      _vm._s(
-                        _vm.drink.map_url != "undefined"
-                          ? _vm.drink.map_url
-                          : "不明"
-                      ) +
-                      "\n                "
-                  )
-                ])
-              : _c("p", { staticClass: "mt-2" }, [
-                  _c("i", { staticClass: "far fa-globe mr-2" }),
-                  _vm._v(" "),
-                  _c(
-                    "a",
-                    { attrs: { href: _vm.drink.map_url, target: "_blank" } },
-                    [
-                      _vm._v(
-                        "\n                        " +
-                          _vm._s(
-                            _vm.drink.map_url != "undefined"
-                              ? _vm.drink.map_url
-                              : "不明"
-                          )
-                      )
-                    ]
-                  )
-                ]),
-            _vm._v(" "),
-            _c("p", { staticClass: "mt-2 drink-text" }, [
-              _c("i", { staticClass: "fas fa-yen-sign mr-2" }),
-              _vm._v(_vm._s(_vm.drink.price) + " 円\n                ")
-            ]),
-            _vm._v(" "),
-            _vm.$route.name == "drinks"
-              ? _c("p", { staticClass: "mt-1 drink-text" }, [
-                  _vm._v(
-                    "\n                    " +
-                      _vm._s(_vm.drink.review) +
-                      "\n                "
-                  )
-                ])
-              : _c("p", { staticClass: "mt-1" }, [
-                  _vm._v(_vm._s(_vm.drink.review))
-                ]),
-            _vm._v(" "),
-            _vm.$route.name == "drinks"
-              ? _c(
-                  "div",
-                  { staticClass: "mt-1 flex justify-end" },
-                  [
+          _c("div", { staticClass: "pt-1" }, [
+            _c("div", { staticClass: "mb-2 text-sm" }, [
+              _c("p", { staticClass: "drink-place" }, [
+                _c("i", { staticClass: "fas fa-tenge mr-2 text-red-700" }),
+                _vm._v(_vm._s(_vm.drink.prefecture) + "\n                ")
+              ]),
+              _vm._v(" "),
+              _c("p", { staticClass: "drink-place" }, [
+                _c("i", { staticClass: "fas fa-map-marker-alt mr-2" }),
+                _vm._v(
+                  "\n                    " +
+                    _vm._s(_vm.drink.place) +
+                    "\n                "
+                )
+              ]),
+              _vm._v(" "),
+              _vm.$route.name == "drinks"
+                ? _c("p", { staticClass: "mt-2 drink-text " }, [
+                    _c("i", { staticClass: "far fa-globe mr-2" }),
+                    _vm._v(
+                      "\n                    " +
+                        _vm._s(
+                          _vm.drink.map_url != "undefined"
+                            ? _vm.drink.map_url
+                            : "不明"
+                        ) +
+                        "\n                "
+                    )
+                  ])
+                : _c("p", { staticClass: "mt-2" }, [
+                    _c("i", { staticClass: "far fa-globe mr-2" }),
+                    _vm._v(" "),
                     _c(
-                      "router-link",
+                      "a",
+                      { attrs: { href: _vm.drink.map_url, target: "_blank" } },
+                      [
+                        _vm._v(
+                          "\n                        " +
+                            _vm._s(
+                              _vm.drink.map_url != "undefined"
+                                ? _vm.drink.map_url
+                                : "不明"
+                            )
+                        )
+                      ]
+                    )
+                  ]),
+              _vm._v(" "),
+              _c("p", { staticClass: "mt-2 drink-text" }, [
+                _c("i", { staticClass: "fas fa-yen-sign mr-2" }),
+                _vm._v(_vm._s(_vm.drink.price) + " 円\n                ")
+              ]),
+              _vm._v(" "),
+              _vm.$route.name == "drinks"
+                ? _c("p", { staticClass: "mt-1 drink-text" }, [
+                    _vm._v(
+                      "\n                    " +
+                        _vm._s(_vm.drink.review) +
+                        "\n                "
+                    )
+                  ])
+                : _c("p", { staticClass: "mt-1" }, [
+                    _vm._v(_vm._s(_vm.drink.review))
+                  ]),
+              _vm._v(" "),
+              _vm.$route.name == "drinks"
+                ? _c(
+                    "div",
+                    { staticClass: "mt-1 flex justify-end" },
+                    [
+                      _c(
+                        "router-link",
+                        {
+                          attrs: {
+                            to: {
+                              name: "drinkDetails",
+                              params: { drinkId: _vm.drink.id }
+                            }
+                          }
+                        },
+                        [_vm._v("...more\n                    ")]
+                      )
+                    ],
+                    1
+                  )
+                : _vm._e(),
+              _vm._v(" "),
+              _c("span", { staticClass: "mt-1 flex justify-start " }, [
+                _c("i", {
+                  staticClass: "far fa-comment pl-2 mr-2 text-2xl",
+                  on: {
+                    click: function($event) {
+                      _vm.showComment = !_vm.showComment
+                    }
+                  }
+                }),
+                _vm._v(" "),
+                _c("p", [_vm._v(_vm._s(_vm.drink.comments.length))])
+              ]),
+              _vm._v(" "),
+              _vm.$route.name !== "drinks"
+                ? _c("div", { staticClass: "mt-1 flex justify-end" }, [
+                    _c(
+                      "button",
                       {
-                        attrs: {
-                          to: {
-                            name: "drinkDetails",
-                            params: { drinkId: _vm.drink.id }
+                        on: {
+                          click: function($event) {
+                            return _vm.deleteDrink(_vm.drink.id)
                           }
                         }
                       },
-                      [_vm._v("...more\n                    ")]
+                      [_c("i", { staticClass: "far fa-trash text-red-500" })]
+                    )
+                  ])
+                : _vm._e()
+            ])
+          ]),
+          _vm._v(" "),
+          _c("Transition", [
+            _vm.showComment && _vm.$route.name != "drinks"
+              ? _c(
+                  "div",
+                  { staticClass: "max-w-lg shadow-md " },
+                  [
+                    _vm._l(_vm.drink.comments, function(comment) {
+                      return _c(
+                        "ul",
+                        {
+                          staticClass:
+                            "divide-solid max-w-md text-gray-900 divide-y divide-green-500 dark:text-white dark:divide-gray-700"
+                        },
+                        [
+                          _c("li", [
+                            _c("p", [_vm._v(_vm._s(comment.body))]),
+                            _vm._v(
+                              "\n                        --------------------------------------\n                    "
+                            )
+                          ])
+                        ]
+                      )
+                    }),
+                    _vm._v(" "),
+                    _c(
+                      "form",
+                      { staticClass: "w-full p-4", attrs: { action: "" } },
+                      [
+                        _c("div", { staticClass: "mb-2" }, [
+                          _c(
+                            "label",
+                            {
+                              staticClass: "text-lg text-gray-600",
+                              attrs: { for: "comment" }
+                            },
+                            [_vm._v("Add a comment")]
+                          ),
+                          _vm._v(" "),
+                          _c("textarea", {
+                            directives: [
+                              {
+                                name: "model",
+                                rawName: "v-model",
+                                value: _vm.data.body,
+                                expression: "data.body"
+                              }
+                            ],
+                            staticClass:
+                              "w-full h-20 p-2 border rounded focus:outline-none focus:ring-gray-300 focus:ring-1",
+                            attrs: { name: "comment", placeholder: "" },
+                            domProps: { value: _vm.data.body },
+                            on: {
+                              input: function($event) {
+                                if ($event.target.composing) {
+                                  return
+                                }
+                                _vm.$set(_vm.data, "body", $event.target.value)
+                              }
+                            }
+                          })
+                        ]),
+                        _vm._v(" "),
+                        _c(
+                          "button",
+                          {
+                            staticClass:
+                              "px-3 py-2 text-sm text-blue-100 bg-blue-600 rounded",
+                            on: { click: _vm.submitComment }
+                          },
+                          [
+                            _vm._v(
+                              "\n                    Comment\n                "
+                            )
+                          ]
+                        )
+                      ]
                     )
                   ],
-                  1
+                  2
                 )
-              : _vm._e(),
-            _vm._v(" "),
-            _c("span", { staticClass: "mt-1 flex justify-start " }, [
-              _c("i", {
-                staticClass: "far fa-comment pl-2 mr-2 text-2xl",
-                on: {
-                  click: function($event) {
-                    _vm.showComment = !_vm.showComment
-                  }
-                }
-              }),
-              _vm._v(" "),
-              _c("p", [_vm._v(_vm._s(_vm.drink.comments.length))])
-            ]),
-            _vm._v(" "),
-            _vm.$route.name !== "drinks"
-              ? _c("div", { staticClass: "mt-1 flex justify-end" }, [
-                  _c(
-                    "button",
-                    {
-                      on: {
-                        click: function($event) {
-                          return _vm.deleteDrink(_vm.drink.id)
-                        }
-                      }
-                    },
-                    [_c("i", { staticClass: "far fa-trash text-red-500" })]
-                  )
-                ])
               : _vm._e()
           ])
-        ]),
-        _vm._v(" "),
-        _vm.showComment && _vm.$route.name != "drinks"
-          ? _c("div", { staticClass: "max-w-lg shadow-md" }, [
-              _c(
-                "div",
-                _vm._l(_vm.drink.comments, function(comment) {
-                  return _c(
-                    "ul",
-                    {
-                      staticClass:
-                        "divide-solid max-w-md text-gray-900 divide-y divide-green-500 dark:text-white dark:divide-gray-700"
-                    },
-                    [_c("li", [_c("p", [_vm._v(_vm._s(comment.body))])])]
-                  )
-                }),
-                0
-              ),
-              _vm._v(" "),
-              _c("form", { staticClass: "w-full p-4", attrs: { action: "" } }, [
-                _c("div", { staticClass: "mb-2" }, [
-                  _c(
-                    "label",
-                    {
-                      staticClass: "text-lg text-gray-600",
-                      attrs: { for: "comment" }
-                    },
-                    [_vm._v("Add a comment")]
-                  ),
-                  _vm._v(" "),
-                  _c("textarea", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.data.body,
-                        expression: "data.body"
-                      }
-                    ],
-                    staticClass:
-                      "w-full h-20 p-2 border rounded focus:outline-none focus:ring-gray-300 focus:ring-1",
-                    attrs: { name: "comment", placeholder: "" },
-                    domProps: { value: _vm.data.body },
-                    on: {
-                      input: function($event) {
-                        if ($event.target.composing) {
-                          return
-                        }
-                        _vm.$set(_vm.data, "body", $event.target.value)
-                      }
-                    }
-                  })
-                ]),
-                _vm._v(" "),
-                _c(
-                  "button",
-                  {
-                    staticClass:
-                      "px-3 py-2 text-sm text-blue-100 bg-blue-600 rounded",
-                    on: { click: _vm.submitComment }
-                  },
-                  [_vm._v("\n                    Comment\n                ")]
-                )
-              ])
-            ])
-          : _vm._e()
-      ])
+        ],
+        1
+      )
     ]
   )
 }

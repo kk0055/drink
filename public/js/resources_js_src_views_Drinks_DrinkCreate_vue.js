@@ -299,7 +299,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                   break;
                 }
 
-                console.log("バリデーションエラー");
+                console.log("Validation Error");
                 _context.next = 17;
                 break;
 
@@ -312,16 +312,15 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                     timeout: 2000 // transition: "fade"
 
                   });
+
+                  _this.loading = false;
+
+                  _this.$router.push("/");
                 })["catch"](function (error) {
                   console.log(error);
                 });
 
               case 17:
-                _this.loading = false;
-
-                _this.$router.push("/");
-
-              case 19:
               case "end":
                 return _context.stop();
             }
@@ -1073,11 +1072,7 @@ var render = function() {
                     " rounded-full  p-3 w-full sm:w-56   bg-gradient-to-r from-sky-600  to-teal-300 text-blue-400 text-lg font-semibold shadow",
                   on: { click: _vm.postData }
                 },
-                [
-                  _vm._v(
-                    "投稿                            \n                    "
-                  )
-                ]
+                [_vm._v("\n                        投稿\n                    ")]
               )
             ])
           ])

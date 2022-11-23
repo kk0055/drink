@@ -92,7 +92,7 @@ export default {
             await axios
                 .get("/api/drinks", {
                     params: {
-                    with:'comments'
+                        with: "comments"
                     }
                 })
                 .then(response => {

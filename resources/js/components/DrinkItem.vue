@@ -95,20 +95,20 @@
                 </div>
             </div>
             <!-- Comment -->
+            <Transition>
             <div
                 v-if="showComment && $route.name != 'drinks'"
-                class="max-w-lg shadow-md"
+                class="max-w-lg shadow-md "
             >
-                <div>
                     <ul
                         class="divide-solid max-w-md text-gray-900 divide-y divide-green-500 dark:text-white dark:divide-gray-700"
                         v-for="comment in drink.comments"
                     >
                         <li>
                             <p>{{ comment.body }}</p>
+                            --------------------------------------
                         </li>
                     </ul>
-                </div>
                 <form action="" class="w-full p-4">
                     <div class="mb-2">
                         <label for="comment" class="text-lg text-gray-600"
@@ -129,6 +129,7 @@
                     </button>
                 </form>
             </div>
+        </Transition>
         </div>
     </div>
 </template>
@@ -199,3 +200,13 @@ export default {
     }
 };
 </script>
+<style>
+.v-enter-active,
+.v-leave-active {
+  transition: opacity 0.5s ease;
+}
+.v-enter-from,
+.v-leave-to {
+  opacity: 0;
+}
+</style>

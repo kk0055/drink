@@ -8,7 +8,6 @@
                     class="flex sm:text-3xl text-2xl font-semibold items-center justify-center text-center text-sky-600  mb-12"
                 >
                     <img :src="'/images/logo.png'" alt="" width="50x" />
-                
                 </div>
 
                 <!-- <div
@@ -67,7 +66,7 @@
                                 >{{ prefecture.name }}</option
                             >
                         </select>
-                           <span
+                        <span
                             v-if="$v.data.prefecture.$error"
                             class="mt-2"
                             :class="{ error: $v.data.prefecture.$error }"
@@ -82,7 +81,7 @@
                             placeholder="見つけた店 or 場所"
                             @input="$v.data.place.$touch()"
                         />
-                          <span
+                        <span
                             v-if="$v.data.place.$error"
                             class="mt-2"
                             :class="{ error: $v.data.place.$error }"
@@ -114,12 +113,12 @@
                                 :increment="0.5"
                                 @input="$v.data.place.$touch()"
                             ></star-rating>
-                                 <span
-                            v-if="$v.data.score.$error"
-                            class="mt-2"
-                            :class="{ error: $v.data.score.$error }"
-                            >Oops!!!!! 選択してね!</span
-                        >
+                            <span
+                                v-if="$v.data.score.$error"
+                                class="mt-2"
+                                :class="{ error: $v.data.score.$error }"
+                                >Oops!!!!! 選択してね!</span
+                            >
                         </div>
                     </div>
                     <div class="flex justify-center mt-8 ">
@@ -187,7 +186,8 @@
                         <button
                             class=" rounded-full  p-3 w-full sm:w-56   bg-gradient-to-r from-sky-600  to-teal-300 text-blue-400 text-lg font-semibold shadow"
                             @click="postData"
-                        >投稿                            
+                        >
+                            投稿
                         </button>
                     </div>
                 </div>
@@ -215,9 +215,7 @@ export default {
     components: {
         StarRating
     },
-    props: {
-
-    },
+    props: {},
     validations: {
         data: {
             name: {
@@ -245,7 +243,7 @@ export default {
     },
     methods: {
         async postData() {
-            this.$v.$touch()
+            this.$v.$touch();
             const config = {
                 headers: {
                     "content-type": "multipart/form-data"
@@ -261,7 +259,7 @@ export default {
             formData.append("score", this.data.score);
             formData.append("price", this.data.price);
             if (this.$v.$invalid) {
-                console.log("バリデーションエラー");
+                console.log("Validation Error");
             } else {
                 await axios
                     .post("/api/drinks", formData, config)
@@ -272,14 +270,13 @@ export default {
                             timeout: 2000
                             // transition: "fade"
                         });
+                        this.loading = false;
+                        this.$router.push("/");
                     })
                     .catch(function(error) {
                         console.log(error);
                     });
             }
-
-            this.loading = false;
-            this.$router.push("/");
         },
         selectedFile(e) {
             const file = this.$refs.preview.files[0];
