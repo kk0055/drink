@@ -24,11 +24,18 @@ export default {
     },
     data: () => ({
         drinks: [],
-        loading: true
+        loading: true,
+        
     }),
     async created() {
         await Promise.all([this.getData()]);
     },
+//   watch: {
+//     $route(to, from) {
+//       this.drinks = from.drinks;
+    
+//     } 
+//   },
     methods: {
         async getData() {
             await axios
@@ -39,6 +46,7 @@ export default {
                 .catch(function(error) {
                     console.log(error);
                 });
+            
             this.loading = false;
         }
     }

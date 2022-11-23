@@ -95,7 +95,7 @@
 export default {
     props: {
         drink: { Type: Object },
-        drinks: { Type: Array }
+        // drinks: { Type: Array }
     },
     data: () => ({}),
     computed: {
@@ -116,16 +116,28 @@ export default {
                             timeout: 2000
                             // transition: "fade"
                         });
-                        let i = this.drinks.filter(o => o.id == id);
-                        this.drinks.splice(i, 1);
+                        // let i = this.drinks.filter(o => o.id !== id);
+                        // this.drinks.splice(id, 1);
                     })
                     .catch(function(error) {
                         console.log(error);
                     });
             }
-
+            // await this.getDrinks()
             this.loading = false;
             this.$router.push("/");
+        },
+            async getDrinks() {
+            await axios
+                .get("/api/")
+                .then(response => {
+                    // console.log(response);
+                })
+                .catch(function(error) {
+                    console.log(error);
+                });
+            
+            this.loading = false;
         }
     }
 };

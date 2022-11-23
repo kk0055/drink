@@ -1961,10 +1961,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
   props: {
     drink: {
       Type: Object
-    },
-    drinks: {
-      Type: Array
-    }
+    } // drinks: { Type: Array }
+
   },
   data: function data() {
     return {};
@@ -1994,18 +1992,15 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                     position: "top-right",
                     timeout: 2000 // transition: "fade"
 
-                  });
+                  }); // let i = this.drinks.filter(o => o.id !== id);
+                  // this.drinks.splice(id, 1);
 
-                  var i = _this.drinks.filter(function (o) {
-                    return o.id == id;
-                  });
-
-                  _this.drinks.splice(i, 1);
                 })["catch"](function (error) {
                   console.log(error);
                 });
 
               case 3:
+                // await this.getDrinks()
                 _this.loading = false;
 
                 _this.$router.push("/");
@@ -2016,6 +2011,31 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
             }
           }
         }, _callee);
+      }))();
+    },
+    getDrinks: function getDrinks() {
+      var _this2 = this;
+
+      return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee2() {
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee2$(_context2) {
+          while (1) {
+            switch (_context2.prev = _context2.next) {
+              case 0:
+                _context2.next = 2;
+                return axios.get("/api/").then(function (response) {// console.log(response);
+                })["catch"](function (error) {
+                  console.log(error);
+                });
+
+              case 2:
+                _this2.loading = false;
+
+              case 3:
+              case "end":
+                return _context2.stop();
+            }
+          }
+        }, _callee2);
       }))();
     }
   }
@@ -2409,6 +2429,11 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       }, _callee);
     }))();
   },
+  //   watch: {
+  //     $route(to, from) {
+  //       this.drinks = from.drinks;
+  //     } 
+  //   },
   methods: {
     getData: function getData() {
       var _this2 = this;
@@ -2452,8 +2477,26 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _components_DrinkItem__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../components/DrinkItem */ "./resources/js/components/DrinkItem.vue");
-/* harmony import */ var _components_Footer__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../components/Footer */ "./resources/js/components/Footer.vue");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _components_DrinkItem__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../components/DrinkItem */ "./resources/js/components/DrinkItem.vue");
+/* harmony import */ var _components_Footer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../components/Footer */ "./resources/js/components/Footer.vue");
+
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -2519,14 +2562,63 @@ __webpack_require__.r(__webpack_exports__);
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   components: {
-    DrinkItem: _components_DrinkItem__WEBPACK_IMPORTED_MODULE_0__.default,
-    Footer: _components_Footer__WEBPACK_IMPORTED_MODULE_1__.default
+    DrinkItem: _components_DrinkItem__WEBPACK_IMPORTED_MODULE_1__.default,
+    Footer: _components_Footer__WEBPACK_IMPORTED_MODULE_2__.default
+  },
+  props: {// drinks: Array
   },
   data: function data() {
-    return {};
+    return {
+      drinks: [],
+      loading: true
+    };
   },
-  props: {
-    drinks: Array
+  created: function created() {
+    var _this = this;
+
+    return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee() {
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee$(_context) {
+        while (1) {
+          switch (_context.prev = _context.next) {
+            case 0:
+              _context.next = 2;
+              return Promise.all([_this.getData()]);
+
+            case 2:
+            case "end":
+              return _context.stop();
+          }
+        }
+      }, _callee);
+    }))();
+  },
+  methods: {
+    getData: function getData() {
+      var _this2 = this;
+
+      return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee2() {
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee2$(_context2) {
+          while (1) {
+            switch (_context2.prev = _context2.next) {
+              case 0:
+                _context2.next = 2;
+                return axios.get("/api/").then(function (response) {
+                  _this2.drinks = response.data;
+                })["catch"](function (error) {
+                  console.log(error);
+                });
+
+              case 2:
+                _this2.loading = false;
+
+              case 3:
+              case "end":
+                return _context2.stop();
+            }
+          }
+        }, _callee2);
+      }))();
+    }
   }
 });
 
@@ -22819,45 +22911,60 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
-    _c(
-      "div",
-      [
-        _c("div", [
-          _vm._m(0),
-          _vm._v(" "),
-          _c("section", { staticClass: "bg-white py-4" }, [
-            _c(
-              "div",
-              {
-                staticClass:
-                  "container mx-auto flex items-center flex-wrap pt-1 pb-12 "
-              },
-              _vm._l(_vm.drinks, function(drink) {
-                return _c(
+  return _vm.loading
+    ? _c(
+        "div",
+        {
+          staticClass: "flex justify-center items-center",
+          staticStyle: { height: "90vh" }
+        },
+        [
+          _c("div", {
+            staticClass:
+              "spinner-border animate-spin inline-block w-8 h-8 border-4 rounded-full text-blue-400",
+            attrs: { role: "status" }
+          })
+        ]
+      )
+    : _c("div", [
+        _c(
+          "div",
+          [
+            _c("div", [
+              _vm._m(0),
+              _vm._v(" "),
+              _c("section", { staticClass: "bg-white py-4" }, [
+                _c(
                   "div",
                   {
                     staticClass:
-                      "w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col  inline-block sm:-m-4 -mx-4 md:mx-0"
+                      "container mx-auto flex items-center flex-wrap pt-1 pb-12 "
                   },
-                  [
-                    _c("DrinkItem", {
-                      attrs: { drink: drink, drinks: _vm.drinks }
-                    })
-                  ],
-                  1
+                  _vm._l(_vm.drinks, function(drink) {
+                    return _c(
+                      "div",
+                      {
+                        staticClass:
+                          "w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col  inline-block sm:-m-4 -mx-4 md:mx-0"
+                      },
+                      [
+                        _c("DrinkItem", {
+                          attrs: { drink: drink, drinks: _vm.drinks }
+                        })
+                      ],
+                      1
+                    )
+                  }),
+                  0
                 )
-              }),
-              0
-            )
-          ])
-        ]),
-        _vm._v(" "),
-        _c("Footer")
-      ],
-      1
-    )
-  ])
+              ])
+            ]),
+            _vm._v(" "),
+            _c("Footer")
+          ],
+          1
+        )
+      ])
 }
 var staticRenderFns = [
   function() {
