@@ -241,11 +241,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
   components: {
     StarRating: vue_rate_it__WEBPACK_IMPORTED_MODULE_2__.StarRating
   },
-  props: {
-    getData: {
-      Type: Function
-    }
-  },
+  props: {},
   validations: {
     data: {
       name: {
@@ -316,8 +312,6 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                     timeout: 2000 // transition: "fade"
 
                   });
-
-                  _this.getData();
                 })["catch"](function (error) {
                   console.log(error);
                 });

@@ -1,5 +1,5 @@
 <template>
-    <div
+    <!-- <div
         v-if="loading"
         class="flex justify-center items-center"
         style="height: 90vh"
@@ -8,10 +8,10 @@
             class="spinner-border animate-spin inline-block w-8 h-8 border-4 rounded-full text-blue-400"
             role="status"
         ></div>
-    </div>
-    <div class="bg-white" v-else>
+    </div> -->
+    <div class="bg-white" >
         <HeaderComponent></HeaderComponent>
-        <router-view :drinks="drinks" :getData="getData"></router-view>
+        <router-view :drinks="drinks" ></router-view>
     </div>
 </template>
 
@@ -28,27 +28,21 @@ export default {
         
     }),
     async created() {
-        await Promise.all([this.getData()]);
+        // await Promise.all([this.getData()]);
     },
-//   watch: {
-//     $route(to, from) {
-//       this.drinks = from.drinks;
-    
-//     } 
-//   },
     methods: {
-        async getData() {
-            await axios
-                .get("/api/")
-                .then(response => {
-                    this.drinks = response.data;
-                })
-                .catch(function(error) {
-                    console.log(error);
-                });
+        // async getData() {
+        //     await axios
+        //         .get("/api/")
+        //         .then(response => {
+        //             this.drinks = response.data;
+        //         })
+        //         .catch(function(error) {
+        //             console.log(error);
+        //         });
             
-            this.loading = false;
-        }
+        //     this.loading = false;
+        // }
     }
 };
 </script>

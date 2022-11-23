@@ -2410,18 +2410,13 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       loading: true
     };
   },
-  created: function created() {
-    var _this = this;
+  created: function created() {// await Promise.all([this.getData()]);
 
     return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee() {
       return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee$(_context) {
         while (1) {
           switch (_context.prev = _context.next) {
             case 0:
-              _context.next = 2;
-              return Promise.all([_this.getData()]);
-
-            case 2:
             case "end":
               return _context.stop();
           }
@@ -2429,38 +2424,17 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       }, _callee);
     }))();
   },
-  //   watch: {
-  //     $route(to, from) {
-  //       this.drinks = from.drinks;
-  //     } 
-  //   },
-  methods: {
-    getData: function getData() {
-      var _this2 = this;
-
-      return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee2() {
-        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee2$(_context2) {
-          while (1) {
-            switch (_context2.prev = _context2.next) {
-              case 0:
-                _context2.next = 2;
-                return axios.get("/api/").then(function (response) {
-                  _this2.drinks = response.data;
-                })["catch"](function (error) {
-                  console.log(error);
-                });
-
-              case 2:
-                _this2.loading = false;
-
-              case 3:
-              case "end":
-                return _context2.stop();
-            }
-          }
-        }, _callee2);
-      }))();
-    }
+  methods: {// async getData() {
+    //     await axios
+    //         .get("/api/")
+    //         .then(response => {
+    //             this.drinks = response.data;
+    //         })
+    //         .catch(function(error) {
+    //             console.log(error);
+    //         });
+    //     this.loading = false;
+    // }
   }
 });
 
@@ -22860,33 +22834,16 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm.loading
-    ? _c(
-        "div",
-        {
-          staticClass: "flex justify-center items-center",
-          staticStyle: { height: "90vh" }
-        },
-        [
-          _c("div", {
-            staticClass:
-              "spinner-border animate-spin inline-block w-8 h-8 border-4 rounded-full text-blue-400",
-            attrs: { role: "status" }
-          })
-        ]
-      )
-    : _c(
-        "div",
-        { staticClass: "bg-white" },
-        [
-          _c("HeaderComponent"),
-          _vm._v(" "),
-          _c("router-view", {
-            attrs: { drinks: _vm.drinks, getData: _vm.getData }
-          })
-        ],
-        1
-      )
+  return _c(
+    "div",
+    { staticClass: "bg-white" },
+    [
+      _c("HeaderComponent"),
+      _vm._v(" "),
+      _c("router-view", { attrs: { drinks: _vm.drinks } })
+    ],
+    1
+  )
 }
 var staticRenderFns = []
 render._withStripped = true

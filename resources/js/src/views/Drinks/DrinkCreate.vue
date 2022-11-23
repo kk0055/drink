@@ -216,7 +216,7 @@ export default {
         StarRating
     },
     props: {
-        getData: { Type: Function }
+
     },
     validations: {
         data: {
@@ -272,7 +272,6 @@ export default {
                             timeout: 2000
                             // transition: "fade"
                         });
-                        this.getData();
                     })
                     .catch(function(error) {
                         console.log(error);
