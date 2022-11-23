@@ -15,7 +15,7 @@
             class="w-full h-auto overflow-scroll block h-screen bg-gradient-to-r from-blue-100 via-purple-100 to-pink-100 p-4 flex items-center justify-center"
         >
             <div class="bg-white py-6 px-10 sm:max-w-md w-full ">
-                <DrinkItem :drink="drink" :drinks="drinks" />
+                <DrinkItem :drink="drink" :drinks="drinks" :getDrink="getDrink"/>
             </div>
         </div>
     </div>
@@ -35,7 +35,7 @@ export default {
         loading: true
     }),
     async created() {
-        await Promise.all([this.getData()]);
+        await Promise.all([this.getDrink()]);
     },
     computed: {
         id() {
@@ -43,7 +43,7 @@ export default {
         }
     },
     methods: {
-        async getData() {
+        async getDrink() {
             this.loading = true;
             await axios
                 .get(`/api/drinks/${this.id}`, {

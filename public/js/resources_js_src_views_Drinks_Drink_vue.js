@@ -66,7 +66,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
           switch (_context.prev = _context.next) {
             case 0:
               _context.next = 2;
-              return Promise.all([_this.getData()]);
+              return Promise.all([_this.getDrink()]);
 
             case 2:
             case "end":
@@ -82,7 +82,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     }
   },
   methods: {
-    getData: function getData() {
+    getDrink: function getDrink() {
       var _this2 = this;
 
       return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee2() {
@@ -234,7 +234,11 @@ var render = function() {
               { staticClass: "bg-white py-6 px-10 sm:max-w-md w-full " },
               [
                 _c("DrinkItem", {
-                  attrs: { drink: _vm.drink, drinks: _vm.drinks }
+                  attrs: {
+                    drink: _vm.drink,
+                    drinks: _vm.drinks,
+                    getDrink: _vm.getDrink
+                  }
                 })
               ],
               1

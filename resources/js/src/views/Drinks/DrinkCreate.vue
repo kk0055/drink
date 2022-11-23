@@ -198,7 +198,7 @@
 <script>
 import prefectures from "../../../Libraries/prefectures.js";
 import { StarRating } from "vue-rate-it";
-import { required, minLength, between } from "vuelidate/lib/validators";
+import { required, } from "vuelidate/lib/validators";
 
 export default {
     data: () => ({
@@ -290,8 +290,4 @@ export default {
     }
 };
 </script>
-<style>
-.error {
-    color: #dd0f3b;
-}
-</style>
+

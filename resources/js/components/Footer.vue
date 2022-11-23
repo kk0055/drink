@@ -1,6 +1,6 @@
 <template>
-    <div>
-        <section class="bg-white py-8">
+    <div class="bg-black text-white ">
+        <section class="bg-black text-white py-8">
             <div class="container py-8 px-6 mx-auto">
                 <a
                     class="tracking-wide no-underline hover:no-underline font-bold text-gray-800 text-xl mb-8"
@@ -19,7 +19,7 @@
             </div>
         </section>
 
-        <footer class="container mx-auto bg-white py-8  border-gray-400">
+        <!-- <footer class="container mx-auto bg-black py-8  border-gray-400">
             <div class="container flex px-3 py-8 ">
                 <div class="w-full mx-auto flex flex-wrap">
                     <div class="flex w-full lg:w-1/2 "></div>
@@ -28,7 +28,7 @@
                     ></div>
                 </div>
             </div>
-        </footer>
+        </footer> -->
     </div>
 </template>
 

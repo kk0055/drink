@@ -77,15 +77,15 @@
                         </router-link>
                     </div>
                     <div class="mt-1 flex  justify-between ">
-                    <span class="mt-1 flex ">
-                        <i
-                            @click="showComment = !showComment"
-                            class="far fa-comment pl-2 mr-2 text-2xl"
-                        ></i>
-                        <p>{{ drink.comments.length }}</p>
-                    </span>
-                    <!-- deleteボタン削除予定 -->
-                    <!-- <div
+                        <span class="mt-1 flex ">
+                            <i
+                                @click="showComment = !showComment"
+                                class="far fa-comment pl-2 mr-2 text-2xl"
+                            ></i>
+                            <p>{{ drink.comments.length }}</p>
+                        </span>
+                        <!-- deleteボタン削除予定 -->
+                        <!-- <div
                         v-if="$route.name !== 'drinks'"
                         class="mt-1 flex justify-end"
                     >
@@ -98,54 +98,70 @@
             </div>
             <!-- Comment -->
             <Transition>
-            <div
-                v-if="showComment && $route.name != 'drinks'"
-                class="max-w-lg shadow-md "
-            >
+                <div
+                    v-if="showComment && $route.name != 'drinks'"
+                    class="max-w-lg shadow-md "
+                >
                     <ul
                         class="divide-solid max-w-md text-gray-900 divide-y divide-green-500 dark:text-white dark:divide-gray-700"
                         v-for="comment in drink.comments"
                     >
                         <li class=" mr-4">
-                            <p class="-my-1 mr-4" >{{ comment.body }}</p>
+                            <p class="-my-1 mr-4">{{ comment.body }}</p>
                             --------------------------------------
                         </li>
                     </ul>
-                <form action="" class="w-full p-4">
-                    <div class="mb-2">
-                        <label for="comment" class="text-lg text-gray-600"
-                            >Add a comment</label
+                    <form action="" class="w-full p-4">
+                        <div class="mb-2">
+                            <label for="comment" class="text-lg text-gray-600"
+                                >Add a comment</label
+                            >
+                            <textarea
+                                v-model="data.body"
+                                class="w-full h-20 p-2 border rounded focus:outline-none focus:ring-gray-300 focus:ring-1"
+                                name="comment"
+                                placeholder=""
+                                @input="$v.data.body.$touch()"
+                            ></textarea>
+                            <span
+                                v-if="$v.data.body.$error"
+                                class="mt-2"
+                                :class="{ error: $v.data.body.$error }"
+                                >Oops!!!!! 書いてね!</span
+                            >
+                        </div>
+                        <button
+                            @click="submitComment"
+                            class="px-3 py-2 text-sm text-blue-100 bg-blue-600 rounded"
                         >
-                        <textarea
-                            v-model="data.body"
-                            class="w-full h-20 p-2 border rounded focus:outline-none focus:ring-gray-300 focus:ring-1"
-                            name="comment"
-                            placeholder=""
-                        ></textarea>
-                    </div>
-                    <button
-                        @click="submitComment"
-                        class="px-3 py-2 text-sm text-blue-100 bg-blue-600 rounded"
-                    >
-                        Comment
-                    </button>
-                </form>
-            </div>
-        </Transition>
+                            Comment
+                        </button>
+                    </form>
+                </div>
+            </Transition>
         </div>
     </div>
 </template>
 
 <script>
+import { required } from "vuelidate/lib/validators";
 export default {
     props: {
-        drink: { Type: Object }
+        drink: { Type: Object },
+        getDrink: { Type: Function },
         // drinks: { Type: Array }
     },
     data: () => ({
         showComment: false,
         data: {}
     }),
+    validations: {
+        data: {
+            body: {
+                required
+            }
+        }
+    },
     computed: {
         image() {
             return this.drink.image
@@ -173,31 +189,42 @@ export default {
             this.loading = false;
             this.$router.push("/");
         },
-        async getDrinks() {
-            await axios
-                .get("/api/")
-                .then(response => {
-                    // console.log(response);
-                })
-                .catch(function(error) {
-                    console.log(error);
-                });
+        // async getDrinks() {
+        //     await axios
+        //         .get("/api/")
+        //         .then(response => {
+        //             // console.log(response);
+        //         })
+        //         .catch(function(error) {
+        //             console.log(error);
+        //         });
 
-            this.loading = false;
-        },
-        async submitComment() {
-            this.data.drink_id = this.drink.id
-            this.data.user_id = 1
-            await axios
-                .post("/api/comments",this.data)
-                .then(response => {
-                    // console.log(response);
-                })
-                .catch(function(error) {
-                    console.log(error);
-                });
-
-            this.loading = false;
+        //     this.loading = false;
+        // },
+        async submitComment(e) {
+            this.$v.$touch();
+            e.preventDefault();
+            if (this.$v.$invalid) {
+                console.log("Validation Error");
+            } else {
+                this.data.drink_id = this.drink.id;
+                this.data.user_id = 1;
+                
+                await axios
+                    .post("/api/comments", this.data)
+                    .then(response => {
+                        this.$toast("コメントありがとう!", {
+                            position: "top-right",
+                            timeout: 2000
+                            // transition: "fade"
+                        });
+                    })
+                    .catch(function(error) {
+                        console.log(error);
+                    });
+                this.getDrink()
+                this.loading = false;
+            }
         }
     }
 };
@@ -205,10 +232,10 @@ export default {
 <style>
 .v-enter-active,
 .v-leave-active {
-  transition: opacity 0.5s ease;
+    transition: opacity 0.5s ease;
 }
 .v-enter-from,
 .v-leave-to {
-  opacity: 0;
+    opacity: 0;
 }
 </style>

@@ -71,4 +71,7 @@ h2 {
 p {
     font-family: "Bitter", sans-serif;
 }
+.error {
+    color: #dd0f3b;
+}
 </style>
