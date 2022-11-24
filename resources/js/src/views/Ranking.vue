@@ -13,7 +13,6 @@
     <div v-else>
         <div>
             <div>
-    
                 <section class="bg-white py-4">
                     <div
                         class="container mx-auto flex items-center flex-wrap pt-1 pb-12 "
@@ -25,10 +24,6 @@
                             <DrinkItem :drink="drink" :drinks="drinks" />
                         </div>
                     </div>
-                    <!-- <favorite-btn
-                        :drink={{ $drink->id }}
-                        :favorited={{ $drink->favorited() ? 'true' : 'false' }}
-                    ></favorite-btn> -->
                 </section>
             </div>
             <Footer />

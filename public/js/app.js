@@ -2581,7 +2581,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _components_DrinkItem__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../components/DrinkItem */ "./resources/js/components/DrinkItem.vue");
-/* harmony import */ var _components_Footer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../components/Footer */ "./resources/js/components/Footer.vue");
+/* harmony import */ var _components_LandingPage__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../components/LandingPage */ "./resources/js/components/LandingPage.vue");
+/* harmony import */ var _components_Footer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../components/Footer */ "./resources/js/components/Footer.vue");
 
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
@@ -2633,38 +2634,14 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   components: {
+    LandingPage: _components_LandingPage__WEBPACK_IMPORTED_MODULE_2__.default,
     DrinkItem: _components_DrinkItem__WEBPACK_IMPORTED_MODULE_1__.default,
-    Footer: _components_Footer__WEBPACK_IMPORTED_MODULE_2__.default
+    Footer: _components_Footer__WEBPACK_IMPORTED_MODULE_3__.default
   },
   props: {// drinks: Array
   },
@@ -21920,6 +21897,43 @@ component.options.__file = "resources/js/components/Header.vue"
 
 /***/ }),
 
+/***/ "./resources/js/components/LandingPage.vue":
+/*!*************************************************!*\
+  !*** ./resources/js/components/LandingPage.vue ***!
+  \*************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _LandingPage_vue_vue_type_template_id_643fd5aa___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./LandingPage.vue?vue&type=template&id=643fd5aa& */ "./resources/js/components/LandingPage.vue?vue&type=template&id=643fd5aa&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+var script = {}
+
+
+/* normalize component */
+;
+var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__.default)(
+  script,
+  _LandingPage_vue_vue_type_template_id_643fd5aa___WEBPACK_IMPORTED_MODULE_0__.render,
+  _LandingPage_vue_vue_type_template_id_643fd5aa___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/LandingPage.vue"
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (component.exports);
+
+/***/ }),
+
 /***/ "./resources/js/src/App.vue":
 /*!**********************************!*\
   !*** ./resources/js/src/App.vue ***!
@@ -22219,6 +22233,23 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Header_vue_vue_type_template_id_1f42fb90___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
 /* harmony export */ });
 /* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Header_vue_vue_type_template_id_1f42fb90___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./Header.vue?vue&type=template&id=1f42fb90& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Header.vue?vue&type=template&id=1f42fb90&");
+
+
+/***/ }),
+
+/***/ "./resources/js/components/LandingPage.vue?vue&type=template&id=643fd5aa&":
+/*!********************************************************************************!*\
+  !*** ./resources/js/components/LandingPage.vue?vue&type=template&id=643fd5aa& ***!
+  \********************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_LandingPage_vue_vue_type_template_id_643fd5aa___WEBPACK_IMPORTED_MODULE_0__.render),
+/* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_LandingPage_vue_vue_type_template_id_643fd5aa___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
+/* harmony export */ });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_LandingPage_vue_vue_type_template_id_643fd5aa___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./LandingPage.vue?vue&type=template&id=643fd5aa& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/LandingPage.vue?vue&type=template&id=643fd5aa&");
 
 
 /***/ }),
@@ -23111,6 +23142,103 @@ render._withStripped = true
 
 /***/ }),
 
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/LandingPage.vue?vue&type=template&id=643fd5aa&":
+/*!***********************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/LandingPage.vue?vue&type=template&id=643fd5aa& ***!
+  \***********************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* binding */ render),
+/* harmony export */   "staticRenderFns": () => (/* binding */ staticRenderFns)
+/* harmony export */ });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _vm._m(0)
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", [
+      _c(
+        "div",
+        { staticClass: "bg-indigo-900 relative overflow-hidden h-screen" },
+        [
+          _c("img", {
+            staticClass: "absolute h-full w-full object-cover",
+            attrs: { src: "/images/background2.png" }
+          }),
+          _vm._v(" "),
+          _c("div", { staticClass: "inset-0 bg-black opacity-95 absolute" }),
+          _vm._v(" "),
+          _c(
+            "div",
+            {
+              staticClass:
+                "container mx-auto px-6 md:px-12 relative z-10 flex items-center py-32 xl:py-40"
+            },
+            [
+              _c(
+                "div",
+                {
+                  staticClass:
+                    "w-full font-mono flex flex-col items-center relative z-10"
+                },
+                [
+                  _c(
+                    "h1",
+                    {
+                      staticClass:
+                        "font-extrabold text-5xl md:text-7xl mb-24 text-white animate-bounce "
+                    },
+                    [
+                      _vm._v(
+                        "\n                    俺の飲んだもの\n                "
+                      )
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "p",
+                    {
+                      staticClass: "text-white w-2/3",
+                      staticStyle: { "font-family": "'Stick', sans-serif" }
+                    },
+                    [
+                      _vm._v(
+                        "\n                    街を歩いている時にたまたま出会った、見たこともない面白いパッケージの飲み物、ビックリするほど美味しいドリンク。君が知らないだけで街角の自販機やコンビニ、スーパー、居酒屋、近所の喫茶店...などなど新しい発見はどこにでもある。そんな偶然を記録していこう。\n                "
+                      )
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "p",
+                    {
+                      staticClass: "font-extrabold text-2xl my-20 text-white "
+                    },
+                    [_c("span", {}, [_vm._v("ところで、君は今日何を飲んだ?")])]
+                  )
+                ]
+              )
+            ]
+          )
+        ]
+      )
+    ])
+  }
+]
+render._withStripped = true
+
+
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/src/App.vue?vue&type=template&id=7201f370&":
 /*!********************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/src/App.vue?vue&type=template&id=7201f370& ***!
@@ -23180,35 +23308,41 @@ var render = function() {
         _c(
           "div",
           [
-            _c("div", [
-              _vm._m(0),
-              _vm._v(" "),
-              _c("section", { staticClass: "bg-white py-4" }, [
-                _c(
-                  "div",
-                  {
-                    staticClass:
-                      "container mx-auto flex items-center flex-wrap pt-1 pb-12 "
-                  },
-                  _vm._l(_vm.drinks, function(drink) {
-                    return _c(
-                      "div",
-                      {
-                        staticClass:
-                          "w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col  inline-block sm:-m-4 -mx-4 md:mx-0"
-                      },
-                      [
-                        _c("DrinkItem", {
-                          attrs: { drink: drink, drinks: _vm.drinks }
-                        })
-                      ],
-                      1
-                    )
-                  }),
-                  0
-                )
-              ])
-            ]),
+            _c(
+              "div",
+              [
+                _c("LandingPage"),
+                _vm._v(" "),
+                _c("section", { staticClass: "bg-white py-4" }, [
+                  _vm._m(0),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass:
+                        "container mx-auto flex items-center flex-wrap pt-1 pb-12 "
+                    },
+                    _vm._l(_vm.drinks, function(drink) {
+                      return _c(
+                        "div",
+                        {
+                          staticClass:
+                            "w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col  inline-block sm:-m-4 -mx-4 md:mx-0"
+                        },
+                        [
+                          _c("DrinkItem", {
+                            attrs: { drink: drink, drinks: _vm.drinks }
+                          })
+                        ],
+                        1
+                      )
+                    }),
+                    0
+                  )
+                ])
+              ],
+              1
+            ),
             _vm._v(" "),
             _c("Footer")
           ],
@@ -23221,68 +23355,24 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      { staticClass: "bg-indigo-900 relative overflow-hidden h-screen" },
-      [
-        _c("img", {
-          staticClass: "absolute h-full w-full object-cover",
-          attrs: { src: "/images/background2.png" }
-        }),
-        _vm._v(" "),
-        _c("div", { staticClass: "inset-0 bg-black opacity-95 absolute" }),
-        _vm._v(" "),
-        _c(
-          "div",
-          {
-            staticClass:
-              "container mx-auto px-6 md:px-12 relative z-10 flex items-center py-32 xl:py-40"
-          },
-          [
-            _c(
-              "div",
-              {
-                staticClass:
-                  "w-full font-mono flex flex-col items-center relative z-10"
-              },
-              [
-                _c(
-                  "h1",
-                  {
-                    staticClass:
-                      "font-extrabold text-5xl md:text-7xl mb-24 text-white animate-bounce "
-                  },
-                  [
-                    _vm._v(
-                      "\n                            俺の飲んだもの\n                        "
-                    )
-                  ]
-                ),
-                _vm._v(" "),
-                _c(
-                  "p",
-                  {
-                    staticClass: "text-white w-2/3",
-                    staticStyle: { "font-family": "'Stick', sans-serif" }
-                  },
-                  [
-                    _vm._v(
-                      "\n                            街を歩いている時にたまたま出会った、見たこともない面白いパッケージの飲み物、ビックリするほど美味しいドリンク。君が知らないだけで街角の自販機やコンビニ、スーパー、居酒屋、近所の喫茶店...などなど新しい発見はどこにでもある。そんな偶然を記録していこう。\n                        "
-                    )
-                  ]
-                ),
-                _vm._v(" "),
-                _c(
-                  "p",
-                  { staticClass: "font-extrabold text-2xl my-20 text-white " },
-                  [_c("span", {}, [_vm._v("ところで、君は今日何を飲んだ?")])]
-                )
-              ]
-            )
-          ]
-        )
-      ]
-    )
+    return _c("div", { staticClass: "w-full my-4" }, [
+      _c("div", { staticClass: "flex " }, [
+        _c("div", { staticClass: "m-auto flex flex-col gap-6" }, [
+          _c(
+            "div",
+            {
+              staticClass:
+                "border-2 bg-black border-gray-800 rounded-lg px-3 py-2 text-white cursor-pointer hover:bg-gray-800 hover:text-white"
+            },
+            [
+              _vm._v(
+                "\n                                都道府県から探す\n                            "
+              )
+            ]
+          )
+        ])
+      ])
+    ])
   }
 ]
 render._withStripped = true
