@@ -15,17 +15,24 @@
                 <LandingPage />
                 <section class="bg-white py-4">
                     <div class="w-full my-4">
-                        <div class="flex ">
+                        <div class="flex">
                             <div class="m-auto flex flex-col gap-6">
                                 <div
                                     class="border-2 bg-black border-gray-800 rounded-lg px-3 py-2 text-white cursor-pointer hover:bg-gray-800 hover:text-white"
                                 >
-                                    都道府県から探す
+                                    <button @click="toggleModal">
+                                        都道府県から探す
+                                    </button>
                                 </div>
                             </div>
                         </div>
                     </div>
-
+                    <template v-if="showModal">
+                         <PrefectureModal @execute-method="executeMethod"
+                         :prefectures="prefectures"
+                         />
+                    </template>
+              
                     <div
                         class="container mx-auto flex items-center flex-wrap pt-1 pb-12 "
                     >
@@ -45,12 +52,15 @@
 
 <script>
 import DrinkItem from "../../components/DrinkItem";
+import PrefectureModal from "../../components/PrefectureModal";
 import LandingPage from "../../components/LandingPage";
 import Footer from "../../components/Footer";
+import prefectures from "../../Libraries/prefectures.js";
 export default {
     components: {
         LandingPage,
         DrinkItem,
+        PrefectureModal,
         Footer
     },
     props: {
@@ -58,10 +68,13 @@ export default {
     },
     data: () => ({
         drinks: [],
-        loading: true
+        loading: true,
+        showModal: false,
+        prefectures: {}
     }),
     async created() {
         await Promise.all([this.getDrinks()]);
+        this.prefectures = prefectures.prefectures;
     },
     methods: {
         async getDrinks() {
@@ -79,7 +92,18 @@ export default {
                 });
 
             this.loading = false;
-        }
+        },
+           toggleModal() {
+            this.showModal = !this.showModal;
+        },
+      executeMethod(val) {
+    //   this.showModal = false;
+      if (val) {
+        alert(val);
+      } else {
+        this.showModal = false;
+      }
+      }
     }
 };
 </script>

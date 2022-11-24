@@ -2460,6 +2460,113 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/PrefectureModal.vue?vue&type=script&lang=js&":
+/*!**********************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/PrefectureModal.vue?vue&type=script&lang=js& ***!
+  \**********************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  data: function data() {
+    return {
+      showModal: false,
+      data: {}
+    };
+  },
+  components: {},
+  props: {
+    prefectures: Array
+  },
+  created: function created() {},
+  computed: {},
+  methods: {
+    cancel: function cancel() {
+      this.$emit("execute-method", false);
+    },
+    selectPrefecture: function selectPrefecture() {
+      this.$emit("execute-method", this.data.prefecture);
+    }
+  }
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/src/App.vue?vue&type=script&lang=js&":
 /*!***************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/src/App.vue?vue&type=script&lang=js& ***!
@@ -2581,8 +2688,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _components_DrinkItem__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../components/DrinkItem */ "./resources/js/components/DrinkItem.vue");
-/* harmony import */ var _components_LandingPage__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../components/LandingPage */ "./resources/js/components/LandingPage.vue");
-/* harmony import */ var _components_Footer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../components/Footer */ "./resources/js/components/Footer.vue");
+/* harmony import */ var _components_PrefectureModal__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../components/PrefectureModal */ "./resources/js/components/PrefectureModal.vue");
+/* harmony import */ var _components_LandingPage__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../components/LandingPage */ "./resources/js/components/LandingPage.vue");
+/* harmony import */ var _components_Footer__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../components/Footer */ "./resources/js/components/Footer.vue");
+/* harmony import */ var _Libraries_prefectures_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../Libraries/prefectures.js */ "./resources/js/Libraries/prefectures.js");
 
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
@@ -2634,21 +2743,33 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+
+
 
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   components: {
-    LandingPage: _components_LandingPage__WEBPACK_IMPORTED_MODULE_2__.default,
+    LandingPage: _components_LandingPage__WEBPACK_IMPORTED_MODULE_3__.default,
     DrinkItem: _components_DrinkItem__WEBPACK_IMPORTED_MODULE_1__.default,
-    Footer: _components_Footer__WEBPACK_IMPORTED_MODULE_3__.default
+    PrefectureModal: _components_PrefectureModal__WEBPACK_IMPORTED_MODULE_2__.default,
+    Footer: _components_Footer__WEBPACK_IMPORTED_MODULE_4__.default
   },
   props: {// drinks: Array
   },
   data: function data() {
     return {
       drinks: [],
-      loading: true
+      loading: true,
+      showModal: false,
+      prefectures: {}
     };
   },
   created: function created() {
@@ -2663,6 +2784,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
               return Promise.all([_this.getDrinks()]);
 
             case 2:
+              _this.prefectures = _Libraries_prefectures_js__WEBPACK_IMPORTED_MODULE_5__.default.prefectures;
+
+            case 3:
             case "end":
               return _context.stop();
           }
@@ -2700,8 +2824,177 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
           }
         }, _callee2);
       }))();
+    },
+    toggleModal: function toggleModal() {
+      this.showModal = !this.showModal;
+    },
+    executeMethod: function executeMethod(val) {
+      //   this.showModal = false;
+      if (val) {
+        alert(val);
+      } else {
+        this.showModal = false;
+      }
     }
   }
+});
+
+/***/ }),
+
+/***/ "./resources/js/Libraries/prefectures.js":
+/*!***********************************************!*\
+  !*** ./resources/js/Libraries/prefectures.js ***!
+  \***********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  "prefectures": [{
+    "code": 1,
+    "name": "北海道"
+  }, {
+    "code": 2,
+    "name": "青森県"
+  }, {
+    "code": 3,
+    "name": "岩手県"
+  }, {
+    "code": 4,
+    "name": "宮城県"
+  }, {
+    "code": 5,
+    "name": "秋田県"
+  }, {
+    "code": 6,
+    "name": "山形県"
+  }, {
+    "code": 7,
+    "name": "福島県"
+  }, {
+    "code": 8,
+    "name": "茨城県"
+  }, {
+    "code": 9,
+    "name": "栃木県"
+  }, {
+    "code": 10,
+    "name": "群馬県"
+  }, {
+    "code": 11,
+    "name": "埼玉県"
+  }, {
+    "code": 12,
+    "name": "千葉県"
+  }, {
+    "code": 13,
+    "name": "東京都"
+  }, {
+    "code": 14,
+    "name": "神奈川県"
+  }, {
+    "code": 15,
+    "name": "新潟県"
+  }, {
+    "code": 16,
+    "name": "富山県"
+  }, {
+    "code": 17,
+    "name": "石川県"
+  }, {
+    "code": 18,
+    "name": "福井県"
+  }, {
+    "code": 19,
+    "name": "山梨県"
+  }, {
+    "code": 20,
+    "name": "長野県"
+  }, {
+    "code": 21,
+    "name": "岐阜県"
+  }, {
+    "code": 22,
+    "name": "静岡県"
+  }, {
+    "code": 23,
+    "name": "愛知県"
+  }, {
+    "code": 24,
+    "name": "三重県"
+  }, {
+    "code": 25,
+    "name": "滋賀県"
+  }, {
+    "code": 26,
+    "name": "京都府"
+  }, {
+    "code": 27,
+    "name": "大阪府"
+  }, {
+    "code": 28,
+    "name": "兵庫県"
+  }, {
+    "code": 29,
+    "name": "奈良県"
+  }, {
+    "code": 30,
+    "name": "和歌山県"
+  }, {
+    "code": 31,
+    "name": "鳥取県"
+  }, {
+    "code": 32,
+    "name": "島根県"
+  }, {
+    "code": 33,
+    "name": "岡山県"
+  }, {
+    "code": 34,
+    "name": "広島県"
+  }, {
+    "code": 35,
+    "name": "山口県"
+  }, {
+    "code": 36,
+    "name": "徳島県"
+  }, {
+    "code": 37,
+    "name": "香川県"
+  }, {
+    "code": 38,
+    "name": "愛媛県"
+  }, {
+    "code": 39,
+    "name": "高知県"
+  }, {
+    "code": 40,
+    "name": "福岡県"
+  }, {
+    "code": 41,
+    "name": "佐賀県"
+  }, {
+    "code": 42,
+    "name": "長崎県"
+  }, {
+    "code": 43,
+    "name": "熊本県"
+  }, {
+    "code": 44,
+    "name": "大分県"
+  }, {
+    "code": 45,
+    "name": "宮崎県"
+  }, {
+    "code": 46,
+    "name": "鹿児島県"
+  }, {
+    "code": 47,
+    "name": "沖縄県"
+  }]
 });
 
 /***/ }),
@@ -21934,6 +22227,45 @@ component.options.__file = "resources/js/components/LandingPage.vue"
 
 /***/ }),
 
+/***/ "./resources/js/components/PrefectureModal.vue":
+/*!*****************************************************!*\
+  !*** ./resources/js/components/PrefectureModal.vue ***!
+  \*****************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _PrefectureModal_vue_vue_type_template_id_1cd3bbc6___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./PrefectureModal.vue?vue&type=template&id=1cd3bbc6& */ "./resources/js/components/PrefectureModal.vue?vue&type=template&id=1cd3bbc6&");
+/* harmony import */ var _PrefectureModal_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./PrefectureModal.vue?vue&type=script&lang=js& */ "./resources/js/components/PrefectureModal.vue?vue&type=script&lang=js&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+;
+var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__.default)(
+  _PrefectureModal_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__.default,
+  _PrefectureModal_vue_vue_type_template_id_1cd3bbc6___WEBPACK_IMPORTED_MODULE_0__.render,
+  _PrefectureModal_vue_vue_type_template_id_1cd3bbc6___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/PrefectureModal.vue"
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (component.exports);
+
+/***/ }),
+
 /***/ "./resources/js/src/App.vue":
 /*!**********************************!*\
   !*** ./resources/js/src/App.vue ***!
@@ -22094,6 +22426,22 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/components/PrefectureModal.vue?vue&type=script&lang=js&":
+/*!******************************************************************************!*\
+  !*** ./resources/js/components/PrefectureModal.vue?vue&type=script&lang=js& ***!
+  \******************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_PrefectureModal_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./PrefectureModal.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/PrefectureModal.vue?vue&type=script&lang=js&");
+ /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_PrefectureModal_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__.default); 
+
+/***/ }),
+
 /***/ "./resources/js/src/App.vue?vue&type=script&lang=js&":
 /*!***********************************************************!*\
   !*** ./resources/js/src/App.vue?vue&type=script&lang=js& ***!
@@ -22250,6 +22598,23 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_LandingPage_vue_vue_type_template_id_643fd5aa___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
 /* harmony export */ });
 /* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_LandingPage_vue_vue_type_template_id_643fd5aa___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./LandingPage.vue?vue&type=template&id=643fd5aa& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/LandingPage.vue?vue&type=template&id=643fd5aa&");
+
+
+/***/ }),
+
+/***/ "./resources/js/components/PrefectureModal.vue?vue&type=template&id=1cd3bbc6&":
+/*!************************************************************************************!*\
+  !*** ./resources/js/components/PrefectureModal.vue?vue&type=template&id=1cd3bbc6& ***!
+  \************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_PrefectureModal_vue_vue_type_template_id_1cd3bbc6___WEBPACK_IMPORTED_MODULE_0__.render),
+/* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_PrefectureModal_vue_vue_type_template_id_1cd3bbc6___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
+/* harmony export */ });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_PrefectureModal_vue_vue_type_template_id_1cd3bbc6___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./PrefectureModal.vue?vue&type=template&id=1cd3bbc6& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/PrefectureModal.vue?vue&type=template&id=1cd3bbc6&");
 
 
 /***/ }),
@@ -23239,6 +23604,168 @@ render._withStripped = true
 
 /***/ }),
 
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/PrefectureModal.vue?vue&type=template&id=1cd3bbc6&":
+/*!***************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/PrefectureModal.vue?vue&type=template&id=1cd3bbc6& ***!
+  \***************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* binding */ render),
+/* harmony export */   "staticRenderFns": () => (/* binding */ staticRenderFns)
+/* harmony export */ });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", [
+    _c(
+      "div",
+      {
+        staticClass:
+          "overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none justify-center items-center flex"
+      },
+      [
+        _c("div", { staticClass: "relative w-auto my-6 mx-auto max-w-3xl" }, [
+          _c(
+            "div",
+            {
+              staticClass:
+                "border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none"
+            },
+            [
+              _vm._m(0),
+              _vm._v(" "),
+              _c("div", { staticClass: "relative p-6 flex-auto" }, [
+                _c("div", { staticClass: "mt-4" }, [
+                  _c(
+                    "select",
+                    {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.data.prefecture,
+                          expression: "data.prefecture"
+                        }
+                      ],
+                      staticClass:
+                        "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-1 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500",
+                      attrs: { id: "prefectures" },
+                      on: {
+                        change: function($event) {
+                          var $$selectedVal = Array.prototype.filter
+                            .call($event.target.options, function(o) {
+                              return o.selected
+                            })
+                            .map(function(o) {
+                              var val = "_value" in o ? o._value : o.value
+                              return val
+                            })
+                          _vm.$set(
+                            _vm.data,
+                            "prefecture",
+                            $event.target.multiple
+                              ? $$selectedVal
+                              : $$selectedVal[0]
+                          )
+                        }
+                      }
+                    },
+                    _vm._l(_vm.prefectures, function(prefecture) {
+                      return _c(
+                        "option",
+                        { domProps: { value: prefecture.name } },
+                        [_vm._v(_vm._s(prefecture.name))]
+                      )
+                    }),
+                    0
+                  )
+                ])
+              ]),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass:
+                    "flex items-center justify-end p-6 border-t border-solid border-slate-200 rounded-b"
+                },
+                [
+                  _c(
+                    "button",
+                    {
+                      staticClass:
+                        "text-red-500 bg-transparent border border-solid border-red-500 hover:bg-red-500 hover:text-white active:bg-red-600 font-bold uppercase text-sm px-6 py-3 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150",
+                      attrs: { type: "button" },
+                      on: {
+                        click: function($event) {
+                          return _vm.cancel()
+                        }
+                      }
+                    },
+                    [
+                      _vm._v(
+                        "\n                        Close\n                    "
+                      )
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "button",
+                    {
+                      staticClass:
+                        "text-red-500 background-transparent font-bold uppercase px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150",
+                      attrs: { type: "button" },
+                      on: {
+                        click: function($event) {
+                          return _vm.selectPrefecture()
+                        }
+                      }
+                    },
+                    [
+                      _vm._v(
+                        "\n                        Save Changes\n                    "
+                      )
+                    ]
+                  )
+                ]
+              )
+            ]
+          )
+        ])
+      ]
+    ),
+    _vm._v(" "),
+    _c("div", { staticClass: "opacity-25 fixed inset-0 z-40 bg-black" })
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      {
+        staticClass:
+          "flex items-start justify-between p-5 border-b border-solid border-slate-200 rounded-t"
+      },
+      [
+        _c("h3", { staticClass: "text-3xl font-semibold" }, [
+          _vm._v("\n                        Modal Title\n                    ")
+        ])
+      ]
+    )
+  }
+]
+render._withStripped = true
+
+
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/src/App.vue?vue&type=template&id=7201f370&":
 /*!********************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/src/App.vue?vue&type=template&id=7201f370& ***!
@@ -23313,33 +23840,74 @@ var render = function() {
               [
                 _c("LandingPage"),
                 _vm._v(" "),
-                _c("section", { staticClass: "bg-white py-4" }, [
-                  _vm._m(0),
-                  _vm._v(" "),
-                  _c(
-                    "div",
-                    {
-                      staticClass:
-                        "container mx-auto flex items-center flex-wrap pt-1 pb-12 "
-                    },
-                    _vm._l(_vm.drinks, function(drink) {
-                      return _c(
-                        "div",
-                        {
-                          staticClass:
-                            "w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col  inline-block sm:-m-4 -mx-4 md:mx-0"
-                        },
-                        [
-                          _c("DrinkItem", {
-                            attrs: { drink: drink, drinks: _vm.drinks }
+                _c(
+                  "section",
+                  { staticClass: "bg-white py-4" },
+                  [
+                    _c("div", { staticClass: "w-full my-4" }, [
+                      _c("div", { staticClass: "flex" }, [
+                        _c(
+                          "div",
+                          { staticClass: "m-auto flex flex-col gap-6" },
+                          [
+                            _c(
+                              "div",
+                              {
+                                staticClass:
+                                  "border-2 bg-black border-gray-800 rounded-lg px-3 py-2 text-white cursor-pointer hover:bg-gray-800 hover:text-white"
+                              },
+                              [
+                                _c(
+                                  "button",
+                                  { on: { click: _vm.toggleModal } },
+                                  [
+                                    _vm._v(
+                                      "\n                                    都道府県から探す\n                                "
+                                    )
+                                  ]
+                                )
+                              ]
+                            )
+                          ]
+                        )
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _vm.showModal
+                      ? [
+                          _c("PrefectureModal", {
+                            attrs: { prefectures: _vm.prefectures },
+                            on: { "execute-method": _vm.executeMethod }
                           })
-                        ],
-                        1
-                      )
-                    }),
-                    0
-                  )
-                ])
+                        ]
+                      : _vm._e(),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      {
+                        staticClass:
+                          "container mx-auto flex items-center flex-wrap pt-1 pb-12 "
+                      },
+                      _vm._l(_vm.drinks, function(drink) {
+                        return _c(
+                          "div",
+                          {
+                            staticClass:
+                              "w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col  inline-block sm:-m-4 -mx-4 md:mx-0"
+                          },
+                          [
+                            _c("DrinkItem", {
+                              attrs: { drink: drink, drinks: _vm.drinks }
+                            })
+                          ],
+                          1
+                        )
+                      }),
+                      0
+                    )
+                  ],
+                  2
+                )
               ],
               1
             ),
@@ -23350,31 +23918,7 @@ var render = function() {
         )
       ])
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "w-full my-4" }, [
-      _c("div", { staticClass: "flex " }, [
-        _c("div", { staticClass: "m-auto flex flex-col gap-6" }, [
-          _c(
-            "div",
-            {
-              staticClass:
-                "border-2 bg-black border-gray-800 rounded-lg px-3 py-2 text-white cursor-pointer hover:bg-gray-800 hover:text-white"
-            },
-            [
-              _vm._v(
-                "\n                                都道府県から探す\n                            "
-              )
-            ]
-          )
-        ])
-      ])
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
 
