@@ -17,13 +17,13 @@
                     <div class="w-full my-4">
                         <div class="flex">
                             <div class="m-auto flex flex-col gap-6">
-                                <div
-                                    class="border-2 bg-black border-gray-800 rounded-lg px-3 py-2 text-white cursor-pointer hover:bg-gray-800 hover:text-white"
-                                >
-                                    <button @click="toggleModal">
+                                <button @click="toggleModal">
+                                    <div
+                                        class="border-2 bg-black border-gray-800 rounded-lg px-3 py-2 text-white cursor-pointer hover:bg-gray-800 hover:text-white"
+                                    >
                                         都道府県から探す
-                                    </button>
-                                </div>
+                                    </div>
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -76,6 +76,10 @@ export default {
     async created() {
         await Promise.all([this.getDrinks()]);
         this.prefectures = prefectures.prefectures;
+        this.prefectures.unshift({
+            code: 0,
+            name: "全部"
+        });
     },
     methods: {
         async getDrinks() {
@@ -108,10 +112,10 @@ export default {
                         }
                     })
                     .then(response => {
-                        if(response.data) {
+                        if (response.data) {
                             this.drinks = response.data;
-                        } else  {
-                            return 
+                        } else {
+                            return;
                         }
                     })
                     .catch(function(error) {
@@ -122,6 +126,18 @@ export default {
                 this.showModal = false;
                 console.log(val);
             } else {
+                await axios
+                    .get("/api/drinks", {
+                        params: {
+                            with: "comments"
+                        }
+                    })
+                    .then(response => {
+                        this.drinks = response.data;
+                    })
+                    .catch(function(error) {
+                        console.log(error);
+                    });
                 this.showModal = false;
             }
         }

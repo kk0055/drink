@@ -2777,7 +2777,12 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
             case 2:
               _this.prefectures = _Libraries_prefectures_js__WEBPACK_IMPORTED_MODULE_5__.default.prefectures;
 
-            case 3:
+              _this.prefectures.unshift({
+                code: 0,
+                name: "全部"
+              });
+
+            case 4:
             case "end":
               return _context.stop();
           }
@@ -2852,13 +2857,25 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 _this3.loading = false;
                 _this3.showModal = false;
                 console.log(val);
-                _context3.next = 9;
+                _context3.next = 11;
                 break;
 
               case 8:
+                _context3.next = 10;
+                return axios.get("/api/drinks", {
+                  params: {
+                    "with": "comments"
+                  }
+                }).then(function (response) {
+                  _this3.drinks = response.data;
+                })["catch"](function (error) {
+                  console.log(error);
+                });
+
+              case 10:
                 _this3.showModal = false;
 
-              case 9:
+              case 11:
               case "end":
                 return _context3.stop();
             }
@@ -23876,24 +23893,20 @@ var render = function() {
                           "div",
                           { staticClass: "m-auto flex flex-col gap-6" },
                           [
-                            _c(
-                              "div",
-                              {
-                                staticClass:
-                                  "border-2 bg-black border-gray-800 rounded-lg px-3 py-2 text-white cursor-pointer hover:bg-gray-800 hover:text-white"
-                              },
-                              [
-                                _c(
-                                  "button",
-                                  { on: { click: _vm.toggleModal } },
-                                  [
-                                    _vm._v(
-                                      "\n                                    都道府県から探す\n                                "
-                                    )
-                                  ]
-                                )
-                              ]
-                            )
+                            _c("button", { on: { click: _vm.toggleModal } }, [
+                              _c(
+                                "div",
+                                {
+                                  staticClass:
+                                    "border-2 bg-black border-gray-800 rounded-lg px-3 py-2 text-white cursor-pointer hover:bg-gray-800 hover:text-white"
+                                },
+                                [
+                                  _vm._v(
+                                    "\n                                    都道府県から探す\n                                "
+                                  )
+                                ]
+                              )
+                            ])
                           ]
                         )
                       ])

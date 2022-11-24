@@ -46,6 +46,7 @@ class Drink extends Model
                     ->where('prefecture', $prefecture);
                 ;
             })
+           
         ;
     }
 }
