@@ -2532,16 +2532,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
@@ -2750,6 +2740,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
 
 
 
@@ -2829,12 +2820,51 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       this.showModal = !this.showModal;
     },
     executeMethod: function executeMethod(val) {
-      //   this.showModal = false;
-      if (val) {
-        alert(val);
-      } else {
-        this.showModal = false;
-      }
+      var _this3 = this;
+
+      return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee3() {
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee3$(_context3) {
+          while (1) {
+            switch (_context3.prev = _context3.next) {
+              case 0:
+                if (!val) {
+                  _context3.next = 8;
+                  break;
+                }
+
+                _context3.next = 3;
+                return axios.get("/api/drinks", {
+                  params: {
+                    prefecture: val,
+                    "with": "comments"
+                  }
+                }).then(function (response) {
+                  if (response.data) {
+                    _this3.drinks = response.data;
+                  } else {
+                    return;
+                  }
+                })["catch"](function (error) {
+                  console.log(error);
+                });
+
+              case 3:
+                _this3.loading = false;
+                _this3.showModal = false;
+                console.log(val);
+                _context3.next = 9;
+                break;
+
+              case 8:
+                _this3.showModal = false;
+
+              case 9:
+              case "end":
+                return _context3.stop();
+            }
+          }
+        }, _callee3);
+      }))();
     }
   }
 });
@@ -23638,8 +23668,8 @@ var render = function() {
             [
               _vm._m(0),
               _vm._v(" "),
-              _c("div", { staticClass: "relative p-6 flex-auto" }, [
-                _c("div", { staticClass: "mt-4" }, [
+              _c("div", { staticClass: "relative p-3 flex-auto" }, [
+                _c("div", { staticClass: "mt-1" }, [
                   _c(
                     "select",
                     {
@@ -23716,7 +23746,7 @@ var render = function() {
                     "button",
                     {
                       staticClass:
-                        "text-red-500 background-transparent font-bold uppercase px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150",
+                        "text-red-500 bg-transparent border border-solid border-red-500 hover:bg-red-500 hover:text-white active:bg-red-600 font-bold uppercase text-sm px-6 py-3 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150",
                       attrs: { type: "button" },
                       on: {
                         click: function($event) {
@@ -23725,9 +23755,8 @@ var render = function() {
                       }
                     },
                     [
-                      _vm._v(
-                        "\n                        Save Changes\n                    "
-                      )
+                      _vm._v("\n                      Okay"),
+                      _c("i", { staticClass: "far fa-thumbs-up" })
                     ]
                   )
                 ]
@@ -23748,13 +23777,10 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c(
       "div",
-      {
-        staticClass:
-          "flex items-start justify-between p-5 border-b border-solid border-slate-200 rounded-t"
-      },
+      { staticClass: "flex items-start justify-between p-5 rounded-t" },
       [
         _c("h3", { staticClass: "text-3xl font-semibold" }, [
-          _vm._v("\n                        Modal Title\n                    ")
+          _vm._v("\n                        どこにする？\n                    ")
         ])
       ]
     )

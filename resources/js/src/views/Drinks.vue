@@ -28,11 +28,12 @@
                         </div>
                     </div>
                     <template v-if="showModal">
-                         <PrefectureModal @execute-method="executeMethod"
-                         :prefectures="prefectures"
-                         />
+                        <PrefectureModal
+                            @execute-method="executeMethod"
+                            :prefectures="prefectures"
+                        />
                     </template>
-              
+
                     <div
                         class="container mx-auto flex items-center flex-wrap pt-1 pb-12 "
                     >
@@ -93,17 +94,37 @@ export default {
 
             this.loading = false;
         },
-           toggleModal() {
+        toggleModal() {
             this.showModal = !this.showModal;
         },
-      executeMethod(val) {
-    //   this.showModal = false;
-      if (val) {
-        alert(val);
-      } else {
-        this.showModal = false;
-      }
-      }
+        async executeMethod(val) {
+            //   this.showModal = false;
+            if (val) {
+                await axios
+                    .get("/api/drinks", {
+                        params: {
+                            prefecture: val,
+                            with: "comments"
+                        }
+                    })
+                    .then(response => {
+                        if(response.data) {
+                            this.drinks = response.data;
+                        } else  {
+                            return 
+                        }
+                    })
+                    .catch(function(error) {
+                        console.log(error);
+                    });
+
+                this.loading = false;
+                this.showModal = false;
+                console.log(val);
+            } else {
+                this.showModal = false;
+            }
+        }
     }
 };
 </script>

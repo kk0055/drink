@@ -33,11 +33,17 @@ class Drink extends Model
     public function scopeQueryFilter($query)
     {
         $ranking = request()->query('ranking');
+        $prefecture = request()->query('prefecture');
 
         return $query
             ->when($ranking, function ($query, $val) {
                 return $query
-                ->orderBy('score', 'DESC');
+                    ->orderBy('score', 'DESC');
+                ;
+            })
+            ->when($prefecture, function ($query, $val) use ($prefecture) {
+                return $query
+                    ->where('prefecture', $prefecture);
                 ;
             })
         ;
