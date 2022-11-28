@@ -2529,9 +2529,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
@@ -23792,15 +23789,16 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      { staticClass: "flex items-start justify-between p-5 rounded-t" },
-      [
-        _c("h3", { staticClass: "text-3xl font-semibold" }, [
-          _vm._v("\n                        どこにする？\n                    ")
-        ])
-      ]
-    )
+    return _c("div", { staticClass: "text-center" }, [
+      _c(
+        "h2",
+        {
+          staticClass:
+            "block text-2xl font-bold text-gray-800 dark:text-white mt-3"
+        },
+        [_vm._v("どこにする？")]
+      )
+    ])
   }
 ]
 render._withStripped = true

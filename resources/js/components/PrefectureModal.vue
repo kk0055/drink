@@ -9,13 +9,10 @@
                     class="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none"
                 >
                     <!--header-->
-                    <div
-                        class="flex items-start justify-between p-5 rounded-t"
-                    >
-                        <h3 class="text-3xl font-semibold">
-                            どこにする？
-                        </h3>
-                    </div>
+                <div class="text-center">
+          <h2 class="block text-2xl font-bold text-gray-800 dark:text-white mt-3">どこにする？</h2>
+       
+        </div>
                     <!--body-->
 
                     <div class="relative p-3 flex-auto">
