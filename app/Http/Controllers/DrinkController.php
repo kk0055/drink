@@ -18,9 +18,7 @@ class DrinkController extends Controller
 
     public function index()
     {
-
         return Drink::queryControl()->queryFilter()->latest()->get();
-
     }
 
     public function create()

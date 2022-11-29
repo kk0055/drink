@@ -22,6 +22,7 @@ class DrinkFactory extends Factory
      */
     public function definition()
     {
+        $image = ['https://media.nedigital.sg/fairprice/fpol/media/images/product/XL/90046492_XL1_20201116.jpg','https://us.coca-cola.com/content/dam/nagbrands/us/coke/en/home/coca-cola-original-20oz.png',''];
         $userId  = User::pluck('id')->all();
         $score = ['1','2','3','4','5'];
         return [
@@ -31,7 +32,7 @@ class DrinkFactory extends Factory
             'prefecture' => $this->faker->prefecture,
             'place' => $this->faker->word,
             'map_url' => $this->faker->url,
-            // 'image' => "https://m.media-amazon.com/images/I/51eomlP5sJL._AC_SX679_.jpg",
+            'image' => $this->faker->randomElement($image),
             'price' => $this->faker->randomNumber($nbDigits = 3),
             'score' =>  $this->faker->randomElement($score),
         ];
