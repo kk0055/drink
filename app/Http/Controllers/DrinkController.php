@@ -18,9 +18,7 @@ class DrinkController extends Controller
 
     public function index()
     {
-
         return Drink::queryControl()->queryFilter()->latest()->get();
-
     }
 
     public function create()
@@ -30,51 +28,10 @@ class DrinkController extends Controller
 
     public function store(Request $request)
     {
+        
+        $new = new Drink();
 
-        // $this->validate($request, [
-        //     'name' => 'required',
-        //     'body' => 'required|max:300',
-        //     'score' => 'required',
-        //     'place' => 'required',
-        //     'image' => 'required',
-        // ],
-        //     [
-        //         'name.required' => '何飲んだの？',
-        //         'body.required' => '感想教えてね',
-        //         'body.max' => '300文字までだよ',
-        //         'score.required' => '何点？？？',
-        //         'image.required' => '画像のせてくれ',
-        //         'place.required' => 'どこで買ったのか教えてよ～',
-        //     ]);
-
-        if ($request->hasFile('image')) {
-
-            //名前設定
-            $filenameWithExt = $request->file('image')->getClientOriginalName();
-            $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
-            $extension = $request->file('image')->getClientOriginalExtension();
-            $fileNameToStore = $filename . '_' . time() . '.' . $extension;
-
-            //InterventionImageを使わない場合に使用
-            // $request->file('image')->storeAs('public/images/', $fileNameToStore);
-
-            //storageを含めたパス全体を保存すれば呼び出しが簡単 /storageにしないとパスが切れる
-            $saveImageToDB = "/storage/images/" . $fileNameToStore;
-
-            //storage_path...Storageに保存される. public_path...publicに保存される.publicに保存すべきではない。
-            //画像を保存するパス(Storage上)
-            $filePath = storage_path('app/public/images/');
-
-            $image = InterventionImage::make($request->file('image'))->resize(1000, 1000, function ($constraint) {
-                $constraint->aspectRatio();
-            });
-            //InterventionImageを保存する場合はあらかじめ指定するdirectlyがstorage内に必要
-            $image->save($filePath . $fileNameToStore);
-        } else {
-            $saveImageToDB = null;
-        }
-
-        return Drink::create([
+        $drink = Drink::create([
             'name' => $request->name,
             'user_id' => '1',
             'prefecture' => $request->prefecture,
@@ -83,17 +40,16 @@ class DrinkController extends Controller
             'place' => $request->place,
             'map_url' => $request->map_url,
             'price' => $request->price,
-            'image' => $saveImageToDB,
+            'image' => $new->getFile($request),
         ]);
-        // $request->user()->drinks()->create([
-        //     'name' => $request->name,
-        //     'review' => $request->review,
-        //     'score' => $request->score,
-        //     'place' => $request->place,
-        //     'image' => $fileNameToStore,
 
-        // ]);
-
+        $tag_id = json_decode(request()->tag_id);
+        if ($tag_id) {
+            foreach ($tag_id as $key => $id) {
+                $drink->tags()->sync($id, false);
+            }
+        }
+        return $drink;
         // return redirect()->route('drinks.index')->with('info', 'ごちそうさまでした！');
     }
 

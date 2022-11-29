@@ -12,42 +12,28 @@
     <div v-else>
         <div>
             <div>
-                <div class="bg-indigo-900 relative overflow-hidden h-screen">
-                    <img
-                        src="/images/background2.png"
-                        class="absolute h-full w-full object-cover"
-                    />
-                    <!-- 背景画像に被せる色 -->
-                    <div class="inset-0 bg-black opacity-95 absolute"></div>
-                    <div
-                        class="container mx-auto px-6 md:px-12 relative z-10 flex items-center py-32 xl:py-40"
-                    >
-                        <div
-                            class="w-full font-mono flex flex-col items-center relative z-10"
-                        >
-                            <h1
-                                class="font-extrabold text-5xl md:text-7xl mb-24 text-white animate-bounce "
-                            >
-                                俺の飲んだもの
-                            </h1>
-                            <p
-                                class="text-white w-2/3"
-                                style="font-family: 'Stick', sans-serif"
-                            >
-                                街を歩いている時にたまたま出会った、見たこともない面白いパッケージの飲み物、ビックリするほど美味しいドリンク。君が知らないだけで街角の自販機やコンビニ、スーパー、居酒屋、近所の喫茶店...などなど新しい発見はどこにでもある。そんな偶然を記録していこう。
-                            </p>
-                            <p
-                                class="font-extrabold text-2xl my-20 text-white "
-                            >
-                                <span class=""
-                                    >ところで、君は今日何を飲んだ?</span
-                                >
-                            </p>
+                <LandingPage />
+                <section class="bg-white py-4">
+                    <div class="w-full my-4">
+                        <div class="flex">
+                            <div class="m-auto flex flex-col gap-6">
+                                <button @click="toggleModal">
+                                    <div
+                                        class="border-2 bg-black border-gray-800 rounded-lg px-3 py-2 text-white cursor-pointer hover:bg-gray-800 hover:text-white"
+                                    >
+                                        都道府県から探す
+                                    </div>
+                                </button>
+                            </div>
                         </div>
                     </div>
-                </div>
+                    <template v-if="showModal">
+                        <PrefectureModal
+                            @execute-method="executeMethod"
+                            :prefectures="prefectures"
+                        />
+                    </template>
 
-                <section class="bg-white py-4">
                     <div
                         class="container mx-auto flex items-center flex-wrap pt-1 pb-12 "
                     >
@@ -58,10 +44,6 @@
                             <DrinkItem :drink="drink" :drinks="drinks" />
                         </div>
                     </div>
-                    <!-- <favorite-btn
-                        :drink={{ $drink->id }}
-                        :favorited={{ $drink->favorited() ? 'true' : 'false' }}
-                    ></favorite-btn> -->
                 </section>
             </div>
             <Footer />
@@ -71,10 +53,15 @@
 
 <script>
 import DrinkItem from "../../components/DrinkItem";
+import PrefectureModal from "../../components/PrefectureModal";
+import LandingPage from "../../components/LandingPage";
 import Footer from "../../components/Footer";
+import prefectures from "../../Libraries/prefectures.js";
 export default {
     components: {
+        LandingPage,
         DrinkItem,
+        PrefectureModal,
         Footer
     },
     props: {
@@ -82,17 +69,24 @@ export default {
     },
     data: () => ({
         drinks: [],
-        loading: true
+        loading: true,
+        showModal: false,
+        prefectures: {}
     }),
     async created() {
         await Promise.all([this.getDrinks()]);
+        this.prefectures = prefectures.prefectures;
+        this.prefectures.unshift({
+            code: 0,
+            name: "全部"
+        });
     },
     methods: {
         async getDrinks() {
             await axios
                 .get("/api/drinks", {
                     params: {
-                        with: "comments",
+                        with: "comments"
                     }
                 })
                 .then(response => {
@@ -103,6 +97,49 @@ export default {
                 });
 
             this.loading = false;
+        },
+        toggleModal() {
+            this.showModal = !this.showModal;
+        },
+        async executeMethod(val) {
+            //   this.showModal = false;
+            if (val) {
+                await axios
+                    .get("/api/drinks", {
+                        params: {
+                            prefecture: val,
+                            with: "comments"
+                        }
+                    })
+                    .then(response => {
+                        if (response.data) {
+                            this.drinks = response.data;
+                        } else {
+                            return;
+                        }
+                    })
+                    .catch(function(error) {
+                        console.log(error);
+                    });
+
+                this.loading = false;
+                this.showModal = false;
+                console.log(val);
+            } else {
+                await axios
+                    .get("/api/drinks", {
+                        params: {
+                            with: "comments"
+                        }
+                    })
+                    .then(response => {
+                        this.drinks = response.data;
+                    })
+                    .catch(function(error) {
+                        console.log(error);
+                    });
+                this.showModal = false;
+            }
         }
     }
 };

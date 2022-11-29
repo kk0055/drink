@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\DrinkController;
+use App\Http\Controllers\TagController;
 use App\Http\Controllers\CommentController;
 use App\Http\Controllers\SearchController;
 use Illuminate\Support\Facades\Request;
@@ -32,16 +33,15 @@ Route
         Route::get('/', [DrinkController::class, 'index'])->name('drinks.index');
 
         Route::resource('drinks', DrinkController::class);
+        Route::resource('tags', TagController::class);
         Route::resource('comments', CommentController::class);
-
-        Route::get('/ranking', [DrinkController::class, 'ranking'])->name('drinks.ranking');
 
         Route::get('/search', [SearchController::class, 'search'])->name('item.search');
 
         Route::get('my_favorites', [DrinkController::class, 'myFavorites']);
 
-        Route::post('/favorite/{drink}', [DrinkController::class, 'favorite']);
-        Route::post('/unfavorite/{drink}', [DrinkController::class, 'unFavorite']);
+        Route::post('/bookmark/{drink}', [DrinkController::class, 'bookmark']);
+        Route::post('/unbookmark/{drink}', [DrinkController::class, 'unbookmark']);
     });
 
 Route::fallback(function () {
