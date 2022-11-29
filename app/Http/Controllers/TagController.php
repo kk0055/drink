@@ -8,6 +8,6 @@ class TagController extends Controller
 {
     public function index()
     {
-        return Tag::queryControl()->queryFilter()->latest()->get();
+        return Tag::queryControl()->queryFilter()->inRandomOrder()->take(15)->get();
     }
 }

@@ -220,6 +220,42 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -235,7 +271,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       maxstars: 5,
       disabled: false,
       imageUrl: "",
-      files: []
+      files: [],
+      tags: []
     };
   },
   components: {
@@ -263,6 +300,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
   },
   created: function created() {
     this.prefectures = _Libraries_prefectures_js__WEBPACK_IMPORTED_MODULE_1__.default.prefectures;
+    this.getTags();
   },
   computed: {
     getPrefectures: function getPrefectures() {}
@@ -335,6 +373,30 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       var files = e.target.files; // console.log(files[0]);
 
       this.files = files[0];
+    },
+    getTags: function getTags() {
+      var _this2 = this;
+
+      return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee2() {
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee2$(_context2) {
+          while (1) {
+            switch (_context2.prev = _context2.next) {
+              case 0:
+                _context2.next = 2;
+                return axios.get("/api/tags").then(function (res) {
+                  console.log(res);
+                  _this2.tags = res.data;
+                })["catch"](function (error) {
+                  console.log(error);
+                });
+
+              case 2:
+              case "end":
+                return _context2.stop();
+            }
+          }
+        }, _callee2);
+      }))();
     }
   }
 });
@@ -836,6 +898,37 @@ var render = function() {
                 ]
               )
             ]),
+            _vm._v(" "),
+            _c(
+              "div",
+              { staticClass: "my-3 flex flex-wrap " },
+              _vm._l(_vm.tags, function(tag) {
+                return _c("div", { staticClass: "flex flex-row" }, [
+                  _c(
+                    "div",
+                    {
+                      staticClass:
+                        "bg-yellow-100 text-yellow-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-yellow-200 dark:text-yellow-900 my-1 mx-1",
+                      model: {
+                        value: _vm.data.tag,
+                        callback: function($$v) {
+                          _vm.$set(_vm.data, "tag", $$v)
+                        },
+                        expression: "data.tag"
+                      }
+                    },
+                    [
+                      _vm._v(
+                        "\n                            " +
+                          _vm._s(tag.name) +
+                          "\n                        "
+                      )
+                    ]
+                  )
+                ])
+              }),
+              0
+            ),
             _vm._v(" "),
             _c("div", { staticClass: "flex justify-center my-6" }, [
               _c(

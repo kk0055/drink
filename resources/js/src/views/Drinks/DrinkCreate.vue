@@ -182,6 +182,42 @@
         </div> -->
                         </div>
                     </div>
+                    <!-- Tags -->
+                    <!-- <form action="#" class="mt-8">
+                        <div
+                            class="flex bg-gray-100 p-1 items-center w-full space-x-2 sm:space-x- rounded border border-gray-500 dark:bg-gray-700 dark:border-gray-300"
+                        >
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                class="h-6 w-6 opacity-50 dark:text-gray-100 ml-2"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke="currentColor"
+                            >
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z"
+                                />
+                            </svg>
+                            <input
+                                class="bg-gray-100 outline-none text-sm sm:text-base w-full dark:bg-gray-700 dark:text-gray-200 border-transparent focus:border-transparent focus:ring-0"
+                                type="text"
+                                placeholder="Add a tag..."
+                            />
+                        </div>
+                    </form> -->
+                    <div class="my-3 flex flex-wrap ">
+                        <div class="flex flex-row" v-for="tag in tags">
+                            <div
+                                v-model="data.tag"
+                                class="bg-yellow-100 text-yellow-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-yellow-200 dark:text-yellow-900 my-1 mx-1"
+                            >
+                                {{ tag.name }}
+                            </div>
+                        </div>
+                    </div>
                     <div class="flex justify-center my-6">
                         <button
                             class=" rounded-full  p-3 w-full sm:w-56   bg-gradient-to-r from-sky-600  to-teal-300 text-blue-400 text-lg font-semibold shadow"
@@ -198,7 +234,7 @@
 <script>
 import prefectures from "../../../Libraries/prefectures.js";
 import { StarRating } from "vue-rate-it";
-import { required, } from "vuelidate/lib/validators";
+import { required } from "vuelidate/lib/validators";
 
 export default {
     data: () => ({
@@ -210,7 +246,8 @@ export default {
         maxstars: 5,
         disabled: false,
         imageUrl: "",
-        files: []
+        files: [],
+        tags: []
     }),
     components: {
         StarRating
@@ -237,6 +274,7 @@ export default {
     },
     created() {
         this.prefectures = prefectures.prefectures;
+        this.getTags();
     },
     computed: {
         getPrefectures() {}
@@ -286,8 +324,18 @@ export default {
             let files = e.target.files;
             // console.log(files[0]);
             this.files = files[0];
+        },
+        async getTags() {
+            await axios
+                .get("/api/tags")
+                .then(res => {
+                    console.log(res);
+                    this.tags = res.data;
+                })
+                .catch(function(error) {
+                    console.log(error);
+                });
         }
     }
 };
 </script>
-

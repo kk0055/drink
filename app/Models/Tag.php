@@ -9,6 +9,7 @@ use App\Traits\QueryControl;
 class Tag extends Model
 {
     use HasFactory;
+    use QueryControl;
     protected $guarded = [];
 
     public function drinks()
