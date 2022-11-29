@@ -32,7 +32,7 @@ class DrinkController extends Controller
     {
 
         $new = new Drink();
-             
+
         $drink = Drink::create([
             'name' => $request->name,
             'user_id' => '1',
@@ -51,7 +51,7 @@ class DrinkController extends Controller
                 $drink->tags()->sync($id, false);
             }
         }
-        return $drink;      
+        return $drink;
         // return redirect()->route('drinks.index')->with('info', 'ごちそうさまでした！');
     }
 

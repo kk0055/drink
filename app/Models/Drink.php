@@ -5,8 +5,8 @@ namespace App\Models;
 use App\Traits\QueryControl;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Intervention\Image\ImageManagerStatic as InterventionImage;
 
 class Drink extends Model
@@ -37,7 +37,8 @@ class Drink extends Model
             ->first();
     }
 
-    public function getFile(Request $request) {
+    public function getFile(Request $request)
+    {
         if ($request->hasFile('image')) {
 
             //名前設定
@@ -49,7 +50,7 @@ class Drink extends Model
             //InterventionImageを使わない場合に使用
             // $request->file('image')->storeAs('public/images/', $fileNameToStore);
 
-                        //storage_path...Storageに保存される. public_path...publicに保存される.publicに保存すべきではない。
+            //storage_path...Storageに保存される. public_path...publicに保存される.publicに保存すべきではない。
             //画像を保存するパス(Storage上)
             $filePath = storage_path('app/public/images/');
 
@@ -60,8 +61,7 @@ class Drink extends Model
             $image->save($filePath . $fileNameToStore);
 
             //storageを含めたパス全体を保存すれば呼び出しが簡単 /storageにしないとパスが切れる
-           return $saveImageToDB = "/storage/images/" . $fileNameToStore;
-
+            return $saveImageToDB = "/storage/images/" . $fileNameToStore;
 
         } else {
             return $saveImageToDB = null;
@@ -84,7 +84,7 @@ class Drink extends Model
                     ->where('prefecture', $prefecture);
                 ;
             })
-           
+
         ;
     }
 }

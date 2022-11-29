@@ -73,6 +73,9 @@ export default {
             this.$emit("execute-method", false);
         },
         selectPrefecture() {
+            if(this.data.prefecture == '全部') {
+                this.data.prefecture = ''
+            }
             this.$emit("execute-method", this.data.prefecture);
         }
     }

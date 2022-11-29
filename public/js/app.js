@@ -2547,6 +2547,10 @@ __webpack_require__.r(__webpack_exports__);
       this.$emit("execute-method", false);
     },
     selectPrefecture: function selectPrefecture() {
+      if (this.data.prefecture == '全部') {
+        this.data.prefecture = '';
+      }
+
       this.$emit("execute-method", this.data.prefecture);
     }
   }
