@@ -210,14 +210,16 @@
                     </form> -->
                     <div class="my-3 flex flex-wrap ">
                         <div class="flex flex-row" v-for="tag in tags">
-                            <input  type="checkbox" v-model="selectedTags" :value="tag.id">
-                            <div 
-                                
+                            <input
+                                type="checkbox"
+                                v-model="selectedTags"
+                                :value="tag.id"
+                            />
+                            <div
                                 class="bg-yellow-100 text-yellow-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-yellow-200 dark:text-yellow-900 my-1 mx-1"
                             >
-                                {{ tag.name }}       
+                                {{ tag.name }}
                             </div>
-                            
                         </div>
                     </div>
                     <div class="flex justify-center my-6">
@@ -250,7 +252,7 @@ export default {
         imageUrl: "",
         files: [],
         tags: [],
-        selectedTags:[]
+        selectedTags: []
     }),
     components: {
         StarRating
@@ -280,7 +282,9 @@ export default {
         this.getTags();
     },
     computed: {
-        getPrefectures() {}
+        // setTags() {
+        //     this.data.tag_id.push(this.selectedTags)
+        // }
     },
     methods: {
         async postData() {
@@ -299,6 +303,9 @@ export default {
             formData.append("review", this.data.review);
             formData.append("score", this.data.score);
             formData.append("price", this.data.price);
+
+            formData.append("tag_id" , JSON.stringify(this.selectedTags));
+            
             if (this.$v.$invalid) {
                 console.log("Validation Error");
             } else {

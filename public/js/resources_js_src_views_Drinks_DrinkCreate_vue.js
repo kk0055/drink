@@ -258,6 +258,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
 
 
 
@@ -305,8 +307,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     this.prefectures = _Libraries_prefectures_js__WEBPACK_IMPORTED_MODULE_1__.default.prefectures;
     this.getTags();
   },
-  computed: {
-    getPrefectures: function getPrefectures() {}
+  computed: {// setTags() {
+    //     this.data.tag_id.push(this.selectedTags)
+    // }
   },
   methods: {
     postData: function postData() {
@@ -334,18 +337,19 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 formData.append("review", _this.data.review);
                 formData.append("score", _this.data.score);
                 formData.append("price", _this.data.price);
+                formData.append("tag_id", JSON.stringify(_this.selectedTags));
 
                 if (!_this.$v.$invalid) {
-                  _context.next = 15;
+                  _context.next = 16;
                   break;
                 }
 
                 console.log("Validation Error");
-                _context.next = 17;
+                _context.next = 18;
                 break;
 
-              case 15:
-                _context.next = 17;
+              case 16:
+                _context.next = 18;
                 return axios.post("/api/drinks", formData, config).then(function (res) {
                   // console.log(res);
                   _this.$toast("投稿完了!", {
@@ -361,7 +365,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                   console.log(error);
                 });
 
-              case 17:
+              case 18:
               case "end":
                 return _context.stop();
             }
@@ -956,7 +960,7 @@ var render = function() {
                       _vm._v(
                         "\n                            " +
                           _vm._s(tag.name) +
-                          "       \n                        "
+                          "\n                        "
                       )
                     ]
                   )

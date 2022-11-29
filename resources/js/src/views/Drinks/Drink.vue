@@ -48,7 +48,7 @@ export default {
             await axios
                 .get(`/api/drinks/${this.id}`, {
                     params: {
-                    with:'comments'
+                    with:'comments,tags'
                     }
                 })
                 .then(response => {

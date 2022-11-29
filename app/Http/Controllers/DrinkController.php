@@ -28,7 +28,7 @@ class DrinkController extends Controller
 
     public function store(Request $request)
     {
-
+        
         $new = new Drink();
 
         $drink = Drink::create([
@@ -43,7 +43,7 @@ class DrinkController extends Controller
             'image' => $new->getFile($request),
         ]);
 
-        $tag_id = request()->tag_id;
+        $tag_id = json_decode(request()->tag_id);
         if ($tag_id) {
             foreach ($tag_id as $key => $id) {
                 $drink->tags()->sync($id, false);
