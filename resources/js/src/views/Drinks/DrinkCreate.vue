@@ -210,12 +210,14 @@
                     </form> -->
                     <div class="my-3 flex flex-wrap ">
                         <div class="flex flex-row" v-for="tag in tags">
-                            <div
-                                v-model="data.tag"
+                            <input  type="checkbox" v-model="selectedTags" :value="tag.id">
+                            <div 
+                                
                                 class="bg-yellow-100 text-yellow-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-yellow-200 dark:text-yellow-900 my-1 mx-1"
                             >
-                                {{ tag.name }}
+                                {{ tag.name }}       
                             </div>
+                            
                         </div>
                     </div>
                     <div class="flex justify-center my-6">
@@ -247,7 +249,8 @@ export default {
         disabled: false,
         imageUrl: "",
         files: [],
-        tags: []
+        tags: [],
+        selectedTags:[]
     }),
     components: {
         StarRating

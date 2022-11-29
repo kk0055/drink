@@ -256,6 +256,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
 
 
 
@@ -272,7 +274,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       disabled: false,
       imageUrl: "",
       files: [],
-      tags: []
+      tags: [],
+      selectedTags: []
     };
   },
   components: {
@@ -904,24 +907,56 @@ var render = function() {
               { staticClass: "my-3 flex flex-wrap " },
               _vm._l(_vm.tags, function(tag) {
                 return _c("div", { staticClass: "flex flex-row" }, [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.selectedTags,
+                        expression: "selectedTags"
+                      }
+                    ],
+                    attrs: { type: "checkbox" },
+                    domProps: {
+                      value: tag.id,
+                      checked: Array.isArray(_vm.selectedTags)
+                        ? _vm._i(_vm.selectedTags, tag.id) > -1
+                        : _vm.selectedTags
+                    },
+                    on: {
+                      change: function($event) {
+                        var $$a = _vm.selectedTags,
+                          $$el = $event.target,
+                          $$c = $$el.checked ? true : false
+                        if (Array.isArray($$a)) {
+                          var $$v = tag.id,
+                            $$i = _vm._i($$a, $$v)
+                          if ($$el.checked) {
+                            $$i < 0 && (_vm.selectedTags = $$a.concat([$$v]))
+                          } else {
+                            $$i > -1 &&
+                              (_vm.selectedTags = $$a
+                                .slice(0, $$i)
+                                .concat($$a.slice($$i + 1)))
+                          }
+                        } else {
+                          _vm.selectedTags = $$c
+                        }
+                      }
+                    }
+                  }),
+                  _vm._v(" "),
                   _c(
                     "div",
                     {
                       staticClass:
-                        "bg-yellow-100 text-yellow-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-yellow-200 dark:text-yellow-900 my-1 mx-1",
-                      model: {
-                        value: _vm.data.tag,
-                        callback: function($$v) {
-                          _vm.$set(_vm.data, "tag", $$v)
-                        },
-                        expression: "data.tag"
-                      }
+                        "bg-yellow-100 text-yellow-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-yellow-200 dark:text-yellow-900 my-1 mx-1"
                     },
                     [
                       _vm._v(
                         "\n                            " +
                           _vm._s(tag.name) +
-                          "\n                        "
+                          "       \n                        "
                       )
                     ]
                   )
