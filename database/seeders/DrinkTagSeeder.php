@@ -16,7 +16,7 @@ class DrinkTagSeeder extends Seeder
      */
     public function run()
     {
-        for ($i = 0; $i < 150; $i++) {
+        for ($i = 0; $i < 400; $i++) {
             $drinkIds = DB::table('drinks')->pluck('id');
             $tagIds = DB::table('tags')->pluck('id');
             DB::table('drink_tag')->insert([

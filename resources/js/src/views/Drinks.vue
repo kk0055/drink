@@ -15,19 +15,27 @@
                 <LandingPage />
                 <section class="bg-white py-4">
                     <div class="w-full my-4">
-                        <div class="flex">
-                            <div class="m-auto flex flex-col gap-6">
-                                <button @click="toggleModal">
+                        <div class="flex items-center justify-center">
+                            <div class="flex space-x-2 justify-center">
+                                <button @click="togglePrefectureModal">
                                     <div
                                         class="border-2 bg-black border-gray-800 rounded-lg px-3 py-2 text-white cursor-pointer hover:bg-gray-800 hover:text-white"
                                     >
                                         都道府県から探す
                                     </div>
                                 </button>
+                                     <button @click="toggleTasteModal">
+                                    <div
+                                        class="border-2 bg-black border-gray-800 rounded-lg px-3 py-2 text-white cursor-pointer hover:bg-gray-800 hover:text-white"
+                                    >
+                                        好みから探す
+                                    </div>
+                                </button>
                             </div>
+                   
                         </div>
                     </div>
-                    <template v-if="showModal">
+                    <template v-if="showPrefectureModal">
                         <PrefectureModal
                             @execute-method="executeMethod"
                             :prefectures="prefectures"
@@ -70,7 +78,8 @@ export default {
     data: () => ({
         drinks: [],
         loading: true,
-        showModal: false,
+        showPrefectureModal: false,
+        showTasteModal: false,
         prefectures: {}
     }),
     async created() {
@@ -98,8 +107,11 @@ export default {
 
             this.loading = false;
         },
-        toggleModal() {
-            this.showModal = !this.showModal;
+        togglePrefectureModal() {
+            this.showPrefectureModal = !this.showPrefectureModal;
+        },
+        toggleTasteModal() {
+            this.showTasteModal = !this.showTasteModal;
         },
         async executeMethod(val) {
             //   this.showModal = false;
@@ -123,7 +135,7 @@ export default {
                     });
 
                 this.loading = false;
-                this.showModal = false;
+                this.showPrefectureModal = false;
                 console.log(val);
             } else {
                 await axios
@@ -138,7 +150,7 @@ export default {
                     .catch(function(error) {
                         console.log(error);
                     });
-                this.showModal = false;
+                this.showPrefectureModal = false;
             }
         }
     }

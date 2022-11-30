@@ -2769,6 +2769,14 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -2787,7 +2795,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     return {
       drinks: [],
       loading: true,
-      showModal: false,
+      showPrefectureModal: false,
+      showTasteModal: false,
       prefectures: {}
     };
   },
@@ -2849,8 +2858,11 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         }, _callee2);
       }))();
     },
-    toggleModal: function toggleModal() {
-      this.showModal = !this.showModal;
+    togglePrefectureModal: function togglePrefectureModal() {
+      this.showPrefectureModal = !this.showPrefectureModal;
+    },
+    toggleTasteModal: function toggleTasteModal() {
+      this.showTasteModal = !this.showTasteModal;
     },
     executeMethod: function executeMethod(val) {
       var _this3 = this;
@@ -2883,7 +2895,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
               case 3:
                 _this3.loading = false;
-                _this3.showModal = false;
+                _this3.showPrefectureModal = false;
                 console.log(val);
                 _context3.next = 11;
                 break;
@@ -2901,7 +2913,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 });
 
               case 10:
-                _this3.showModal = false;
+                _this3.showPrefectureModal = false;
 
               case 11:
               case "end":
@@ -23943,31 +23955,58 @@ var render = function() {
                   { staticClass: "bg-white py-4" },
                   [
                     _c("div", { staticClass: "w-full my-4" }, [
-                      _c("div", { staticClass: "flex" }, [
-                        _c(
-                          "div",
-                          { staticClass: "m-auto flex flex-col gap-6" },
-                          [
-                            _c("button", { on: { click: _vm.toggleModal } }, [
+                      _c(
+                        "div",
+                        { staticClass: "flex items-center justify-center" },
+                        [
+                          _c(
+                            "div",
+                            { staticClass: "flex space-x-2 justify-center" },
+                            [
                               _c(
-                                "div",
-                                {
-                                  staticClass:
-                                    "border-2 bg-black border-gray-800 rounded-lg px-3 py-2 text-white cursor-pointer hover:bg-gray-800 hover:text-white"
-                                },
+                                "button",
+                                { on: { click: _vm.togglePrefectureModal } },
                                 [
-                                  _vm._v(
-                                    "\n                                    都道府県から探す\n                                "
+                                  _c(
+                                    "div",
+                                    {
+                                      staticClass:
+                                        "border-2 bg-black border-gray-800 rounded-lg px-3 py-2 text-white cursor-pointer hover:bg-gray-800 hover:text-white"
+                                    },
+                                    [
+                                      _vm._v(
+                                        "\n                                    都道府県から探す\n                                "
+                                      )
+                                    ]
+                                  )
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "button",
+                                { on: { click: _vm.toggleTasteModal } },
+                                [
+                                  _c(
+                                    "div",
+                                    {
+                                      staticClass:
+                                        "border-2 bg-black border-gray-800 rounded-lg px-3 py-2 text-white cursor-pointer hover:bg-gray-800 hover:text-white"
+                                    },
+                                    [
+                                      _vm._v(
+                                        "\n                                    好みから探す\n                                "
+                                      )
+                                    ]
                                   )
                                 ]
                               )
-                            ])
-                          ]
-                        )
-                      ])
+                            ]
+                          )
+                        ]
+                      )
                     ]),
                     _vm._v(" "),
-                    _vm.showModal
+                    _vm.showPrefectureModal
                       ? [
                           _c("PrefectureModal", {
                             attrs: { prefectures: _vm.prefectures },
