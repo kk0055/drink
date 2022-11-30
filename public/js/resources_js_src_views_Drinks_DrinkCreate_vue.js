@@ -260,6 +260,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
 
 
 
@@ -908,9 +909,9 @@ var render = function() {
             _vm._v(" "),
             _c(
               "div",
-              { staticClass: "my-3 flex flex-wrap " },
+              { staticClass: "my-3 p-2 flex flex-wrap " },
               _vm._l(_vm.tags, function(tag) {
-                return _c("div", { staticClass: "flex flex-row" }, [
+                return _c("div", { staticClass: "flex flex-row mr-1" }, [
                   _c("input", {
                     directives: [
                       {
@@ -954,11 +955,11 @@ var render = function() {
                     "div",
                     {
                       staticClass:
-                        "bg-yellow-100 text-yellow-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-yellow-200 dark:text-yellow-900 my-1 mx-1"
+                        "bg-green-100 text-green-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-green-200 dark:text-green-900 my-1 "
                     },
                     [
                       _vm._v(
-                        "\n                            " +
+                        "\n                            #" +
                           _vm._s(tag.name) +
                           "\n                        "
                       )
@@ -974,7 +975,7 @@ var render = function() {
                 "button",
                 {
                   staticClass:
-                    " rounded-full  p-3 w-full sm:w-56   bg-gradient-to-r from-sky-600  to-teal-300 text-blue-400 text-lg font-semibold shadow",
+                    " rounded-full  p-3 w-full sm:w-56   bg-gradient-to-r from-sky-600  to-teal-300 text-blue-400 text-lg font-semibold shadow \n                      ",
                   on: { click: _vm.postData }
                 },
                 [_vm._v("\n                        投稿\n                    ")]

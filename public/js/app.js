@@ -2010,6 +2010,33 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: {
@@ -22836,8 +22863,34 @@ var render = function() {
                   )
                 : _vm._e(),
               _vm._v(" "),
+              _vm.$route.name == "drinkDetails"
+                ? _c(
+                    "div",
+                    { staticClass: "my-3 flex flex-wrap " },
+                    _vm._l(_vm.drink.tags, function(tag) {
+                      return _c("div", { staticClass: "flex flex-row" }, [
+                        _c(
+                          "div",
+                          {
+                            staticClass:
+                              "bg-green-100 text-green-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-green-200 dark:text-green-900 my-1 mx-1"
+                          },
+                          [
+                            _vm._v(
+                              "\n                            #" +
+                                _vm._s(tag.name) +
+                                "\n                        "
+                            )
+                          ]
+                        )
+                      ])
+                    }),
+                    0
+                  )
+                : _vm._e(),
+              _vm._v(" "),
               _c("div", { staticClass: "mt-1 flex  justify-between " }, [
-                _c("span", { staticClass: "mt-1 flex " }, [
+                _c("button", { staticClass: "mt-1 flex " }, [
                   _c("i", {
                     staticClass: "far fa-comment pl-2 mr-2 text-2xl",
                     on: {

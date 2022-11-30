@@ -208,23 +208,24 @@
                             />
                         </div>
                     </form> -->
-                    <div class="my-3 flex flex-wrap ">
-                        <div class="flex flex-row" v-for="tag in tags">
+                    <div class="my-3 p-2 flex flex-wrap ">
+                        <div class="flex flex-row mr-1" v-for="tag in tags">
                             <input
                                 type="checkbox"
                                 v-model="selectedTags"
                                 :value="tag.id"
                             />
-                            <div
-                                class="bg-yellow-100 text-yellow-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-yellow-200 dark:text-yellow-900 my-1 mx-1"
+                            <div 
+                                class="bg-green-100 text-green-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-green-200 dark:text-green-900 my-1 "
                             >
-                                {{ tag.name }}
+                                #{{ tag.name }}
                             </div>
                         </div>
                     </div>
                     <div class="flex justify-center my-6">
                         <button
-                            class=" rounded-full  p-3 w-full sm:w-56   bg-gradient-to-r from-sky-600  to-teal-300 text-blue-400 text-lg font-semibold shadow"
+                            class=" rounded-full  p-3 w-full sm:w-56   bg-gradient-to-r from-sky-600  to-teal-300 text-blue-400 text-lg font-semibold shadow 
+                          "
                             @click="postData"
                         >
                             投稿
