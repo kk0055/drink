@@ -20,16 +20,19 @@
 
                     <div class=" flex flex-wrap ">
                         <div class="flex flex-row mr-1" v-for="tag in tags">
-                            <input
+                           <label :for="tag.id"    class="bg-green-100 text-green-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-green-200 dark:text-green-900 my-1">
+                             <input
                                 type="checkbox"
                                 v-model="selectedTags"
                                 :value="tag.id"
-                            />
-                            <div
+                                :id="tag.id"
+                            />   #{{ tag.name }}
+                           </label>
+                            <!-- <div
                                 class="bg-green-100 text-green-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-green-200 dark:text-green-900 my-1"
                             >
                                 #{{ tag.name }}
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                     <!--footer-->
@@ -46,7 +49,7 @@
                         <button
                             class="text-red-500 bg-transparent border border-solid border-red-500 hover:bg-red-500 hover:text-white active:bg-red-600 font-bold uppercase text-sm px-6 py-3 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
                             type="button"
-                            @click="selectPrefecture()"
+                            @click="selectTaste()"
                         >
                             Okay<i class="far fa-thumbs-up"></i>
                         </button>
@@ -68,7 +71,6 @@ export default {
     }),
     components: {},
     props: {
-        prefectures: Array
     },
     created() {
         this.getTags();

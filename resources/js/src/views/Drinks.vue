@@ -184,7 +184,7 @@ export default {
                     });
 
                 this.loading = false;
-                this.showPrefectureModal = false;
+                this.showTasteModal = false;
                 console.log(val);
             } else {
                 await axios
@@ -199,7 +199,7 @@ export default {
                     .catch(function(error) {
                         console.log(error);
                     });
-                this.showPrefectureModal = false;
+                this.showTasteModal = false;
             }
         }
     }

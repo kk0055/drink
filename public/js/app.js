@@ -2673,6 +2673,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
@@ -2683,9 +2686,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     };
   },
   components: {},
-  props: {
-    prefectures: Array
-  },
+  props: {},
   created: function created() {
     this.getTags();
   },
@@ -3105,7 +3106,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
               case 3:
                 _this4.loading = false;
-                _this4.showPrefectureModal = false;
+                _this4.showTasteModal = false;
                 console.log(val);
                 _context4.next = 11;
                 break;
@@ -3123,7 +3124,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 });
 
               case 10:
-                _this4.showPrefectureModal = false;
+                _this4.showTasteModal = false;
 
               case 11:
               case "end":
@@ -24054,56 +24055,57 @@ var render = function() {
                 { staticClass: " flex flex-wrap " },
                 _vm._l(_vm.tags, function(tag) {
                   return _c("div", { staticClass: "flex flex-row mr-1" }, [
-                    _c("input", {
-                      directives: [
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value: _vm.selectedTags,
-                          expression: "selectedTags"
-                        }
-                      ],
-                      attrs: { type: "checkbox" },
-                      domProps: {
-                        value: tag.id,
-                        checked: Array.isArray(_vm.selectedTags)
-                          ? _vm._i(_vm.selectedTags, tag.id) > -1
-                          : _vm.selectedTags
-                      },
-                      on: {
-                        change: function($event) {
-                          var $$a = _vm.selectedTags,
-                            $$el = $event.target,
-                            $$c = $$el.checked ? true : false
-                          if (Array.isArray($$a)) {
-                            var $$v = tag.id,
-                              $$i = _vm._i($$a, $$v)
-                            if ($$el.checked) {
-                              $$i < 0 && (_vm.selectedTags = $$a.concat([$$v]))
-                            } else {
-                              $$i > -1 &&
-                                (_vm.selectedTags = $$a
-                                  .slice(0, $$i)
-                                  .concat($$a.slice($$i + 1)))
-                            }
-                          } else {
-                            _vm.selectedTags = $$c
-                          }
-                        }
-                      }
-                    }),
-                    _vm._v(" "),
                     _c(
-                      "div",
+                      "label",
                       {
                         staticClass:
-                          "bg-green-100 text-green-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-green-200 dark:text-green-900 my-1"
+                          "bg-green-100 text-green-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-green-200 dark:text-green-900 my-1",
+                        attrs: { for: tag.id }
                       },
                       [
+                        _c("input", {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.selectedTags,
+                              expression: "selectedTags"
+                            }
+                          ],
+                          attrs: { type: "checkbox", id: tag.id },
+                          domProps: {
+                            value: tag.id,
+                            checked: Array.isArray(_vm.selectedTags)
+                              ? _vm._i(_vm.selectedTags, tag.id) > -1
+                              : _vm.selectedTags
+                          },
+                          on: {
+                            change: function($event) {
+                              var $$a = _vm.selectedTags,
+                                $$el = $event.target,
+                                $$c = $$el.checked ? true : false
+                              if (Array.isArray($$a)) {
+                                var $$v = tag.id,
+                                  $$i = _vm._i($$a, $$v)
+                                if ($$el.checked) {
+                                  $$i < 0 &&
+                                    (_vm.selectedTags = $$a.concat([$$v]))
+                                } else {
+                                  $$i > -1 &&
+                                    (_vm.selectedTags = $$a
+                                      .slice(0, $$i)
+                                      .concat($$a.slice($$i + 1)))
+                                }
+                              } else {
+                                _vm.selectedTags = $$c
+                              }
+                            }
+                          }
+                        }),
                         _vm._v(
-                          "\n                            #" +
+                          "   #" +
                             _vm._s(tag.name) +
-                            "\n                        "
+                            "\n                       "
                         )
                       ]
                     )
@@ -24146,7 +24148,7 @@ var render = function() {
                       attrs: { type: "button" },
                       on: {
                         click: function($event) {
-                          return _vm.selectPrefecture()
+                          return _vm.selectTaste()
                         }
                       }
                     },
