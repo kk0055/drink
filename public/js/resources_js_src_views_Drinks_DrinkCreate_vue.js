@@ -391,7 +391,11 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
             switch (_context2.prev = _context2.next) {
               case 0:
                 _context2.next = 2;
-                return axios.get("/api/tags").then(function (res) {
+                return axios.get("/api/tags", {
+                  params: {
+                    random: true
+                  }
+                }).then(function (res) {
                   console.log(res);
                   _this2.tags = res.data;
                 })["catch"](function (error) {

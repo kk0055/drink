@@ -338,7 +338,11 @@ export default {
         },
         async getTags() {
             await axios
-                .get("/api/tags")
+                .get("/api/tags" , {
+                    params: {
+                    random:true
+                    }
+                })
                 .then(res => {
                     console.log(res);
                     this.tags = res.data;

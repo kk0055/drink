@@ -37,8 +37,13 @@
                     </div>
                     <template v-if="showPrefectureModal">
                         <PrefectureModal
-                            @execute-method="executeMethod"
+                            @execute-method="filterPrefecture"
                             :prefectures="prefectures"
+                        />
+                    </template>
+                    <template v-if="showTasteModal">
+                        <TasteModal
+                            @execute-method="filterTaste"
                         />
                     </template>
 
@@ -62,6 +67,7 @@
 <script>
 import DrinkItem from "../../components/DrinkItem";
 import PrefectureModal from "../../components/PrefectureModal";
+import TasteModal from "../../components/TasteModal";
 import LandingPage from "../../components/LandingPage";
 import Footer from "../../components/Footer";
 import prefectures from "../../Libraries/prefectures.js";
@@ -70,6 +76,7 @@ export default {
         LandingPage,
         DrinkItem,
         PrefectureModal,
+        TasteModal,
         Footer
     },
     props: {
@@ -113,7 +120,47 @@ export default {
         toggleTasteModal() {
             this.showTasteModal = !this.showTasteModal;
         },
-        async executeMethod(val) {
+        async filterPrefecture(val) {
+            //   this.showModal = false;
+            if (val) {
+                await axios
+                    .get("/api/drinks", {
+                        params: {
+                            prefecture: val,
+                            with: "comments"
+                        }
+                    })
+                    .then(response => {
+                        if (response.data) {
+                            this.drinks = response.data;
+                        } else {
+                            return;
+                        }
+                    })
+                    .catch(function(error) {
+                        console.log(error);
+                    });
+
+                this.loading = false;
+                this.showPrefectureModal = false;
+                console.log(val);
+            } else {
+                await axios
+                    .get("/api/drinks", {
+                        params: {
+                            with: "comments"
+                        }
+                    })
+                    .then(response => {
+                        this.drinks = response.data;
+                    })
+                    .catch(function(error) {
+                        console.log(error);
+                    });
+                this.showPrefectureModal = false;
+            }
+        },
+        async filterTaste(val) {
             //   this.showModal = false;
             if (val) {
                 await axios

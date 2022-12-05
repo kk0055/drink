@@ -12,8 +12,9 @@
         <!-- <img class="w-full bg-cover p-3" width="300px" height="350px" v-if="$route.name == 'drinks'"  :src="drink.image"> -->
         <img
             v-else
-            class="p-3  w-full object-center"
+            class="p-3 w-full object-center"
             width="200px"
+            height="400px"
             :src="image"
         />
         <div class="px-3 pb-2">
