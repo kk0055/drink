@@ -1,21 +1,24 @@
 <template>
-    <div>
+    <div class="">
         <div
-            class="overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none justify-center items-center flex"
+            class="overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none justify-center items-center  flex"
         >
-            <div class="relative w-auto my-6 mx-auto max-w-3xl">
+            <div class="relative w-auto my-6 mx-auto max-w-3xl ">
                 <!--content-->
                 <div
-                    class="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none"
+                    class="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none p-3"
                 >
                     <!--header-->
-                <div class="text-center">
-          <h2 class="block text-2xl font-bold text-gray-800 dark:text-white mt-3">どれにする？</h2>
-       
-        </div>
+                    <div class="text-center">
+                        <h2
+                            class="block text-2xl font-bold text-gray-800 dark:text-white mt-3"
+                        >
+                            どれにする？
+                        </h2>
+                    </div>
                     <!--body-->
 
-             <div class=" flex flex-wrap ">
+                    <div class=" flex flex-wrap ">
                         <div class="flex flex-row mr-1" v-for="tag in tags">
                             <input
                                 type="checkbox"
@@ -23,7 +26,7 @@
                                 :value="tag.id"
                             />
                             <div
-                                class="bg-green-100 text-green-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-green-200 dark:text-green-900 my-1 "
+                                class="bg-green-100 text-green-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-green-200 dark:text-green-900 my-1"
                             >
                                 #{{ tag.name }}
                             </div>
@@ -45,7 +48,7 @@
                             type="button"
                             @click="selectPrefecture()"
                         >
-                          Okay<i class="far fa-thumbs-up"></i>
+                            Okay<i class="far fa-thumbs-up"></i>
                         </button>
                     </div>
                 </div>
@@ -61,27 +64,24 @@ export default {
         showModal: false,
         data: {},
         tags: [],
-        selectedTags:[],
+        selectedTags: []
     }),
     components: {},
     props: {
         prefectures: Array
     },
     created() {
-      this.getTags()
+        this.getTags();
     },
     computed: {},
     methods: {
         cancel() {
             this.$emit("execute-method", false);
         },
-        selectPrefecture() {
-            if(this.data.prefecture == '全部') {
-                this.data.prefecture = ''
-            }
+        selectTaste() {
             this.$emit("execute-method", JSON.stringify(this.selectedTags));
         },
-            async getTags() {
+        async getTags() {
             await axios
                 .get("/api/tags")
                 .then(res => {

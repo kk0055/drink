@@ -2670,6 +2670,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
@@ -2691,11 +2694,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     cancel: function cancel() {
       this.$emit("execute-method", false);
     },
-    selectPrefecture: function selectPrefecture() {
-      if (this.data.prefecture == '全部') {
-        this.data.prefecture = '';
-      }
-
+    selectTaste: function selectTaste() {
       this.$emit("execute-method", JSON.stringify(this.selectedTags));
     },
     getTags: function getTags() {
@@ -24032,20 +24031,20 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
+  return _c("div", {}, [
     _c(
       "div",
       {
         staticClass:
-          "overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none justify-center items-center flex"
+          "overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none justify-center items-center  flex"
       },
       [
-        _c("div", { staticClass: "relative w-auto my-6 mx-auto max-w-3xl" }, [
+        _c("div", { staticClass: "relative w-auto my-6 mx-auto max-w-3xl " }, [
           _c(
             "div",
             {
               staticClass:
-                "border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none"
+                "border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none p-3"
             },
             [
               _vm._m(0),
@@ -24098,7 +24097,7 @@ var render = function() {
                       "div",
                       {
                         staticClass:
-                          "bg-green-100 text-green-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-green-200 dark:text-green-900 my-1 "
+                          "bg-green-100 text-green-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-green-200 dark:text-green-900 my-1"
                       },
                       [
                         _vm._v(
@@ -24152,7 +24151,7 @@ var render = function() {
                       }
                     },
                     [
-                      _vm._v("\n                      Okay"),
+                      _vm._v("\n                        Okay"),
                       _c("i", { staticClass: "far fa-thumbs-up" })
                     ]
                   )
@@ -24179,7 +24178,7 @@ var staticRenderFns = [
           staticClass:
             "block text-2xl font-bold text-gray-800 dark:text-white mt-3"
         },
-        [_vm._v("どれにする？")]
+        [_vm._v("\n                        どれにする？\n                    ")]
       )
     ])
   }
