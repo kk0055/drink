@@ -20,13 +20,14 @@
 
                     <div class=" flex flex-wrap ">
                         <div class="flex flex-row mr-1" v-for="tag in tags">
-                           <label :for="tag.id"    class="bg-green-100 text-green-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-green-200 dark:text-green-900 my-1">
-                             <input
+                           <input
                                 type="checkbox"
                                 v-model="selectedTags"
                                 :value="tag.id"
                                 :id="tag.id"
-                            />   #{{ tag.name }}
+                            />  
+                           <label :for="tag.id"    class="bg-green-100 text-green-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-green-200 dark:text-green-900 my-1">
+                             #{{ tag.name }}
                            </label>
                             <!-- <div
                                 class="bg-green-100 text-green-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-green-200 dark:text-green-900 my-1"
