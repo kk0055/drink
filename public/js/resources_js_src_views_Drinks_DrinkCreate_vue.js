@@ -261,6 +261,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
 
 
 
@@ -308,10 +311,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     this.prefectures = _Libraries_prefectures_js__WEBPACK_IMPORTED_MODULE_1__.default.prefectures;
     this.getTags();
   },
-  computed: {// setTags() {
-    //     this.data.tag_id.push(this.selectedTags)
-    // }
-  },
+  computed: {},
   methods: {
     postData: function postData() {
       var _this = this;
@@ -378,8 +378,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       var file = this.$refs.preview.files[0];
       this.imageUrl = URL.createObjectURL(file);
       e.preventDefault();
-      var files = e.target.files; // console.log(files[0]);
-
+      var files = e.target.files;
       this.files = files[0];
     },
     getTags: function getTags() {
@@ -396,7 +395,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                     random: true
                   }
                 }).then(function (res) {
-                  console.log(res);
+                  // console.log(res);
                   _this2.tags = res.data;
                 })["catch"](function (error) {
                   console.log(error);
@@ -911,9 +910,13 @@ var render = function() {
               )
             ]),
             _vm._v(" "),
+            _c("button", { on: { click: _vm.getTags } }, [
+              _c("i", { staticClass: "mt-3 p-2 far fa-sync" })
+            ]),
+            _vm._v(" "),
             _c(
               "div",
-              { staticClass: "my-3 p-2 flex flex-wrap " },
+              { staticClass: " flex flex-wrap " },
               _vm._l(_vm.tags, function(tag) {
                 return _c("div", { staticClass: "flex flex-row mr-1" }, [
                   _c("input", {

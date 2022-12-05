@@ -208,14 +208,17 @@
                             />
                         </div>
                     </form> -->
-                    <div class="my-3 p-2 flex flex-wrap ">
+                    <button class="" @click="getTags">
+                        <i class="mt-3 p-2 far fa-sync"> </i>
+                    </button>
+                    <div class=" flex flex-wrap ">
                         <div class="flex flex-row mr-1" v-for="tag in tags">
                             <input
                                 type="checkbox"
                                 v-model="selectedTags"
                                 :value="tag.id"
                             />
-                            <div 
+                            <div
                                 class="bg-green-100 text-green-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-green-200 dark:text-green-900 my-1 "
                             >
                                 #{{ tag.name }}
@@ -283,9 +286,7 @@ export default {
         this.getTags();
     },
     computed: {
-        // setTags() {
-        //     this.data.tag_id.push(this.selectedTags)
-        // }
+
     },
     methods: {
         async postData() {
@@ -305,8 +306,8 @@ export default {
             formData.append("score", this.data.score);
             formData.append("price", this.data.price);
 
-            formData.append("tag_id" , JSON.stringify(this.selectedTags));
-            
+            formData.append("tag_id", JSON.stringify(this.selectedTags));
+
             if (this.$v.$invalid) {
                 console.log("Validation Error");
             } else {
@@ -330,21 +331,19 @@ export default {
         selectedFile(e) {
             const file = this.$refs.preview.files[0];
             this.imageUrl = URL.createObjectURL(file);
-
             e.preventDefault();
             let files = e.target.files;
-            // console.log(files[0]);
             this.files = files[0];
         },
         async getTags() {
             await axios
-                .get("/api/tags" , {
+                .get("/api/tags", {
                     params: {
-                    random:true
+                        random: true
                     }
                 })
                 .then(res => {
-                    console.log(res);
+                    // console.log(res);
                     this.tags = res.data;
                 })
                 .catch(function(error) {
