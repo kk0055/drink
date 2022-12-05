@@ -105,7 +105,7 @@
                         />
                     </div>
                     <div>
-                        <p>評価</p>
+                        <span>評価</span>
                         <div width="20px">
                             <star-rating
                                 v-model="data.score"

@@ -2477,6 +2477,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
@@ -23613,26 +23618,6 @@ var render = function() {
                       {
                         staticClass:
                           "text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium",
-                        attrs: { to: "/login" }
-                      },
-                      [_vm._v("ログイン")]
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "router-link",
-                      {
-                        staticClass:
-                          "text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium",
-                        attrs: { to: "#" }
-                      },
-                      [_vm._v("俺のお気に入り")]
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "router-link",
-                      {
-                        staticClass:
-                          "text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium",
                         attrs: { to: { name: "drinkRanking" } }
                       },
                       [
@@ -23656,54 +23641,14 @@ var render = function() {
                 "absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0"
             },
             [
-              _c(
-                "button",
-                {
-                  staticClass:
-                    "rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800",
-                  attrs: { type: "button" }
-                },
-                [
-                  _c("span", { staticClass: "sr-only" }, [
-                    _vm._v("View notifications")
-                  ]),
-                  _vm._v(" "),
-                  _c(
-                    "svg",
-                    {
-                      staticClass: "h-6 w-6",
-                      attrs: {
-                        xmlns: "http://www.w3.org/2000/svg",
-                        fill: "none",
-                        viewBox: "0 0 24 24",
-                        "stroke-width": "1.5",
-                        stroke: "currentColor",
-                        "aria-hidden": "true"
-                      }
-                    },
-                    [
-                      _c("path", {
-                        attrs: {
-                          "stroke-linecap": "round",
-                          "stroke-linejoin": "round",
-                          d:
-                            "M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0"
-                        }
-                      })
-                    ]
-                  )
-                ]
-              ),
-              _vm._v(" "),
               _c("div", { staticClass: "relative ml-3" }, [
                 _c("div", [
                   _c(
-                    "button",
+                    "div",
                     {
                       staticClass:
                         "flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800",
                       attrs: {
-                        type: "button",
                         id: "user-menu-button",
                         "aria-expanded": "false",
                         "aria-haspopup": "true"
@@ -23725,70 +23670,7 @@ var render = function() {
                       })
                     ]
                   )
-                ]),
-                _vm._v(" "),
-                _vm.showProf
-                  ? _c(
-                      "div",
-                      {
-                        staticClass:
-                          "absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none",
-                        attrs: {
-                          role: "menu",
-                          "aria-orientation": "vertical",
-                          "aria-labelledby": "user-menu-button",
-                          tabindex: "-1"
-                        }
-                      },
-                      [
-                        _c(
-                          "a",
-                          {
-                            staticClass:
-                              "block px-4 py-2 text-sm text-gray-700",
-                            attrs: {
-                              to: "#",
-                              href: "#",
-                              role: "menuitem",
-                              tabindex: "-1",
-                              id: "user-menu-item-0"
-                            }
-                          },
-                          [_vm._v("Your Profile")]
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "a",
-                          {
-                            staticClass:
-                              "block px-4 py-2 text-sm text-gray-700",
-                            attrs: {
-                              href: "#",
-                              role: "menuitem",
-                              tabindex: "-1",
-                              id: "user-menu-item-1"
-                            }
-                          },
-                          [_vm._v("Settings")]
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "a",
-                          {
-                            staticClass:
-                              "block px-4 py-2 text-sm text-gray-700",
-                            attrs: {
-                              href: "#",
-                              role: "menuitem",
-                              tabindex: "-1",
-                              id: "user-menu-item-2"
-                            }
-                          },
-                          [_vm._v("Sign out")]
-                        )
-                      ]
-                    )
-                  : _vm._e()
+                ])
               ])
             ]
           )
@@ -23810,26 +23692,6 @@ var render = function() {
                   attrs: { to: "/drink", "aria-current": "page" }
                 },
                 [_vm._v("何か飲んだから書く")]
-              ),
-              _vm._v(" "),
-              _c(
-                "router-link",
-                {
-                  staticClass:
-                    "text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium",
-                  attrs: { to: "/login" }
-                },
-                [_vm._v("ログイン")]
-              ),
-              _vm._v(" "),
-              _c(
-                "router-link",
-                {
-                  staticClass:
-                    "text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium",
-                  attrs: { to: "#" }
-                },
-                [_vm._v("俺のお気に入り")]
               ),
               _vm._v(" "),
               _c(

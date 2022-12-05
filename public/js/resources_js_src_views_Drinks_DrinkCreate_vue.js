@@ -769,7 +769,7 @@ var render = function() {
             ]),
             _vm._v(" "),
             _c("div", [
-              _c("p", [_vm._v("評価")]),
+              _c("span", [_vm._v("評価")]),
               _vm._v(" "),
               _c(
                 "div",
