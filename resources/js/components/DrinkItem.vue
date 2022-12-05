@@ -109,7 +109,7 @@
                                 @click="showComment = !showComment"
                                 class="far fa-comment pl-2 mr-2 text-2xl"
                             ></i>
-                            <p>{{ drink.comments.length }}</p>
+                            <p>{{ commentCount }}</p>
                         </button>
                         <!-- deleteボタン削除予定 -->
                         <!-- <div
@@ -195,6 +195,9 @@ export default {
             return this.drink.image
                 ? this.drink.image
                 : "https://previews.123rf.com/images/arcady31/arcady311303/arcady31130300032/18519959-vector-oops-symbol.jpg";
+        },
+        commentCount() {
+            return this.drink.comments.length
         }
     },
     methods: {

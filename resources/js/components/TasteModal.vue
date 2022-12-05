@@ -10,24 +10,23 @@
                 >
                     <!--header-->
                 <div class="text-center">
-          <h2 class="block text-2xl font-bold text-gray-800 dark:text-white mt-3">どこにする？</h2>
+          <h2 class="block text-2xl font-bold text-gray-800 dark:text-white mt-3">どれにする？</h2>
        
         </div>
                     <!--body-->
 
-                    <div class="relative p-3 flex-auto">
-                        <div class="mt-1">
-                            <select
-                                v-model="data.prefecture"
-                                id="prefectures"
-                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-1 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+             <div class=" flex flex-wrap ">
+                        <div class="flex flex-row mr-1" v-for="tag in tags">
+                            <input
+                                type="checkbox"
+                                v-model="selectedTags"
+                                :value="tag.id"
+                            />
+                            <div
+                                class="bg-green-100 text-green-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-green-200 dark:text-green-900 my-1 "
                             >
-                                <option
-                                    v-for="prefecture in prefectures"
-                                    :value="prefecture.name"
-                                    >{{ prefecture.name }}</option
-                                >
-                            </select>
+                                #{{ tag.name }}
+                            </div>
                         </div>
                     </div>
                     <!--footer-->
@@ -60,13 +59,17 @@
 export default {
     data: () => ({
         showModal: false,
-        data: {}
+        data: {},
+        tags: [],
+        selectedTags:[],
     }),
     components: {},
     props: {
         prefectures: Array
     },
-    created() {},
+    created() {
+      this.getTags()
+    },
     computed: {},
     methods: {
         cancel() {
@@ -76,7 +79,18 @@ export default {
             if(this.data.prefecture == '全部') {
                 this.data.prefecture = ''
             }
-            this.$emit("execute-method", this.data.prefecture);
+            this.$emit("execute-method", JSON.stringify(this.selectedTags));
+        },
+            async getTags() {
+            await axios
+                .get("/api/tags")
+                .then(res => {
+                    // console.log(res);
+                    this.tags = res.data;
+                })
+                .catch(function(error) {
+                    console.log(error);
+                });
         }
     }
 };

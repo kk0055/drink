@@ -24,7 +24,7 @@
                                         都道府県から探す
                                     </div>
                                 </button>
-                                     <button @click="toggleTasteModal">
+                                <button @click="toggleTasteModal">
                                     <div
                                         class="border-2 bg-black border-gray-800 rounded-lg px-3 py-2 text-white cursor-pointer hover:bg-gray-800 hover:text-white"
                                     >
@@ -32,7 +32,6 @@
                                     </div>
                                 </button>
                             </div>
-                   
                         </div>
                     </div>
                     <template v-if="showPrefectureModal">
@@ -42,20 +41,23 @@
                         />
                     </template>
                     <template v-if="showTasteModal">
-                        <TasteModal
-                            @execute-method="filterTaste"
-                        />
+                        <TasteModal @execute-method="filterTaste" />
                     </template>
 
                     <div
                         class="container mx-auto flex items-center flex-wrap pt-1 pb-12 "
                     >
-                        <div
-                            v-for="drink in drinks"
-                            class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col  inline-block sm:-m-4 -mx-4 md:mx-0"
-                        >
-                            <DrinkItem :drink="drink" :drinks="drinks" />
-                        </div>
+                        <template v-if="drinks.length > 0">
+                            <div
+                                v-for="drink in drinks"
+                                class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col  inline-block sm:-m-4 -mx-4 md:mx-0"
+                            >
+                                <DrinkItem :drink="drink" :drinks="drinks" />
+                            </div>
+                        </template>
+                        <template v-else>
+                            <h1>アイテムがありません.....</h1>
+                        </template>
                     </div>
                 </section>
             </div>
@@ -166,7 +168,7 @@ export default {
                 await axios
                     .get("/api/drinks", {
                         params: {
-                            prefecture: val,
+                            tags: val,
                             with: "comments"
                         }
                     })
