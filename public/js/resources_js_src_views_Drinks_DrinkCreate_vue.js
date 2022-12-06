@@ -260,6 +260,10 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
+//
 
 
 
@@ -307,10 +311,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     this.prefectures = _Libraries_prefectures_js__WEBPACK_IMPORTED_MODULE_1__.default.prefectures;
     this.getTags();
   },
-  computed: {// setTags() {
-    //     this.data.tag_id.push(this.selectedTags)
-    // }
-  },
+  computed: {},
   methods: {
     postData: function postData() {
       var _this = this;
@@ -377,8 +378,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       var file = this.$refs.preview.files[0];
       this.imageUrl = URL.createObjectURL(file);
       e.preventDefault();
-      var files = e.target.files; // console.log(files[0]);
-
+      var files = e.target.files;
       this.files = files[0];
     },
     getTags: function getTags() {
@@ -390,8 +390,12 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
             switch (_context2.prev = _context2.next) {
               case 0:
                 _context2.next = 2;
-                return axios.get("/api/tags").then(function (res) {
-                  console.log(res);
+                return axios.get("/api/tags", {
+                  params: {
+                    random: true
+                  }
+                }).then(function (res) {
+                  // console.log(res);
                   _this2.tags = res.data;
                 })["catch"](function (error) {
                   console.log(error);
@@ -765,7 +769,7 @@ var render = function() {
             ]),
             _vm._v(" "),
             _c("div", [
-              _c("p", [_vm._v("評価")]),
+              _c("span", [_vm._v("評価")]),
               _vm._v(" "),
               _c(
                 "div",
@@ -906,11 +910,15 @@ var render = function() {
               )
             ]),
             _vm._v(" "),
+            _c("button", { on: { click: _vm.getTags } }, [
+              _c("i", { staticClass: "mt-3 p-2 far fa-sync" })
+            ]),
+            _vm._v(" "),
             _c(
               "div",
-              { staticClass: "my-3 flex flex-wrap " },
+              { staticClass: " flex flex-wrap " },
               _vm._l(_vm.tags, function(tag) {
-                return _c("div", { staticClass: "flex flex-row" }, [
+                return _c("div", { staticClass: "flex flex-row mr-1" }, [
                   _c("input", {
                     directives: [
                       {
@@ -954,11 +962,11 @@ var render = function() {
                     "div",
                     {
                       staticClass:
-                        "bg-yellow-100 text-yellow-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-yellow-200 dark:text-yellow-900 my-1 mx-1"
+                        "bg-green-100 text-green-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-green-200 dark:text-green-900 my-1 "
                     },
                     [
                       _vm._v(
-                        "\n                            " +
+                        "\n                            #" +
                           _vm._s(tag.name) +
                           "\n                        "
                       )
@@ -974,7 +982,7 @@ var render = function() {
                 "button",
                 {
                   staticClass:
-                    " rounded-full  p-3 w-full sm:w-56   bg-gradient-to-r from-sky-600  to-teal-300 text-blue-400 text-lg font-semibold shadow",
+                    " rounded-full  p-3 w-full sm:w-56   bg-gradient-to-r from-sky-600  to-teal-300 text-blue-400 text-lg font-semibold shadow \n                      ",
                   on: { click: _vm.postData }
                 },
                 [_vm._v("\n                        投稿\n                    ")]

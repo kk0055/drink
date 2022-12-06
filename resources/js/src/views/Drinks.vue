@@ -15,34 +15,49 @@
                 <LandingPage />
                 <section class="bg-white py-4">
                     <div class="w-full my-4">
-                        <div class="flex">
-                            <div class="m-auto flex flex-col gap-6">
-                                <button @click="toggleModal">
+                        <div class="flex items-center justify-center">
+                            <div class="flex space-x-2 justify-center">
+                                <button @click="togglePrefectureModal">
                                     <div
                                         class="border-2 bg-black border-gray-800 rounded-lg px-3 py-2 text-white cursor-pointer hover:bg-gray-800 hover:text-white"
                                     >
                                         都道府県から探す
                                     </div>
                                 </button>
+                                <button @click="toggleTasteModal">
+                                    <div
+                                        class="border-2 bg-black border-gray-800 rounded-lg px-3 py-2 text-white cursor-pointer hover:bg-gray-800 hover:text-white"
+                                    >
+                                        好みから探す
+                                    </div>
+                                </button>
                             </div>
                         </div>
                     </div>
-                    <template v-if="showModal">
+                    <template v-if="showPrefectureModal">
                         <PrefectureModal
-                            @execute-method="executeMethod"
+                            @execute-method="filterPrefecture"
                             :prefectures="prefectures"
                         />
+                    </template>
+                    <template v-if="showTasteModal">
+                        <TasteModal @execute-method="filterTaste" />
                     </template>
 
                     <div
                         class="container mx-auto flex items-center flex-wrap pt-1 pb-12 "
                     >
-                        <div
-                            v-for="drink in drinks"
-                            class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col  inline-block sm:-m-4 -mx-4 md:mx-0"
-                        >
-                            <DrinkItem :drink="drink" :drinks="drinks" />
-                        </div>
+                        <template v-if="drinks.length > 0">
+                            <div
+                                v-for="drink in drinks"
+                                class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col  inline-block sm:-m-4 -mx-4 md:mx-0"
+                            >
+                                <DrinkItem :drink="drink" />
+                            </div>
+                        </template>
+                        <template v-else>
+                            <h1>アイテムがありません.....</h1>
+                        </template>
                     </div>
                 </section>
             </div>
@@ -54,6 +69,7 @@
 <script>
 import DrinkItem from "../../components/DrinkItem";
 import PrefectureModal from "../../components/PrefectureModal";
+import TasteModal from "../../components/TasteModal";
 import LandingPage from "../../components/LandingPage";
 import Footer from "../../components/Footer";
 import prefectures from "../../Libraries/prefectures.js";
@@ -62,6 +78,7 @@ export default {
         LandingPage,
         DrinkItem,
         PrefectureModal,
+        TasteModal,
         Footer
     },
     props: {
@@ -70,11 +87,13 @@ export default {
     data: () => ({
         drinks: [],
         loading: true,
-        showModal: false,
-        prefectures: {}
+        showPrefectureModal: false,
+        showTasteModal: false,
+        prefectures: {},
+        selectedTags:[]
     }),
     async created() {
-        await Promise.all([this.getDrinks()]);
+        await Promise.all([ this.getDrinks()]);
         this.prefectures = prefectures.prefectures;
         this.prefectures.unshift({
             code: 0,
@@ -83,7 +102,8 @@ export default {
     },
     methods: {
         async getDrinks() {
-            await axios
+            console.log(this.$route.query)
+             await axios
                 .get("/api/drinks", {
                     params: {
                         with: "comments"
@@ -98,10 +118,13 @@ export default {
 
             this.loading = false;
         },
-        toggleModal() {
-            this.showModal = !this.showModal;
+        togglePrefectureModal() {
+            this.showPrefectureModal = !this.showPrefectureModal;
         },
-        async executeMethod(val) {
+        toggleTasteModal() {
+            this.showTasteModal = !this.showTasteModal;
+        },
+        async filterPrefecture(val) {
             //   this.showModal = false;
             if (val) {
                 await axios
@@ -123,7 +146,7 @@ export default {
                     });
 
                 this.loading = false;
-                this.showModal = false;
+                this.showPrefectureModal = false;
                 console.log(val);
             } else {
                 await axios
@@ -138,7 +161,49 @@ export default {
                     .catch(function(error) {
                         console.log(error);
                     });
-                this.showModal = false;
+                this.showPrefectureModal = false;
+            }
+        },
+        async filterTaste(val) {
+            //   this.showModal = false;
+            if (val) {
+                this.selectedTags = val
+                await axios
+                    .get("/api/drinks", {
+                        params: {
+                            tags: val,
+                            with: "comments"
+                        }
+                    })
+                    .then(response => {
+                        if (response.data) {
+                            this.drinks = response.data;
+                            // this.$router.replace({ query: {"search" :"taste"} })
+                        } else {
+                            return;
+                        }
+                    })
+                    .catch(function(error) {
+                        console.log(error);
+                    });
+
+                this.loading = false;
+                this.showTasteModal = false;
+                console.log(val);
+            } else {
+                await axios
+                    .get("/api/drinks", {
+                        params: {
+                            with: "comments"
+                        }
+                    })
+                    .then(response => {
+                        this.drinks = response.data;
+                    })
+                    .catch(function(error) {
+                        console.log(error);
+                    });
+                this.showTasteModal = false;
             }
         }
     }

@@ -43,6 +43,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   components: {
@@ -231,7 +232,10 @@ var render = function() {
           [
             _c(
               "div",
-              { staticClass: "bg-white py-6 px-10 sm:max-w-md w-full " },
+              {
+                staticClass:
+                  "bg-white py-6 px-10 sm:max-w-md w-full flex justify-center items-center"
+              },
               [
                 _c("DrinkItem", {
                   attrs: {

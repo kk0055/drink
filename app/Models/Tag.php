@@ -19,6 +19,15 @@ class Tag extends Model
 
     public function scopeQueryFilter($query)
     {
- 
+        $random = request()->query('random');
+
+        return $query
+            ->when($random, function ($query, $val) {
+                return $query
+                    ->inRandomOrder()->take(15);
+                ;
+            })
+
+        ;
     }
 }

@@ -12,8 +12,9 @@
         <!-- <img class="w-full bg-cover p-3" width="300px" height="350px" v-if="$route.name == 'drinks'"  :src="drink.image"> -->
         <img
             v-else
-            class="p-3  w-full object-center"
+            class="p-3 w-full object-center"
             width="200px"
+            height="400px"
             :src="image"
         />
         <div class="px-3 pb-2">
@@ -38,7 +39,13 @@
                         <i class="fas fa-map-marker-alt mr-2"></i>
                         {{ drink.place }}
                     </p>
-                    <p class="mt-2 drink-text "  v-if="$route.name == 'drinks' || $route.name == 'drinkRanking'">
+                    <p
+                        class="mt-2 drink-text "
+                        v-if="
+                            $route.name == 'drinks' ||
+                                $route.name == 'drinkRanking'
+                        "
+                    >
                         <i class="far fa-globe mr-2"></i>
                         {{
                             drink.map_url != "undefined"
@@ -59,13 +66,22 @@
                     <p class="mt-2 drink-text">
                         <i class="fas fa-yen-sign mr-2"></i>{{ drink.price }} 円
                     </p>
-                    <p class="mt-1 drink-text" v-if="$route.name == 'drinks' || $route.name == 'drinkRanking'">
+                    <p
+                        class="mt-1 drink-text"
+                        v-if="
+                            $route.name == 'drinks' ||
+                                $route.name == 'drinkRanking'
+                        "
+                    >
                         {{ drink.review }}
                     </p>
                     <p class="mt-1" v-else>{{ drink.review }}</p>
 
                     <div
-                        v-if="$route.name == 'drinks' || $route.name == 'drinkRanking'"
+                        v-if="
+                            $route.name == 'drinks' ||
+                                $route.name == 'drinkRanking'
+                        "
                         class="mt-1 flex justify-end"
                     >
                         <router-link
@@ -76,14 +92,25 @@
                             >...more
                         </router-link>
                     </div>
+                    <!-- Tag -->
+                    <div  v-if="
+                            $route.name == 'drinkDetails'                        "class="my-3 flex flex-wrap ">
+                        <div class="flex flex-row" v-for="tag in drink.tags">
+                            <div
+                                class="bg-green-100 text-green-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-green-200 dark:text-green-900 my-1 mx-1"
+                            >
+                                #{{ tag.name }}
+                            </div>
+                        </div>
+                    </div>
                     <div class="mt-1 flex  justify-between ">
-                        <span class="mt-1 flex ">
+                        <button class="mt-1 flex ">
                             <i
                                 @click="showComment = !showComment"
                                 class="far fa-comment pl-2 mr-2 text-2xl"
                             ></i>
-                            <p>{{ drink.comments.length }}</p>
-                        </span>
+                            <p>{{ commentCount }}</p>
+                        </button>
                         <!-- deleteボタン削除予定 -->
                         <!-- <div
                         v-if="$route.name !== 'drinks'"
@@ -96,6 +123,7 @@
                     </div>
                 </div>
             </div>
+
             <!-- Comment -->
             <Transition>
                 <div
@@ -148,7 +176,7 @@ import { required } from "vuelidate/lib/validators";
 export default {
     props: {
         drink: { Type: Object },
-        getDrink: { Type: Function },
+        getDrink: { Type: Function }
         // drinks: { Type: Array }
     },
     data: () => ({
@@ -168,6 +196,9 @@ export default {
                 ? this.drink.image
                 : "https://previews.123rf.com/images/arcady31/arcady311303/arcady31130300032/18519959-vector-oops-symbol.jpg";
         },
+        commentCount() {
+            return this.drink.comments.length
+        }
     },
     methods: {
         async deleteDrink(id) {
@@ -209,7 +240,7 @@ export default {
             } else {
                 this.data.drink_id = this.drink.id;
                 this.data.user_id = 1;
-                
+
                 await axios
                     .post("/api/comments", this.data)
                     .then(response => {
@@ -219,12 +250,11 @@ export default {
                             // transition: "fade"
                         });
                         this.loading = false;
-                         
                     })
                     .catch(function(error) {
                         console.log(error);
                     });
-                    this.getDrink()
+                this.getDrink();
             }
         }
     }

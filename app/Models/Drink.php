@@ -72,6 +72,7 @@ class Drink extends Model
     {
         $ranking = request()->query('ranking');
         $prefecture = request()->query('prefecture');
+        $tags = json_decode(request()->query('tags'));
 
         return $query
             ->when($ranking, function ($query, $val) {
@@ -82,6 +83,13 @@ class Drink extends Model
             ->when($prefecture, function ($query, $val) use ($prefecture) {
                 return $query
                     ->where('prefecture', $prefecture);
+                ;
+            })
+            ->when($tags, function ($query, $val) use ($tags) {
+                return $query
+                ->whereHas('tags', function ($query) use ($tags) {
+                    $query->whereIn('tags.id', $tags);
+                });
                 ;
             })
 
