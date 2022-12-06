@@ -217,12 +217,14 @@
                                 type="checkbox"
                                 v-model="selectedTags"
                                 :value="tag.id"
+                                :id="tag.id"
                             />
-                            <div
-                                class="bg-green-100 text-green-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-green-200 dark:text-green-900 my-1 "
+                            <label
+                                :for="tag.id"
+                                class="bg-green-100 text-green-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-green-200 dark:text-green-900 my-1"
                             >
                                 #{{ tag.name }}
-                            </div>
+                            </label>
                         </div>
                     </div>
                     <div class="flex justify-center my-6">
@@ -285,9 +287,7 @@ export default {
         this.prefectures = prefectures.prefectures;
         this.getTags();
     },
-    computed: {
-
-    },
+    computed: {},
     methods: {
         async postData() {
             this.$v.$touch();
