@@ -2950,7 +2950,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       loading: true,
       showPrefectureModal: false,
       showTasteModal: false,
-      prefectures: {}
+      prefectures: {},
+      selectedTags: []
     };
   },
   created: function created() {
@@ -2989,7 +2990,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
           while (1) {
             switch (_context2.prev = _context2.next) {
               case 0:
-                _context2.next = 2;
+                console.log(_this2.$route.query);
+                _context2.next = 3;
                 return axios.get("/api/drinks", {
                   params: {
                     "with": "comments"
@@ -3000,10 +3002,10 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                   console.log(error);
                 });
 
-              case 2:
+              case 3:
                 _this2.loading = false;
 
-              case 3:
+              case 4:
               case "end":
                 return _context2.stop();
             }
@@ -3085,11 +3087,12 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
             switch (_context4.prev = _context4.next) {
               case 0:
                 if (!val) {
-                  _context4.next = 8;
+                  _context4.next = 9;
                   break;
                 }
 
-                _context4.next = 3;
+                _this4.selectedTags = val;
+                _context4.next = 4;
                 return axios.get("/api/drinks", {
                   params: {
                     tags: val,
@@ -3097,7 +3100,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                   }
                 }).then(function (response) {
                   if (response.data) {
-                    _this4.drinks = response.data;
+                    _this4.drinks = response.data; // this.$router.replace({ query: {"search" :"taste"} })
                   } else {
                     return;
                   }
@@ -3105,15 +3108,15 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                   console.log(error);
                 });
 
-              case 3:
+              case 4:
                 _this4.loading = false;
                 _this4.showTasteModal = false;
                 console.log(val);
-                _context4.next = 11;
+                _context4.next = 12;
                 break;
 
-              case 8:
-                _context4.next = 10;
+              case 9:
+                _context4.next = 11;
                 return axios.get("/api/drinks", {
                   params: {
                     "with": "comments"
@@ -3124,10 +3127,10 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                   console.log(error);
                 });
 
-              case 10:
+              case 11:
                 _this4.showTasteModal = false;
 
-              case 11:
+              case 12:
               case "end":
                 return _context4.stop();
             }
@@ -24354,11 +24357,7 @@ var render = function() {
                                   staticClass:
                                     "w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col  inline-block sm:-m-4 -mx-4 md:mx-0"
                                 },
-                                [
-                                  _c("DrinkItem", {
-                                    attrs: { drink: drink, drinks: _vm.drinks }
-                                  })
-                                ],
+                                [_c("DrinkItem", { attrs: { drink: drink } })],
                                 1
                               )
                             })

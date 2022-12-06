@@ -52,7 +52,7 @@
                                 v-for="drink in drinks"
                                 class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col  inline-block sm:-m-4 -mx-4 md:mx-0"
                             >
-                                <DrinkItem :drink="drink" :drinks="drinks" />
+                                <DrinkItem :drink="drink" />
                             </div>
                         </template>
                         <template v-else>
@@ -89,10 +89,11 @@ export default {
         loading: true,
         showPrefectureModal: false,
         showTasteModal: false,
-        prefectures: {}
+        prefectures: {},
+        selectedTags:[]
     }),
     async created() {
-        await Promise.all([this.getDrinks()]);
+        await Promise.all([ this.getDrinks()]);
         this.prefectures = prefectures.prefectures;
         this.prefectures.unshift({
             code: 0,
@@ -101,7 +102,8 @@ export default {
     },
     methods: {
         async getDrinks() {
-            await axios
+            console.log(this.$route.query)
+             await axios
                 .get("/api/drinks", {
                     params: {
                         with: "comments"
@@ -165,6 +167,7 @@ export default {
         async filterTaste(val) {
             //   this.showModal = false;
             if (val) {
+                this.selectedTags = val
                 await axios
                     .get("/api/drinks", {
                         params: {
@@ -175,6 +178,7 @@ export default {
                     .then(response => {
                         if (response.data) {
                             this.drinks = response.data;
+                            // this.$router.replace({ query: {"search" :"taste"} })
                         } else {
                             return;
                         }
