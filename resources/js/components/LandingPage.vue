@@ -6,7 +6,7 @@
                 class="absolute h-full w-full object-cover"
             />
             <!-- 背景画像に被せる色 -->
-            <div class="inset-0 bg-black opacity-95 absolute"></div>
+            <div class="inset-0 bg-black opacity-90 absolute"></div>
             <div
                 class="container mx-auto px-6 md:px-12 relative z-10 flex items-center py-32 xl:py-40"
             >

@@ -732,7 +732,7 @@ var render = function() {
                 ],
                 staticClass:
                   "focus:outline-none border-b w-full pb-2 border-sky-400 placeholder-gray-500 mt-4",
-                attrs: { type: "text", placeholder: "Google mapのURL" },
+                attrs: { type: "text", placeholder: "Google mapのURL(任意)" },
                 domProps: { value: _vm.data.map_url },
                 on: {
                   input: function($event) {
@@ -757,7 +757,7 @@ var render = function() {
                 ],
                 staticClass:
                   "focus:outline-none border-b w-full pb-2 border-sky-400 placeholder-gray-500 my-4",
-                attrs: { type: "text", placeholder: "値段" },
+                attrs: { type: "text", placeholder: "値段(単位は不要)" },
                 domProps: { value: _vm.data.price },
                 on: {
                   input: function($event) {
