@@ -13,7 +13,7 @@
         </div>
         <div
             v-else
-            class="w-full h-full overflow-scroll block h-screen bg-gradient-to-r from-blue-100 via-purple-100 to-pink-100 p-4 flex items-center justify-center"
+            class="w-full h-auto overflow-scroll block h-screen bg-gradient-to-r from-blue-100 via-purple-100 to-pink-100 p-4 flex items-center justify-center"
         >
             <div class="bg-white py-3 px-2 sm:max-w-md w-full flex justify-center items-center">
                 <DrinkItem :drink="drink" :drinks="drinks" :getDrink="getDrink"/>
