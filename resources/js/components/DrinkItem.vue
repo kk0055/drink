@@ -3,7 +3,7 @@
         class="pt-3 px-1 rounded overflow-hidden border w-full bg-white mx-3 md:mx-0 lg:mx-0"
     >
         <img
-            v-if="$route.name == 'drinks' || $route.name == 'drinkRanking'"
+            v-if="isShowedItemDetails"
             class="h-48 md:h-36 w-full object-cover object-center"
             width="300px"
             height="350px"
@@ -41,10 +41,7 @@
                     </p>
                     <p
                         class="mt-2 drink-text "
-                        v-if="
-                            $route.name == 'drinks' ||
-                                $route.name == 'drinkRanking'
-                        "
+                        v-if="isShowedItemDetails"
                     >
                         <i class="far fa-globe mr-2"></i>
                         {{
@@ -68,16 +65,14 @@
                     </p>
                     <p
                         class="mt-1 drink-text"
-                        v-if="$route.name == 'drinks' || $route.name == 'drinkRanking'"
+                        v-if="isShowedItemDetails"
                     >
                         {{ drink.review }}
                     </p>
                     <p class="mt-1" v-else>{{ drink.review }}</p>
 
                     <div
-                        v-if="
-                            $route.name == 'drinks' ||
-                                $route.name == 'drinkRanking'
+                        v-if="isShowedItemDetails
                         "
                         class="mt-1 flex justify-end"
                     >
@@ -126,7 +121,7 @@
             <!-- Comment -->
             <Transition>
                 <div
-                    v-if="showComment && $route.name != 'drinks'"
+                    v-if="showComment && isShowedItemDetails"
                     class="max-w-lg shadow-md "
                 >
                     <ul
@@ -197,6 +192,13 @@ export default {
         },
         commentCount() {
             return this.drink.comments.length;
+        },
+        isShowedItemDetails() {
+            return (
+                this.$route.name == "drinks" ||
+                this.$route.name == "drinkRanking" ||
+                this.$route.name == "drinksWithTaste"
+            );
         }
     },
     methods: {

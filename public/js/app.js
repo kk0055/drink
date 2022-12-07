@@ -2032,11 +2032,6 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
-//
-//
-//
-//
-//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: {
@@ -2067,6 +2062,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     },
     commentCount: function commentCount() {
       return this.drink.comments.length;
+    },
+    isShowedItemDetails: function isShowedItemDetails() {
+      return this.$route.name == "drinks" || this.$route.name == "drinkRanking" || this.$route.name == "drinksWithTaste";
     }
   },
   methods: {
@@ -2753,7 +2751,12 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       this.$emit("execute-method", false);
     },
     selectTaste: function selectTaste() {
-      this.$emit("execute-method", JSON.stringify(this.selectedTags));
+      this.$router.push({
+        name: "drinksWithTaste",
+        params: {
+          tags: JSON.stringify(this.selectedTags)
+        }
+      }); // this.$emit("execute-method", JSON.stringify(this.selectedTags));
     },
     getTags: function getTags() {
       var _this = this;
@@ -3151,7 +3154,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 _context4.next = 4;
                 return axios.get("/api/drinks", {
                   params: {
-                    tags: val,
+                    tags: _this4.$attrs.tags,
                     "with": "comments"
                   }
                 }).then(function (response) {
@@ -3493,6 +3496,16 @@ var routes = [{
   props: true,
   component: function component() {
     return __webpack_require__.e(/*! import() */ "resources_js_src_views_Drinks_DrinkCreate_vue").then(__webpack_require__.bind(__webpack_require__, /*! ../src/views/Drinks/DrinkCreate.vue */ "./resources/js/src/views/Drinks/DrinkCreate.vue"));
+  }
+}, {
+  path: "/drink/search/taste",
+  name: "drinksWithTaste",
+  // meta: {
+  //   backPath: { name: 'drinks' },
+  // },
+  props: true,
+  component: function component() {
+    return __webpack_require__.e(/*! import() */ "resources_js_src_views_drinksWithTaste_vue").then(__webpack_require__.bind(__webpack_require__, /*! ../src/views/drinksWithTaste.vue */ "./resources/js/src/views/drinksWithTaste.vue"));
   }
 }, {
   path: "/drinks/:drinkId",
@@ -23112,7 +23125,7 @@ var render = function() {
         "pt-3 px-1 rounded overflow-hidden border w-full bg-white mx-3 md:mx-0 lg:mx-0"
     },
     [
-      _vm.$route.name == "drinks" || _vm.$route.name == "drinkRanking"
+      _vm.isShowedItemDetails
         ? _c("img", {
             staticClass: "h-48 md:h-36 w-full object-cover object-center",
             attrs: { width: "300px", height: "350px", src: _vm.image }
@@ -23153,7 +23166,7 @@ var render = function() {
                 )
               ]),
               _vm._v(" "),
-              _vm.$route.name == "drinks" || _vm.$route.name == "drinkRanking"
+              _vm.isShowedItemDetails
                 ? _c("p", { staticClass: "mt-2 drink-text " }, [
                     _c("i", { staticClass: "far fa-globe mr-2" }),
                     _vm._v(
@@ -23190,7 +23203,7 @@ var render = function() {
                 _vm._v(_vm._s(_vm.drink.price) + " 円\n                ")
               ]),
               _vm._v(" "),
-              _vm.$route.name == "drinks" || _vm.$route.name == "drinkRanking"
+              _vm.isShowedItemDetails
                 ? _c("p", { staticClass: "mt-1 drink-text" }, [
                     _vm._v(
                       "\n                    " +
@@ -23202,7 +23215,7 @@ var render = function() {
                     _vm._v(_vm._s(_vm.drink.review))
                   ]),
               _vm._v(" "),
-              _vm.$route.name == "drinks" || _vm.$route.name == "drinkRanking"
+              _vm.isShowedItemDetails
                 ? _c(
                     "div",
                     { staticClass: "mt-1 flex justify-end" },
@@ -23268,7 +23281,7 @@ var render = function() {
           ]),
           _vm._v(" "),
           _c("Transition", [
-            _vm.showComment && _vm.$route.name != "drinks"
+            _vm.showComment && _vm.isShowedItemDetails
               ? _c(
                   "div",
                   { staticClass: "max-w-lg shadow-md " },
@@ -43296,7 +43309,7 @@ exports.withParams = withParams;
 /******/ 		// This function allow to reference async chunks
 /******/ 		__webpack_require__.u = (chunkId) => {
 /******/ 			// return url for filenames not based on template
-/******/ 			if ({"resources_js_src_views_Ranking_vue":1,"resources_js_src_views_Drinks_DrinkCreate_vue":1,"resources_js_src_views_Drinks_Drink_vue":1,"resources_js_src_views_Register_vue":1,"resources_js_src_views_Login_vue":1,"resources_js_src_views_NotFound_vue":1}[chunkId]) return "js/" + chunkId + ".js";
+/******/ 			if ({"resources_js_src_views_Ranking_vue":1,"resources_js_src_views_Drinks_DrinkCreate_vue":1,"resources_js_src_views_drinksWithTaste_vue":1,"resources_js_src_views_Drinks_Drink_vue":1,"resources_js_src_views_Register_vue":1,"resources_js_src_views_Login_vue":1,"resources_js_src_views_NotFound_vue":1}[chunkId]) return "js/" + chunkId + ".js";
 /******/ 			// return url for filenames based on template
 /******/ 			return undefined;
 /******/ 		};

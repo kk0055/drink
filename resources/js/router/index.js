@@ -38,6 +38,15 @@ const routes = [
         component: () => import("../src/views/Drinks/DrinkCreate.vue")
     },
     {
+        path: "/drink/search/taste",
+        name: "drinksWithTaste",
+        // meta: {
+        //   backPath: { name: 'drinks' },
+        // },
+        props: true,
+        component: () => import("../src/views/drinksWithTaste.vue")
+    },
+    {
         path: "/drinks/:drinkId",
         name: "drinkDetails",
         component: () => import("../src/views/Drinks/Drink.vue")

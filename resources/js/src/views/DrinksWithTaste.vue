@@ -93,7 +93,7 @@ export default {
         selectedTags:[]
     }),
     async created() {
-        await Promise.all([ this.getDrinks()]);
+        await Promise.all([ this.filterTaste()]);
         this.prefectures = prefectures.prefectures;
         this.prefectures.unshift({
             code: 0,
@@ -130,7 +130,7 @@ export default {
                 await axios
                     .get("/api/drinks", {
                         params: {
-                            prefecture: val,
+                            prefecture: this.$attrs.tags,
                             with: "comments"
                         }
                     })
