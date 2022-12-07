@@ -234,7 +234,7 @@ var render = function() {
               "div",
               {
                 staticClass:
-                  "bg-white py-6 px-10 sm:max-w-md w-full flex justify-center items-center"
+                  "bg-white py-3 px-2 sm:max-w-md w-full flex justify-center items-center"
               },
               [
                 _c("DrinkItem", {

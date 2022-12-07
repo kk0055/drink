@@ -2037,7 +2037,6 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
-//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: {
@@ -23251,7 +23250,7 @@ var render = function() {
                   )
                 : _vm._e(),
               _vm._v(" "),
-              _c("div", { staticClass: "mt-1 flex  justify-between " }, [
+              _c("div", { staticClass: "mt-1 flex justify-between " }, [
                 _c("button", { staticClass: "mt-1 flex " }, [
                   _c("i", {
                     staticClass: "far fa-comment pl-2 mr-2 text-2xl",
@@ -23279,7 +23278,7 @@ var render = function() {
                         "ul",
                         {
                           staticClass:
-                            "divide-solid max-w-md text-gray-900 divide-y divide-green-500 dark:text-white dark:divide-gray-700"
+                            "max-w-md text-gray-900  dark:text-white dark:divide-gray-700"
                         },
                         [
                           _c("li", { staticClass: " mr-4" }, [
@@ -23287,7 +23286,7 @@ var render = function() {
                               _vm._v(_vm._s(comment.body))
                             ]),
                             _vm._v(
-                              "\n                        --------------------------------------\n                    "
+                              "\n                        --------------------------------\n                    "
                             )
                           ])
                         ]
