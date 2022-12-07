@@ -227,14 +227,14 @@ var render = function() {
           "div",
           {
             staticClass:
-              "w-full h-auto overflow-scroll block h-screen bg-gradient-to-r from-blue-100 via-purple-100 to-pink-100 p-4 flex items-center justify-center"
+              "w-full h-full overflow-scroll block h-screen bg-gradient-to-r from-blue-100 via-purple-100 to-pink-100 p-4 flex items-center justify-center"
           },
           [
             _c(
               "div",
               {
                 staticClass:
-                  "bg-white py-6 px-10 sm:max-w-md w-full flex justify-center items-center"
+                  "bg-white py-3 px-2 sm:max-w-md w-full flex justify-center items-center"
               },
               [
                 _c("DrinkItem", {

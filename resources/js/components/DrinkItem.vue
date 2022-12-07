@@ -68,10 +68,7 @@
                     </p>
                     <p
                         class="mt-1 drink-text"
-                        v-if="
-                            $route.name == 'drinks' ||
-                                $route.name == 'drinkRanking'
-                        "
+                        v-if="$route.name == 'drinks' || $route.name == 'drinkRanking'"
                     >
                         {{ drink.review }}
                     </p>
@@ -93,8 +90,10 @@
                         </router-link>
                     </div>
                     <!-- Tag -->
-                    <div  v-if="
-                            $route.name == 'drinkDetails'                        "class="my-3 flex flex-wrap ">
+                    <div
+                        v-if="$route.name == 'drinkDetails'"
+                        class="my-3 flex flex-wrap "
+                    >
                         <div class="flex flex-row" v-for="tag in drink.tags">
                             <div
                                 class="bg-green-100 text-green-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-green-200 dark:text-green-900 my-1 mx-1"
@@ -103,7 +102,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="mt-1 flex  justify-between ">
+                    <div class="mt-1 flex justify-between ">
                         <button class="mt-1 flex ">
                             <i
                                 @click="showComment = !showComment"
@@ -131,12 +130,12 @@
                     class="max-w-lg shadow-md "
                 >
                     <ul
-                        class="divide-solid max-w-md text-gray-900 divide-y divide-green-500 dark:text-white dark:divide-gray-700"
+                        class="max-w-md text-gray-900  dark:text-white dark:divide-gray-700"
                         v-for="comment in drink.comments"
                     >
                         <li class=" mr-4">
                             <p class="-my-1 mr-4">{{ comment.body }}</p>
-                            --------------------------------------
+                            --------------------------------
                         </li>
                     </ul>
                     <form action="" class="w-full p-4">
@@ -197,7 +196,7 @@ export default {
                 : "https://previews.123rf.com/images/arcady31/arcady311303/arcady31130300032/18519959-vector-oops-symbol.jpg";
         },
         commentCount() {
-            return this.drink.comments.length
+            return this.drink.comments.length;
         }
     },
     methods: {
