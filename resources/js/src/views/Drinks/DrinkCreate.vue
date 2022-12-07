@@ -93,7 +93,7 @@
                             v-model="data.map_url"
                             type="text"
                             class="focus:outline-none border-b w-full pb-2 border-sky-400 placeholder-gray-500 mt-4"
-                            placeholder="Google mapのURL"
+                            placeholder="Google mapのURL(任意)"
                         />
                     </div>
                     <div>
@@ -101,7 +101,7 @@
                             v-model="data.price"
                             type="text"
                             class="focus:outline-none border-b w-full pb-2 border-sky-400 placeholder-gray-500 my-4"
-                            placeholder="値段"
+                            placeholder="値段(単位は不要)"
                         />
                     </div>
                     <div>

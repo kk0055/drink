@@ -2485,6 +2485,63 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
@@ -23613,7 +23670,7 @@ var render = function() {
                     "router-link",
                     {
                       staticClass:
-                        "\n          flex\n          items-center\n          tracking-wide\n          text-gray-800 text-xl\n        ",
+                        "flex items-center tracking-wide text-gray-800 text-xl",
                       attrs: { to: { name: "drinks" } }
                     },
                     [
@@ -23631,7 +23688,7 @@ var render = function() {
                     "router-link",
                     {
                       staticClass:
-                        "flex items-center tracking-wide\n          text-gray-800 text-xl\n        ",
+                        "flex items-center tracking-wide text-gray-800 text-xl",
                       attrs: { to: { name: "drinks" } }
                     },
                     [
@@ -23660,7 +23717,11 @@ var render = function() {
                           "bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium",
                         attrs: { "aria-current": "page", to: "/drink" }
                       },
-                      [_vm._v("\n         何か飲んだから書く?")]
+                      [
+                        _vm._v(
+                          "\n                            何か飲んだから書く?"
+                        )
+                      ]
                     ),
                     _vm._v(" "),
                     _c(
@@ -23714,11 +23775,14 @@ var render = function() {
                         _vm._v("Open user menu")
                       ]),
                       _vm._v(" "),
-                      _c("img", {
-                        staticClass: "h-8 w-8 rounded-full",
-                        attrs: { src: "/images/girl.png", alt: "" }
-                      })
-                    ]
+                      _c("router-link", { attrs: { to: "/drink" } }, [
+                        _c("img", {
+                          staticClass: "h-8 w-8 rounded-full",
+                          attrs: { src: "/images/girl.png", alt: "" }
+                        })
+                      ])
+                    ],
+                    1
                   )
                 ])
               ])
@@ -23749,7 +23813,7 @@ var render = function() {
                 {
                   staticClass:
                     "text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium",
-                  attrs: { to: "#" }
+                  attrs: { to: { name: "drinkRanking" } }
                 },
                 [
                   _c("i", { staticClass: "fas fa-crown text-yellow-500 mr-1" }),
@@ -23803,7 +23867,7 @@ var staticRenderFns = [
             attrs: { src: "/images/background2.png" }
           }),
           _vm._v(" "),
-          _c("div", { staticClass: "inset-0 bg-black opacity-95 absolute" }),
+          _c("div", { staticClass: "inset-0 bg-black opacity-90 absolute" }),
           _vm._v(" "),
           _c(
             "div",
