@@ -1,6 +1,5 @@
 <template>
     <div>
-       <!-- <button @click="$router.back()">aa</button> -->
         <div
             v-if="loading"
             class="flex justify-center items-center"

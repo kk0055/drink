@@ -1,10 +1,10 @@
 <template>
     <div
-        class="pt-3 px-1 rounded overflow-hidden border w-full bg-white mx-3 md:mx-0 lg:mx-0"
+        class="max-w-sm rounded overflow-hidden border w-full bg-white mx-3 md:mx-0 lg:mx-0"
     >
         <img
             v-if="hideItemDetails"
-            class="h-48 md:h-36 w-full object-cover object-center"
+            class="h-48 md:h-36 w-full object-cover"
             width="300px"
             height="350px"
             :src="image"
@@ -12,8 +12,7 @@
         <!-- <img class="w-full bg-cover p-3" width="300px" height="350px" v-if="$route.name == 'drinks'"  :src="drink.image"> -->
         <img
             v-else
-            class="p-3 w-full object-center"
-            width="200px"
+            class="w-full object-center "
             height="400px"
             :src="image"
         />
@@ -98,13 +97,20 @@
                         </div>
                     </div>
                     <div class="mt-1 flex justify-between ">
-                        <button class="mt-1 flex ">
+                        <button class="mt-1 flex" v-if="$route.name == 'drinkDetails'">
                             <i
                                 @click="showComment = !showComment"
                                 class="far fa-comment pl-2 mr-2 text-2xl"
                             ></i>
                             <p>{{ commentCount }}</p>
                         </button>
+                        <div v-else class="mt-1 flex">
+                            <i
+                                @click="showComment = !showComment"
+                                class="far fa-comment pl-2 mr-2 text-2xl"
+                            ></i>
+                            <p>{{ commentCount }}</p>
+                        </div>
                         <!-- deleteボタン削除予定 -->
                         <!-- <div
                         v-if="$route.name !== 'drinks'"

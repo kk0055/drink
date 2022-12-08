@@ -2032,6 +2032,12 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: {
@@ -23090,17 +23096,17 @@ var render = function() {
     "div",
     {
       staticClass:
-        "pt-3 px-1 rounded overflow-hidden border w-full bg-white mx-3 md:mx-0 lg:mx-0"
+        "max-w-sm rounded overflow-hidden border w-full bg-white mx-3 md:mx-0 lg:mx-0"
     },
     [
       _vm.hideItemDetails
         ? _c("img", {
-            staticClass: "h-48 md:h-36 w-full object-cover object-center",
+            staticClass: "h-48 md:h-36 w-full object-cover",
             attrs: { width: "300px", height: "350px", src: _vm.image }
           })
         : _c("img", {
-            staticClass: "p-3 w-full object-center",
-            attrs: { width: "200px", height: "400px", src: _vm.image }
+            staticClass: "w-full object-center ",
+            attrs: { height: "400px", src: _vm.image }
           }),
       _vm._v(" "),
       _c(
@@ -23232,18 +23238,31 @@ var render = function() {
                 : _vm._e(),
               _vm._v(" "),
               _c("div", { staticClass: "mt-1 flex justify-between " }, [
-                _c("button", { staticClass: "mt-1 flex " }, [
-                  _c("i", {
-                    staticClass: "far fa-comment pl-2 mr-2 text-2xl",
-                    on: {
-                      click: function($event) {
-                        _vm.showComment = !_vm.showComment
-                      }
-                    }
-                  }),
-                  _vm._v(" "),
-                  _c("p", [_vm._v(_vm._s(_vm.commentCount))])
-                ])
+                _vm.$route.name == "drinkDetails"
+                  ? _c("button", { staticClass: "mt-1 flex" }, [
+                      _c("i", {
+                        staticClass: "far fa-comment pl-2 mr-2 text-2xl",
+                        on: {
+                          click: function($event) {
+                            _vm.showComment = !_vm.showComment
+                          }
+                        }
+                      }),
+                      _vm._v(" "),
+                      _c("p", [_vm._v(_vm._s(_vm.commentCount))])
+                    ])
+                  : _c("div", { staticClass: "mt-1 flex" }, [
+                      _c("i", {
+                        staticClass: "far fa-comment pl-2 mr-2 text-2xl",
+                        on: {
+                          click: function($event) {
+                            _vm.showComment = !_vm.showComment
+                          }
+                        }
+                      }),
+                      _vm._v(" "),
+                      _c("p", [_vm._v(_vm._s(_vm.commentCount))])
+                    ])
               ])
             ])
           ]),
