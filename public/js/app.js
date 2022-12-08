@@ -2666,8 +2666,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var _Modal_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Modal.vue */ "./resources/js/components/Modal.vue");
-function _readOnlyError(name) { throw new TypeError("\"" + name + "\" is read-only"); }
-
 //
 //
 //
@@ -2692,9 +2690,7 @@ function _readOnlyError(name) { throw new TypeError("\"" + name + "\" is read-on
     prefectures: Array
   },
   created: function created() {},
-  computed: {
-    prefectureName: function prefectureName() {}
-  },
+  computed: {},
   methods: {
     cancel: function cancel() {
       this.$emit("closeModal");
@@ -2705,12 +2701,6 @@ function _readOnlyError(name) { throw new TypeError("\"" + name + "\" is read-on
       }).map(function (o) {
         return o.name;
       });
-      console.log(name);
-
-      if (name == "全部") {
-        name = (_readOnlyError("name"), "");
-      }
-
       this.$router.push({
         name: "Search",
         query: {
@@ -3049,12 +3039,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
             case 2:
               _this.prefectures = _Libraries_prefectures_js__WEBPACK_IMPORTED_MODULE_6__.default.prefectures;
 
-              _this.prefectures.unshift({
-                id: 0,
-                name: "全部"
-              });
-
-            case 4:
+            case 3:
             case "end":
               return _context.stop();
           }
@@ -3071,8 +3056,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
           while (1) {
             switch (_context2.prev = _context2.next) {
               case 0:
-                console.log(_this2.$route.query);
-                _context2.next = 3;
+                _context2.next = 2;
                 return axios.get("/api/drinks", {
                   params: {
                     "with": "comments"
@@ -3083,10 +3067,10 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                   console.log(error);
                 });
 
-              case 3:
+              case 2:
                 _this2.loading = false;
 
-              case 4:
+              case 3:
               case "end":
                 return _context2.stop();
             }
@@ -3099,68 +3083,6 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     },
     toggleTasteModal: function toggleTasteModal() {
       this.showTasteModal = !this.showTasteModal;
-    },
-    filterPrefecture: function filterPrefecture(val) {
-      var _this3 = this;
-
-      return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee3() {
-        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee3$(_context3) {
-          while (1) {
-            switch (_context3.prev = _context3.next) {
-              case 0:
-                if (!val) {
-                  _context3.next = 8;
-                  break;
-                }
-
-                _context3.next = 3;
-                return axios.get("/api/drinks", {
-                  params: {
-                    prefecture: val,
-                    "with": "comments"
-                  }
-                }).then(function (response) {
-                  if (response.data) {
-                    _this3.drinks = response.data;
-                  } else {
-                    return;
-                  }
-                })["catch"](function (error) {
-                  console.log(error);
-                });
-
-              case 3:
-                _this3.loading = false;
-                _this3.showPrefectureModal = false;
-                console.log(val);
-                _context3.next = 11;
-                break;
-
-              case 8:
-                _context3.next = 10;
-                return axios.get("/api/drinks", {
-                  params: {
-                    "with": "comments"
-                  }
-                }).then(function (response) {
-                  _this3.drinks = response.data;
-                })["catch"](function (error) {
-                  console.log(error);
-                });
-
-              case 10:
-                _this3.showPrefectureModal = false;
-
-              case 11:
-              case "end":
-                return _context3.stop();
-            }
-          }
-        }, _callee3);
-      }))();
-    },
-    closeModal: function closeModal() {
-      this.showTasteModal = false;
     }
   }
 });
@@ -24345,7 +24267,7 @@ var render = function() {
                       ? [
                           _c("PrefectureModal", {
                             attrs: { prefectures: _vm.prefectures },
-                            on: { closeModal: _vm.closeModal }
+                            on: { closeModal: _vm.togglePrefectureModal }
                           })
                         ]
                       : _vm._e(),
@@ -24353,7 +24275,7 @@ var render = function() {
                     _vm.showTasteModal
                       ? [
                           _c("TasteModal", {
-                            on: { closeModal: _vm.closeModal }
+                            on: { closeModal: _vm.toggleTasteModal }
                           })
                         ]
                       : _vm._e(),

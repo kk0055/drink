@@ -36,12 +36,12 @@
                     </div>
                     <template v-if="showPrefectureModal">
                         <PrefectureModal
-                            @closeModal="closeModal"
+                            @closeModal="togglePrefectureModal"
                             :prefectures="prefectures"
                         />
                     </template>
                     <template v-if="showTasteModal">
-                        <TasteModal @closeModal="closeModal" />
+                        <TasteModal @closeModal="toggleTasteModal" />
                     </template>
 
                     <div
@@ -90,20 +90,15 @@ export default {
         showPrefectureModal: false,
         showTasteModal: false,
         prefectures: {},
-        selectedTags:[]
+        selectedTags: []
     }),
     async created() {
-        await Promise.all([ this.getDrinks()]);
+        await Promise.all([this.getDrinks()]);
         this.prefectures = prefectures.prefectures;
-        this.prefectures.unshift({
-            id: 0,
-            name: "全部"
-        });
     },
     methods: {
         async getDrinks() {
-            console.log(this.$route.query)
-             await axios
+            await axios
                 .get("/api/drinks", {
                     params: {
                         with: "comments"
@@ -123,49 +118,6 @@ export default {
         },
         toggleTasteModal() {
             this.showTasteModal = !this.showTasteModal;
-        },
-        async filterPrefecture(val) {
-            //   this.showModal = false;
-            if (val) {
-                await axios
-                    .get("/api/drinks", {
-                        params: {
-                            prefecture: val,
-                            with: "comments"
-                        }
-                    })
-                    .then(response => {
-                        if (response.data) {
-                            this.drinks = response.data;
-                        } else {
-                            return;
-                        }
-                    })
-                    .catch(function(error) {
-                        console.log(error);
-                    });
-
-                this.loading = false;
-                this.showPrefectureModal = false;
-                console.log(val);
-            } else {
-                await axios
-                    .get("/api/drinks", {
-                        params: {
-                            with: "comments"
-                        }
-                    })
-                    .then(response => {
-                        this.drinks = response.data;
-                    })
-                    .catch(function(error) {
-                        console.log(error);
-                    });
-                this.showPrefectureModal = false;
-            }
-        },
-        closeModal() {
-        this.showTasteModal = false;
         }
     }
 };

@@ -22,9 +22,6 @@ export default {
     },
     created() {},
     computed: {
-        prefectureName() {
-         
-        }
     },
     methods: {
         cancel() {
@@ -32,10 +29,6 @@ export default {
         },
         selectPrefecture(value) {
             const name = this.prefectures.filter(o => value.includes(o.id)).map(o => o.name)
-            console.log(name)
-            if (name == "全部") {
-                name = "";
-            }
             this.$router.push({
                 name: "Search",
                 query: { prefectures: name}
