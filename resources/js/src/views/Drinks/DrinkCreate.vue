@@ -296,12 +296,16 @@ export default {
                     "content-type": "multipart/form-data"
                 }
             };
+            const url = this.data.map_url
+            let index = url.indexOf('http');
+            let map_url = url.substring(index);
+
             let formData = new FormData();
             formData.append("image", this.files);
             formData.append("name", this.data.name);
             formData.append("prefecture", this.data.prefecture);
             formData.append("place", this.data.place);
-            formData.append("map_url", this.data.map_url);
+            formData.append("map_url", map_url);
             formData.append("review", this.data.review);
             formData.append("score", this.data.score);
             formData.append("price", this.data.price);

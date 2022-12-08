@@ -319,7 +319,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       var _this = this;
 
       return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee() {
-        var config, formData;
+        var config, url, index, map_url, formData;
         return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee$(_context) {
           while (1) {
             switch (_context.prev = _context.next) {
@@ -331,28 +331,31 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                     "content-type": "multipart/form-data"
                   }
                 };
+                url = _this.data.map_url;
+                index = url.indexOf('http');
+                map_url = url.substring(index);
                 formData = new FormData();
                 formData.append("image", _this.files);
                 formData.append("name", _this.data.name);
                 formData.append("prefecture", _this.data.prefecture);
                 formData.append("place", _this.data.place);
-                formData.append("map_url", _this.data.map_url);
+                formData.append("map_url", map_url);
                 formData.append("review", _this.data.review);
                 formData.append("score", _this.data.score);
                 formData.append("price", _this.data.price);
                 formData.append("tag_id", JSON.stringify(_this.selectedTags));
 
                 if (!_this.$v.$invalid) {
-                  _context.next = 16;
+                  _context.next = 19;
                   break;
                 }
 
                 console.log("Validation Error");
-                _context.next = 18;
+                _context.next = 21;
                 break;
 
-              case 16:
-                _context.next = 18;
+              case 19:
+                _context.next = 21;
                 return axios.post("/api/drinks", formData, config).then(function (res) {
                   // console.log(res);
                   _this.$toast("投稿完了!", {
@@ -368,7 +371,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                   console.log(error);
                 });
 
-              case 18:
+              case 21:
               case "end":
                 return _context.stop();
             }
