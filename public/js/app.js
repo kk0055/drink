@@ -2032,11 +2032,6 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
-//
-//
-//
-//
-//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: {
@@ -2067,6 +2062,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     },
     commentCount: function commentCount() {
       return this.drink.comments.length;
+    },
+    hideItemDetails: function hideItemDetails() {
+      return this.$route.name == "drinks" || this.$route.name == "drinkRanking" || this.$route.name == "Search";
     }
   },
   methods: {
@@ -2552,10 +2550,10 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/PrefectureModal.vue?vue&type=script&lang=js&":
-/*!**********************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/PrefectureModal.vue?vue&type=script&lang=js& ***!
-  \**********************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Modal.vue?vue&type=script&lang=js&":
+/*!************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Modal.vue?vue&type=script&lang=js& ***!
+  \************************************************************************************************************************************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -2621,6 +2619,72 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  data: function data() {
+    return {
+      selectedItems: []
+    };
+  },
+  components: {},
+  props: {
+    data: {
+      Type: Array
+    },
+    itemlists: {
+      Type: Array
+    }
+  },
+  created: function created() {},
+  computed: {},
+  methods: {
+    cancel: function cancel() {
+      this.$emit("closeModal");
+    }
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/PrefectureModal.vue?vue&type=script&lang=js&":
+/*!**********************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/PrefectureModal.vue?vue&type=script&lang=js& ***!
+  \**********************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _Modal_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Modal.vue */ "./resources/js/components/Modal.vue");
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
@@ -2628,7 +2692,9 @@ __webpack_require__.r(__webpack_exports__);
       data: {}
     };
   },
-  components: {},
+  components: {
+    Modal: _Modal_vue__WEBPACK_IMPORTED_MODULE_0__.default
+  },
   props: {
     prefectures: Array
   },
@@ -2636,14 +2702,20 @@ __webpack_require__.r(__webpack_exports__);
   computed: {},
   methods: {
     cancel: function cancel() {
-      this.$emit("execute-method", false);
+      this.$emit("closeModal");
     },
-    selectPrefecture: function selectPrefecture() {
-      if (this.data.prefecture == '全部') {
-        this.data.prefecture = '';
-      }
-
-      this.$emit("execute-method", this.data.prefecture);
+    selectPrefecture: function selectPrefecture(value) {
+      var name = this.prefectures.filter(function (o) {
+        return value.includes(o.id);
+      }).map(function (o) {
+        return o.name;
+      });
+      this.$router.push({
+        name: "Search",
+        query: {
+          prefectures: name
+        }
+      });
     }
   }
 });
@@ -2663,6 +2735,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _Modal_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Modal.vue */ "./resources/js/components/Modal.vue");
 
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
@@ -2678,71 +2751,18 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
       showModal: false,
       data: {},
-      tags: [],
-      selectedTags: []
+      tags: []
     };
   },
-  components: {},
+  components: {
+    Modal: _Modal_vue__WEBPACK_IMPORTED_MODULE_1__.default
+  },
   props: {},
   created: function created() {
     this.getTags();
@@ -2750,10 +2770,15 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
   computed: {},
   methods: {
     cancel: function cancel() {
-      this.$emit("execute-method", false);
+      this.$emit("closeModal");
     },
-    selectTaste: function selectTaste() {
-      this.$emit("execute-method", JSON.stringify(this.selectedTags));
+    selectTaste: function selectTaste(value) {
+      this.$router.push({
+        name: "Search",
+        query: {
+          tags: JSON.stringify(value)
+        }
+      });
     },
     getTags: function getTags() {
       var _this = this;
@@ -2765,7 +2790,6 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
               case 0:
                 _context.next = 2;
                 return axios.get("/api/tags").then(function (res) {
-                  // console.log(res);
                   _this.tags = res.data;
                 })["catch"](function (error) {
                   console.log(error);
@@ -3024,12 +3048,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
             case 2:
               _this.prefectures = _Libraries_prefectures_js__WEBPACK_IMPORTED_MODULE_6__.default.prefectures;
 
-              _this.prefectures.unshift({
-                code: 0,
-                name: "全部"
-              });
-
-            case 4:
+            case 3:
             case "end":
               return _context.stop();
           }
@@ -3046,8 +3065,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
           while (1) {
             switch (_context2.prev = _context2.next) {
               case 0:
-                console.log(_this2.$route.query);
-                _context2.next = 3;
+                _context2.next = 2;
                 return axios.get("/api/drinks", {
                   params: {
                     "with": "comments"
@@ -3058,10 +3076,10 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                   console.log(error);
                 });
 
-              case 3:
+              case 2:
                 _this2.loading = false;
 
-              case 4:
+              case 3:
               case "end":
                 return _context2.stop();
             }
@@ -3074,125 +3092,6 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     },
     toggleTasteModal: function toggleTasteModal() {
       this.showTasteModal = !this.showTasteModal;
-    },
-    filterPrefecture: function filterPrefecture(val) {
-      var _this3 = this;
-
-      return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee3() {
-        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee3$(_context3) {
-          while (1) {
-            switch (_context3.prev = _context3.next) {
-              case 0:
-                if (!val) {
-                  _context3.next = 8;
-                  break;
-                }
-
-                _context3.next = 3;
-                return axios.get("/api/drinks", {
-                  params: {
-                    prefecture: val,
-                    "with": "comments"
-                  }
-                }).then(function (response) {
-                  if (response.data) {
-                    _this3.drinks = response.data;
-                  } else {
-                    return;
-                  }
-                })["catch"](function (error) {
-                  console.log(error);
-                });
-
-              case 3:
-                _this3.loading = false;
-                _this3.showPrefectureModal = false;
-                console.log(val);
-                _context3.next = 11;
-                break;
-
-              case 8:
-                _context3.next = 10;
-                return axios.get("/api/drinks", {
-                  params: {
-                    "with": "comments"
-                  }
-                }).then(function (response) {
-                  _this3.drinks = response.data;
-                })["catch"](function (error) {
-                  console.log(error);
-                });
-
-              case 10:
-                _this3.showPrefectureModal = false;
-
-              case 11:
-              case "end":
-                return _context3.stop();
-            }
-          }
-        }, _callee3);
-      }))();
-    },
-    filterTaste: function filterTaste(val) {
-      var _this4 = this;
-
-      return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee4() {
-        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee4$(_context4) {
-          while (1) {
-            switch (_context4.prev = _context4.next) {
-              case 0:
-                if (!val) {
-                  _context4.next = 9;
-                  break;
-                }
-
-                _this4.selectedTags = val;
-                _context4.next = 4;
-                return axios.get("/api/drinks", {
-                  params: {
-                    tags: val,
-                    "with": "comments"
-                  }
-                }).then(function (response) {
-                  if (response.data) {
-                    _this4.drinks = response.data; // this.$router.replace({ query: {"search" :"taste"} })
-                  } else {
-                    return;
-                  }
-                })["catch"](function (error) {
-                  console.log(error);
-                });
-
-              case 4:
-                _this4.loading = false;
-                _this4.showTasteModal = false;
-                console.log(val);
-                _context4.next = 12;
-                break;
-
-              case 9:
-                _context4.next = 11;
-                return axios.get("/api/drinks", {
-                  params: {
-                    "with": "comments"
-                  }
-                }).then(function (response) {
-                  _this4.drinks = response.data;
-                })["catch"](function (error) {
-                  console.log(error);
-                });
-
-              case 11:
-                _this4.showTasteModal = false;
-
-              case 12:
-              case "end":
-                return _context4.stop();
-            }
-          }
-        }, _callee4);
-      }))();
     }
   }
 });
@@ -3212,145 +3111,145 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   "prefectures": [{
-    "code": 1,
+    "id": 1,
     "name": "北海道"
   }, {
-    "code": 2,
+    "id": 2,
     "name": "青森県"
   }, {
-    "code": 3,
+    "id": 3,
     "name": "岩手県"
   }, {
-    "code": 4,
+    "id": 4,
     "name": "宮城県"
   }, {
-    "code": 5,
+    "id": 5,
     "name": "秋田県"
   }, {
-    "code": 6,
+    "id": 6,
     "name": "山形県"
   }, {
-    "code": 7,
+    "id": 7,
     "name": "福島県"
   }, {
-    "code": 8,
+    "id": 8,
     "name": "茨城県"
   }, {
-    "code": 9,
+    "id": 9,
     "name": "栃木県"
   }, {
-    "code": 10,
+    "id": 10,
     "name": "群馬県"
   }, {
-    "code": 11,
+    "id": 11,
     "name": "埼玉県"
   }, {
-    "code": 12,
+    "id": 12,
     "name": "千葉県"
   }, {
-    "code": 13,
+    "id": 13,
     "name": "東京都"
   }, {
-    "code": 14,
+    "id": 14,
     "name": "神奈川県"
   }, {
-    "code": 15,
+    "id": 15,
     "name": "新潟県"
   }, {
-    "code": 16,
+    "id": 16,
     "name": "富山県"
   }, {
-    "code": 17,
+    "id": 17,
     "name": "石川県"
   }, {
-    "code": 18,
+    "id": 18,
     "name": "福井県"
   }, {
-    "code": 19,
+    "id": 19,
     "name": "山梨県"
   }, {
-    "code": 20,
+    "id": 20,
     "name": "長野県"
   }, {
-    "code": 21,
+    "id": 21,
     "name": "岐阜県"
   }, {
-    "code": 22,
+    "id": 22,
     "name": "静岡県"
   }, {
-    "code": 23,
+    "id": 23,
     "name": "愛知県"
   }, {
-    "code": 24,
+    "id": 24,
     "name": "三重県"
   }, {
-    "code": 25,
+    "id": 25,
     "name": "滋賀県"
   }, {
-    "code": 26,
+    "id": 26,
     "name": "京都府"
   }, {
-    "code": 27,
+    "id": 27,
     "name": "大阪府"
   }, {
-    "code": 28,
+    "id": 28,
     "name": "兵庫県"
   }, {
-    "code": 29,
+    "id": 29,
     "name": "奈良県"
   }, {
-    "code": 30,
+    "id": 30,
     "name": "和歌山県"
   }, {
-    "code": 31,
+    "id": 31,
     "name": "鳥取県"
   }, {
-    "code": 32,
+    "id": 32,
     "name": "島根県"
   }, {
-    "code": 33,
+    "id": 33,
     "name": "岡山県"
   }, {
-    "code": 34,
+    "id": 34,
     "name": "広島県"
   }, {
-    "code": 35,
+    "id": 35,
     "name": "山口県"
   }, {
-    "code": 36,
+    "id": 36,
     "name": "徳島県"
   }, {
-    "code": 37,
+    "id": 37,
     "name": "香川県"
   }, {
-    "code": 38,
+    "id": 38,
     "name": "愛媛県"
   }, {
-    "code": 39,
+    "id": 39,
     "name": "高知県"
   }, {
-    "code": 40,
+    "id": 40,
     "name": "福岡県"
   }, {
-    "code": 41,
+    "id": 41,
     "name": "佐賀県"
   }, {
-    "code": 42,
+    "id": 42,
     "name": "長崎県"
   }, {
-    "code": 43,
+    "id": 43,
     "name": "熊本県"
   }, {
-    "code": 44,
+    "id": 44,
     "name": "大分県"
   }, {
-    "code": 45,
+    "id": 45,
     "name": "宮崎県"
   }, {
-    "code": 46,
+    "id": 46,
     "name": "鹿児島県"
   }, {
-    "code": 47,
+    "id": 47,
     "name": "沖縄県"
   }]
 });
@@ -3493,6 +3392,16 @@ var routes = [{
   props: true,
   component: function component() {
     return __webpack_require__.e(/*! import() */ "resources_js_src_views_Drinks_DrinkCreate_vue").then(__webpack_require__.bind(__webpack_require__, /*! ../src/views/Drinks/DrinkCreate.vue */ "./resources/js/src/views/Drinks/DrinkCreate.vue"));
+  }
+}, {
+  path: "/search",
+  name: "Search",
+  // meta: {
+  //   backPath: { name: 'drinks' },
+  // },
+  props: true,
+  component: function component() {
+    return __webpack_require__.e(/*! import() */ "resources_js_src_views_Search_vue").then(__webpack_require__.bind(__webpack_require__, /*! ../src/views/Search.vue */ "./resources/js/src/views/Search.vue"));
   }
 }, {
   path: "/drinks/:drinkId",
@@ -22591,6 +22500,45 @@ component.options.__file = "resources/js/components/LandingPage.vue"
 
 /***/ }),
 
+/***/ "./resources/js/components/Modal.vue":
+/*!*******************************************!*\
+  !*** ./resources/js/components/Modal.vue ***!
+  \*******************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _Modal_vue_vue_type_template_id_53ab54d2___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Modal.vue?vue&type=template&id=53ab54d2& */ "./resources/js/components/Modal.vue?vue&type=template&id=53ab54d2&");
+/* harmony import */ var _Modal_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Modal.vue?vue&type=script&lang=js& */ "./resources/js/components/Modal.vue?vue&type=script&lang=js&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+;
+var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__.default)(
+  _Modal_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__.default,
+  _Modal_vue_vue_type_template_id_53ab54d2___WEBPACK_IMPORTED_MODULE_0__.render,
+  _Modal_vue_vue_type_template_id_53ab54d2___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/Modal.vue"
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (component.exports);
+
+/***/ }),
+
 /***/ "./resources/js/components/PrefectureModal.vue":
 /*!*****************************************************!*\
   !*** ./resources/js/components/PrefectureModal.vue ***!
@@ -22829,6 +22777,22 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/components/Modal.vue?vue&type=script&lang=js&":
+/*!********************************************************************!*\
+  !*** ./resources/js/components/Modal.vue?vue&type=script&lang=js& ***!
+  \********************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Modal_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./Modal.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Modal.vue?vue&type=script&lang=js&");
+ /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Modal_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__.default); 
+
+/***/ }),
+
 /***/ "./resources/js/components/PrefectureModal.vue?vue&type=script&lang=js&":
 /*!******************************************************************************!*\
   !*** ./resources/js/components/PrefectureModal.vue?vue&type=script&lang=js& ***!
@@ -23021,6 +22985,23 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/components/Modal.vue?vue&type=template&id=53ab54d2&":
+/*!**************************************************************************!*\
+  !*** ./resources/js/components/Modal.vue?vue&type=template&id=53ab54d2& ***!
+  \**************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Modal_vue_vue_type_template_id_53ab54d2___WEBPACK_IMPORTED_MODULE_0__.render),
+/* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Modal_vue_vue_type_template_id_53ab54d2___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
+/* harmony export */ });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Modal_vue_vue_type_template_id_53ab54d2___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./Modal.vue?vue&type=template&id=53ab54d2& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Modal.vue?vue&type=template&id=53ab54d2&");
+
+
+/***/ }),
+
 /***/ "./resources/js/components/PrefectureModal.vue?vue&type=template&id=1cd3bbc6&":
 /*!************************************************************************************!*\
   !*** ./resources/js/components/PrefectureModal.vue?vue&type=template&id=1cd3bbc6& ***!
@@ -23112,7 +23093,7 @@ var render = function() {
         "pt-3 px-1 rounded overflow-hidden border w-full bg-white mx-3 md:mx-0 lg:mx-0"
     },
     [
-      _vm.$route.name == "drinks" || _vm.$route.name == "drinkRanking"
+      _vm.hideItemDetails
         ? _c("img", {
             staticClass: "h-48 md:h-36 w-full object-cover object-center",
             attrs: { width: "300px", height: "350px", src: _vm.image }
@@ -23153,7 +23134,7 @@ var render = function() {
                 )
               ]),
               _vm._v(" "),
-              _vm.$route.name == "drinks" || _vm.$route.name == "drinkRanking"
+              _vm.hideItemDetails
                 ? _c("p", { staticClass: "mt-2 drink-text " }, [
                     _c("i", { staticClass: "far fa-globe mr-2" }),
                     _vm._v(
@@ -23190,7 +23171,7 @@ var render = function() {
                 _vm._v(_vm._s(_vm.drink.price) + " 円\n                ")
               ]),
               _vm._v(" "),
-              _vm.$route.name == "drinks" || _vm.$route.name == "drinkRanking"
+              _vm.hideItemDetails
                 ? _c("p", { staticClass: "mt-1 drink-text" }, [
                     _vm._v(
                       "\n                    " +
@@ -23202,7 +23183,7 @@ var render = function() {
                     _vm._v(_vm._s(_vm.drink.review))
                   ]),
               _vm._v(" "),
-              _vm.$route.name == "drinks" || _vm.$route.name == "drinkRanking"
+              _vm.hideItemDetails
                 ? _c(
                     "div",
                     { staticClass: "mt-1 flex justify-end" },
@@ -23268,7 +23249,7 @@ var render = function() {
           ]),
           _vm._v(" "),
           _c("Transition", [
-            _vm.showComment && _vm.$route.name != "drinks"
+            _vm.showComment && _vm.$route.name == "drinkDetails"
               ? _c(
                   "div",
                   { staticClass: "max-w-lg shadow-md " },
@@ -23930,169 +23911,10 @@ render._withStripped = true
 
 /***/ }),
 
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/PrefectureModal.vue?vue&type=template&id=1cd3bbc6&":
-/*!***************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/PrefectureModal.vue?vue&type=template&id=1cd3bbc6& ***!
-  \***************************************************************************************************************************************************************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "render": () => (/* binding */ render),
-/* harmony export */   "staticRenderFns": () => (/* binding */ staticRenderFns)
-/* harmony export */ });
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c("div", [
-    _c(
-      "div",
-      {
-        staticClass:
-          "overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none justify-center items-center flex"
-      },
-      [
-        _c("div", { staticClass: "relative w-auto my-6 mx-auto max-w-3xl" }, [
-          _c(
-            "div",
-            {
-              staticClass:
-                "border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none"
-            },
-            [
-              _vm._m(0),
-              _vm._v(" "),
-              _c("div", { staticClass: "relative p-3 flex-auto" }, [
-                _c("div", { staticClass: "mt-1" }, [
-                  _c(
-                    "select",
-                    {
-                      directives: [
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value: _vm.data.prefecture,
-                          expression: "data.prefecture"
-                        }
-                      ],
-                      staticClass:
-                        "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-1 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500",
-                      attrs: { id: "prefectures" },
-                      on: {
-                        change: function($event) {
-                          var $$selectedVal = Array.prototype.filter
-                            .call($event.target.options, function(o) {
-                              return o.selected
-                            })
-                            .map(function(o) {
-                              var val = "_value" in o ? o._value : o.value
-                              return val
-                            })
-                          _vm.$set(
-                            _vm.data,
-                            "prefecture",
-                            $event.target.multiple
-                              ? $$selectedVal
-                              : $$selectedVal[0]
-                          )
-                        }
-                      }
-                    },
-                    _vm._l(_vm.prefectures, function(prefecture) {
-                      return _c(
-                        "option",
-                        { domProps: { value: prefecture.name } },
-                        [_vm._v(_vm._s(prefecture.name))]
-                      )
-                    }),
-                    0
-                  )
-                ])
-              ]),
-              _vm._v(" "),
-              _c(
-                "div",
-                {
-                  staticClass:
-                    "flex items-center justify-end p-6 border-t border-solid border-slate-200 rounded-b"
-                },
-                [
-                  _c(
-                    "button",
-                    {
-                      staticClass:
-                        "text-red-500 bg-transparent border border-solid border-red-500 hover:bg-red-500 hover:text-white active:bg-red-600 font-bold uppercase text-sm px-6 py-3 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150",
-                      attrs: { type: "button" },
-                      on: {
-                        click: function($event) {
-                          return _vm.cancel()
-                        }
-                      }
-                    },
-                    [
-                      _vm._v(
-                        "\n                        Close\n                    "
-                      )
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "button",
-                    {
-                      staticClass:
-                        "text-red-500 bg-transparent border border-solid border-red-500 hover:bg-red-500 hover:text-white active:bg-red-600 font-bold uppercase text-sm px-6 py-3 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150",
-                      attrs: { type: "button" },
-                      on: {
-                        click: function($event) {
-                          return _vm.selectPrefecture()
-                        }
-                      }
-                    },
-                    [
-                      _vm._v("\n                      Okay"),
-                      _c("i", { staticClass: "far fa-thumbs-up" })
-                    ]
-                  )
-                ]
-              )
-            ]
-          )
-        ])
-      ]
-    ),
-    _vm._v(" "),
-    _c("div", { staticClass: "opacity-25 fixed inset-0 z-40 bg-black" })
-  ])
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "text-center" }, [
-      _c(
-        "h2",
-        {
-          staticClass:
-            "block text-2xl font-bold text-gray-800 dark:text-white mt-3"
-        },
-        [_vm._v("どこにする？")]
-      )
-    ])
-  }
-]
-render._withStripped = true
-
-
-
-/***/ }),
-
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/TasteModal.vue?vue&type=template&id=ec1533fe&":
-/*!**********************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/TasteModal.vue?vue&type=template&id=ec1533fe& ***!
-  \**********************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Modal.vue?vue&type=template&id=53ab54d2&":
+/*!*****************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Modal.vue?vue&type=template&id=53ab54d2& ***!
+  \*****************************************************************************************************************************************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -24126,42 +23948,42 @@ var render = function() {
               _c(
                 "div",
                 { staticClass: " flex flex-wrap " },
-                _vm._l(_vm.tags, function(tag) {
+                _vm._l(_vm.itemlists, function(item) {
                   return _c("div", { staticClass: "flex flex-row mr-1" }, [
                     _c("input", {
                       directives: [
                         {
                           name: "model",
                           rawName: "v-model",
-                          value: _vm.selectedTags,
-                          expression: "selectedTags"
+                          value: _vm.selectedItems,
+                          expression: "selectedItems"
                         }
                       ],
-                      attrs: { type: "checkbox", id: tag.id },
+                      attrs: { type: "checkbox", id: item.id },
                       domProps: {
-                        value: tag.id,
-                        checked: Array.isArray(_vm.selectedTags)
-                          ? _vm._i(_vm.selectedTags, tag.id) > -1
-                          : _vm.selectedTags
+                        value: item.id,
+                        checked: Array.isArray(_vm.selectedItems)
+                          ? _vm._i(_vm.selectedItems, item.id) > -1
+                          : _vm.selectedItems
                       },
                       on: {
                         change: function($event) {
-                          var $$a = _vm.selectedTags,
+                          var $$a = _vm.selectedItems,
                             $$el = $event.target,
                             $$c = $$el.checked ? true : false
                           if (Array.isArray($$a)) {
-                            var $$v = tag.id,
+                            var $$v = item.id,
                               $$i = _vm._i($$a, $$v)
                             if ($$el.checked) {
-                              $$i < 0 && (_vm.selectedTags = $$a.concat([$$v]))
+                              $$i < 0 && (_vm.selectedItems = $$a.concat([$$v]))
                             } else {
                               $$i > -1 &&
-                                (_vm.selectedTags = $$a
+                                (_vm.selectedItems = $$a
                                   .slice(0, $$i)
                                   .concat($$a.slice($$i + 1)))
                             }
                           } else {
-                            _vm.selectedTags = $$c
+                            _vm.selectedItems = $$c
                           }
                         }
                       }
@@ -24172,13 +23994,13 @@ var render = function() {
                       {
                         staticClass:
                           "bg-green-100 text-green-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-green-200 dark:text-green-900 my-1",
-                        attrs: { for: tag.id }
+                        attrs: { for: item.id }
                       },
                       [
                         _vm._v(
-                          "\n                         #" +
-                            _vm._s(tag.name) +
-                            "\n                       "
+                          "\n                            #" +
+                            _vm._s(item.name) +
+                            "\n                        "
                         )
                       ]
                     )
@@ -24198,15 +24020,23 @@ var render = function() {
                     "button",
                     {
                       staticClass:
-                        "text-red-500 bg-transparent border border-solid border-red-500 hover:bg-red-500 hover:text-white active:bg-red-600 font-bold uppercase text-sm px-6 py-3 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150",
-                      attrs: { type: "button" },
+                        "relative z-30 inline-flex items-center justify-center w-auto px-4 py-2 overflow-hidden font-bold text-gray-500 transition-all duration-500 border border-gray-200 rounded-md cursor-pointer group ease bg-gradient-to-b from-white to-gray-50 hover:from-gray-50 hover:to-white active:to-white",
                       on: {
                         click: function($event) {
-                          return _vm.cancel()
+                          return _vm.$emit("cancel")
                         }
                       }
                     },
                     [
+                      _c("span", {
+                        staticClass:
+                          "w-full h-0.5 absolute bottom-0 group-active:bg-transparent left-0 bg-gray-100"
+                      }),
+                      _vm._v(" "),
+                      _c("span", {
+                        staticClass:
+                          "h-full w-0.5 absolute bottom-0 group-active:bg-transparent right-0 bg-gray-100"
+                      }),
                       _vm._v(
                         "\n                        Close\n                    "
                       )
@@ -24217,18 +24047,14 @@ var render = function() {
                     "button",
                     {
                       staticClass:
-                        "text-red-500 bg-transparent border border-solid border-red-500 hover:bg-red-500 hover:text-white active:bg-red-600 font-bold uppercase text-sm px-6 py-3 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150",
-                      attrs: { type: "button" },
+                        "ml-2 inline-flex items-center justify-center px-4 py-2 text-base font-medium text-center text-indigo-100 border border-indigo-500 rounded-lg shadow-sm cursor-pointer hover:text-white bg-gradient-to-br from-purple-500 via-indigo-500 to-indigo-500",
                       on: {
                         click: function($event) {
-                          return _vm.selectTaste()
+                          return _vm.$emit("accepted", _vm.selectedItems)
                         }
                       }
                     },
-                    [
-                      _vm._v("\n                        Okay"),
-                      _c("i", { staticClass: "far fa-thumbs-up" })
-                    ]
+                    [_vm._m(1)]
                   )
                 ]
               )
@@ -24256,8 +24082,73 @@ var staticRenderFns = [
         [_vm._v("\n                        どれにする？\n                    ")]
       )
     ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("span", { staticClass: "relative" }, [
+      _vm._v("Okay"),
+      _c("i", { staticClass: "ml-1 far fa-thumbs-up" })
+    ])
   }
 ]
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/PrefectureModal.vue?vue&type=template&id=1cd3bbc6&":
+/*!***************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/PrefectureModal.vue?vue&type=template&id=1cd3bbc6& ***!
+  \***************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* binding */ render),
+/* harmony export */   "staticRenderFns": () => (/* binding */ staticRenderFns)
+/* harmony export */ });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("Modal", {
+    attrs: { data: _vm.data, itemlists: _vm.prefectures },
+    on: { cancel: _vm.cancel, accepted: _vm.selectPrefecture }
+  })
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/TasteModal.vue?vue&type=template&id=ec1533fe&":
+/*!**********************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/TasteModal.vue?vue&type=template&id=ec1533fe& ***!
+  \**********************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* binding */ render),
+/* harmony export */   "staticRenderFns": () => (/* binding */ staticRenderFns)
+/* harmony export */ });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("Modal", {
+    attrs: { data: _vm.data, itemlists: _vm.tags },
+    on: { cancel: _vm.cancel, accepted: _vm.selectTaste }
+  })
+}
+var staticRenderFns = []
 render._withStripped = true
 
 
@@ -24398,7 +24289,7 @@ var render = function() {
                       ? [
                           _c("PrefectureModal", {
                             attrs: { prefectures: _vm.prefectures },
-                            on: { "execute-method": _vm.filterPrefecture }
+                            on: { closeModal: _vm.togglePrefectureModal }
                           })
                         ]
                       : _vm._e(),
@@ -24406,7 +24297,7 @@ var render = function() {
                     _vm.showTasteModal
                       ? [
                           _c("TasteModal", {
-                            on: { "execute-method": _vm.filterTaste }
+                            on: { closeModal: _vm.toggleTasteModal }
                           })
                         ]
                       : _vm._e(),
@@ -43296,7 +43187,7 @@ exports.withParams = withParams;
 /******/ 		// This function allow to reference async chunks
 /******/ 		__webpack_require__.u = (chunkId) => {
 /******/ 			// return url for filenames not based on template
-/******/ 			if ({"resources_js_src_views_Ranking_vue":1,"resources_js_src_views_Drinks_DrinkCreate_vue":1,"resources_js_src_views_Drinks_Drink_vue":1,"resources_js_src_views_Register_vue":1,"resources_js_src_views_Login_vue":1,"resources_js_src_views_NotFound_vue":1}[chunkId]) return "js/" + chunkId + ".js";
+/******/ 			if ({"resources_js_src_views_Ranking_vue":1,"resources_js_src_views_Drinks_DrinkCreate_vue":1,"resources_js_src_views_Search_vue":1,"resources_js_src_views_Drinks_Drink_vue":1,"resources_js_src_views_Register_vue":1,"resources_js_src_views_Login_vue":1,"resources_js_src_views_NotFound_vue":1}[chunkId]) return "js/" + chunkId + ".js";
 /******/ 			// return url for filenames based on template
 /******/ 			return undefined;
 /******/ 		};

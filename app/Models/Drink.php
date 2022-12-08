@@ -71,7 +71,7 @@ class Drink extends Model
     public function scopeQueryFilter($query)
     {
         $ranking = request()->query('ranking');
-        $prefecture = request()->query('prefecture');
+        $prefectures = request()->query('prefectures');
         $tags = json_decode(request()->query('tags'));
 
         return $query
@@ -80,9 +80,9 @@ class Drink extends Model
                     ->orderBy('score', 'DESC');
                 ;
             })
-            ->when($prefecture, function ($query, $val) use ($prefecture) {
+            ->when($prefectures, function ($query, $val){
                 return $query
-                    ->where('prefecture', $prefecture);
+                    ->whereIn('prefecture', $val);
                 ;
             })
             ->when($tags, function ($query, $val) use ($tags) {
