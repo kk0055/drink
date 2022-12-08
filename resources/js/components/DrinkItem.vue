@@ -121,7 +121,7 @@
             <!-- Comment -->
             <Transition>
                 <div
-                    v-if="showComment "
+                    v-if="showComment && $route.name == 'drinkDetails'"
                     class="max-w-lg shadow-md "
                 >
                     <ul

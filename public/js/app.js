@@ -2665,6 +2665,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
+/* harmony import */ var _Modal_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Modal.vue */ "./resources/js/components/Modal.vue");
+function _readOnlyError(name) { throw new TypeError("\"" + name + "\" is read-only"); }
+
 //
 //
 //
@@ -2674,55 +2677,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
@@ -2730,25 +2685,36 @@ __webpack_require__.r(__webpack_exports__);
       data: {}
     };
   },
-  components: {},
+  components: {
+    Modal: _Modal_vue__WEBPACK_IMPORTED_MODULE_0__.default
+  },
   props: {
     prefectures: Array
   },
   created: function created() {},
-  computed: {},
+  computed: {
+    prefectureName: function prefectureName() {}
+  },
   methods: {
     cancel: function cancel() {
       this.$emit("closeModal");
     },
-    selectPrefecture: function selectPrefecture() {
-      if (this.data.prefecture == '全部') {
-        this.data.prefecture = '';
+    selectPrefecture: function selectPrefecture(value) {
+      var name = this.prefectures.filter(function (o) {
+        return value.includes(o.id);
+      }).map(function (o) {
+        return o.name;
+      });
+      console.log(name);
+
+      if (name == "全部") {
+        name = (_readOnlyError("name"), "");
       }
 
       this.$router.push({
         name: "Search",
         query: {
-          prefecture: this.data.prefecture
+          prefectures: name
         }
       });
     }
@@ -3084,7 +3050,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
               _this.prefectures = _Libraries_prefectures_js__WEBPACK_IMPORTED_MODULE_6__.default.prefectures;
 
               _this.prefectures.unshift({
-                code: 0,
+                id: 0,
                 name: "全部"
               });
 
@@ -3214,145 +3180,145 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   "prefectures": [{
-    "code": 1,
+    "id": 1,
     "name": "北海道"
   }, {
-    "code": 2,
+    "id": 2,
     "name": "青森県"
   }, {
-    "code": 3,
+    "id": 3,
     "name": "岩手県"
   }, {
-    "code": 4,
+    "id": 4,
     "name": "宮城県"
   }, {
-    "code": 5,
+    "id": 5,
     "name": "秋田県"
   }, {
-    "code": 6,
+    "id": 6,
     "name": "山形県"
   }, {
-    "code": 7,
+    "id": 7,
     "name": "福島県"
   }, {
-    "code": 8,
+    "id": 8,
     "name": "茨城県"
   }, {
-    "code": 9,
+    "id": 9,
     "name": "栃木県"
   }, {
-    "code": 10,
+    "id": 10,
     "name": "群馬県"
   }, {
-    "code": 11,
+    "id": 11,
     "name": "埼玉県"
   }, {
-    "code": 12,
+    "id": 12,
     "name": "千葉県"
   }, {
-    "code": 13,
+    "id": 13,
     "name": "東京都"
   }, {
-    "code": 14,
+    "id": 14,
     "name": "神奈川県"
   }, {
-    "code": 15,
+    "id": 15,
     "name": "新潟県"
   }, {
-    "code": 16,
+    "id": 16,
     "name": "富山県"
   }, {
-    "code": 17,
+    "id": 17,
     "name": "石川県"
   }, {
-    "code": 18,
+    "id": 18,
     "name": "福井県"
   }, {
-    "code": 19,
+    "id": 19,
     "name": "山梨県"
   }, {
-    "code": 20,
+    "id": 20,
     "name": "長野県"
   }, {
-    "code": 21,
+    "id": 21,
     "name": "岐阜県"
   }, {
-    "code": 22,
+    "id": 22,
     "name": "静岡県"
   }, {
-    "code": 23,
+    "id": 23,
     "name": "愛知県"
   }, {
-    "code": 24,
+    "id": 24,
     "name": "三重県"
   }, {
-    "code": 25,
+    "id": 25,
     "name": "滋賀県"
   }, {
-    "code": 26,
+    "id": 26,
     "name": "京都府"
   }, {
-    "code": 27,
+    "id": 27,
     "name": "大阪府"
   }, {
-    "code": 28,
+    "id": 28,
     "name": "兵庫県"
   }, {
-    "code": 29,
+    "id": 29,
     "name": "奈良県"
   }, {
-    "code": 30,
+    "id": 30,
     "name": "和歌山県"
   }, {
-    "code": 31,
+    "id": 31,
     "name": "鳥取県"
   }, {
-    "code": 32,
+    "id": 32,
     "name": "島根県"
   }, {
-    "code": 33,
+    "id": 33,
     "name": "岡山県"
   }, {
-    "code": 34,
+    "id": 34,
     "name": "広島県"
   }, {
-    "code": 35,
+    "id": 35,
     "name": "山口県"
   }, {
-    "code": 36,
+    "id": 36,
     "name": "徳島県"
   }, {
-    "code": 37,
+    "id": 37,
     "name": "香川県"
   }, {
-    "code": 38,
+    "id": 38,
     "name": "愛媛県"
   }, {
-    "code": 39,
+    "id": 39,
     "name": "高知県"
   }, {
-    "code": 40,
+    "id": 40,
     "name": "福岡県"
   }, {
-    "code": 41,
+    "id": 41,
     "name": "佐賀県"
   }, {
-    "code": 42,
+    "id": 42,
     "name": "長崎県"
   }, {
-    "code": 43,
+    "id": 43,
     "name": "熊本県"
   }, {
-    "code": 44,
+    "id": 44,
     "name": "大分県"
   }, {
-    "code": 45,
+    "id": 45,
     "name": "宮崎県"
   }, {
-    "code": 46,
+    "id": 46,
     "name": "鹿児島県"
   }, {
-    "code": 47,
+    "id": 47,
     "name": "沖縄県"
   }]
 });
@@ -23352,7 +23318,7 @@ var render = function() {
           ]),
           _vm._v(" "),
           _c("Transition", [
-            _vm.showComment
+            _vm.showComment && _vm.$route.name == "drinkDetails"
               ? _c(
                   "div",
                   { staticClass: "max-w-lg shadow-md " },
@@ -24205,143 +24171,12 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
-    _c(
-      "div",
-      {
-        staticClass:
-          "overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none justify-center items-center flex"
-      },
-      [
-        _c("div", { staticClass: "relative w-auto my-6 mx-auto max-w-3xl" }, [
-          _c(
-            "div",
-            {
-              staticClass:
-                "border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none"
-            },
-            [
-              _vm._m(0),
-              _vm._v(" "),
-              _c("div", { staticClass: "relative p-3 flex-auto" }, [
-                _c("div", { staticClass: "mt-1" }, [
-                  _c(
-                    "select",
-                    {
-                      directives: [
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value: _vm.data.prefecture,
-                          expression: "data.prefecture"
-                        }
-                      ],
-                      staticClass:
-                        "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-1 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500",
-                      attrs: { id: "prefectures" },
-                      on: {
-                        change: function($event) {
-                          var $$selectedVal = Array.prototype.filter
-                            .call($event.target.options, function(o) {
-                              return o.selected
-                            })
-                            .map(function(o) {
-                              var val = "_value" in o ? o._value : o.value
-                              return val
-                            })
-                          _vm.$set(
-                            _vm.data,
-                            "prefecture",
-                            $event.target.multiple
-                              ? $$selectedVal
-                              : $$selectedVal[0]
-                          )
-                        }
-                      }
-                    },
-                    _vm._l(_vm.prefectures, function(prefecture) {
-                      return _c(
-                        "option",
-                        { domProps: { value: prefecture.name } },
-                        [_vm._v(_vm._s(prefecture.name))]
-                      )
-                    }),
-                    0
-                  )
-                ])
-              ]),
-              _vm._v(" "),
-              _c(
-                "div",
-                {
-                  staticClass:
-                    "flex items-center justify-end p-6 border-t border-solid border-slate-200 rounded-b"
-                },
-                [
-                  _c(
-                    "button",
-                    {
-                      staticClass:
-                        "text-red-500 bg-transparent border border-solid border-red-500 hover:bg-red-500 hover:text-white active:bg-red-600 font-bold uppercase text-sm px-6 py-3 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150",
-                      attrs: { type: "button" },
-                      on: {
-                        click: function($event) {
-                          return _vm.closeModal()
-                        }
-                      }
-                    },
-                    [
-                      _vm._v(
-                        "\n                        Close\n                    "
-                      )
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "button",
-                    {
-                      staticClass:
-                        "text-red-500 bg-transparent border border-solid border-red-500 hover:bg-red-500 hover:text-white active:bg-red-600 font-bold uppercase text-sm px-6 py-3 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150",
-                      attrs: { type: "button" },
-                      on: {
-                        click: function($event) {
-                          return _vm.selectPrefecture()
-                        }
-                      }
-                    },
-                    [
-                      _vm._v("\n                      Okay"),
-                      _c("i", { staticClass: "far fa-thumbs-up" })
-                    ]
-                  )
-                ]
-              )
-            ]
-          )
-        ])
-      ]
-    ),
-    _vm._v(" "),
-    _c("div", { staticClass: "opacity-25 fixed inset-0 z-40 bg-black" })
-  ])
+  return _c("Modal", {
+    attrs: { data: _vm.data, itemlists: _vm.prefectures },
+    on: { cancel: _vm.cancel, accepted: _vm.selectPrefecture }
+  })
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "text-center" }, [
-      _c(
-        "h2",
-        {
-          staticClass:
-            "block text-2xl font-bold text-gray-800 dark:text-white mt-3"
-        },
-        [_vm._v("どこにする？")]
-      )
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
 

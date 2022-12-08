@@ -96,7 +96,7 @@ export default {
         await Promise.all([ this.getDrinks()]);
         this.prefectures = prefectures.prefectures;
         this.prefectures.unshift({
-            code: 0,
+            id: 0,
             name: "全部"
         });
     },

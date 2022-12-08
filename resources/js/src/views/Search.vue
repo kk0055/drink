@@ -79,11 +79,11 @@ export default {
         },
         async getDrinksWithPrefecture() {
             this.loading = true;
-            const prefecture = this.$route.query.prefecture
+            const prefectures = this.$route.query.prefectures
             await axios
                 .get("/api/drinks", {
                     params: {
-                            prefecture: prefecture,
+                            prefectures: prefectures,
                             with: "comments"
                     }
                 })
