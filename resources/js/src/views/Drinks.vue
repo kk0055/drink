@@ -171,7 +171,7 @@ export default {
                 await axios
                     .get("/api/drinks", {
                         params: {
-                            tags: this.$attrs.tags,
+                            tags: val,
                             with: "comments"
                         }
                     })

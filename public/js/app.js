@@ -2064,7 +2064,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       return this.drink.comments.length;
     },
     isShowedItemDetails: function isShowedItemDetails() {
-      return this.$route.name == "drinks" || this.$route.name == "drinkRanking" || this.$route.name == "drinksWithTaste";
+      return this.$route.name == "drinks" || this.$route.name == "drinkRanking" || this.$route.name == "Search";
     }
   },
   methods: {
@@ -2752,8 +2752,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     },
     selectTaste: function selectTaste() {
       this.$router.push({
-        name: "drinksWithTaste",
-        params: {
+        name: "Search",
+        query: {
           tags: JSON.stringify(this.selectedTags)
         }
       }); // this.$emit("execute-method", JSON.stringify(this.selectedTags));
@@ -3154,7 +3154,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 _context4.next = 4;
                 return axios.get("/api/drinks", {
                   params: {
-                    tags: _this4.$attrs.tags,
+                    tags: val,
                     "with": "comments"
                   }
                 }).then(function (response) {
@@ -3498,14 +3498,14 @@ var routes = [{
     return __webpack_require__.e(/*! import() */ "resources_js_src_views_Drinks_DrinkCreate_vue").then(__webpack_require__.bind(__webpack_require__, /*! ../src/views/Drinks/DrinkCreate.vue */ "./resources/js/src/views/Drinks/DrinkCreate.vue"));
   }
 }, {
-  path: "/drink/search/taste",
-  name: "drinksWithTaste",
+  path: "/search",
+  name: "Search",
   // meta: {
   //   backPath: { name: 'drinks' },
   // },
   props: true,
   component: function component() {
-    return __webpack_require__.e(/*! import() */ "resources_js_src_views_drinksWithTaste_vue").then(__webpack_require__.bind(__webpack_require__, /*! ../src/views/drinksWithTaste.vue */ "./resources/js/src/views/drinksWithTaste.vue"));
+    return __webpack_require__.e(/*! import() */ "resources_js_src_views_Search_vue").then(__webpack_require__.bind(__webpack_require__, /*! ../src/views/Search.vue */ "./resources/js/src/views/Search.vue"));
   }
 }, {
   path: "/drinks/:drinkId",
@@ -43309,7 +43309,7 @@ exports.withParams = withParams;
 /******/ 		// This function allow to reference async chunks
 /******/ 		__webpack_require__.u = (chunkId) => {
 /******/ 			// return url for filenames not based on template
-/******/ 			if ({"resources_js_src_views_Ranking_vue":1,"resources_js_src_views_Drinks_DrinkCreate_vue":1,"resources_js_src_views_drinksWithTaste_vue":1,"resources_js_src_views_Drinks_Drink_vue":1,"resources_js_src_views_Register_vue":1,"resources_js_src_views_Login_vue":1,"resources_js_src_views_NotFound_vue":1}[chunkId]) return "js/" + chunkId + ".js";
+/******/ 			if ({"resources_js_src_views_Ranking_vue":1,"resources_js_src_views_Drinks_DrinkCreate_vue":1,"resources_js_src_views_Search_vue":1,"resources_js_src_views_Drinks_Drink_vue":1,"resources_js_src_views_Register_vue":1,"resources_js_src_views_Login_vue":1,"resources_js_src_views_NotFound_vue":1}[chunkId]) return "js/" + chunkId + ".js";
 /******/ 			// return url for filenames based on template
 /******/ 			return undefined;
 /******/ 		};

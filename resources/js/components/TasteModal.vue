@@ -82,7 +82,7 @@ export default {
             this.$emit("execute-method", false);
         },
         selectTaste() {
-            this.$router.push({ name: "drinksWithTaste", params: {tags:JSON.stringify(this.selectedTags)}});
+            this.$router.push({ name: "Search", query: {tags:JSON.stringify(this.selectedTags)}});
             // this.$emit("execute-method", JSON.stringify(this.selectedTags));
         },
         async getTags() {

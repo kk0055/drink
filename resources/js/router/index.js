@@ -38,13 +38,13 @@ const routes = [
         component: () => import("../src/views/Drinks/DrinkCreate.vue")
     },
     {
-        path: "/drink/search/taste",
-        name: "drinksWithTaste",
+        path: "/search",
+        name: "Search",
         // meta: {
         //   backPath: { name: 'drinks' },
         // },
         props: true,
-        component: () => import("../src/views/drinksWithTaste.vue")
+        component: () => import("../src/views/Search.vue")
     },
     {
         path: "/drinks/:drinkId",
