@@ -79,7 +79,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
           switch (_context.prev = _context.next) {
             case 0:
               _context.next = 2;
-              return Promise.all([_this.getDrinks()]);
+              return Promise.all([_this.getData()]);
 
             case 2:
             case "end":
@@ -90,7 +90,14 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     }))();
   },
   methods: {
-    getDrinks: function getDrinks() {
+    getData: function getData() {
+      if (this.$route.query.tags) {
+        this.getDrinksWithTags();
+      } else {
+        this.getDrinksWithPrefecture();
+      }
+    },
+    getDrinksWithTags: function getDrinksWithTags() {
       var _this2 = this;
 
       return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee2() {
@@ -122,6 +129,40 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
             }
           }
         }, _callee2);
+      }))();
+    },
+    getDrinksWithPrefecture: function getDrinksWithPrefecture() {
+      var _this3 = this;
+
+      return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee3() {
+        var prefecture;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee3$(_context3) {
+          while (1) {
+            switch (_context3.prev = _context3.next) {
+              case 0:
+                _this3.loading = true;
+                prefecture = _this3.$route.query.prefecture;
+                _context3.next = 4;
+                return axios.get("/api/drinks", {
+                  params: {
+                    prefecture: prefecture,
+                    "with": "comments"
+                  }
+                }).then(function (response) {
+                  _this3.drinks = response.data;
+                })["catch"](function (error) {
+                  console.log(error);
+                });
+
+              case 4:
+                _this3.loading = false;
+
+              case 5:
+              case "end":
+                return _context3.stop();
+            }
+          }
+        }, _callee3);
       }))();
     }
   }

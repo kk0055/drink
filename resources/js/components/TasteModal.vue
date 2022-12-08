@@ -20,15 +20,18 @@
 
                     <div class=" flex flex-wrap ">
                         <div class="flex flex-row mr-1" v-for="tag in tags">
-                           <input
+                            <input
                                 type="checkbox"
                                 v-model="selectedTags"
                                 :value="tag.id"
                                 :id="tag.id"
-                            />  
-                           <label :for="tag.id"    class="bg-green-100 text-green-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-green-200 dark:text-green-900 my-1">
-                             #{{ tag.name }}
-                           </label>
+                            />
+                            <label
+                                :for="tag.id"
+                                class="bg-green-100 text-green-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-green-200 dark:text-green-900 my-1"
+                            >
+                                #{{ tag.name }}
+                            </label>
                             <!-- <div
                                 class="bg-green-100 text-green-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-green-200 dark:text-green-900 my-1"
                             >
@@ -71,25 +74,25 @@ export default {
         selectedTags: []
     }),
     components: {},
-    props: {
-    },
+    props: {},
     created() {
         this.getTags();
     },
     computed: {},
     methods: {
         cancel() {
-            this.$emit("execute-method", false);
+            this.$emit("closeModal");
         },
         selectTaste() {
-            this.$router.push({ name: "Search", query: {tags:JSON.stringify(this.selectedTags)}});
-            // this.$emit("execute-method", JSON.stringify(this.selectedTags));
+            this.$router.push({
+                name: "Search",
+                query: { tags: JSON.stringify(this.selectedTags) }
+            });
         },
         async getTags() {
             await axios
                 .get("/api/tags")
                 .then(res => {
-                    // console.log(res);
                     this.tags = res.data;
                 })
                 .catch(function(error) {

@@ -48,16 +48,42 @@ export default {
         loading: true
     }),
     async created() {
-        await Promise.all([this.getDrinks()]);
+        await Promise.all([this.getData()]);
     },
     methods: {
-        async getDrinks() {
+        getData() {
+          if(this.$route.query.tags ) {
+            this.getDrinksWithTags() 
+          } else {
+           this.getDrinksWithPrefecture() 
+          }
+        },
+        async getDrinksWithTags() {
             this.loading = true;
             const tags = this.$route.query.tags
             await axios
                 .get("/api/drinks", {
                     params: {
                             tags: tags,
+                            with: "comments"
+                    }
+                })
+                .then(response => {
+                    this.drinks = response.data;
+                })
+                .catch(function(error) {
+                    console.log(error);
+                });
+
+            this.loading = false;
+        },
+        async getDrinksWithPrefecture() {
+            this.loading = true;
+            const prefecture = this.$route.query.prefecture
+            await axios
+                .get("/api/drinks", {
+                    params: {
+                            prefecture: prefecture,
                             with: "comments"
                     }
                 })

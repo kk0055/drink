@@ -37,7 +37,7 @@
                         <button
                             class="text-red-500 bg-transparent border border-solid border-red-500 hover:bg-red-500 hover:text-white active:bg-red-600 font-bold uppercase text-sm px-6 py-3 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
                             type="button"
-                            @click="cancel()"
+                            @click="closeModal()"
                         >
                             Close
                         </button>
@@ -69,14 +69,17 @@ export default {
     created() {},
     computed: {},
     methods: {
-        cancel() {
-            this.$emit("execute-method", false);
+         cancel() {
+            this.$emit("closeModal");
         },
         selectPrefecture() {
             if(this.data.prefecture == '全部') {
                 this.data.prefecture = ''
             }
-            this.$emit("execute-method", this.data.prefecture);
+                this.$router.push({
+                name: "Search",
+                query: { prefecture: this.data.prefecture}
+            });
         }
     }
 };

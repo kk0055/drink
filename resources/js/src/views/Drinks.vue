@@ -36,12 +36,12 @@
                     </div>
                     <template v-if="showPrefectureModal">
                         <PrefectureModal
-                            @execute-method="filterPrefecture"
+                            @closeModal="closeModal"
                             :prefectures="prefectures"
                         />
                     </template>
                     <template v-if="showTasteModal">
-                        <TasteModal @execute-method="filterTaste" />
+                        <TasteModal @closeModal="closeModal" />
                     </template>
 
                     <div
@@ -164,47 +164,8 @@ export default {
                 this.showPrefectureModal = false;
             }
         },
-        async filterTaste(val) {
-            //   this.showModal = false;
-            if (val) {
-                this.selectedTags = val
-                await axios
-                    .get("/api/drinks", {
-                        params: {
-                            tags: val,
-                            with: "comments"
-                        }
-                    })
-                    .then(response => {
-                        if (response.data) {
-                            this.drinks = response.data;
-                            // this.$router.replace({ query: {"search" :"taste"} })
-                        } else {
-                            return;
-                        }
-                    })
-                    .catch(function(error) {
-                        console.log(error);
-                    });
-
-                this.loading = false;
-                this.showTasteModal = false;
-                console.log(val);
-            } else {
-                await axios
-                    .get("/api/drinks", {
-                        params: {
-                            with: "comments"
-                        }
-                    })
-                    .then(response => {
-                        this.drinks = response.data;
-                    })
-                    .catch(function(error) {
-                        console.log(error);
-                    });
-                this.showTasteModal = false;
-            }
+        closeModal() {
+        this.showTasteModal = false;
         }
     }
 };

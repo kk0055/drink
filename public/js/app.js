@@ -2063,7 +2063,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     commentCount: function commentCount() {
       return this.drink.comments.length;
     },
-    isShowedItemDetails: function isShowedItemDetails() {
+    hideItemDetails: function hideItemDetails() {
       return this.$route.name == "drinks" || this.$route.name == "drinkRanking" || this.$route.name == "Search";
     }
   },
@@ -2634,14 +2634,19 @@ __webpack_require__.r(__webpack_exports__);
   computed: {},
   methods: {
     cancel: function cancel() {
-      this.$emit("execute-method", false);
+      this.$emit("closeModal");
     },
     selectPrefecture: function selectPrefecture() {
       if (this.data.prefecture == '全部') {
         this.data.prefecture = '';
       }
 
-      this.$emit("execute-method", this.data.prefecture);
+      this.$router.push({
+        name: "Search",
+        query: {
+          prefecture: this.data.prefecture
+        }
+      });
     }
   }
 });
@@ -2731,6 +2736,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
@@ -2748,7 +2756,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
   computed: {},
   methods: {
     cancel: function cancel() {
-      this.$emit("execute-method", false);
+      this.$emit("closeModal");
     },
     selectTaste: function selectTaste() {
       this.$router.push({
@@ -2756,7 +2764,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         query: {
           tags: JSON.stringify(this.selectedTags)
         }
-      }); // this.$emit("execute-method", JSON.stringify(this.selectedTags));
+      });
     },
     getTags: function getTags() {
       var _this = this;
@@ -2768,7 +2776,6 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
               case 0:
                 _context.next = 2;
                 return axios.get("/api/tags").then(function (res) {
-                  // console.log(res);
                   _this.tags = res.data;
                 })["catch"](function (error) {
                   console.log(error);
@@ -3137,65 +3144,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         }, _callee3);
       }))();
     },
-    filterTaste: function filterTaste(val) {
-      var _this4 = this;
-
-      return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee4() {
-        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee4$(_context4) {
-          while (1) {
-            switch (_context4.prev = _context4.next) {
-              case 0:
-                if (!val) {
-                  _context4.next = 9;
-                  break;
-                }
-
-                _this4.selectedTags = val;
-                _context4.next = 4;
-                return axios.get("/api/drinks", {
-                  params: {
-                    tags: val,
-                    "with": "comments"
-                  }
-                }).then(function (response) {
-                  if (response.data) {
-                    _this4.drinks = response.data; // this.$router.replace({ query: {"search" :"taste"} })
-                  } else {
-                    return;
-                  }
-                })["catch"](function (error) {
-                  console.log(error);
-                });
-
-              case 4:
-                _this4.loading = false;
-                _this4.showTasteModal = false;
-                console.log(val);
-                _context4.next = 12;
-                break;
-
-              case 9:
-                _context4.next = 11;
-                return axios.get("/api/drinks", {
-                  params: {
-                    "with": "comments"
-                  }
-                }).then(function (response) {
-                  _this4.drinks = response.data;
-                })["catch"](function (error) {
-                  console.log(error);
-                });
-
-              case 11:
-                _this4.showTasteModal = false;
-
-              case 12:
-              case "end":
-                return _context4.stop();
-            }
-          }
-        }, _callee4);
-      }))();
+    closeModal: function closeModal() {
+      this.showTasteModal = false;
     }
   }
 });
@@ -23125,7 +23075,7 @@ var render = function() {
         "pt-3 px-1 rounded overflow-hidden border w-full bg-white mx-3 md:mx-0 lg:mx-0"
     },
     [
-      _vm.isShowedItemDetails
+      _vm.hideItemDetails
         ? _c("img", {
             staticClass: "h-48 md:h-36 w-full object-cover object-center",
             attrs: { width: "300px", height: "350px", src: _vm.image }
@@ -23166,7 +23116,7 @@ var render = function() {
                 )
               ]),
               _vm._v(" "),
-              _vm.isShowedItemDetails
+              _vm.hideItemDetails
                 ? _c("p", { staticClass: "mt-2 drink-text " }, [
                     _c("i", { staticClass: "far fa-globe mr-2" }),
                     _vm._v(
@@ -23203,7 +23153,7 @@ var render = function() {
                 _vm._v(_vm._s(_vm.drink.price) + " 円\n                ")
               ]),
               _vm._v(" "),
-              _vm.isShowedItemDetails
+              _vm.hideItemDetails
                 ? _c("p", { staticClass: "mt-1 drink-text" }, [
                     _vm._v(
                       "\n                    " +
@@ -23215,7 +23165,7 @@ var render = function() {
                     _vm._v(_vm._s(_vm.drink.review))
                   ]),
               _vm._v(" "),
-              _vm.isShowedItemDetails
+              _vm.hideItemDetails
                 ? _c(
                     "div",
                     { staticClass: "mt-1 flex justify-end" },
@@ -23281,7 +23231,7 @@ var render = function() {
           ]),
           _vm._v(" "),
           _c("Transition", [
-            _vm.showComment && _vm.isShowedItemDetails
+            _vm.showComment
               ? _c(
                   "div",
                   { staticClass: "max-w-lg shadow-md " },
@@ -24040,7 +23990,7 @@ var render = function() {
                       attrs: { type: "button" },
                       on: {
                         click: function($event) {
-                          return _vm.cancel()
+                          return _vm.closeModal()
                         }
                       }
                     },
@@ -24189,9 +24139,9 @@ var render = function() {
                       },
                       [
                         _vm._v(
-                          "\n                         #" +
+                          "\n                            #" +
                             _vm._s(tag.name) +
-                            "\n                       "
+                            "\n                        "
                         )
                       ]
                     )
@@ -24411,7 +24361,7 @@ var render = function() {
                       ? [
                           _c("PrefectureModal", {
                             attrs: { prefectures: _vm.prefectures },
-                            on: { "execute-method": _vm.filterPrefecture }
+                            on: { closeModal: _vm.closeModal }
                           })
                         ]
                       : _vm._e(),
@@ -24419,7 +24369,7 @@ var render = function() {
                     _vm.showTasteModal
                       ? [
                           _c("TasteModal", {
-                            on: { "execute-method": _vm.filterTaste }
+                            on: { closeModal: _vm.closeModal }
                           })
                         ]
                       : _vm._e(),

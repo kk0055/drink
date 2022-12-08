@@ -3,7 +3,7 @@
         class="pt-3 px-1 rounded overflow-hidden border w-full bg-white mx-3 md:mx-0 lg:mx-0"
     >
         <img
-            v-if="isShowedItemDetails"
+            v-if="hideItemDetails"
             class="h-48 md:h-36 w-full object-cover object-center"
             width="300px"
             height="350px"
@@ -41,7 +41,7 @@
                     </p>
                     <p
                         class="mt-2 drink-text "
-                        v-if="isShowedItemDetails"
+                        v-if="hideItemDetails"
                     >
                         <i class="far fa-globe mr-2"></i>
                         {{
@@ -65,14 +65,14 @@
                     </p>
                     <p
                         class="mt-1 drink-text"
-                        v-if="isShowedItemDetails"
+                        v-if="hideItemDetails"
                     >
                         {{ drink.review }}
                     </p>
                     <p class="mt-1" v-else>{{ drink.review }}</p>
 
                     <div
-                        v-if="isShowedItemDetails
+                        v-if="hideItemDetails
                         "
                         class="mt-1 flex justify-end"
                     >
@@ -121,7 +121,7 @@
             <!-- Comment -->
             <Transition>
                 <div
-                    v-if="showComment && isShowedItemDetails"
+                    v-if="showComment "
                     class="max-w-lg shadow-md "
                 >
                     <ul
@@ -193,7 +193,7 @@ export default {
         commentCount() {
             return this.drink.comments.length;
         },
-        isShowedItemDetails() {
+        hideItemDetails() {
             return (
                 this.$route.name == "drinks" ||
                 this.$route.name == "drinkRanking" ||
