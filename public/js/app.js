@@ -2628,6 +2628,15 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
@@ -24011,8 +24020,7 @@ var render = function() {
                     "button",
                     {
                       staticClass:
-                        "text-red-500 bg-transparent border border-solid border-red-500 hover:bg-red-500 hover:text-white active:bg-red-600 font-bold uppercase text-sm px-6 py-3 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150",
-                      attrs: { type: "button" },
+                        "relative z-30 inline-flex items-center justify-center w-auto px-4 py-2 overflow-hidden font-bold text-gray-500 transition-all duration-500 border border-gray-200 rounded-md cursor-pointer group ease bg-gradient-to-b from-white to-gray-50 hover:from-gray-50 hover:to-white active:to-white",
                       on: {
                         click: function($event) {
                           return _vm.$emit("cancel")
@@ -24020,6 +24028,15 @@ var render = function() {
                       }
                     },
                     [
+                      _c("span", {
+                        staticClass:
+                          "w-full h-0.5 absolute bottom-0 group-active:bg-transparent left-0 bg-gray-100"
+                      }),
+                      _vm._v(" "),
+                      _c("span", {
+                        staticClass:
+                          "h-full w-0.5 absolute bottom-0 group-active:bg-transparent right-0 bg-gray-100"
+                      }),
                       _vm._v(
                         "\n                        Close\n                    "
                       )
@@ -24030,18 +24047,14 @@ var render = function() {
                     "button",
                     {
                       staticClass:
-                        "text-red-500 bg-transparent border border-solid border-red-500 hover:bg-red-500 hover:text-white active:bg-red-600 font-bold uppercase text-sm px-6 py-3 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150",
-                      attrs: { type: "button" },
+                        "ml-2 inline-flex items-center justify-center px-4 py-2 text-base font-medium text-center text-indigo-100 border border-indigo-500 rounded-lg shadow-sm cursor-pointer hover:text-white bg-gradient-to-br from-purple-500 via-indigo-500 to-indigo-500",
                       on: {
                         click: function($event) {
                           return _vm.$emit("accepted", _vm.selectedItems)
                         }
                       }
                     },
-                    [
-                      _vm._v("\n                        Okay"),
-                      _c("i", { staticClass: "far fa-thumbs-up" })
-                    ]
+                    [_vm._m(1)]
                   )
                 ]
               )
@@ -24068,6 +24081,15 @@ var staticRenderFns = [
         },
         [_vm._v("\n                        どれにする？\n                    ")]
       )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("span", { staticClass: "relative" }, [
+      _vm._v("Okay"),
+      _c("i", { staticClass: "ml-1 far fa-thumbs-up" })
     ])
   }
 ]
