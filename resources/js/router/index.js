@@ -73,9 +73,16 @@ const router = new VueRouter({
     base: process.env.BASE_URL,
     routes
 });
-// router.onError(error => {
-//     if (/loading chunk \d* failed./i.test(error.message)) {
-//       window.location.reload()
-//     }
-//   })
+router.onError(error => {
+    console.error(error);
+    Vue.prototype.$log.error('Failure Reason: ', error.message, error);
+    if (/ChunkLoadError:.*failed./i.test(error.message)) {
+      Vue.prototype.$log.error('Reloading Window 1');
+      window.location.reload();
+    }
+    else if (/Loading.*chunk.*failed./i.test(error.message)) {
+      Vue.prototype.$log.error('Reloading Window 2');
+      window.location.reload();
+    }
+  });
 export default router;
