@@ -1,7 +1,6 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import ExampleComponent from "../components/ExampleComponent";
-// import HeaderComponent from '../components/Header'
 import Drinks from "../src/views/Drinks";
 import App from "../src/App.vue";
 
@@ -40,9 +39,9 @@ const routes = [
     {
         path: "/search",
         name: "search",
-        // meta: {
-        //   backPath: { name: 'drinks' },
-        // },
+        meta: {
+          backPath: { name: 'drinks' },
+        },
         props: true,
         component: () => import("../src/views/Search.vue")
     },
@@ -74,9 +73,9 @@ const router = new VueRouter({
     base: process.env.BASE_URL,
     routes
 });
-router.onError(error => {
-    if (/loading chunk \d* failed./i.test(error.message)) {
-      window.location.reload()
-    }
-  })
+// router.onError(error => {
+//     if (/loading chunk \d* failed./i.test(error.message)) {
+//       window.location.reload()
+//     }
+//   })
 export default router;
