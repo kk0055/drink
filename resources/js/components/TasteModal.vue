@@ -29,7 +29,7 @@ export default {
         },
         selectTaste(value) {
             this.$router.push({
-                name: "Search",
+                name: "search",
                 query: { tags: JSON.stringify(value) }
             });
         },

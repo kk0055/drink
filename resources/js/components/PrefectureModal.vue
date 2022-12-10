@@ -30,7 +30,7 @@ export default {
         selectPrefecture(value) {
             const name = this.prefectures.filter(o => value.includes(o.id)).map(o => o.name)
             this.$router.push({
-                name: "Search",
+                name: "search",
                 query: { prefectures: name}
             });
         }
