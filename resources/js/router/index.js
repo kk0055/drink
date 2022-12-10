@@ -74,5 +74,9 @@ const router = new VueRouter({
     base: process.env.BASE_URL,
     routes
 });
-
+router.onError(error => {
+    if (/loading chunk \d* failed./i.test(error.message)) {
+      window.location.reload()
+    }
+  })
 export default router;

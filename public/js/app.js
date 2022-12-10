@@ -3439,6 +3439,11 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_4__.default({
   base: process.env.BASE_URL,
   routes: routes
 });
+router.onError(function (error) {
+  if (/loading chunk \d* failed./i.test(error.message)) {
+    window.location.reload();
+  }
+});
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (router);
 
 /***/ }),
