@@ -298,12 +298,12 @@ export default {
         this.getTags();
     },
     computed: {
-        mapUrl() {
-            const url = this.data.map_url
-            let index = url.indexOf('http');
-            let map_url = url.substring(index);
-            return map_url
-        }
+        // mapUrl() {
+        //     const url = this.data.map_url
+        //     let index = url.indexOf('http');
+        //     let map_url = url.substring(index);
+        //     return map_url
+        // }
     },
     methods: {
         async postData() {

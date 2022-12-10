@@ -323,13 +323,12 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     this.prefectures = _Libraries_prefectures_js__WEBPACK_IMPORTED_MODULE_1__.default.prefectures;
     this.getTags();
   },
-  computed: {
-    mapUrl: function mapUrl() {
-      var url = this.data.map_url;
-      var index = url.indexOf('http');
-      var map_url = url.substring(index);
-      return map_url;
-    }
+  computed: {// mapUrl() {
+    //     const url = this.data.map_url
+    //     let index = url.indexOf('http');
+    //     let map_url = url.substring(index);
+    //     return map_url
+    // }
   },
   methods: {
     postData: function postData() {

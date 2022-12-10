@@ -39,7 +39,7 @@ const routes = [
     },
     {
         path: "/search",
-        name: "Search",
+        name: "search",
         // meta: {
         //   backPath: { name: 'drinks' },
         // },

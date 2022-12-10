@@ -2717,7 +2717,7 @@ __webpack_require__.r(__webpack_exports__);
         return o.name;
       });
       this.$router.push({
-        name: "Search",
+        name: "search",
         query: {
           prefectures: name
         }
@@ -2780,7 +2780,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     },
     selectTaste: function selectTaste(value) {
       this.$router.push({
-        name: "Search",
+        name: "search",
         query: {
           tags: JSON.stringify(value)
         }
@@ -3401,7 +3401,7 @@ var routes = [{
   }
 }, {
   path: "/search",
-  name: "Search",
+  name: "search",
   // meta: {
   //   backPath: { name: 'drinks' },
   // },
