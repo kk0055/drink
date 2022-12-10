@@ -43,7 +43,7 @@ const routes = [
           backPath: { name: 'drinks' },
         },
         props: true,
-        component: () => import("../src/views/Search.vue")
+        component: () => import("../src/views/SearchResults.vue")
     },
     {
         path: "/drinks/:drinkId",
