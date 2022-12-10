@@ -313,12 +313,15 @@ export default {
                     "content-type": "multipart/form-data"
                 }
             };
-            this.loading = true
-            const url = this.data.map_url
-            let index = url.indexOf('http');
-            let map_url = url.substring(index);
-
+            this.loading = true;
+             let map_url
+            if (this.data.map_url) {
+                const url = this.data.map_url;
+                let index = url.indexOf("http");
+                 map_url = url.substring(index);
+            }
             let formData = new FormData();
+            
             formData.append("image", this.files);
             formData.append("name", this.data.name);
             formData.append("prefecture", this.data.prefecture);

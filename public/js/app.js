@@ -2070,7 +2070,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       return this.drink.comments.length;
     },
     hideItemDetails: function hideItemDetails() {
-      return this.$route.name == "drinks" || this.$route.name == "drinkRanking" || this.$route.name == "Search";
+      return this.$route.name == "drinks" || this.$route.name == "drinkRanking" || this.$route.name == "search";
     }
   },
   methods: {

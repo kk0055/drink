@@ -203,7 +203,7 @@ export default {
             return (
                 this.$route.name == "drinks" ||
                 this.$route.name == "drinkRanking" ||
-                this.$route.name == "Search"
+                this.$route.name == "search"
             );
         }
     },

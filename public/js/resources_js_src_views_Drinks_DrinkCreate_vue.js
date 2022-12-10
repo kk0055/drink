@@ -335,7 +335,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       var _this = this;
 
       return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee() {
-        var config, url, index, map_url, formData;
+        var config, map_url, url, index, formData;
         return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee$(_context) {
           while (1) {
             switch (_context.prev = _context.next) {
@@ -348,9 +348,13 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                   }
                 };
                 _this.loading = true;
-                url = _this.data.map_url;
-                index = url.indexOf('http');
-                map_url = url.substring(index);
+
+                if (_this.data.map_url) {
+                  url = _this.data.map_url;
+                  index = url.indexOf("http");
+                  map_url = url.substring(index);
+                }
+
                 formData = new FormData();
                 formData.append("image", _this.files);
                 formData.append("name", _this.data.name);
@@ -363,16 +367,16 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 formData.append("tag_id", JSON.stringify(_this.selectedTags));
 
                 if (!_this.$v.$invalid) {
-                  _context.next = 20;
+                  _context.next = 18;
                   break;
                 }
 
                 console.log("Validation Error");
-                _context.next = 22;
+                _context.next = 20;
                 break;
 
-              case 20:
-                _context.next = 22;
+              case 18:
+                _context.next = 20;
                 return axios.post("/api/drinks", formData, config).then(function (res) {
                   // console.log(res);
                   _this.$toast("投稿完了!", {
@@ -388,7 +392,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                   console.log(error);
                 });
 
-              case 22:
+              case 20:
               case "end":
                 return _context.stop();
             }
