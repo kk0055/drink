@@ -36,7 +36,7 @@ Route
         Route::resource('tags', TagController::class);
         Route::resource('comments', CommentController::class);
 
-        Route::get('/search', [SearchController::class, 'search'])->name('item.search');
+        // Route::get('/search', [SearchController::class, 'search'])->name('item.search');
 
         Route::get('my_favorites', [DrinkController::class, 'myFavorites']);
 
