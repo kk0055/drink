@@ -266,6 +266,16 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -313,7 +323,14 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     this.prefectures = _Libraries_prefectures_js__WEBPACK_IMPORTED_MODULE_1__.default.prefectures;
     this.getTags();
   },
-  computed: {},
+  computed: {
+    mapUrl: function mapUrl() {
+      var url = this.data.map_url;
+      var index = url.indexOf('http');
+      var map_url = url.substring(index);
+      return map_url;
+    }
+  },
   methods: {
     postData: function postData() {
       var _this = this;
@@ -331,6 +348,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                     "content-type": "multipart/form-data"
                   }
                 };
+                _this.loading = true;
                 url = _this.data.map_url;
                 index = url.indexOf('http');
                 map_url = url.substring(index);
@@ -346,16 +364,16 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 formData.append("tag_id", JSON.stringify(_this.selectedTags));
 
                 if (!_this.$v.$invalid) {
-                  _context.next = 19;
+                  _context.next = 20;
                   break;
                 }
 
                 console.log("Validation Error");
-                _context.next = 21;
+                _context.next = 22;
                 break;
 
-              case 19:
-                _context.next = 21;
+              case 20:
+                _context.next = 22;
                 return axios.post("/api/drinks", formData, config).then(function (res) {
                   // console.log(res);
                   _this.$toast("投稿完了!", {
@@ -371,7 +389,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                   console.log(error);
                 });
 
-              case 21:
+              case 22:
               case "end":
                 return _context.stop();
             }
@@ -507,498 +525,532 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
-    _c(
-      "div",
-      {
-        staticClass:
-          "w-full h-auto overflow-scroll block h-screen bg-gradient-to-r from-blue-100 via-purple-100 to-pink-100 p-4 flex items-center justify-center"
-      },
-      [
-        _c("div", { staticClass: "bg-white py-6 px-10 sm:max-w-md w-full " }, [
-          _c(
-            "div",
-            {
-              staticClass:
-                "flex sm:text-3xl text-2xl font-semibold items-center justify-center text-center text-sky-600  mb-12"
-            },
-            [
-              _c("img", {
-                attrs: { src: "/images/logo.png", alt: "", width: "50x" }
-              })
-            ]
-          ),
-          _vm._v(" "),
-          _c("div", {}, [
-            _c("div", [
-              _c("input", {
-                directives: [
+  return !_vm.loading
+    ? _c(
+        "div",
+        {
+          staticClass: "flex justify-center items-center",
+          staticStyle: { height: "90vh" }
+        },
+        [
+          _c("div", {
+            staticClass:
+              "spinner-border animate-spin inline-block w-8 h-8 border-4 rounded-full text-blue-400",
+            attrs: { role: "status" }
+          })
+        ]
+      )
+    : _c("div", [
+        _c(
+          "div",
+          {
+            staticClass:
+              "w-full h-auto overflow-scroll block h-screen bg-gradient-to-r from-blue-100 via-purple-100 to-pink-100 p-4 flex items-center justify-center"
+          },
+          [
+            _c(
+              "div",
+              { staticClass: "bg-white py-6 px-10 sm:max-w-md w-full " },
+              [
+                _c(
+                  "div",
                   {
-                    name: "model",
-                    rawName: "v-model",
-                    value: _vm.data.name,
-                    expression: "data.name"
-                  }
-                ],
-                staticClass:
-                  "focus:outline-none border-b w-full pb-2 border-sky-400 placeholder-gray-500",
-                attrs: { type: "text", placeholder: "飲んだもの" },
-                domProps: { value: _vm.data.name },
-                on: {
-                  input: [
-                    function($event) {
-                      if ($event.target.composing) {
-                        return
-                      }
-                      _vm.$set(_vm.data, "name", $event.target.value)
-                    },
-                    function($event) {
-                      return _vm.$v.data.name.$touch()
-                    }
+                    staticClass:
+                      "flex sm:text-3xl text-2xl font-semibold items-center justify-center text-center text-sky-600  mb-12"
+                  },
+                  [
+                    _c("img", {
+                      attrs: { src: "/images/logo.png", alt: "", width: "50x" }
+                    })
                   ]
-                }
-              }),
-              _vm._v(" "),
-              _vm.$v.data.name.$error
-                ? _c(
-                    "span",
-                    {
-                      staticClass: "mt-2",
-                      class: { error: _vm.$v.data.name.$error }
-                    },
-                    [_vm._v("Oops!!!!! 書いてね!")]
-                  )
-                : _vm._e()
-            ]),
-            _vm._v(" "),
-            _c("div", [
-              _c("input", {
-                directives: [
-                  {
-                    name: "model",
-                    rawName: "v-model",
-                    value: _vm.data.review,
-                    expression: "data.review"
-                  }
-                ],
-                staticClass:
-                  "focus:outline-none border-b w-full pb-2 border-sky-400 placeholder-gray-500 mt-4",
-                attrs: { type: "text", placeholder: "感想" },
-                domProps: { value: _vm.data.review },
-                on: {
-                  input: [
-                    function($event) {
-                      if ($event.target.composing) {
-                        return
-                      }
-                      _vm.$set(_vm.data, "review", $event.target.value)
-                    },
-                    function($event) {
-                      return _vm.$v.data.review.$touch()
-                    }
-                  ]
-                }
-              }),
-              _vm._v(" "),
-              _vm.$v.data.review.$error
-                ? _c(
-                    "span",
-                    {
-                      staticClass: "mt-2",
-                      class: { error: _vm.$v.data.review.$error }
-                    },
-                    [_vm._v("Oops!!!!! 書いてね!")]
-                  )
-                : _vm._e()
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "mt-4" }, [
-              _c(
-                "label",
-                {
-                  staticClass:
-                    "block mb-2 text-sm font-medium text-gray-500 dark:text-gray-400",
-                  attrs: { for: "prefectures" }
-                },
-                [_vm._v("見つけた県")]
-              ),
-              _vm._v(" "),
-              _c(
-                "select",
-                {
-                  directives: [
-                    {
-                      name: "model",
-                      rawName: "v-model",
-                      value: _vm.data.prefecture,
-                      expression: "data.prefecture"
-                    }
-                  ],
-                  staticClass:
-                    "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-1 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500",
-                  attrs: { id: "prefectures" },
-                  on: {
-                    input: function($event) {
-                      return _vm.$v.data.prefecture.$touch()
-                    },
-                    change: function($event) {
-                      var $$selectedVal = Array.prototype.filter
-                        .call($event.target.options, function(o) {
-                          return o.selected
-                        })
-                        .map(function(o) {
-                          var val = "_value" in o ? o._value : o.value
-                          return val
-                        })
-                      _vm.$set(
-                        _vm.data,
-                        "prefecture",
-                        $event.target.multiple
-                          ? $$selectedVal
-                          : $$selectedVal[0]
-                      )
-                    }
-                  }
-                },
-                _vm._l(_vm.prefectures, function(prefecture) {
-                  return _c(
-                    "option",
-                    { domProps: { value: prefecture.name } },
-                    [_vm._v(_vm._s(prefecture.name))]
-                  )
-                }),
-                0
-              ),
-              _vm._v(" "),
-              _vm.$v.data.prefecture.$error
-                ? _c(
-                    "span",
-                    {
-                      staticClass: "mt-2",
-                      class: { error: _vm.$v.data.prefecture.$error }
-                    },
-                    [_vm._v("Oops!!!!! 選択してね!")]
-                  )
-                : _vm._e()
-            ]),
-            _vm._v(" "),
-            _c("div", [
-              _c("input", {
-                directives: [
-                  {
-                    name: "model",
-                    rawName: "v-model",
-                    value: _vm.data.place,
-                    expression: "data.place"
-                  }
-                ],
-                staticClass:
-                  "focus:outline-none border-b w-full pb-2 border-sky-400 placeholder-gray-500 mt-4",
-                attrs: { type: "text", placeholder: "見つけた店 or 場所" },
-                domProps: { value: _vm.data.place },
-                on: {
-                  input: [
-                    function($event) {
-                      if ($event.target.composing) {
-                        return
-                      }
-                      _vm.$set(_vm.data, "place", $event.target.value)
-                    },
-                    function($event) {
-                      return _vm.$v.data.place.$touch()
-                    }
-                  ]
-                }
-              }),
-              _vm._v(" "),
-              _vm.$v.data.place.$error
-                ? _c(
-                    "span",
-                    {
-                      staticClass: "mt-2",
-                      class: { error: _vm.$v.data.place.$error }
-                    },
-                    [_vm._v("Oops!!!!! 書いてね!")]
-                  )
-                : _vm._e()
-            ]),
-            _vm._v(" "),
-            _c("div", [
-              _c("input", {
-                directives: [
-                  {
-                    name: "model",
-                    rawName: "v-model",
-                    value: _vm.data.map_url,
-                    expression: "data.map_url"
-                  }
-                ],
-                staticClass:
-                  "focus:outline-none border-b w-full pb-2 border-sky-400 placeholder-gray-500 mt-4",
-                attrs: { type: "text", placeholder: "Google mapのURL(任意)" },
-                domProps: { value: _vm.data.map_url },
-                on: {
-                  input: function($event) {
-                    if ($event.target.composing) {
-                      return
-                    }
-                    _vm.$set(_vm.data, "map_url", $event.target.value)
-                  }
-                }
-              })
-            ]),
-            _vm._v(" "),
-            _c("div", [
-              _c("input", {
-                directives: [
-                  {
-                    name: "model",
-                    rawName: "v-model",
-                    value: _vm.data.price,
-                    expression: "data.price"
-                  }
-                ],
-                staticClass:
-                  "focus:outline-none border-b w-full pb-2 border-sky-400 placeholder-gray-500 my-4",
-                attrs: { type: "text", placeholder: "値段(単位は不要)" },
-                domProps: { value: _vm.data.price },
-                on: {
-                  input: function($event) {
-                    if ($event.target.composing) {
-                      return
-                    }
-                    _vm.$set(_vm.data, "price", $event.target.value)
-                  }
-                }
-              })
-            ]),
-            _vm._v(" "),
-            _c("div", [
-              _c("span", [_vm._v("評価")]),
-              _vm._v(" "),
-              _c(
-                "div",
-                { attrs: { width: "20px" } },
-                [
-                  _c("star-rating", {
-                    attrs: { "item-size": 20, increment: 0.5 },
-                    on: {
-                      input: function($event) {
-                        return _vm.$v.data.place.$touch()
-                      }
-                    },
-                    model: {
-                      value: _vm.data.score,
-                      callback: function($$v) {
-                        _vm.$set(_vm.data, "score", $$v)
-                      },
-                      expression: "data.score"
-                    }
-                  }),
-                  _vm._v(" "),
-                  _vm.$v.data.score.$error
-                    ? _c(
-                        "span",
+                ),
+                _vm._v(" "),
+                _c("div", {}, [
+                  _c("div", [
+                    _c("input", {
+                      directives: [
                         {
-                          staticClass: "mt-2",
-                          class: { error: _vm.$v.data.score.$error }
-                        },
-                        [_vm._v("Oops!!!!! 選択してね!")]
-                      )
-                    : _vm._e()
-                ],
-                1
-              )
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "flex justify-center mt-8 " }, [
-              _c(
-                "div",
-                { staticClass: "max-w-2xl rounded-lg shadow-xl bg-gray-50" },
-                [
-                  _c("div", { staticClass: "m-2 md:m-4" }, [
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.data.name,
+                          expression: "data.name"
+                        }
+                      ],
+                      staticClass:
+                        "focus:outline-none border-b w-full pb-2 border-sky-400 placeholder-gray-500",
+                      attrs: { type: "text", placeholder: "飲んだもの" },
+                      domProps: { value: _vm.data.name },
+                      on: {
+                        input: [
+                          function($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.$set(_vm.data, "name", $event.target.value)
+                          },
+                          function($event) {
+                            return _vm.$v.data.name.$touch()
+                          }
+                        ]
+                      }
+                    }),
+                    _vm._v(" "),
+                    _vm.$v.data.name.$error
+                      ? _c(
+                          "span",
+                          {
+                            staticClass: "mt-2",
+                            class: { error: _vm.$v.data.name.$error }
+                          },
+                          [_vm._v("Oops!!!!! 書いてね!")]
+                        )
+                      : _vm._e()
+                  ]),
+                  _vm._v(" "),
+                  _c("div", [
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.data.review,
+                          expression: "data.review"
+                        }
+                      ],
+                      staticClass:
+                        "focus:outline-none border-b w-full pb-2 border-sky-400 placeholder-gray-500 mt-4",
+                      attrs: { type: "text", placeholder: "感想" },
+                      domProps: { value: _vm.data.review },
+                      on: {
+                        input: [
+                          function($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.$set(_vm.data, "review", $event.target.value)
+                          },
+                          function($event) {
+                            return _vm.$v.data.review.$touch()
+                          }
+                        ]
+                      }
+                    }),
+                    _vm._v(" "),
+                    _vm.$v.data.review.$error
+                      ? _c(
+                          "span",
+                          {
+                            staticClass: "mt-2",
+                            class: { error: _vm.$v.data.review.$error }
+                          },
+                          [_vm._v("Oops!!!!! 書いてね!")]
+                        )
+                      : _vm._e()
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "mt-4" }, [
                     _c(
                       "label",
-                      { staticClass: "inline-block mb-2 text-gray-500" },
-                      [_vm._v("File Upload")]
+                      {
+                        staticClass:
+                          "block mb-2 text-sm font-medium text-gray-500 dark:text-gray-400",
+                        attrs: { for: "prefectures" }
+                      },
+                      [_vm._v("見つけた県")]
                     ),
                     _vm._v(" "),
                     _c(
+                      "select",
+                      {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.data.prefecture,
+                            expression: "data.prefecture"
+                          }
+                        ],
+                        staticClass:
+                          "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-1 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500",
+                        attrs: { id: "prefectures" },
+                        on: {
+                          input: function($event) {
+                            return _vm.$v.data.prefecture.$touch()
+                          },
+                          change: function($event) {
+                            var $$selectedVal = Array.prototype.filter
+                              .call($event.target.options, function(o) {
+                                return o.selected
+                              })
+                              .map(function(o) {
+                                var val = "_value" in o ? o._value : o.value
+                                return val
+                              })
+                            _vm.$set(
+                              _vm.data,
+                              "prefecture",
+                              $event.target.multiple
+                                ? $$selectedVal
+                                : $$selectedVal[0]
+                            )
+                          }
+                        }
+                      },
+                      _vm._l(_vm.prefectures, function(prefecture) {
+                        return _c(
+                          "option",
+                          { domProps: { value: prefecture.name } },
+                          [_vm._v(_vm._s(prefecture.name))]
+                        )
+                      }),
+                      0
+                    ),
+                    _vm._v(" "),
+                    _vm.$v.data.prefecture.$error
+                      ? _c(
+                          "span",
+                          {
+                            staticClass: "mt-2",
+                            class: { error: _vm.$v.data.prefecture.$error }
+                          },
+                          [_vm._v("Oops!!!!! 選択してね!")]
+                        )
+                      : _vm._e()
+                  ]),
+                  _vm._v(" "),
+                  _c("div", [
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.data.place,
+                          expression: "data.place"
+                        }
+                      ],
+                      staticClass:
+                        "focus:outline-none border-b w-full pb-2 border-sky-400 placeholder-gray-500 mt-4",
+                      attrs: {
+                        type: "text",
+                        placeholder: "見つけた店 or 場所"
+                      },
+                      domProps: { value: _vm.data.place },
+                      on: {
+                        input: [
+                          function($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.$set(_vm.data, "place", $event.target.value)
+                          },
+                          function($event) {
+                            return _vm.$v.data.place.$touch()
+                          }
+                        ]
+                      }
+                    }),
+                    _vm._v(" "),
+                    _vm.$v.data.place.$error
+                      ? _c(
+                          "span",
+                          {
+                            staticClass: "mt-2",
+                            class: { error: _vm.$v.data.place.$error }
+                          },
+                          [_vm._v("Oops!!!!! 書いてね!")]
+                        )
+                      : _vm._e()
+                  ]),
+                  _vm._v(" "),
+                  _c("div", [
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.data.map_url,
+                          expression: "data.map_url"
+                        }
+                      ],
+                      staticClass:
+                        "focus:outline-none border-b w-full pb-2 border-sky-400 placeholder-gray-500 mt-4",
+                      attrs: {
+                        type: "text",
+                        placeholder: "Google mapのURL(任意)"
+                      },
+                      domProps: { value: _vm.data.map_url },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(_vm.data, "map_url", $event.target.value)
+                        }
+                      }
+                    })
+                  ]),
+                  _vm._v(" "),
+                  _c("div", [
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.data.price,
+                          expression: "data.price"
+                        }
+                      ],
+                      staticClass:
+                        "focus:outline-none border-b w-full pb-2 border-sky-400 placeholder-gray-500 my-4",
+                      attrs: { type: "text", placeholder: "値段(単位は不要)" },
+                      domProps: { value: _vm.data.price },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(_vm.data, "price", $event.target.value)
+                        }
+                      }
+                    })
+                  ]),
+                  _vm._v(" "),
+                  _c("div", [
+                    _c("span", [_vm._v("評価")]),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      { attrs: { width: "20px" } },
+                      [
+                        _c("star-rating", {
+                          attrs: { "item-size": 20, increment: 0.5 },
+                          on: {
+                            input: function($event) {
+                              return _vm.$v.data.place.$touch()
+                            }
+                          },
+                          model: {
+                            value: _vm.data.score,
+                            callback: function($$v) {
+                              _vm.$set(_vm.data, "score", $$v)
+                            },
+                            expression: "data.score"
+                          }
+                        }),
+                        _vm._v(" "),
+                        _vm.$v.data.score.$error
+                          ? _c(
+                              "span",
+                              {
+                                staticClass: "mt-2",
+                                class: { error: _vm.$v.data.score.$error }
+                              },
+                              [_vm._v("Oops!!!!! 選択してね!")]
+                            )
+                          : _vm._e()
+                      ],
+                      1
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "flex justify-center mt-8 " }, [
+                    _c(
                       "div",
                       {
-                        staticClass: "flex items-center justify-center w-full"
+                        staticClass: "max-w-2xl rounded-lg shadow-xl bg-gray-50"
                       },
                       [
+                        _c("div", { staticClass: "m-2 md:m-4" }, [
+                          _c(
+                            "label",
+                            { staticClass: "inline-block mb-2 text-gray-500" },
+                            [_vm._v("File Upload")]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "div",
+                            {
+                              staticClass:
+                                "flex items-center justify-center w-full"
+                            },
+                            [
+                              _c(
+                                "label",
+                                {
+                                  staticClass:
+                                    "flex flex-col w-full h-32 border-4 border-blue-200 border-dashed hover:bg-gray-100 hover:border-gray-300"
+                                },
+                                [
+                                  _vm.imageUrl
+                                    ? _c(
+                                        "div",
+                                        {
+                                          staticClass:
+                                            "flex flex-col items-center justify-center-box "
+                                        },
+                                        [
+                                          _c("img", {
+                                            staticClass: "h-32",
+                                            attrs: {
+                                              width: "298px",
+                                              src: _vm.imageUrl
+                                            }
+                                          })
+                                        ]
+                                      )
+                                    : _c(
+                                        "div",
+                                        {
+                                          staticClass:
+                                            "flex flex-col items-center justify-center pt-7"
+                                        },
+                                        [
+                                          _c(
+                                            "svg",
+                                            {
+                                              staticClass:
+                                                "w-8 h-8 text-gray-400 group-hover:text-gray-600",
+                                              attrs: {
+                                                xmlns:
+                                                  "http://www.w3.org/2000/svg",
+                                                fill: "none",
+                                                viewBox: "0 0 24 24",
+                                                stroke: "currentColor"
+                                              }
+                                            },
+                                            [
+                                              _c("path", {
+                                                attrs: {
+                                                  "stroke-linecap": "round",
+                                                  "stroke-linejoin": "round",
+                                                  "stroke-width": "2",
+                                                  d:
+                                                    "M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"
+                                                }
+                                              })
+                                            ]
+                                          ),
+                                          _vm._v(" "),
+                                          _c(
+                                            "p",
+                                            {
+                                              staticClass:
+                                                "pt-1 text-sm tracking-wider text-gray-400 group-hover:text-gray-600"
+                                            },
+                                            [
+                                              _vm._v(
+                                                "\n                                            Attach a file\n                                        "
+                                              )
+                                            ]
+                                          )
+                                        ]
+                                      ),
+                                  _vm._v(" "),
+                                  _c("input", {
+                                    ref: "preview",
+                                    staticClass: "opacity-0",
+                                    attrs: { type: "file", name: "avatar" },
+                                    on: { change: _vm.selectedFile }
+                                  })
+                                ]
+                              )
+                            ]
+                          )
+                        ])
+                      ]
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("button", { on: { click: _vm.getTags } }, [
+                    _c("i", { staticClass: "mt-3 p-2 far fa-sync" })
+                  ]),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    { staticClass: " flex flex-wrap " },
+                    _vm._l(_vm.tags, function(tag) {
+                      return _c("div", { staticClass: "flex flex-row mr-1" }, [
+                        _c("input", {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.selectedTags,
+                              expression: "selectedTags"
+                            }
+                          ],
+                          attrs: { type: "checkbox", id: tag.id },
+                          domProps: {
+                            value: tag.id,
+                            checked: Array.isArray(_vm.selectedTags)
+                              ? _vm._i(_vm.selectedTags, tag.id) > -1
+                              : _vm.selectedTags
+                          },
+                          on: {
+                            change: function($event) {
+                              var $$a = _vm.selectedTags,
+                                $$el = $event.target,
+                                $$c = $$el.checked ? true : false
+                              if (Array.isArray($$a)) {
+                                var $$v = tag.id,
+                                  $$i = _vm._i($$a, $$v)
+                                if ($$el.checked) {
+                                  $$i < 0 &&
+                                    (_vm.selectedTags = $$a.concat([$$v]))
+                                } else {
+                                  $$i > -1 &&
+                                    (_vm.selectedTags = $$a
+                                      .slice(0, $$i)
+                                      .concat($$a.slice($$i + 1)))
+                                }
+                              } else {
+                                _vm.selectedTags = $$c
+                              }
+                            }
+                          }
+                        }),
+                        _vm._v(" "),
                         _c(
                           "label",
                           {
                             staticClass:
-                              "flex flex-col w-full h-32 border-4 border-blue-200 border-dashed hover:bg-gray-100 hover:border-gray-300"
+                              "bg-green-100 text-green-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-green-200 dark:text-green-900 my-1",
+                            attrs: { for: tag.id }
                           },
                           [
-                            _vm.imageUrl
-                              ? _c(
-                                  "div",
-                                  {
-                                    staticClass:
-                                      "flex flex-col items-center justify-center-box "
-                                  },
-                                  [
-                                    _c("img", {
-                                      staticClass: "h-32",
-                                      attrs: {
-                                        width: "298px",
-                                        src: _vm.imageUrl
-                                      }
-                                    })
-                                  ]
-                                )
-                              : _c(
-                                  "div",
-                                  {
-                                    staticClass:
-                                      "flex flex-col items-center justify-center pt-7"
-                                  },
-                                  [
-                                    _c(
-                                      "svg",
-                                      {
-                                        staticClass:
-                                          "w-8 h-8 text-gray-400 group-hover:text-gray-600",
-                                        attrs: {
-                                          xmlns: "http://www.w3.org/2000/svg",
-                                          fill: "none",
-                                          viewBox: "0 0 24 24",
-                                          stroke: "currentColor"
-                                        }
-                                      },
-                                      [
-                                        _c("path", {
-                                          attrs: {
-                                            "stroke-linecap": "round",
-                                            "stroke-linejoin": "round",
-                                            "stroke-width": "2",
-                                            d:
-                                              "M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"
-                                          }
-                                        })
-                                      ]
-                                    ),
-                                    _vm._v(" "),
-                                    _c(
-                                      "p",
-                                      {
-                                        staticClass:
-                                          "pt-1 text-sm tracking-wider text-gray-400 group-hover:text-gray-600"
-                                      },
-                                      [
-                                        _vm._v(
-                                          "\n                                            Attach a file\n                                        "
-                                        )
-                                      ]
-                                    )
-                                  ]
-                                ),
-                            _vm._v(" "),
-                            _c("input", {
-                              ref: "preview",
-                              staticClass: "opacity-0",
-                              attrs: { type: "file", name: "avatar" },
-                              on: { change: _vm.selectedFile }
-                            })
+                            _vm._v(
+                              "\n                            #" +
+                                _vm._s(tag.name) +
+                                "\n                        "
+                            )
                           ]
+                        )
+                      ])
+                    }),
+                    0
+                  ),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "flex justify-center my-6" }, [
+                    _c(
+                      "button",
+                      {
+                        staticClass:
+                          " rounded-full  p-3 w-full sm:w-56   bg-gradient-to-r from-sky-600  to-teal-300 text-blue-400 text-lg font-semibold shadow \n                      ",
+                        on: { click: _vm.postData }
+                      },
+                      [
+                        _vm._v(
+                          "\n                        投稿\n                    "
                         )
                       ]
                     )
                   ])
-                ]
-              )
-            ]),
-            _vm._v(" "),
-            _c("button", { on: { click: _vm.getTags } }, [
-              _c("i", { staticClass: "mt-3 p-2 far fa-sync" })
-            ]),
-            _vm._v(" "),
-            _c(
-              "div",
-              { staticClass: " flex flex-wrap " },
-              _vm._l(_vm.tags, function(tag) {
-                return _c("div", { staticClass: "flex flex-row mr-1" }, [
-                  _c("input", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.selectedTags,
-                        expression: "selectedTags"
-                      }
-                    ],
-                    attrs: { type: "checkbox", id: tag.id },
-                    domProps: {
-                      value: tag.id,
-                      checked: Array.isArray(_vm.selectedTags)
-                        ? _vm._i(_vm.selectedTags, tag.id) > -1
-                        : _vm.selectedTags
-                    },
-                    on: {
-                      change: function($event) {
-                        var $$a = _vm.selectedTags,
-                          $$el = $event.target,
-                          $$c = $$el.checked ? true : false
-                        if (Array.isArray($$a)) {
-                          var $$v = tag.id,
-                            $$i = _vm._i($$a, $$v)
-                          if ($$el.checked) {
-                            $$i < 0 && (_vm.selectedTags = $$a.concat([$$v]))
-                          } else {
-                            $$i > -1 &&
-                              (_vm.selectedTags = $$a
-                                .slice(0, $$i)
-                                .concat($$a.slice($$i + 1)))
-                          }
-                        } else {
-                          _vm.selectedTags = $$c
-                        }
-                      }
-                    }
-                  }),
-                  _vm._v(" "),
-                  _c(
-                    "label",
-                    {
-                      staticClass:
-                        "bg-green-100 text-green-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-green-200 dark:text-green-900 my-1",
-                      attrs: { for: tag.id }
-                    },
-                    [
-                      _vm._v(
-                        "\n                            #" +
-                          _vm._s(tag.name) +
-                          "\n                        "
-                      )
-                    ]
-                  )
                 ])
-              }),
-              0
-            ),
-            _vm._v(" "),
-            _c("div", { staticClass: "flex justify-center my-6" }, [
-              _c(
-                "button",
-                {
-                  staticClass:
-                    " rounded-full  p-3 w-full sm:w-56   bg-gradient-to-r from-sky-600  to-teal-300 text-blue-400 text-lg font-semibold shadow \n                      ",
-                  on: { click: _vm.postData }
-                },
-                [_vm._v("\n                        投稿\n                    ")]
-              )
-            ])
-          ])
-        ])
-      ]
-    )
-  ])
+              ]
+            )
+          ]
+        )
+      ])
 }
 var staticRenderFns = []
 render._withStripped = true
