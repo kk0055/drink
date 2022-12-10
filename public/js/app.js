@@ -3439,12 +3439,19 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_4__.default({
   mode: "history",
   base: process.env.BASE_URL,
   routes: routes
-}); // router.onError(error => {
-//     if (/loading chunk \d* failed./i.test(error.message)) {
-//       window.location.reload()
-//     }
-//   })
+});
+router.onError(function (error) {
+  console.error(error);
+  vue__WEBPACK_IMPORTED_MODULE_3__.default.prototype.$log.error('Failure Reason: ', error.message, error);
 
+  if (/ChunkLoadError:.*failed./i.test(error.message)) {
+    vue__WEBPACK_IMPORTED_MODULE_3__.default.prototype.$log.error('Reloading Window 1');
+    window.location.reload();
+  } else if (/Loading.*chunk.*failed./i.test(error.message)) {
+    vue__WEBPACK_IMPORTED_MODULE_3__.default.prototype.$log.error('Reloading Window 2');
+    window.location.reload();
+  }
+});
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (router);
 
 /***/ }),
