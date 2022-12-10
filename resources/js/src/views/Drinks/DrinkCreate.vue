@@ -1,5 +1,15 @@
 <template>
-    <div>
+    <div
+        v-if="!loading"
+        class="flex justify-center items-center"
+        style="height: 90vh"
+    >
+        <div
+            class="spinner-border animate-spin inline-block w-8 h-8 border-4 rounded-full text-blue-400"
+            role="status"
+        ></div>
+    </div>
+    <div v-else>
         <div
             class="w-full h-auto overflow-scroll block h-screen bg-gradient-to-r from-blue-100 via-purple-100 to-pink-100 p-4 flex items-center justify-center"
         >
@@ -287,7 +297,14 @@ export default {
         this.prefectures = prefectures.prefectures;
         this.getTags();
     },
-    computed: {},
+    computed: {
+        mapUrl() {
+            const url = this.data.map_url
+            let index = url.indexOf('http');
+            let map_url = url.substring(index);
+            return map_url
+        }
+    },
     methods: {
         async postData() {
             this.$v.$touch();
@@ -296,6 +313,7 @@ export default {
                     "content-type": "multipart/form-data"
                 }
             };
+            this.loading = true
             const url = this.data.map_url
             let index = url.indexOf('http');
             let map_url = url.substring(index);
