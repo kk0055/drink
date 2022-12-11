@@ -59,8 +59,11 @@
                             }}</a
                         >
                     </p>
-                    <p class="mt-2 drink-text">
-                        <i class="fas fa-yen-sign mr-2"></i>{{ drink.price }} 円
+                    <p v-if="drink.price !== '不明'" class="mt-2 drink-text">
+                        <i class="fas fa-yen-sign mr-2"></i>{{ drink.price}} 円
+                    </p>
+                    <p v-else class="mt-2 drink-text">
+                        <i class="fas fa-yen-sign mr-2"></i>不明
                     </p>
                     <p
                         class="mt-1 drink-text"
@@ -263,7 +266,8 @@ export default {
                     });
                 this.getDrink();
             }
-        }
+        },
+  
     }
 };
 </script>

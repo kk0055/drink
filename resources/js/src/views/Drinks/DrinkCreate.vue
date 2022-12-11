@@ -318,7 +318,7 @@ export default {
             const url = this.data.map_url ? this.data.map_url : '不明'
             let index = url.indexOf("http");
             let map_url = url.substring(index);
-
+           const price = this.data.price ? this.data.price : '不明'
             let formData = new FormData();
 
             formData.append("image", this.files);
@@ -328,7 +328,7 @@ export default {
             formData.append("map_url", map_url);
             formData.append("review", this.data.review);
             formData.append("score", this.data.score);
-            formData.append("price", this.data.price);
+            formData.append("price", price);
 
             formData.append("tag_id", JSON.stringify(this.selectedTags));
 
@@ -373,7 +373,7 @@ export default {
                 .catch(function(error) {
                     console.log(error);
                 });
-        }
+        },
     }
 };
 </script>
