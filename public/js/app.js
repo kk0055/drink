@@ -2038,6 +2038,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: {
@@ -23186,10 +23189,15 @@ var render = function() {
                     )
                   ]),
               _vm._v(" "),
-              _c("p", { staticClass: "mt-2 drink-text" }, [
-                _c("i", { staticClass: "fas fa-yen-sign mr-2" }),
-                _vm._v(_vm._s(_vm.drink.price) + " 円\n                ")
-              ]),
+              _vm.drink.price !== "不明"
+                ? _c("p", { staticClass: "mt-2 drink-text" }, [
+                    _c("i", { staticClass: "fas fa-yen-sign mr-2" }),
+                    _vm._v(_vm._s(_vm.drink.price) + " 円\n                ")
+                  ])
+                : _c("p", { staticClass: "mt-2 drink-text" }, [
+                    _c("i", { staticClass: "fas fa-yen-sign mr-2" }),
+                    _vm._v("不明\n                ")
+                  ]),
               _vm._v(" "),
               _vm.hideItemDetails
                 ? _c("p", { staticClass: "mt-1 drink-text" }, [
