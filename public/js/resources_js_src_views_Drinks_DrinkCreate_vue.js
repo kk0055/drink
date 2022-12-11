@@ -873,86 +873,76 @@ var render = function() {
                                 "flex items-center justify-center w-full"
                             },
                             [
-                              _c(
-                                "label",
-                                {
-                                  staticClass:
-                                    "flex flex-col w-full h-32 border-4 border-blue-200 border-dashed hover:bg-gray-100 hover:border-gray-300"
-                                },
-                                [
-                                  _vm.imageUrl
-                                    ? _c(
-                                        "div",
-                                        {
-                                          staticClass:
-                                            "flex flex-col items-center justify-center-box "
-                                        },
-                                        [
-                                          _c("img", {
-                                            staticClass: "h-32",
+                              _c("label", [
+                                _vm.imageUrl
+                                  ? _c(
+                                      "div",
+                                      {
+                                        staticClass:
+                                          "flex flex-col items-center justify-center-box "
+                                      },
+                                      [
+                                        _c("img", {
+                                          staticClass: "max-w-full h-auto",
+                                          attrs: { src: _vm.imageUrl }
+                                        })
+                                      ]
+                                    )
+                                  : _c(
+                                      "div",
+                                      {
+                                        staticClass:
+                                          "flex flex-col items-center justify-center pt-7"
+                                      },
+                                      [
+                                        _c(
+                                          "svg",
+                                          {
+                                            staticClass:
+                                              "w-8 h-8 text-gray-400 group-hover:text-gray-600",
                                             attrs: {
-                                              width: "298px",
-                                              src: _vm.imageUrl
+                                              xmlns:
+                                                "http://www.w3.org/2000/svg",
+                                              fill: "none",
+                                              viewBox: "0 0 24 24",
+                                              stroke: "currentColor"
                                             }
-                                          })
-                                        ]
-                                      )
-                                    : _c(
-                                        "div",
-                                        {
-                                          staticClass:
-                                            "flex flex-col items-center justify-center pt-7"
-                                        },
-                                        [
-                                          _c(
-                                            "svg",
-                                            {
-                                              staticClass:
-                                                "w-8 h-8 text-gray-400 group-hover:text-gray-600",
+                                          },
+                                          [
+                                            _c("path", {
                                               attrs: {
-                                                xmlns:
-                                                  "http://www.w3.org/2000/svg",
-                                                fill: "none",
-                                                viewBox: "0 0 24 24",
-                                                stroke: "currentColor"
+                                                "stroke-linecap": "round",
+                                                "stroke-linejoin": "round",
+                                                "stroke-width": "2",
+                                                d:
+                                                  "M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"
                                               }
-                                            },
-                                            [
-                                              _c("path", {
-                                                attrs: {
-                                                  "stroke-linecap": "round",
-                                                  "stroke-linejoin": "round",
-                                                  "stroke-width": "2",
-                                                  d:
-                                                    "M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"
-                                                }
-                                              })
-                                            ]
-                                          ),
-                                          _vm._v(" "),
-                                          _c(
-                                            "p",
-                                            {
-                                              staticClass:
-                                                "pt-1 text-sm tracking-wider text-gray-400 group-hover:text-gray-600"
-                                            },
-                                            [
-                                              _vm._v(
-                                                "\n                                            Attach a file\n                                        "
-                                              )
-                                            ]
-                                          )
-                                        ]
-                                      ),
-                                  _vm._v(" "),
-                                  _c("input", {
-                                    ref: "preview",
-                                    staticClass: "opacity-0",
-                                    attrs: { type: "file", name: "avatar" },
-                                    on: { change: _vm.selectedFile }
-                                  })
-                                ]
-                              )
+                                            })
+                                          ]
+                                        ),
+                                        _vm._v(" "),
+                                        _c(
+                                          "p",
+                                          {
+                                            staticClass:
+                                              "pt-1 text-sm tracking-wider text-gray-400 group-hover:text-gray-600"
+                                          },
+                                          [
+                                            _vm._v(
+                                              "\n                                            Attach a file\n                                        "
+                                            )
+                                          ]
+                                        )
+                                      ]
+                                    ),
+                                _vm._v(" "),
+                                _c("input", {
+                                  ref: "preview",
+                                  staticClass: "opacity-0",
+                                  attrs: { type: "file", name: "avatar" },
+                                  on: { change: _vm.selectedFile }
+                                })
+                              ])
                             ]
                           )
                         ])
@@ -1034,14 +1024,11 @@ var render = function() {
                       "button",
                       {
                         staticClass:
-                          " rounded-full  p-3 w-full sm:w-56   bg-gradient-to-r from-sky-600  to-teal-300 text-blue-400 text-lg font-semibold shadow \n                      ",
+                          "text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2 shadow-2xl",
+                        attrs: { type: "button" },
                         on: { click: _vm.postData }
                       },
-                      [
-                        _vm._v(
-                          "\n                        投稿\n                    "
-                        )
-                      ]
+                      [_vm._v("投稿")]
                     )
                   ])
                 ])

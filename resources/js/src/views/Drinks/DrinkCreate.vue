@@ -141,15 +141,15 @@
                                     class="flex items-center justify-center w-full"
                                 >
                                     <label
-                                        class="flex flex-col w-full h-32 border-4 border-blue-200 border-dashed hover:bg-gray-100 hover:border-gray-300"
+                                      
                                     >
                                         <div
                                             class="flex flex-col items-center justify-center-box "
                                             v-if="imageUrl"
                                         >
                                             <img
-                                                class="h-32"
-                                                width="298px"
+                                                class="max-w-full h-auto"
+                                                
                                                 v-bind:src="imageUrl"
                                             />
                                         </div>
@@ -187,9 +187,6 @@
                                     </label>
                                 </div>
                             </div>
-                            <!-- <div class="flex justify-center p-2">
-            <button class="w-full px-4 py-2 text-white bg-blue-500 rounded shadow-xl">Create</button>
-        </div> -->
                         </div>
                     </div>
                     <!-- Tags -->
@@ -238,13 +235,16 @@
                         </div>
                     </div>
                     <div class="flex justify-center my-6">
-                        <button
+                        <!-- <button
                             class=" rounded-full  p-3 w-full sm:w-56   bg-gradient-to-r from-sky-600  to-teal-300 text-blue-400 text-lg font-semibold shadow 
                           "
                             @click="postData"
                         >
                             投稿
-                        </button>
+                        </button> -->
+                  <button type="button" @click="postData" class="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2 shadow-2xl">投稿</button>
+
+
                     </div>
                 </div>
             </div>
