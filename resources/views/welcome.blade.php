@@ -54,9 +54,6 @@
         #menu-toggle:checked + #menu {
             display: block;
         }
-        .bg{
-            background-color: ;
-        }
         .main-title{
           font-size: 4rem;
           font-family: 'Stick', sans-serif;
