@@ -188,6 +188,10 @@ export default
     {
       "id": 47,
       "name": "沖縄県"
+    },
+    {
+      "id": 48,
+      "name": "海外"
     }
   ]
 }

@@ -1,35 +1,43 @@
 <template>
-  <div>
-      <div
-        v-if="loading"
-        class="flex justify-center items-center"
-        style="height: 90vh"
-    >
+    <div>
         <div
-            class="spinner-border animate-spin inline-block w-8 h-8 border-4 rounded-full text-blue-400"
-            role="status"
-        ></div>
-    </div>
-    <div v-else>
-        <div>
+            v-if="loading"
+            class="flex justify-center items-center"
+            style="height: 90vh"
+        >
+            <div
+                class="spinner-border animate-spin inline-block w-8 h-8 border-4 rounded-full text-blue-400"
+                role="status"
+            ></div>
+        </div>
+        <div v-else>
             <div>
-                <section class="bg-white py-4">
-                    <div
-                        class="container mx-auto flex items-center flex-wrap pt-1 pb-12 "
-                    >
+                <div>
+                    <section class="bg-white py-4">
                         <div
-                            v-for="drink in drinks"
-                            class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col  inline-block sm:-m-4 -mx-4 md:mx-0"
+                            class="container mx-auto flex items-center flex-wrap pt-1 pb-12 "
                         >
-                            <DrinkItem :drink="drink" :drinks="drinks" />
+                            <template v-if="drinks.length > 0">
+                                <div
+                                    v-for="drink in drinks"
+                                    class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col  inline-block sm:-m-4 -mx-4 md:mx-0"
+                                >
+                                    <DrinkItem
+                                        :drink="drink"
+                                        :drinks="drinks"
+                                    />
+                                </div>
+                            </template>
+                            <template v-else>
+                                <h1>アイテムがありません.....</h1>
+                            </template>
                         </div>
-                    </div>
-                </section>
+                    </section>
+                </div>
+                <Footer />
             </div>
-            <Footer />
         </div>
     </div>
-  </div>
 </template>
 
 <script>
@@ -52,20 +60,20 @@ export default {
     },
     methods: {
         getData() {
-          if(this.$route.query.tags ) {
-            this.getDrinksWithTags() 
-          } else {
-           this.getDrinksWithPrefecture() 
-          }
+            if (this.$route.query.tags) {
+                this.getDrinksWithTags();
+            } else {
+                this.getDrinksWithPrefecture();
+            }
         },
         async getDrinksWithTags() {
             this.loading = true;
-            const tags = this.$route.query.tags
+            const tags = this.$route.query.tags;
             await axios
                 .get("/api/drinks", {
                     params: {
-                            tags: tags,
-                            with: "comments"
+                        tags: tags,
+                        with: "comments"
                     }
                 })
                 .then(response => {
@@ -79,12 +87,12 @@ export default {
         },
         async getDrinksWithPrefecture() {
             this.loading = true;
-            const prefectures = this.$route.query.prefectures
+            const prefectures = this.$route.query.prefectures;
             await axios
                 .get("/api/drinks", {
                     params: {
-                            prefectures: prefectures,
-                            with: "comments"
+                        prefectures: prefectures,
+                        with: "comments"
                     }
                 })
                 .then(response => {

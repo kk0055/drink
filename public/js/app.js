@@ -3261,6 +3261,9 @@ __webpack_require__.r(__webpack_exports__);
   }, {
     "id": 47,
     "name": "沖縄県"
+  }, {
+    "id": 48,
+    "name": "海外"
   }]
 });
 
