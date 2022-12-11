@@ -146,11 +146,12 @@
                             >
                                 <span class="sr-only">Open user menu</span>
                                 <router-link to="/drink">
-                                    <img
+                                <i class="fas fa-plus h-8 w-8 fa-2x text-white"></i>
+                                    <!-- <img
                                         class="h-8 w-8 rounded-full"
                                         src="/images/girl.png"
                                         alt=""
-                                    />
+                                    /> -->
                                 </router-link>
                             </div>
                         </div>

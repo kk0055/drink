@@ -2545,6 +2545,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
@@ -23115,7 +23116,7 @@ var render = function() {
       _vm.hideItemDetails
         ? _c("img", {
             staticClass: "h-48 md:h-36 w-full object-cover",
-            attrs: { width: "300px", height: "350px", src: _vm.image }
+            attrs: { width: "300px", height: "5000px", src: _vm.image }
           })
         : _c("img", {
             staticClass: "w-full object-center ",
@@ -23788,9 +23789,8 @@ var render = function() {
                       ]),
                       _vm._v(" "),
                       _c("router-link", { attrs: { to: "/drink" } }, [
-                        _c("img", {
-                          staticClass: "h-8 w-8 rounded-full",
-                          attrs: { src: "/images/girl.png", alt: "" }
+                        _c("i", {
+                          staticClass: "fas fa-plus h-8 w-8 fa-2x text-white"
                         })
                       ])
                     ],
@@ -23979,7 +23979,7 @@ var render = function() {
               _vm._v(" "),
               _c(
                 "div",
-                { staticClass: " flex flex-wrap " },
+                { staticClass: " flex flex-wrap" },
                 _vm._l(_vm.itemlists, function(item) {
                   return _c("div", { staticClass: "flex flex-row mr-1" }, [
                     _c("input", {
