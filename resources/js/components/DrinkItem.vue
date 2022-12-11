@@ -6,7 +6,7 @@
             v-if="hideItemDetails"
             class="h-48 md:h-36 w-full object-cover"
             width="300px"
-            height="350px"
+            height="5000px"
             :src="image"
         />
         <!-- <img class="w-full bg-cover p-3" width="300px" height="350px" v-if="$route.name == 'drinks'"  :src="drink.image"> -->

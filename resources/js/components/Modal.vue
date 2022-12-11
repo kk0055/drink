@@ -18,7 +18,7 @@
                     </div>
                     <!--body-->
 
-                    <div class=" flex flex-wrap ">
+                    <div class=" flex flex-wrap" >
                         <div
                             class="flex flex-row mr-1"
                             v-for="item in itemlists"
