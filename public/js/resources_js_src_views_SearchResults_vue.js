@@ -55,6 +55,14 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -286,22 +294,26 @@ var render = function() {
                       staticClass:
                         "container mx-auto flex items-center flex-wrap pt-1 pb-12 "
                     },
-                    _vm._l(_vm.drinks, function(drink) {
-                      return _c(
-                        "div",
-                        {
-                          staticClass:
-                            "w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col  inline-block sm:-m-4 -mx-4 md:mx-0"
-                        },
-                        [
-                          _c("DrinkItem", {
-                            attrs: { drink: drink, drinks: _vm.drinks }
+                    [
+                      _vm.drinks.length > 0
+                        ? _vm._l(_vm.drinks, function(drink) {
+                            return _c(
+                              "div",
+                              {
+                                staticClass:
+                                  "w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col  inline-block sm:-m-4 -mx-4 md:mx-0"
+                              },
+                              [
+                                _c("DrinkItem", {
+                                  attrs: { drink: drink, drinks: _vm.drinks }
+                                })
+                              ],
+                              1
+                            )
                           })
-                        ],
-                        1
-                      )
-                    }),
-                    0
+                        : [_c("h1", [_vm._v("アイテムがありません.....")])]
+                    ],
+                    2
                   )
                 ])
               ]),
