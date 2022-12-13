@@ -275,6 +275,21 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -315,6 +330,12 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       },
       score: {
         required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_3__.required
+      },
+      map_url: {
+        required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_3__.required
+      },
+      price: {
+        required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_3__.required
       }
     }
   },
@@ -347,10 +368,10 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                   }
                 };
                 _this.loading = true;
-                url = _this.data.map_url ? _this.data.map_url : '不明';
+                url = _this.data.map_url ? _this.data.map_url : "不明";
                 index = url.indexOf("http");
                 map_url = url.substring(index);
-                price = _this.data.price ? _this.data.price : '不明';
+                price = _this.data.price ? _this.data.price : "不明";
                 formData = new FormData();
                 formData.append("image", _this.files);
                 formData.append("name", _this.data.name);
@@ -772,20 +793,33 @@ var render = function() {
                       ],
                       staticClass:
                         "focus:outline-none border-b w-full pb-2 border-sky-400 placeholder-gray-500 mt-4",
-                      attrs: {
-                        type: "text",
-                        placeholder: "Google mapのURL(任意)"
-                      },
+                      attrs: { type: "text", placeholder: "Google mapのURL" },
                       domProps: { value: _vm.data.map_url },
                       on: {
-                        input: function($event) {
-                          if ($event.target.composing) {
-                            return
+                        input: [
+                          function($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.$set(_vm.data, "map_url", $event.target.value)
+                          },
+                          function($event) {
+                            return _vm.$v.data.map_url.$touch()
                           }
-                          _vm.$set(_vm.data, "map_url", $event.target.value)
-                        }
+                        ]
                       }
-                    })
+                    }),
+                    _vm._v(" "),
+                    _vm.$v.data.map_url.$error
+                      ? _c(
+                          "span",
+                          {
+                            staticClass: "mt-2",
+                            class: { error: _vm.$v.data.map_url.$error }
+                          },
+                          [_vm._v("Oops!!!!! 書いてね!")]
+                        )
+                      : _vm._e()
                   ]),
                   _vm._v(" "),
                   _c("div", [
@@ -799,21 +833,37 @@ var render = function() {
                         }
                       ],
                       staticClass:
-                        "focus:outline-none border-b w-full pb-2 border-sky-400 placeholder-gray-500 my-4",
+                        "focus:outline-none border-b w-full pb-2 border-sky-400 placeholder-gray-500 mt-4",
                       attrs: { type: "text", placeholder: "値段(単位は不要)" },
                       domProps: { value: _vm.data.price },
                       on: {
-                        input: function($event) {
-                          if ($event.target.composing) {
-                            return
+                        input: [
+                          function($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.$set(_vm.data, "price", $event.target.value)
+                          },
+                          function($event) {
+                            return _vm.$v.data.price.$touch()
                           }
-                          _vm.$set(_vm.data, "price", $event.target.value)
-                        }
+                        ]
                       }
-                    })
+                    }),
+                    _vm._v(" "),
+                    _vm.$v.data.price.$error
+                      ? _c(
+                          "span",
+                          {
+                            staticClass: "mt-2",
+                            class: { error: _vm.$v.data.price.$error }
+                          },
+                          [_vm._v("Oops!!!!! 書いてね!")]
+                        )
+                      : _vm._e()
                   ]),
                   _vm._v(" "),
-                  _c("div", [
+                  _c("div", { staticClass: "mt-4" }, [
                     _c("span", [_vm._v("評価")]),
                     _vm._v(" "),
                     _c(
@@ -1027,7 +1077,11 @@ var render = function() {
                         attrs: { type: "button" },
                         on: { click: _vm.postData }
                       },
-                      [_vm._v("投稿")]
+                      [
+                        _vm._v(
+                          "\n                        投稿\n                    "
+                        )
+                      ]
                     )
                   ])
                 ])

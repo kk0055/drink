@@ -102,18 +102,32 @@
                             v-model="data.map_url"
                             type="text"
                             class="focus:outline-none border-b w-full pb-2 border-sky-400 placeholder-gray-500 mt-4"
-                            placeholder="Google mapのURL(任意)"
+                            placeholder="Google mapのURL"
+                            @input="$v.data.map_url.$touch()"
                         />
+                        <span
+                            v-if="$v.data.map_url.$error"
+                            class="mt-2"
+                            :class="{ error: $v.data.map_url.$error }"
+                            >Oops!!!!! 書いてね!</span
+                        >
                     </div>
                     <div>
                         <input
                             v-model="data.price"
                             type="text"
-                            class="focus:outline-none border-b w-full pb-2 border-sky-400 placeholder-gray-500 my-4"
+                            class="focus:outline-none border-b w-full pb-2 border-sky-400 placeholder-gray-500 mt-4"
                             placeholder="値段(単位は不要)"
+                            @input="$v.data.price.$touch()"
                         />
+                        <span
+                            v-if="$v.data.price.$error"
+                            class="mt-2"
+                            :class="{ error: $v.data.price.$error }"
+                            >Oops!!!!! 書いてね!</span
+                        >
                     </div>
-                    <div>
+                    <div class="mt-4">
                         <span>評価</span>
                         <div width="20px">
                             <star-rating
@@ -139,16 +153,13 @@
                                 <div
                                     class="flex items-center justify-center w-full"
                                 >
-                                    <label
-                                      
-                                    >
+                                    <label>
                                         <div
                                             class="flex flex-col items-center justify-center-box "
                                             v-if="imageUrl"
                                         >
                                             <img
                                                 class="max-w-full h-auto"
-                                                
                                                 v-bind:src="imageUrl"
                                             />
                                         </div>
@@ -241,9 +252,13 @@
                         >
                             投稿
                         </button> -->
-                  <button type="button" @click="postData" class="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2 shadow-2xl">投稿</button>
-
-
+                        <button
+                            type="button"
+                            @click="postData"
+                            class="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2 shadow-2xl"
+                        >
+                            投稿
+                        </button>
                     </div>
                 </div>
             </div>
@@ -289,6 +304,12 @@ export default {
             },
             score: {
                 required
+            },
+            map_url: {
+                required
+            },
+            price: {
+                required
             }
         }
     },
@@ -314,10 +335,10 @@ export default {
             };
             this.loading = true;
 
-            const url = this.data.map_url ? this.data.map_url : '不明'
+            const url = this.data.map_url ? this.data.map_url : "不明";
             let index = url.indexOf("http");
             let map_url = url.substring(index);
-           const price = this.data.price ? this.data.price : '不明'
+            const price = this.data.price ? this.data.price : "不明";
             let formData = new FormData();
 
             formData.append("image", this.files);
@@ -372,7 +393,7 @@ export default {
                 .catch(function(error) {
                     console.log(error);
                 });
-        },
+        }
     }
 };
 </script>
