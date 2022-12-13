@@ -793,7 +793,10 @@ var render = function() {
                       ],
                       staticClass:
                         "focus:outline-none border-b w-full pb-2 border-sky-400 placeholder-gray-500 mt-4",
-                      attrs: { type: "text", placeholder: "Google mapのURL" },
+                      attrs: {
+                        type: "text",
+                        placeholder: "Google mapのURL(ShareボタンコピペでOK)"
+                      },
                       domProps: { value: _vm.data.map_url },
                       on: {
                         input: [

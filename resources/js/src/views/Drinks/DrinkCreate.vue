@@ -102,7 +102,7 @@
                             v-model="data.map_url"
                             type="text"
                             class="focus:outline-none border-b w-full pb-2 border-sky-400 placeholder-gray-500 mt-4"
-                            placeholder="Google mapのURL"
+                            placeholder="Google mapのURL(ShareボタンコピペでOK)"
                             @input="$v.data.map_url.$touch()"
                         />
                         <span
