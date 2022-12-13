@@ -115,7 +115,7 @@
                     <div>
                         <input
                             v-model="data.price"
-                            type="text"
+                            type="number"
                             class="focus:outline-none border-b w-full pb-2 border-sky-400 placeholder-gray-500 mt-4"
                             placeholder="値段(単位は不要)"
                             @input="$v.data.price.$touch()"
@@ -326,7 +326,7 @@ export default {
         // }
     },
     methods: {
-        async postData() {
+        async postData(e) {
             this.$v.$touch();
             const config = {
                 headers: {
@@ -334,7 +334,7 @@ export default {
                 }
             };
             this.loading = true;
-
+            e.preventDefault();
             const url = this.data.map_url ? this.data.map_url : "不明";
             let index = url.indexOf("http");
             let map_url = url.substring(index);
