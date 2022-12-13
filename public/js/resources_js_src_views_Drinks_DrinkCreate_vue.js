@@ -351,7 +351,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     // }
   },
   methods: {
-    postData: function postData() {
+    postData: function postData(e) {
       var _this = this;
 
       return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee() {
@@ -368,6 +368,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                   }
                 };
                 _this.loading = true;
+                e.preventDefault();
                 url = _this.data.map_url ? _this.data.map_url : "不明";
                 index = url.indexOf("http");
                 map_url = url.substring(index);
@@ -384,16 +385,16 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 formData.append("tag_id", JSON.stringify(_this.selectedTags));
 
                 if (!_this.$v.$invalid) {
-                  _context.next = 21;
+                  _context.next = 22;
                   break;
                 }
 
                 console.log("Validation Error");
-                _context.next = 23;
+                _context.next = 24;
                 break;
 
-              case 21:
-                _context.next = 23;
+              case 22:
+                _context.next = 24;
                 return axios.post("/api/drinks", formData, config).then(function (res) {
                   // console.log(res);
                   _this.$toast("投稿完了!", {
@@ -409,7 +410,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                   console.log(error);
                 });
 
-              case 23:
+              case 24:
               case "end":
                 return _context.stop();
             }
@@ -837,7 +838,10 @@ var render = function() {
                       ],
                       staticClass:
                         "focus:outline-none border-b w-full pb-2 border-sky-400 placeholder-gray-500 mt-4",
-                      attrs: { type: "text", placeholder: "値段(単位は不要)" },
+                      attrs: {
+                        type: "number",
+                        placeholder: "値段(単位は不要)"
+                      },
                       domProps: { value: _vm.data.price },
                       on: {
                         input: [
