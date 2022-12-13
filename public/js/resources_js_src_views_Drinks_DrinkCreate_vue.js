@@ -411,6 +411,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 });
 
               case 24:
+                _this.loading = false;
+
+              case 25:
               case "end":
                 return _context.stop();
             }

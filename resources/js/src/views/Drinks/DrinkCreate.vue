@@ -371,6 +371,7 @@ export default {
                         console.log(error);
                     });
             }
+            this.loading = false;
         },
         selectedFile(e) {
             const file = this.$refs.preview.files[0];
@@ -393,8 +394,7 @@ export default {
                 .catch(function(error) {
                     console.log(error);
                 });
-                this.loading = false;
-                
+            this.loading = false;
         }
     }
 };
