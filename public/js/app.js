@@ -23287,7 +23287,23 @@ var render = function() {
                       }),
                       _vm._v(" "),
                       _c("p", [_vm._v(_vm._s(_vm.commentCount))])
+                    ]),
+                _vm._v(" "),
+                _vm.$route.name !== "drinks"
+                  ? _c("div", { staticClass: "mt-1 flex justify-end" }, [
+                      _c(
+                        "button",
+                        {
+                          on: {
+                            click: function($event) {
+                              return _vm.deleteDrink(_vm.drink.id)
+                            }
+                          }
+                        },
+                        [_c("i", { staticClass: "far fa-trash text-red-500" })]
+                      )
                     ])
+                  : _vm._e()
               ])
             ])
           ]),
