@@ -795,7 +795,7 @@ var render = function() {
                         "focus:outline-none border-b w-full pb-2 border-sky-400 placeholder-gray-500 mt-4",
                       attrs: {
                         type: "text",
-                        placeholder: "Google mapのURL(ShareボタンコピペでOK)"
+                        placeholder: "Google mapのURL(Shareボタンコピペ)"
                       },
                       domProps: { value: _vm.data.map_url },
                       on: {
