@@ -9,10 +9,14 @@ import App from './src/App.vue';
 import Toast from "vue-toastification";
 import "vue-toastification/dist/index.css";
 import Vuelidate from 'vuelidate'
+import Vue2TouchEvents from 'vue2-touch-events'
+
+
 import '../css/app.css' 
 Vue.use(VueRouter);
 Vue.use(Toast);
 Vue.use(Vuelidate)
+Vue.use(Vue2TouchEvents)
 
 Vue.component('favorite-btn', require('./components/Favorite.vue').default);
 Vue.component('App', App);
