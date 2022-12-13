@@ -446,6 +446,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 });
 
               case 2:
+                _this2.loading = false;
+
+              case 3:
               case "end":
                 return _context2.stop();
             }
@@ -546,7 +549,7 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return !_vm.loading
+  return _vm.loading
     ? _c(
         "div",
         {
@@ -1079,17 +1082,10 @@ var render = function() {
                     _c(
                       "button",
                       {
-                        directives: [
-                          {
-                            name: "touch",
-                            rawName: "v-touch",
-                            value: _vm.postData,
-                            expression: "postData"
-                          }
-                        ],
                         staticClass:
                           "text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2 shadow-2xl",
-                        attrs: { type: "button" }
+                        attrs: { type: "button" },
+                        on: { click: _vm.postData }
                       },
                       [
                         _vm._v(
