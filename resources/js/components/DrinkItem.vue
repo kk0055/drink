@@ -115,14 +115,14 @@
                             <p>{{ commentCount }}</p>
                         </div>
                         <!-- deleteボタン削除予定 -->
-                        <!-- <div
+                        <div
                         v-if="$route.name !== 'drinks'"
                         class="mt-1 flex justify-end"
                     >
                         <button @click="deleteDrink(drink.id)">
                             <i class="far fa-trash text-red-500"></i>
                         </button>
-                    </div> -->
+                    </div>
                     </div>
                 </div>
             </div>
