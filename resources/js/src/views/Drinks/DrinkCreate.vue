@@ -72,6 +72,7 @@
                             <option
                                 v-for="prefecture in prefectures"
                                 :value="prefecture.name"
+                                :key="prefecture.id" 
                                 >{{ prefecture.name }}</option
                             >
                         </select>

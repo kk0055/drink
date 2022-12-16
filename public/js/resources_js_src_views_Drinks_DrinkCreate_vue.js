@@ -290,6 +290,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
 
 
 
@@ -725,7 +726,10 @@ var render = function() {
                       _vm._l(_vm.prefectures, function(prefecture) {
                         return _c(
                           "option",
-                          { domProps: { value: prefecture.name } },
+                          {
+                            key: prefecture.id,
+                            domProps: { value: prefecture.name }
+                          },
                           [_vm._v(_vm._s(prefecture.name))]
                         )
                       }),
