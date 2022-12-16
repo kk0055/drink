@@ -64,7 +64,7 @@
                             class="block mb-2 text-sm font-medium text-gray-500 dark:text-gray-400"
                             >見つけた県</label
                         >
-                        <select
+                        <!-- <select
                             name="prefectures"
                             v-model="data.prefecture"
                             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-1 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
@@ -76,7 +76,77 @@
                                 :key="prefecture.id" 
                                 >{{ prefecture.name }}</option
                             >
-                        </select>
+                        </select> -->
+                        <button @click="togglePrefectureModal">
+                            <div
+                                class="border-2 bg-black border-gray-800 rounded-lg px-3 py-2 text-white cursor-pointer hover:bg-gray-800 hover:text-white"
+                            >
+                                都道府県リスト
+                            </div>
+                        </button>
+                        {{ data.prefecture }}
+                        <div class="" v-if="showPrefectureModal">
+                            <div
+                                class="overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none justify-center items-center  flex"
+                            >
+                                <div
+                                    class="relative w-auto my-6 mx-auto max-w-3xl "
+                                >
+                                    <!--content-->
+                                    <div
+                                        class="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none p-3"
+                                    >
+                                        <!--header-->
+                                        <div class="text-center">
+                                            <h2
+                                                class="block text-2xl font-bold text-gray-800 dark:text-white mt-3"
+                                            ></h2>
+                                        </div>
+                                        <!--body-->
+
+                                        <div class=" flex flex-wrap">
+                                            <div
+                                                class="flex flex-row mr-1"
+                                                v-for="item in prefectures"
+                                            >
+                                                <input
+                                                    type="radio"
+                                                    v-model="data.prefecture"
+                                                    :value="item.name"
+                                                    :id="item.id"
+                                                    @input="$v.data.prefecture.$touch()
+                                                    "
+                                                />
+                                                <label
+                                                    :for="item.id"
+                                                    class="bg-green-100 text-green-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-green-200 dark:text-green-900 my-1"
+                                                >
+                                                    {{ item.name }}
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <!--footer-->
+                                        <div
+                                            class="flex items-center justify-end p-6 border-t border-solid border-slate-200 rounded-b"
+                                        >
+                                            <button
+                                                @click="togglePrefectureModal"
+                                                class="ml-2 inline-flex items-center justify-center px-4 py-2 text-base font-medium text-center text-indigo-100 border border-indigo-500 rounded-lg shadow-sm cursor-pointer hover:text-white bg-gradient-to-br from-purple-500 via-indigo-500 to-indigo-500"
+                                            >
+                                                <span class="relative"
+                                                    >Okay<i
+                                                        class="ml-1 far fa-thumbs-up"
+                                                    ></i
+                                                ></span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div
+                                class="opacity-25 fixed inset-0 z-40 bg-black"
+                            ></div>
+                        </div>
                         <span
                             v-if="$v.data.prefecture.$error"
                             class="mt-2"
@@ -284,7 +354,8 @@ export default {
         imageUrl: "",
         files: [],
         tags: [],
-        selectedTags: []
+        selectedTags: [],
+        showPrefectureModal: false
     }),
     components: {
         StarRating
@@ -381,6 +452,9 @@ export default {
             e.preventDefault();
             let files = e.target.files;
             this.files = files[0];
+        },
+        togglePrefectureModal() {
+            this.showPrefectureModal = !this.showPrefectureModal;
         },
         async getTags() {
             await axios

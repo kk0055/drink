@@ -292,6 +292,76 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -309,7 +379,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       imageUrl: "",
       files: [],
       tags: [],
-      selectedTags: []
+      selectedTags: [],
+      showPrefectureModal: false
     };
   },
   components: {
@@ -429,6 +500,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       e.preventDefault();
       var files = e.target.files;
       this.files = files[0];
+    },
+    togglePrefectureModal: function togglePrefectureModal() {
+      this.showPrefectureModal = !this.showPrefectureModal;
     },
     getTags: function getTags() {
       var _this2 = this;
@@ -688,55 +762,149 @@ var render = function() {
                       [_vm._v("見つけた県")]
                     ),
                     _vm._v(" "),
-                    _c(
-                      "select",
-                      {
-                        directives: [
-                          {
-                            name: "model",
-                            rawName: "v-model",
-                            value: _vm.data.prefecture,
-                            expression: "data.prefecture"
-                          }
-                        ],
-                        staticClass:
-                          "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-1 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500",
-                        attrs: { name: "prefectures" },
-                        on: {
-                          input: function($event) {
-                            return _vm.$v.data.prefecture.$touch()
-                          },
-                          change: function($event) {
-                            var $$selectedVal = Array.prototype.filter
-                              .call($event.target.options, function(o) {
-                                return o.selected
-                              })
-                              .map(function(o) {
-                                var val = "_value" in o ? o._value : o.value
-                                return val
-                              })
-                            _vm.$set(
-                              _vm.data,
-                              "prefecture",
-                              $event.target.multiple
-                                ? $$selectedVal
-                                : $$selectedVal[0]
-                            )
-                          }
-                        }
-                      },
-                      _vm._l(_vm.prefectures, function(prefecture) {
-                        return _c(
-                          "option",
-                          {
-                            key: prefecture.id,
-                            domProps: { value: prefecture.name }
-                          },
-                          [_vm._v(_vm._s(prefecture.name))]
-                        )
-                      }),
-                      0
+                    _c("button", { on: { click: _vm.togglePrefectureModal } }, [
+                      _c(
+                        "div",
+                        {
+                          staticClass:
+                            "border-2 bg-black border-gray-800 rounded-lg px-3 py-2 text-white cursor-pointer hover:bg-gray-800 hover:text-white"
+                        },
+                        [
+                          _vm._v(
+                            "\n                            都道府県リスト\n                        "
+                          )
+                        ]
+                      )
+                    ]),
+                    _vm._v(
+                      "\n                    " +
+                        _vm._s(_vm.data.prefecture) +
+                        "\n                    "
                     ),
+                    _vm.showPrefectureModal
+                      ? _c("div", {}, [
+                          _c(
+                            "div",
+                            {
+                              staticClass:
+                                "overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none justify-center items-center  flex"
+                            },
+                            [
+                              _c(
+                                "div",
+                                {
+                                  staticClass:
+                                    "relative w-auto my-6 mx-auto max-w-3xl "
+                                },
+                                [
+                                  _c(
+                                    "div",
+                                    {
+                                      staticClass:
+                                        "border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none p-3"
+                                    },
+                                    [
+                                      _vm._m(0),
+                                      _vm._v(" "),
+                                      _c(
+                                        "div",
+                                        { staticClass: " flex flex-wrap" },
+                                        _vm._l(_vm.prefectures, function(item) {
+                                          return _c(
+                                            "div",
+                                            {
+                                              staticClass: "flex flex-row mr-1"
+                                            },
+                                            [
+                                              _c("input", {
+                                                directives: [
+                                                  {
+                                                    name: "model",
+                                                    rawName: "v-model",
+                                                    value: _vm.data.prefecture,
+                                                    expression:
+                                                      "data.prefecture"
+                                                  }
+                                                ],
+                                                attrs: {
+                                                  type: "radio",
+                                                  id: item.id
+                                                },
+                                                domProps: {
+                                                  value: item.name,
+                                                  checked: _vm._q(
+                                                    _vm.data.prefecture,
+                                                    item.name
+                                                  )
+                                                },
+                                                on: {
+                                                  input: function($event) {
+                                                    return _vm.$v.data.prefecture.$touch()
+                                                  },
+                                                  change: function($event) {
+                                                    return _vm.$set(
+                                                      _vm.data,
+                                                      "prefecture",
+                                                      item.name
+                                                    )
+                                                  }
+                                                }
+                                              }),
+                                              _vm._v(" "),
+                                              _c(
+                                                "label",
+                                                {
+                                                  staticClass:
+                                                    "bg-green-100 text-green-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-green-200 dark:text-green-900 my-1",
+                                                  attrs: { for: item.id }
+                                                },
+                                                [
+                                                  _vm._v(
+                                                    "\n                                                " +
+                                                      _vm._s(item.name) +
+                                                      "\n                                            "
+                                                  )
+                                                ]
+                                              )
+                                            ]
+                                          )
+                                        }),
+                                        0
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "div",
+                                        {
+                                          staticClass:
+                                            "flex items-center justify-end p-6 border-t border-solid border-slate-200 rounded-b"
+                                        },
+                                        [
+                                          _c(
+                                            "button",
+                                            {
+                                              staticClass:
+                                                "ml-2 inline-flex items-center justify-center px-4 py-2 text-base font-medium text-center text-indigo-100 border border-indigo-500 rounded-lg shadow-sm cursor-pointer hover:text-white bg-gradient-to-br from-purple-500 via-indigo-500 to-indigo-500",
+                                              on: {
+                                                click: _vm.togglePrefectureModal
+                                              }
+                                            },
+                                            [_vm._m(1)]
+                                          )
+                                        ]
+                                      )
+                                    ]
+                                  )
+                                ]
+                              )
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _c("div", {
+                            staticClass:
+                              "opacity-25 fixed inset-0 z-40 bg-black"
+                          })
+                        ])
+                      : _vm._e(),
                     _vm._v(" "),
                     _vm.$v.data.prefecture.$error
                       ? _c(
@@ -1110,7 +1278,28 @@ var render = function() {
         )
       ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "text-center" }, [
+      _c("h2", {
+        staticClass:
+          "block text-2xl font-bold text-gray-800 dark:text-white mt-3"
+      })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("span", { staticClass: "relative" }, [
+      _vm._v("Okay"),
+      _c("i", { staticClass: "ml-1 far fa-thumbs-up" })
+    ])
+  }
+]
 render._withStripped = true
 
 
