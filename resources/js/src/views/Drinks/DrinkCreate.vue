@@ -449,7 +449,7 @@ export default {
         selectedFile(e) {
             const file = this.$refs.preview.files[0];
             this.imageUrl = URL.createObjectURL(file);
-            e.preventDefault();
+            // e.preventDefault();
             let files = e.target.files;
             this.files = files[0];
         },
